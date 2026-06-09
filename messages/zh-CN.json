@@ -262,5 +262,52 @@
   "seo": {
     "homeTitle": "保险图鉴 - 对比香港与中国内地保险产品",
     "homeDescription": "对比香港和中国内地的重疾险和储蓄险产品。通过详细分析找到最佳保险方案。"
+  },
+  "IRRCalculator": {
+    "cashFlowInputs": "现金流输入",
+    "loadExample": "加载示例",
+    "helpText": "输入年缴保费、缴费年期和不同保单年度的预期现金价值，计算内部收益率 (IRR)。",
+    "annualPremium": "年缴保费（美元）",
+    "paymentYears": "缴费年期",
+    "premiumPlaceholder": "例如 20000",
+    "yearsPlaceholder": "例如 5",
+    "totalInvestment": "总投资：",
+    "yearsRange": "年",
+    "cashValues": "预期现金价值",
+    "cashValuesHelp": "输入每个保单年度的预期现金价值或退保价值。",
+    "addYear": "+ 添加年份",
+    "year": "第",
+    "cashValue": "现金价值",
+    "removeRow": "删除",
+    "calculateIrr": "计算 IRR",
+    "results": "计算结果",
+    "irrLabel": "IRR",
+    "breakEvenYear": "回本年期",
+    "totalInvested": "总投资金额",
+    "totalReturns": "总领取金额",
+    "notAvailable": "暂无",
+    "yearPrefix": "第",
+    "errorPremium": "请输入有效的年缴保费。",
+    "errorYears": "请输入有效的缴费年期。",
+    "errorFields": "请填写所有现金价值字段。",
+    "errorIrr": "无法计算 IRR，请检查输入数据。"
+  },
+  "IRRPage": {
+    "title": "保险 IRR 计算器",
+    "subtitle": "计算保险储蓄产品的内部收益率，对比不同保单的实际回报。"
+  },
+  "IRRSEO": {
+    "quickAnswerTitle": "什么是保险 IRR？",
+    "quickAnswerText": "保险 IRR（内部收益率）是考虑保费缴纳和未来现金价值后的年化复合回报率。使用我们的免费计算器对比储蓄险产品。",
+    "seoH2": "了解保险 IRR",
+    "seoParagraph1": "内部收益率 (IRR) 是对比保险储蓄产品最准确的方法。与简单收益计算不同，IRR 考虑了所有现金流的时间因素——保费缴纳和未来领取——为您提供真实的年化回报率。",
+    "seoParagraph2": "对比香港分红保单或内地增额终身寿险时，IRR 能让您看清哪个产品在同等风险水平下提供更好的价值。",
+    "faqTitle": "常见问题",
+    "faqQ1": "保险产品的 IRR 多少算好？",
+    "faqA1": "长期储蓄险的保证回报 IRR 通常在 3-5% 左右。分红保单的演示 IRR 可能达到 4-7%，但非保证部分取决于保险公司的经营表现。",
+    "faqQ2": "如何用 IRR 对比两个保险产品？",
+    "faqA2": "分别输入两个产品的保费缴纳和预期现金价值，IRR 较高的产品在同等风险水平下提供更好的回报。",
+    "faqQ3": "IRR 计算器准确吗？",
+    "faqA3": "计算器使用 Newton-Raphson 法配合二分法回退，数学上精确。结果取决于您输入的现金价值——请务必使用官方产品演示数据。"
   }
 }

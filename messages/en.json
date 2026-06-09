@@ -262,5 +262,52 @@
   "seo": {
     "homeTitle": "InsuranceAtlas - Compare Hong Kong & Mainland China Insurance Products",
     "homeDescription": "Compare critical illness and savings insurance products from Hong Kong and mainland China. Find the best insurance plans with detailed analysis."
+  },
+  "IRRCalculator": {
+    "cashFlowInputs": "Cash Flow Inputs",
+    "loadExample": "Load Example",
+    "helpText": "Enter your annual premium, payment years, and expected cash values at different policy years to calculate the Internal Rate of Return (IRR).",
+    "annualPremium": "Annual Premium (USD)",
+    "paymentYears": "Payment Years",
+    "premiumPlaceholder": "e.g. 20000",
+    "yearsPlaceholder": "e.g. 5",
+    "totalInvestment": "Total investment:",
+    "yearsRange": "years",
+    "cashValues": "Expected Cash Values",
+    "cashValuesHelp": "Enter the expected cash value or surrender value at each policy year.",
+    "addYear": "+ Add year",
+    "year": "Yr",
+    "cashValue": "Cash value",
+    "removeRow": "Remove",
+    "calculateIrr": "Calculate IRR",
+    "results": "Results",
+    "irrLabel": "IRR",
+    "breakEvenYear": "Break-even Year",
+    "totalInvested": "Total Invested",
+    "totalReturns": "Total Returns",
+    "notAvailable": "N/A",
+    "yearPrefix": "Year",
+    "errorPremium": "Please enter a valid annual premium.",
+    "errorYears": "Please enter valid payment years.",
+    "errorFields": "Please fill in all cash value fields with valid numbers.",
+    "errorIrr": "Could not calculate IRR. Please check your inputs."
+  },
+  "IRRPage": {
+    "title": "Insurance IRR Calculator",
+    "subtitle": "Calculate the Internal Rate of Return for insurance savings products and compare policy returns."
+  },
+  "IRRSEO": {
+    "quickAnswerTitle": "What is Insurance IRR?",
+    "quickAnswerText": "Insurance IRR (Internal Rate of Return) is the annualized rate of return on an insurance policy, accounting for premium payments and future cash values. Use our free calculator to compare savings plans.",
+    "seoH2": "Understanding Insurance IRR",
+    "seoParagraph1": "The Internal Rate of Return (IRR) is the most accurate way to compare insurance savings products. Unlike simple return calculations, IRR accounts for the timing of all cash flows — premium payments and future withdrawals — giving you a true annualized return.",
+    "seoParagraph2": "When comparing Hong Kong participating policies or mainland China increasing sum insured products, IRR lets you see which product actually delivers better value over time.",
+    "faqTitle": "Frequently Asked Questions",
+    "faqQ1": "What is a good IRR for an insurance policy?",
+    "faqA1": "For long-term savings policies, an IRR of 3-5% is typical for guaranteed returns. Participating policies may show illustrated IRR of 4-7%, but non-guaranteed portions depend on the insurer's performance.",
+    "faqQ2": "How do I compare two insurance products using IRR?",
+    "faqA2": "Enter the premium payment details and expected cash values for each product. The product with the higher IRR provides better value for the same level of risk.",
+    "faqQ3": "Is the IRR calculator accurate?",
+    "faqA3": "The calculator uses the Newton-Raphson method with bisection fallback for mathematical accuracy. Results depend on the cash values you enter — always use official product illustrations."
   }
 }
