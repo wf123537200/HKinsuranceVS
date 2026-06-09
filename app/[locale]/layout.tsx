@@ -1,7 +1,6 @@
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages, setRequestLocale } from "next-intl/server";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { locales } from "@/i18n/config";
 import Providers from "@/components/Providers";
 import Header from "@/components/Header";
@@ -18,14 +17,16 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: {
-    default: "InsuranceAtlas - Insurance Product Database",
-    template: "%s | InsuranceAtlas",
-  },
-  description:
-    "Compare Critical Illness and Savings Insurance Products Across Hong Kong and Mainland China.",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "seo" });
+  return {
+    title: { default: t("homeTitle"), template: "%s | InsuranceAtlas" },
+    description: t("homeDescription"),
+    alternates: { languages: { en: "/en", "zh-CN": "/zh-CN", "zh-TW": "/zh-TW" } },
+    openGraph: { locale, type: "website" },
+  };
+}
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));

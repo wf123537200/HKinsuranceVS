@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
+import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
@@ -10,6 +11,8 @@ export const metadata: Metadata = {
 };
 
 export default async function SavingsPage() {
+  const t = await getTranslations("products");
+  const tc = await getTranslations("categories");
   const products = await prisma.product.findMany({
     where: { category: "SAVINGS" },
     orderBy: { displayName: "asc" },
@@ -19,14 +22,14 @@ export default async function SavingsPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <nav className="text-sm text-gray-500 mb-6">
-        <Link href="/products" className="hover:text-blue-600">Products</Link>
+        <Link href="/products" className="hover:text-blue-600">{t("title")}</Link>
         <span className="mx-2">/</span>
-        <span className="text-gray-900">Savings</span>
+        <span className="text-gray-900">{tc("savings")}</span>
       </nav>
 
-      <h1 className="text-3xl font-bold text-gray-900 mb-2">Savings Insurance</h1>
+      <h1 className="text-3xl font-bold text-gray-900 mb-2">{t("savingsTitle")}</h1>
       <p className="text-gray-600 mb-8">
-        Browse savings insurance products including Hong Kong participating policies and mainland increasing sum insured products.
+        {t("savingsDescriptionLong")}
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -47,10 +50,10 @@ export default async function SavingsPage() {
             {product.savingsDetail && (
               <div className="flex flex-wrap gap-2 text-xs text-gray-500">
                 {product.savingsDetail.illustratedIrr && (
-                  <span>Illustrated IRR: {product.savingsDetail.illustratedIrr}%</span>
+                  <span>{t("illustratedIrr")}: {product.savingsDetail.illustratedIrr}%</span>
                 )}
                 {product.savingsDetail.participating && (
-                  <span className="text-green-600">Participating</span>
+                  <span className="text-green-600">{t("participating")}</span>
                 )}
                 {product.savingsDetail.legacyPlanning && (
                   <span className="text-purple-600">Legacy</span>

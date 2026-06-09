@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
+import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 
 interface Props {
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
 };
 
 export default async function SearchPage({ searchParams }: Props) {
+  const t = await getTranslations("search");
   const { q } = await searchParams;
   const query = q?.trim() || "";
 
@@ -49,8 +51,8 @@ export default async function SearchPage({ searchParams }: Props) {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 className="text-3xl font-bold text-gray-900 mb-2">Search</h1>
-      <p className="text-gray-600 mb-8">Search insurance products, companies, and tags.</p>
+      <h1 className="text-3xl font-bold text-gray-900 mb-2">{t("title")}</h1>
+      <p className="text-gray-600 mb-8">{t("description")}</p>
 
       {/* Search form */}
       <form className="mb-8" action="/search" method="GET">

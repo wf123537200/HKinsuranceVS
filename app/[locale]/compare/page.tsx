@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
+import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default async function ComparePage() {
+  const t = await getTranslations("compare");
   const comparisons = await prisma.comparison.findMany({
     orderBy: { viewCount: "desc" },
     include: {
@@ -20,9 +22,9 @@ export default async function ComparePage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 className="text-3xl font-bold text-gray-900 mb-2">Product Comparisons</h1>
+      <h1 className="text-3xl font-bold text-gray-900 mb-2">{t("title")}</h1>
       <p className="text-gray-600 mb-8">
-        Compare insurance products side by side across Hong Kong and Mainland China.
+        {t("description")}
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

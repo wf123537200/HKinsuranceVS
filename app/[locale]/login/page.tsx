@@ -2,8 +2,10 @@
 
 import { signIn } from "next-auth/react";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 export default function LoginPage() {
+  const t = useTranslations("login");
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -18,8 +20,8 @@ export default function LoginPage() {
     <div className="min-h-[60vh] flex items-center justify-center px-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Sign In</h1>
-          <p className="text-gray-600">Sign in to access AI comparisons (3 free per day).</p>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">{t("title")}</h1>
+          <p className="text-gray-600">{t("description")}</p>
         </div>
 
         <div className="bg-white border border-gray-200 rounded-lg p-6 space-y-4">
@@ -28,14 +30,14 @@ export default function LoginPage() {
             onClick={() => signIn("google", { callbackUrl: "/" })}
             className="w-full flex items-center justify-center gap-3 px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
           >
-            <span className="text-sm font-medium text-gray-700">Continue with Google</span>
+            <span className="text-sm font-medium text-gray-700">{t("orContinueWith")} {t("google")}</span>
           </button>
 
           <button
             onClick={() => signIn("github", { callbackUrl: "/" })}
             className="w-full flex items-center justify-center gap-3 px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
           >
-            <span className="text-sm font-medium text-gray-700">Continue with GitHub</span>
+            <span className="text-sm font-medium text-gray-700">{t("orContinueWith")} {t("github")}</span>
           </button>
 
           <div className="relative">
@@ -43,14 +45,14 @@ export default function LoginPage() {
               <div className="w-full border-t border-gray-200" />
             </div>
             <div className="relative flex justify-center text-sm">
-              <span className="bg-white px-4 text-gray-500">or</span>
+              <span className="bg-white px-4 text-gray-500">{t("orContinueWith")}</span>
             </div>
           </div>
 
           {/* Demo Login */}
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-              Demo Login (Email)
+              {t("email")}
             </label>
             <input
               id="email"
@@ -65,7 +67,7 @@ export default function LoginPage() {
               disabled={loading || !email}
               className="w-full mt-3 px-4 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 disabled:opacity-50 transition-colors"
             >
-              {loading ? "Signing in..." : "Sign In with Demo"}
+              {loading ? "Signing in..." : t("signInBtn")}
             </button>
           </div>
         </div>

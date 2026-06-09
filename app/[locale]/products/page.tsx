@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
+import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
@@ -10,6 +11,8 @@ export const metadata: Metadata = {
 };
 
 export default async function ProductsPage() {
+  const t = await getTranslations("products");
+  const tc = await getTranslations("categories");
   const products = await prisma.product.findMany({
     orderBy: { displayName: "asc" },
     include: { company: true },
@@ -17,17 +20,17 @@ export default async function ProductsPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 className="text-3xl font-bold text-gray-900 mb-2">All Insurance Products</h1>
+      <h1 className="text-3xl font-bold text-gray-900 mb-2">{t("title")}</h1>
       <p className="text-gray-600 mb-8">
-        Browse all insurance products from Hong Kong and Mainland China.
+        {t("description")}
       </p>
 
       <div className="flex gap-3 mb-6">
         <Link href="/products/critical-illness" className="px-4 py-2 text-sm font-medium bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200">
-          Critical Illness
+          {tc("criticalIllness")}
         </Link>
         <Link href="/products/savings" className="px-4 py-2 text-sm font-medium bg-green-100 text-green-700 rounded-lg hover:bg-green-200">
-          Savings
+          {tc("savings")}
         </Link>
       </div>
 

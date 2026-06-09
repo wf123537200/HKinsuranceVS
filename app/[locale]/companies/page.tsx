@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import CompanyLogo from "@/components/CompanyLogo";
+import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
@@ -11,6 +12,10 @@ export const metadata: Metadata = {
 };
 
 export default async function CompaniesPage() {
+  const t = await getTranslations("companies");
+  const tc = await getTranslations("categories");
+  const tCommon = await getTranslations("common");
+
   const companies = await prisma.company.findMany({
     orderBy: { displayName: "asc" },
     include: {
@@ -22,9 +27,9 @@ export default async function CompaniesPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 className="text-3xl font-bold text-gray-900 mb-2">Insurance Companies</h1>
+      <h1 className="text-3xl font-bold text-gray-900 mb-2">{t("title")}</h1>
       <p className="text-gray-600 mb-8">
-        Browse insurance companies from Hong Kong and Mainland China.
+        {t("description")}
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -54,8 +59,8 @@ export default async function CompaniesPage() {
               </div>
               <p className="text-sm text-gray-500 mb-3 line-clamp-2">{company.description}</p>
               <div className="flex gap-4 text-xs text-gray-400">
-                <span>{ciCount} Critical Illness</span>
-                <span>{savingsCount} Savings</span>
+                <span>{ciCount} {tc("criticalIllness")}</span>
+                <span>{savingsCount} {tc("savings")}</span>
               </div>
             </Link>
           );

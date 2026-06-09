@@ -3,6 +3,7 @@ import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import CompanyLogo from "@/components/CompanyLogo";
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -20,6 +21,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function CompanyDetailPage({ params }: Props) {
   const { slug } = await params;
+  const t = await getTranslations("companies");
+  const tc = await getTranslations("categories");
+  const tCommon = await getTranslations("common");
   const company = await prisma.company.findUnique({
     where: { slug },
     include: {
@@ -48,7 +52,7 @@ export default async function CompanyDetailPage({ params }: Props) {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Breadcrumb */}
       <nav className="text-sm text-gray-500 mb-6">
-        <Link href="/companies" className="hover:text-blue-600">Companies</Link>
+        <Link href="/companies" className="hover:text-blue-600">{t("title")}</Link>
         <span className="mx-2">/</span>
         <span className="text-gray-900">{company.displayName}</span>
       </nav>
@@ -75,28 +79,28 @@ export default async function CompanyDetailPage({ params }: Props) {
       {/* Company Info Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
         <div className="bg-gray-50 rounded-lg p-4">
-          <h3 className="text-sm font-medium text-gray-500 mb-1">Founded</h3>
-          <p className="text-gray-900">{company.foundedYear ?? "N/A"}</p>
+          <h3 className="text-sm font-medium text-gray-500 mb-1">{t("founded")}</h3>
+          <p className="text-gray-900">{company.foundedYear ?? tCommon("na")}</p>
         </div>
         <div className="bg-gray-50 rounded-lg p-4">
-          <h3 className="text-sm font-medium text-gray-500 mb-1">Headquarters</h3>
-          <p className="text-gray-900">{company.headquarters ?? "N/A"}</p>
+          <h3 className="text-sm font-medium text-gray-500 mb-1">{t("headquarters")}</h3>
+          <p className="text-gray-900">{company.headquarters ?? tCommon("na")}</p>
         </div>
         <div className="bg-gray-50 rounded-lg p-4">
-          <h3 className="text-sm font-medium text-gray-500 mb-1">Regulator</h3>
-          <p className="text-gray-900">{company.regulator ?? "N/A"}</p>
+          <h3 className="text-sm font-medium text-gray-500 mb-1">{t("regulator")}</h3>
+          <p className="text-gray-900">{company.regulator ?? tCommon("na")}</p>
         </div>
         <div className="bg-gray-50 rounded-lg p-4">
-          <h3 className="text-sm font-medium text-gray-500 mb-1">AM Best Rating</h3>
-          <p className="text-gray-900">{company.amBestRating ?? "N/A"}</p>
+          <h3 className="text-sm font-medium text-gray-500 mb-1">{t("amBestRating")}</h3>
+          <p className="text-gray-900">{company.amBestRating ?? tCommon("na")}</p>
         </div>
         <div className="bg-gray-50 rounded-lg p-4">
-          <h3 className="text-sm font-medium text-gray-500 mb-1">Moody&apos;s Rating</h3>
-          <p className="text-gray-900">{company.moodysRating ?? "N/A"}</p>
+          <h3 className="text-sm font-medium text-gray-500 mb-1">{t("moodysRating")}</h3>
+          <p className="text-gray-900">{company.moodysRating ?? tCommon("na")}</p>
         </div>
         <div className="bg-gray-50 rounded-lg p-4">
-          <h3 className="text-sm font-medium text-gray-500 mb-1">S&P Rating</h3>
-          <p className="text-gray-900">{company.spRating ?? "N/A"}</p>
+          <h3 className="text-sm font-medium text-gray-500 mb-1">{t("spRating")}</h3>
+          <p className="text-gray-900">{company.spRating ?? tCommon("na")}</p>
         </div>
       </div>
 
@@ -108,7 +112,7 @@ export default async function CompanyDetailPage({ params }: Props) {
             rel="noopener noreferrer"
             className="text-blue-600 hover:text-blue-700 text-sm"
           >
-            Visit Official Website &rarr;
+            {t("visitWebsite")} &rarr;
           </a>
         </div>
       )}
@@ -116,7 +120,7 @@ export default async function CompanyDetailPage({ params }: Props) {
       {/* Products */}
       {ciProducts.length > 0 && (
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Critical Illness Products</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">{t("criticalIllnessProducts")}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {ciProducts.map((product) => (
               <Link
@@ -141,7 +145,7 @@ export default async function CompanyDetailPage({ params }: Props) {
 
       {savingsProducts.length > 0 && (
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Savings Products</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">{t("savingsProducts")}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {savingsProducts.map((product) => (
               <Link

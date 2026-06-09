@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
+import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default async function RankingsPage() {
+  const t = await getTranslations("rankings");
   const [mostViewed, mostCompared] = await Promise.all([
     prisma.product.findMany({
       orderBy: { viewCount: "desc" },
@@ -25,8 +27,8 @@ export default async function RankingsPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 className="text-3xl font-bold text-gray-900 mb-2">Insurance Product Rankings</h1>
-      <p className="text-gray-600 mb-8">Rankings of insurance products by views and comparisons.</p>
+      <h1 className="text-3xl font-bold text-gray-900 mb-2">{t("title")}</h1>
+      <p className="text-gray-600 mb-8">{t("description")}</p>
 
       <div className="flex gap-3 mb-8">
         <Link href="/rankings/critical-illness" className="px-4 py-2 text-sm font-medium bg-red-100 text-red-700 rounded-lg hover:bg-red-200">

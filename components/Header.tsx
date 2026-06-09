@@ -23,8 +23,8 @@ export default function Header() {
     { href: "/products", label: t("products") },
     { href: "/compare", label: t("compare") },
     { href: "/rankings", label: t("rankings") },
+    { href: "/calculator", label: t("calculator") },
     { href: "/glossary", label: t("glossary") },
-    { href: "/discussions", label: t("discussions") },
   ];
 
   const pathWithoutLocale = pathname.replace(/^\/(en|zh-CN|zh-TW)/, "") || "/";

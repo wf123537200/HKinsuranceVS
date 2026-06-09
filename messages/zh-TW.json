@@ -33,7 +33,8 @@
     "compare": "產品對比",
     "rankings": "產品排名",
     "glossary": "保險術語",
-    "discussions": "社區討論"
+    "calculator": "計算器",
+    "sitemap": "網站地圖"
   },
   "home": {
     "heroTitle": "保險圖鑑",
@@ -144,7 +145,18 @@
     "productA": "產品 A",
     "productB": "產品 B",
     "comparisonDetail": "對比詳情",
-    "noComparisons": "暫無對比。"
+    "noComparisons": "暫無對比。",
+    "hideSame": "隱藏相同項",
+    "showAll": "顯示全部",
+    "aiDeepComparison": "AI 深度對比",
+    "aiDescription": "生成AI驅動的深度產品對比分析。",
+    "usesQuota": "將使用每日免費對比次數1次。",
+    "summary": "總結",
+    "keyDifferences": "主要區別",
+    "recommendation": "推薦建議",
+    "productType": "產品類型",
+    "dataSource": "資料來源於官方產品手冊",
+    "estimatedData": "預估資料 - 請以官方資料為準"
   },
   "rankings": {
     "title": "產品排名",
@@ -208,12 +220,39 @@
     "mainlandChina": "內地",
     "resources": "資源",
     "glossary": "保險術語",
-    "discussions": "社區討論",
+    "contactUs": "聯絡我們",
+    "email": "電郵",
+    "sitemap": "網站地圖",
+    "calculator": "金融計算器",
     "search": "搜尋",
     "account": "帳戶",
     "signIn": "登入",
     "disclaimer": "保險圖鑑不銷售保險產品，也不提供個性化保險、財務或投資建議。所有內容僅用於資料研究和教育目的。具體產品保障、利益、費用和限制，請以保險公司官方產品手冊、正式合同條款及合資格專業人士意見為準。",
     "disclaimerZH": "",
     "copyright": "© {year} 保險圖鑑。保留所有權利。"
+  },
+  "calculator": {
+    "title": "金融計算器",
+    "description": "計算保險保費、儲蓄收益等。",
+    "compoundInterest": "複利計算",
+    "presentValue": "現值計算",
+    "futureValue": "終值計算",
+    "monthlyPayment": "月供計算",
+    "retirementPlanning": "退休規劃",
+    "educationFund": "教育基金",
+    "principal": "本金",
+    "rate": "年利率（%）",
+    "years": "年期",
+    "result": "計算結果",
+    "calculate": "計算"
+  },
+  "sitemap": {
+    "title": "網站地圖",
+    "description": "保險圖鑑所有頁面一覽。",
+    "pages": "頁面"
+  },
+  "seo": {
+    "homeTitle": "保險圖鑑 - 對比香港與中國內地保險產品",
+    "homeDescription": "對比香港和中國內地的重疾險和儲蓄險產品。通過詳細分析找到最佳保險方案。"
   }
 }

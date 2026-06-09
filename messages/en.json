@@ -33,7 +33,8 @@
     "compare": "Compare",
     "rankings": "Rankings",
     "glossary": "Glossary",
-    "discussions": "Discussions"
+    "calculator": "Calculator",
+    "sitemap": "Sitemap"
   },
   "home": {
     "heroTitle": "InsuranceAtlas",
@@ -144,7 +145,18 @@
     "productA": "Product A",
     "productB": "Product B",
     "comparisonDetail": "Comparison Detail",
-    "noComparisons": "No comparisons yet."
+    "noComparisons": "No comparisons yet.",
+    "hideSame": "Hide Same Values",
+    "showAll": "Show All",
+    "aiDeepComparison": "AI Deep Comparison",
+    "aiDescription": "Generate an AI-powered deep comparison of these two products.",
+    "usesQuota": "This will use 1 of your daily free comparisons.",
+    "summary": "Summary",
+    "keyDifferences": "Key Differences",
+    "recommendation": "Recommendation",
+    "productType": "Product Type",
+    "dataSource": "Data sourced from official product brochures",
+    "estimatedData": "Estimated data - verify with official sources"
   },
   "rankings": {
     "title": "Product Rankings",
@@ -208,12 +220,39 @@
     "mainlandChina": "Mainland China",
     "resources": "Resources",
     "glossary": "Glossary",
-    "discussions": "Discussions",
+    "contactUs": "Contact Us",
+    "email": "Email",
+    "sitemap": "Sitemap",
+    "calculator": "Financial Calculator",
     "search": "Search",
     "account": "Account",
     "signIn": "Sign In",
     "disclaimer": "InsuranceAtlas does not sell insurance products and does not provide personalized insurance, financial, or investment advice. All information is provided for research and educational purposes only. Product details should be verified against official brochures, policy documents, and licensed professionals.",
     "disclaimerZH": "InsuranceAtlas 不销售保险产品，也不提供个性化保险、财务或投资建议。所有内容仅用于资料研究和教育目的。具体产品保障、利益、费用和限制，请以保险公司官方产品手册、正式合同条款及合资格专业人士意见为准。",
     "copyright": "© {year} InsuranceAtlas. All rights reserved."
+  },
+  "calculator": {
+    "title": "Financial Calculator",
+    "description": "Calculate insurance premiums, savings returns, and more.",
+    "compoundInterest": "Compound Interest",
+    "presentValue": "Present Value",
+    "futureValue": "Future Value",
+    "monthlyPayment": "Monthly Payment",
+    "retirementPlanning": "Retirement Planning",
+    "educationFund": "Education Fund",
+    "principal": "Principal",
+    "rate": "Annual Rate (%)",
+    "years": "Years",
+    "result": "Result",
+    "calculate": "Calculate"
+  },
+  "sitemap": {
+    "title": "Sitemap",
+    "description": "Complete overview of all pages on InsuranceAtlas.",
+    "pages": "Pages"
+  },
+  "seo": {
+    "homeTitle": "InsuranceAtlas - Compare Hong Kong & Mainland China Insurance Products",
+    "homeDescription": "Compare critical illness and savings insurance products from Hong Kong and mainland China. Find the best insurance plans with detailed analysis."
   }
 }
