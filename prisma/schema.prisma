@@ -1,0 +1,461 @@
+// InsuranceAtlas Prisma Schema
+
+generator client {
+  provider = "prisma-client"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+// ==================== USER & AUTH ====================
+
+enum UserRole {
+  USER
+  PROFESSIONAL
+  EDITOR
+  ADMIN
+}
+
+enum VerificationStatus {
+  NONE
+  PENDING
+  VERIFIED
+  REJECTED
+}
+
+model User {
+  id                   String               @id @default(cuid())
+  name                 String?
+  email                String               @unique
+  emailVerified        DateTime?
+  image                String?
+  role                 UserRole             @default(USER)
+  verificationStatus   VerificationStatus   @default(NONE)
+  createdAt            DateTime             @default(now())
+  updatedAt            DateTime             @updatedAt
+
+  accounts             Account[]
+  sessions             Session[]
+  compareQuotas        CompareQuota[]
+  discussions          Discussion[]
+  comments             Comment[]
+  professionalVerification ProfessionalVerification?
+
+  @@map("users")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verification_tokens")
+}
+
+// ==================== COMPANY ====================
+
+model Company {
+  id            String   @id @default(cuid())
+  name          String   @unique
+  slug          String   @unique
+  displayName   String
+  region        String
+  country       String
+  website       String?
+  foundedYear   Int?
+  headquarters  String?
+  description   String?
+  logoUrl       String?
+  regulator     String?
+  amBestRating  String?
+  moodysRating  String?
+  spRating      String?
+  fitchRating   String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  products      Product[]
+
+  @@map("companies")
+}
+
+// ==================== PRODUCT ====================
+
+enum ProductCategory {
+  CRITICAL_ILLNESS
+  SAVINGS
+}
+
+model Product {
+  id                   String          @id @default(cuid())
+  companyId            String
+  name                 String
+  slug                 String          @unique
+  displayName          String
+  region               String
+  country              String
+  category             ProductCategory
+  subcategory          String?
+  currency             String          @default("HKD")
+  supportedCurrencies String   @default("[]")
+  productStatus        String          @default("active")
+  officialUrl          String?
+  brochureUrl          String?
+  summary              String?
+  description          String?
+  tags                 String          @default("[]")
+  viewCount            Int             @default(0)
+  compareCount         Int             @default(0)
+  createdAt            DateTime        @default(now())
+  updatedAt            DateTime        @updatedAt
+
+  company              Company              @relation(fields: [companyId], references: [id])
+  criticalIllnessDetail CriticalIllnessDetail?
+  savingsDetail        SavingsDetail?
+  productSources       ProductSource[]
+  comparisonsA         Comparison[]         @relation("ProductA")
+  comparisonsB         Comparison[]         @relation("ProductB")
+  discussions          Discussion[]
+
+  @@map("products")
+}
+
+// ==================== CRITICAL ILLNESS DETAIL ====================
+
+model CriticalIllnessDetail {
+  id                        String   @id @default(cuid())
+  productId                 String   @unique
+  coverageTerm              String?
+  premiumTerm               String?
+  entryAgeMin               Int?
+  entryAgeMax               Int?
+  renewable                 Boolean?
+  waitingPeriodDays         Int?
+  majorIllnessCount         Int?
+  minorIllnessCount         Int?
+  moderateIllnessCount      Int?
+  majorIllnessPayout        String?
+  minorIllnessPayout        String?
+  moderateIllnessPayout     String?
+  multipleClaims            Boolean?
+  cancerMultipleClaims      Boolean?
+  heartStrokeMultipleClaims Boolean?
+  deathBenefit              String?
+  premiumWaiver             Boolean?
+  earlyStageCoverage        Boolean?
+  childCoverage             Boolean?
+  cashValue                 Boolean?
+  participating             Boolean?
+  notes                     String?
+  createdAt                 DateTime @default(now())
+  updatedAt                 DateTime @updatedAt
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@map("critical_illness_details")
+}
+
+// ==================== SAVINGS DETAIL ====================
+
+model SavingsDetail {
+  id                      String   @id @default(cuid())
+  productId               String   @unique
+  premiumTerm             String?
+  coverageTerm            String?
+  entryAgeMin             Int?
+  entryAgeMax             Int?
+  currency                String?
+  supportedCurrencies     String   @default("[]")
+  participating           Boolean?
+  guaranteedCashValue     Boolean?
+  nonGuaranteedBonus      Boolean?
+  dividendType            String?
+  terminalBonus           Boolean?
+  reversionaryBonus       Boolean?
+  illustratedIrr          Float?
+  guaranteedIrr           Float?
+  illustratedBreakEvenYear Int?
+  guaranteedBreakEvenYear Int?
+  policyLoan              Boolean?
+  changePolicyholder      Boolean?
+  changeInsured           Boolean?
+  educationPlanning       Boolean?
+  retirementPlanning      Boolean?
+  legacyPlanning          Boolean?
+  notes                   String?
+  createdAt               DateTime @default(now())
+  updatedAt               DateTime @updatedAt
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@map("savings_details")
+}
+
+// ==================== SOURCE ====================
+
+enum SourceType {
+  OFFICIAL_WEBSITE
+  PRODUCT_BROCHURE
+  ANNUAL_REPORT
+  RATING_AGENCY
+  REGULATOR
+  PRESS_RELEASE
+  MANUAL_INPUT
+}
+
+model Source {
+  id            String     @id @default(cuid())
+  sourceType    SourceType
+  title         String
+  url           String?
+  publisher     String?
+  publishedDate DateTime?
+  accessedDate  DateTime?
+  fileUrl       String?
+  fileHash      String?
+  language      String?
+  notes         String?
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+
+  productSources ProductSource[]
+
+  @@map("sources")
+}
+
+model ProductSource {
+  id          String   @id @default(cuid())
+  productId   String
+  sourceId    String
+  fieldName   String?
+  sourceNote  String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  source  Source  @relation(fields: [sourceId], references: [id], onDelete: Cascade)
+
+  @@unique([productId, sourceId, fieldName])
+  @@map("product_sources")
+}
+
+// ==================== COMPARISON ====================
+
+enum AIReviewStatus {
+  DRAFT
+  AI_GENERATED
+  HUMAN_REVIEWED
+  PUBLISHED
+  REJECTED
+}
+
+model Comparison {
+  id                    String         @id @default(cuid())
+  productAId            String
+  productBId            String
+  slug                  String         @unique
+  basicSummary          String?
+  aiSummary             String?
+  aiKeyDifferences      String?
+  aiCommonPoints        String?
+  aiRiskNotes           String?
+  aiQuestionsToCheck    String?
+  aiGeneratedAt         DateTime?
+  aiReviewStatus        AIReviewStatus @default(DRAFT)
+  viewCount             Int            @default(0)
+  aiGenerateCount       Int            @default(0)
+  createdAt             DateTime       @default(now())
+  updatedAt             DateTime       @updatedAt
+
+  productA Product @relation("ProductA", fields: [productAId], references: [id])
+  productB Product @relation("ProductB", fields: [productBId], references: [id])
+  discussions Discussion[]
+
+  @@unique([productAId, productBId])
+  @@map("comparisons")
+}
+
+// ==================== AI CONTENT ====================
+
+enum AIContentType {
+  PRODUCT_SUMMARY
+  COMPARISON_SUMMARY
+  KEY_DIFFERENCES
+  RISK_NOTES
+  FAQ
+}
+
+enum AITargetType {
+  PRODUCT
+  COMPARISON
+  COMPANY
+  GLOSSARY
+}
+
+model AIContent {
+  id             String         @id @default(cuid())
+  contentType    AIContentType
+  targetType     AITargetType
+  targetId       String
+  model          String?
+  promptVersion  String?
+  sourceIds      String       @default("[]")
+  generatedText  String
+  reviewStatus   AIReviewStatus @default(DRAFT)
+  reviewedBy     String?
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  @@map("ai_contents")
+}
+
+// ==================== COMPARE QUOTA ====================
+
+model CompareQuota {
+  id             String   @id @default(cuid())
+  userId         String
+  date           DateTime @default(now())
+  freeQuotaUsed  Int      @default(0)
+  adRewardQuota  Int      @default(0)
+  adRewardUsed   Int      @default(0)
+  totalUsed      Int      @default(0)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, date])
+  @@map("compare_quotas")
+}
+
+// ==================== DISCUSSION ====================
+
+enum DiscussionCategory {
+  PRODUCT_DISCUSSION
+  CRITICAL_ILLNESS
+  SAVINGS
+  COMPARISON
+  DATA_CORRECTION
+  PROFESSIONALS
+}
+
+enum DiscussionStatus {
+  PUBLISHED
+  PENDING
+  HIDDEN
+  DELETED
+}
+
+model Discussion {
+  id           String             @id @default(cuid())
+  title        String
+  slug         String             @unique
+  content      String
+  category     DiscussionCategory
+  authorId     String
+  productId    String?
+  comparisonId String?
+  status       DiscussionStatus   @default(PUBLISHED)
+  viewCount    Int                @default(0)
+  createdAt    DateTime           @default(now())
+  updatedAt    DateTime           @updatedAt
+
+  author     User        @relation(fields: [authorId], references: [id])
+  product    Product?    @relation(fields: [productId], references: [id])
+  comparison Comparison? @relation(fields: [comparisonId], references: [id])
+  comments   Comment[]
+
+  @@map("discussions")
+}
+
+model Comment {
+  id           String           @id @default(cuid())
+  discussionId String
+  authorId     String
+  content      String           @default("")
+  status       DiscussionStatus @default(PUBLISHED)
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+
+  discussion Discussion @relation(fields: [discussionId], references: [id], onDelete: Cascade)
+  author     User       @relation(fields: [authorId], references: [id])
+
+  @@map("comments")
+}
+
+// ==================== PROFESSIONAL VERIFICATION ====================
+
+enum ProfessionalVerificationStatus {
+  PENDING
+  VERIFIED
+  REJECTED
+}
+
+model ProfessionalVerification {
+  id              String                       @id @default(cuid())
+  userId          String                       @unique
+  realName        String
+  company         String
+  region          String
+  licenseType     String?
+  licenseNumber   String?
+  proofFileUrl    String?
+  status          ProfessionalVerificationStatus @default(PENDING)
+  reviewedBy      String?
+  reviewNote      String?
+  createdAt       DateTime                     @default(now())
+  updatedAt       DateTime                     @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("professional_verifications")
+}
+
+// ==================== GLOSSARY ====================
+
+model GlossaryTerm {
+  id          String   @id @default(cuid())
+  term        String   @unique
+  slug        String   @unique
+  definition  String
+  category    String?
+  language    String   @default("en")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("glossary_terms")
+}

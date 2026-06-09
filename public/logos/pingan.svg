@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" fill="none">
+  <rect width="200" height="60" rx="8" fill="#FFFFFF"/>
+  <text x="100" y="38" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="22" fill="#FF6600">Ping An</text>
+  <circle cx="22" cy="30" r="14" fill="#FF6600"/>
+  <text x="22" y="35" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="14" fill="#FFFFFF">PA</text>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" fill="none">
+  <rect width="200" height="60" rx="8" fill="#FFFFFF"/>
+  <text x="100" y="38" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="24" fill="#00A758">Manulife</text>
+  <rect x="12" y="12" width="36" height="36" rx="18" fill="#00A758"/>
+  <text x="30" y="37" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="18" fill="#FFFFFF">M</text>
+</svg>
