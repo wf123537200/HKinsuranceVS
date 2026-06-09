@@ -33,6 +33,15 @@ export default async function ProductDetailPage({ params }: Props) {
 
   const isCI = product.category === "CRITICAL_ILLNESS";
 
+  // Parse JSON string fields
+  const parseJson = (val: unknown): string[] => {
+    if (Array.isArray(val)) return val;
+    if (typeof val === "string") { try { return JSON.parse(val); } catch { return []; } }
+    return [];
+  };
+  const tags = parseJson(product.tags);
+  const supportedCurrencies = parseJson(product.supportedCurrencies);
+
   // Find related comparisons
   const comparisons = await prisma.comparison.findMany({
     where: {
@@ -100,10 +109,10 @@ export default async function ProductDetailPage({ params }: Props) {
           <h3 className="text-sm font-medium text-gray-500 mb-1">Currency</h3>
           <p className="text-gray-900">{product.currency}</p>
         </div>
-        {product.supportedCurrencies.length > 0 && (
+        {supportedCurrencies.length > 0 && (
           <div className="bg-white border border-gray-200 rounded-lg p-4">
             <h3 className="text-sm font-medium text-gray-500 mb-1">Supported Currencies</h3>
-            <p className="text-gray-900">{product.supportedCurrencies.join(", ")}</p>
+            <p className="text-gray-900">{supportedCurrencies.join(", ")}</p>
           </div>
         )}
         <div className="bg-white border border-gray-200 rounded-lg p-4">
@@ -187,11 +196,11 @@ export default async function ProductDetailPage({ params }: Props) {
       )}
 
       {/* Tags */}
-      {product.tags.length > 0 && (
+      {tags.length > 0 && (
         <section className="mb-8">
           <h2 className="text-lg font-semibold text-gray-900 mb-3">Tags</h2>
           <div className="flex flex-wrap gap-2">
-            {product.tags.map((tag) => (
+            {tags.map((tag) => (
               <span key={tag} className="px-3 py-1 text-sm bg-blue-50 text-blue-700 rounded-full">
                 {tag}
               </span>
