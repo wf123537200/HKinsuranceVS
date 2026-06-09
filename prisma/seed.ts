@@ -229,6 +229,7 @@ async function main() {
       currency: "HKD",
       tags: ["critical-illness", "elite", "cancer-multiple-claims"],
       summary: "Premium critical illness coverage with extensive condition definitions and multiple claim benefits.",
+      brochureUrl: "/pdfs/aia-ci-elite.pdf",
     },
     {
       companyId: companies[1].id,
@@ -242,6 +243,7 @@ async function main() {
       supportedCurrencies: ["HKD", "USD"],
       tags: ["savings", "participating", "education", "retirement"],
       summary: "A leading savings product with guaranteed and non-guaranteed benefits for education and retirement planning.",
+      brochureUrl: "/pdfs/aia-savings-leader.pdf",
     },
     // Manulife
     {
