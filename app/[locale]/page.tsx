@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { getTranslations } from "next-intl/server";
-import { translateProduct, translateCompany } from "@/lib/translations";
+import { translateProduct, translateCompany, sortByTranslatedName } from "@/lib/translations";
 import type { Locale } from "@/i18n/config";
 
 export const dynamic = "force-dynamic";
@@ -18,8 +18,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     prisma.comparison.findMany({ orderBy: { viewCount: "desc" }, take: 6, include: { productA: { include: { company: true } }, productB: { include: { company: true } } } }),
   ]);
 
-  const translatedProducts = products.map((p) => translateProduct(p, locale as Locale));
-  const translatedCompanies = companies.map((c) => translateCompany(c, locale as Locale));
+  const translatedProducts = products.map((p) => translateProduct(p, locale as Locale)).sort(sortByTranslatedName(locale as Locale));
+  const translatedCompanies = companies.map((c) => translateCompany(c, locale as Locale)).sort(sortByTranslatedName(locale as Locale));
 
   return (
     <div>

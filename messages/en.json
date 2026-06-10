@@ -25,7 +25,8 @@
     "yes": "Yes",
     "no": "No",
     "from": "from",
-    "by": "by"
+    "by": "by",
+    "sortNote": "Sorted alphabetically (A-Z)"
   },
   "nav": {
     "companies": "Companies",

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { getTranslations } from "next-intl/server";
-import { translateProduct, translateCompany } from "@/lib/translations";
+import { translateProduct, translateCompany, sortByTranslatedName } from "@/lib/translations";
 import type { Locale } from "@/i18n/config";
 import CompareListWithSearch from "@/components/CompareListWithSearch";
 
@@ -38,7 +38,7 @@ export default async function ComparePage({ params }: Props) {
       productA: { ...comp.productA, displayName: trA.displayName, company: { ...comp.productA.company, displayName: trA.company?.displayName || comp.productA.company.displayName } },
       productB: { ...comp.productB, displayName: trB.displayName, company: { ...comp.productB.company, displayName: trB.company?.displayName || comp.productB.company.displayName } },
     };
-  });
+  }).sort(sortByTranslatedName(locale as Locale));
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

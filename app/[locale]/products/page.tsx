@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { getTranslations } from "next-intl/server";
-import { translateProduct } from "@/lib/translations";
+import { translateProduct, sortByTranslatedName } from "@/lib/translations";
 import type { Locale } from "@/i18n/config";
 import ProductListWithSearch from "@/components/ProductListWithSearch";
 
@@ -22,7 +22,7 @@ export default async function ProductsPage({ params }: { params: Promise<{ local
     include: { company: true },
   });
 
-  const products = rawProducts.map((p) => translateProduct(p, locale as Locale));
+  const products = rawProducts.map((p) => translateProduct(p, locale as Locale)).sort(sortByTranslatedName(locale as Locale));
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

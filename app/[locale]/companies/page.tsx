@@ -3,7 +3,7 @@ import { prisma } from "@/lib/prisma";
 import CompanyLogo from "@/components/CompanyLogo";
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
-import { translateCompany } from "@/lib/translations";
+import { translateCompany, sortByTranslatedName } from "@/lib/translations";
 import type { Locale } from "@/i18n/config";
 
 export const dynamic = "force-dynamic";
@@ -28,7 +28,7 @@ export default async function CompaniesPage({ params }: { params: Promise<{ loca
     },
   });
 
-  const companies = rawCompanies.map((c) => translateCompany(c, locale as Locale));
+  const companies = rawCompanies.map((c) => translateCompany(c, locale as Locale)).sort(sortByTranslatedName(locale as Locale));
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

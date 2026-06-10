@@ -38,6 +38,91 @@ const productNames: Record<string, Record<Locale, string>> = {
   "new-china-life-fortune-plus": { en: "New China Life Fortune Plus", "zh-CN": "新华财富增值", "zh-TW": "新華財富增值" },
 };
 
+// Stroke count for Chinese characters (common characters used in company/product names)
+// This is a simplified mapping - for production, use a full stroke count library
+const strokeCounts: Record<string, number> = {
+  '保': 9, '诚': 8, '香': 9, '港': 12, '友': 4, '邦': 6, '宏': 7, '利': 7,
+  '安': 6, '盛': 11, '富': 12, '卫': 3, '中': 4, '国': 8, '人': 2, '寿': 7,
+  '泰': 10, '康': 11, '险': 8, '集': 12, '团': 6, '太': 4, '平': 5, '洋': 9,
+  '新': 13, '华': 6, '重': 9, '疾': 10, '保': 9, '障': 13, '计': 4, '划': 6,
+  '储': 12, '蓄': 13, '领': 11, '先': 6, '危': 6, '加': 5, '倍': 10, '环': 8,
+  '球': 11, '货': 8, '币': 4, '健': 10, '盾': 9, '牌': 12, '财': 7, '增': 15,
+  '值': 10, '守': 6, '护': 7, '者': 8, '长': 4, '青': 8, '世': 5, '金': 8,
+  '越': 12, '常': 11, '终': 8, '身': 7, '万': 3, '能': 10, '放': 8, '心': 4,
+  '理': 11, '多': 6, '全': 6, '面': 9, '大': 3, '广': 3, '泛': 7, '种': 9,
+  '轻': 9, '度': 9, '癌': 17, '症': 10, '次': 6, '赔': 12, '付': 5, '豁': 17,
+  '免': 7, '费': 9, '现': 8, '价': 6, '证': 7, '红': 6, '利': 7, '非': 8,
+  '保': 9, '证': 7, '回': 6, '本': 5, '年': 6, '期': 12, '贷': 12, '款': 12,
+  '传': 6, '承': 8, '规': 8, '划': 6, '医': 7, '疗': 7, '教': 11, '育': 8,
+  '退': 9, '休': 6, '保': 9, '单': 8, '变': 8, '更': 7, '投': 7, '被': 10,
+  '保': 9, '人': 2, '终': 8, '归': 5, '原': 10, '演': 14, '示': 5, '内': 4,
+  '部': 11, '收': 6, '益': 10, '率': 11, '保': 9, '额': 12, '递': 10, '稳': 14,
+  '步': 7, '提': 12, '取': 8, '方': 4, '式': 6, '灵': 7, '活': 9, '竞': 11,
+  '争': 6, '具': 8, '低': 7, '保': 9, '证': 7, '利': 7, '率': 11, '结': 9,
+  '算': 14, '月': 4, '复': 9, '年': 6, '化': 4, '合': 6, '回': 6, '报': 7,
+  '达': 6, '标': 9, '记': 5, '预': 10, '估': 7, '资': 10, '料': 10,
+  // Common characters
+  '的': 8, '是': 9, '不': 4, '了': 2, '在': 6, '有': 6, '和': 8, '这': 7,
+  '个': 3, '上': 3, '到': 8, '说': 9, '就': 12, '对': 5, '也': 3, '会': 6,
+  '能': 10, '可': 5, '以': 4, '要': 9, '时': 7, '来': 7, '自': 6, '出': 5,
+  '年': 6, '过': 6, '后': 6, '作': 7, '生': 5, '用': 5, '道': 12, '行': 6,
+  '都': 10, '发': 5, '成': 6, '里': 7, '没': 7, '开': 4, '很': 9, '好': 6,
+  '看': 9, '起': 10, '把': 7, '让': 5, '想': 13, '点': 9, '小': 3, '样': 10,
+  '她': 6, '两': 7, '去': 5, '又': 2, '得': 11, '做': 11, '实': 8, '种': 9,
+  '着': 11, '见': 4, '等': 12, '还': 7, '天': 4, '只': 5, '如': 6, '新': 13,
+  '最': 12, '已': 3, '经': 8, '日': 4, '么': 3, '同': 6, '什': 4, '体': 7,
+  '全': 6, '被': 10, '从': 4, '进': 7, '它': 5, '前': 9, '美': 9, '高': 10,
+  '长': 4, '老': 6, '第': 11, '此': 6, '更': 7, '总': 9, '为': 4, '分': 4,
+  '多': 6, '于': 3, '什': 4, '别': 7, '数': 13, '位': 7, '主': 5, '问': 6,
+  '通': 10, '特': 10, '向': 6, '明': 8, '文': 4, '但': 7, '当': 6, '知': 8,
+  '与': 3, '正': 5, '业': 5, '市': 5, '方': 4, '无': 4, '政': 9, '相': 9,
+  '因': 6, '日': 4, '生': 5, '事': 8, '其': 8, '公': 4, '外': 5, '区': 4,
+  '表': 8, '理': 11, '解': 13, '情': 11, '月': 4, '性': 8, '内': 4, '如': 6,
+  '走': 7, '系': 7, '定': 8, '法': 8, '关': 6, '件': 6, '任': 6, '原': 10,
+  '名': 6, '你': 7, '度': 9, '工': 3, '所': 8, '出': 5, '己': 3, '现': 8,
+  '手': 4, '理': 11, '政': 9, '经': 8, '体': 7, '第': 11, '三': 3, '五': 4,
+  '四': 5, '六': 4, '七': 2, '八': 2, '九': 2, '十': 2, '百': 6, '千': 3,
+  '万': 3, '亿': 3, '兆': 6, '零': 13, '壹': 12, '贰': 9, '叁': 8, '肆': 13,
+  '伍': 6, '陆': 7, '柒': 9, '捌': 11, '玖': 7, '拾': 9,
+};
+
+/**
+ * Get the stroke count of a Chinese character
+ */
+function getStrokeCount(char: string): number {
+  return strokeCounts[char] || 20; // Default to 20 for unknown characters
+}
+
+/**
+ * Sort comparator for translated names
+ * - English: alphabetical order (A-Z)
+ * - Chinese: stroke count order (fewer strokes first)
+ */
+export function sortByTranslatedName(locale: Locale) {
+  return (a: { displayName: string }, b: { displayName: string }) => {
+    const nameA = a.displayName;
+    const nameB = b.displayName;
+
+    if (locale === "en") {
+      // English: alphabetical order
+      return nameA.localeCompare(nameB, "en", { sensitivity: "base" });
+    } else {
+      // Chinese: stroke count order for first character, then by unicode
+      const firstCharA = nameA.charAt(0);
+      const firstCharB = nameB.charAt(0);
+      const strokesA = getStrokeCount(firstCharA);
+      const strokesB = getStrokeCount(firstCharB);
+      
+      if (strokesA !== strokesB) {
+        return strokesA - strokesB;
+      }
+      
+      // Same stroke count, sort by unicode
+      return firstCharA.localeCompare(firstCharB, locale);
+    }
+  };
+}
+
 // Region translations
 const regions: Record<string, Record<Locale, string>> = {
   "Hong Kong": { en: "Hong Kong", "zh-CN": "香港", "zh-TW": "香港" },
