@@ -58,7 +58,8 @@ export function translateRegion(region: string, locale: Locale): string {
 }
 
 // Translate a company object
-export function translateCompany(company: { slug: string; displayName: string; region: string }, locale: Locale) {
+export function translateCompany(company: { slug: string; displayName: string; region: string } | null | undefined, locale: Locale) {
+  if (!company) return company as any;
   return {
     ...company,
     displayName: translateCompanyName(company.slug, locale),
@@ -101,6 +102,6 @@ export function translateProduct(product: { slug: string; displayName: string; r
     displayName: translateProductName(product.slug, locale),
     region: translateRegion(product.region, locale),
     summary: translateProductSummary(product.slug, locale) || product.summary,
-    company: translateCompany(product.company, locale),
+    company: product.company ? translateCompany(product.company, locale) : product.company,
   };
 }
