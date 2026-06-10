@@ -287,7 +287,7 @@ async function main() {
       currency: "HKD",
       tags: ["critical-illness", "elite", "cancer-multiple-claims"],
       summary: "Premium critical illness coverage with extensive condition definitions and multiple claim benefits.",
-      brochureUrl: "/pdfs/aia-ci-elite.pdf",
+      brochureUrl: "/pdfs/aia-assemble-ci.pdf",
     },
     {
       companyId: companies[1].id,
@@ -1217,7 +1217,7 @@ async function main() {
         educationPlanning: true,
         retirementPlanning: true,
         legacyPlanning: false,
-        notes: "FWD AeconoLife20: Non-participating endowment plan. Source: fwd-aecono-life-20.pdf",
+        notes: "FWD AeconoLife20: Non-participating endowment plan. Data estimated from product type.",
       },
       // FWD Noble Fortune - from PDF
       "fwd-noble-fortune": {
@@ -1265,7 +1265,7 @@ async function main() {
         educationPlanning: true,
         retirementPlanning: true,
         legacyPlanning: true,
-        notes: "平安传福三号终身寿险（分红型）: Increasing sum insured whole life. Source: pingan-chuan-fu-3.pdf",
+        notes: "平安传福三号终身寿险（分红型）: Increasing sum insured whole life. Data estimated from product type.",
       },
       // China Life Fortune Growth - estimated
       "china-life-fortune-growth": {
