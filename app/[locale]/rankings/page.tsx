@@ -33,10 +33,10 @@ export default async function RankingsPage() {
 
       <div className="flex gap-3 mb-8">
         <Link href="/rankings/critical-illness" className="px-4 py-2 text-sm font-medium bg-red-100 text-red-700 rounded-lg hover:bg-red-200">
-          Critical Illness Rankings
+          {t("criticalIllnessTitle")}
         </Link>
         <Link href="/rankings/savings" className="px-4 py-2 text-sm font-medium bg-green-100 text-green-700 rounded-lg hover:bg-green-200">
-          Savings Rankings
+          {t("savingsTitle")}
         </Link>
       </div>
 
@@ -77,7 +77,7 @@ export default async function RankingsPage() {
                   <h3 className="font-semibold text-gray-900 text-sm">{product.displayName}</h3>
                   <p className="text-xs text-gray-500">{product.company.displayName} · {product.region}</p>
                 </div>
-                <span className="text-sm text-gray-400">{product.compareCount} compares</span>
+                <span className="text-sm text-gray-400">{product.compareCount} {t("compares")}</span>
               </Link>
             ))}
           </div>
