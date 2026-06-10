@@ -4,23 +4,26 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import Disclaimer from "@/components/Disclaimer";
+import { translateProduct, translateCompany, translateRegion } from "@/lib/translations";
+import type { Locale } from "@/i18n/config";
 
 interface Props {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string; locale: string }>;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug, locale } = await params;
   const product = await prisma.product.findUnique({ where: { slug } });
   if (!product) return {};
+  const trProduct = translateProduct(product as Parameters<typeof translateProduct>[0], locale as Locale);
   return {
-    title: product.displayName,
-    description: product.summary ?? `Learn about ${product.displayName}.`,
+    title: trProduct.displayName,
+    description: product.summary ?? `Learn about ${trProduct.displayName}.`,
   };
 }
 
 export default async function ProductDetailPage({ params }: Props) {
-  const { slug } = await params;
+  const { slug, locale } = await params;
   const product = await prisma.product.findUnique({
     where: { slug },
     include: {
@@ -31,6 +34,9 @@ export default async function ProductDetailPage({ params }: Props) {
   });
 
   if (!product) notFound();
+
+  const trProduct = translateProduct(product as Parameters<typeof translateProduct>[0], locale as Locale);
+  const trCompany = translateCompany(product.company as Parameters<typeof translateCompany>[0], locale as Locale);
 
   const isCI = product.category === "CRITICAL_ILLNESS";
 
@@ -74,13 +80,13 @@ export default async function ProductDetailPage({ params }: Props) {
           {isCI ? tc("criticalIllness") : tc("savings")}
         </Link>
         <span className="mx-2">/</span>
-        <span className="text-gray-900">{product.displayName}</span>
+        <span className="text-gray-900">{trProduct.displayName}</span>
       </nav>
 
       {/* Product Header */}
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-2">
-          <h1 className="text-3xl font-bold text-gray-900">{product.displayName}</h1>
+          <h1 className="text-3xl font-bold text-gray-900">{trProduct.displayName}</h1>
           <span className={`px-3 py-1 text-sm font-medium rounded-full ${
             isCI ? "bg-red-100 text-red-700" : "bg-green-100 text-green-700"
           }`}>
@@ -90,9 +96,9 @@ export default async function ProductDetailPage({ params }: Props) {
         <p className="text-gray-600">
           {tCommon("by")}{" "}
           <Link href={`/company/${product.company.slug}`} className="text-blue-600 hover:text-blue-700">
-            {product.company.displayName}
+            {trCompany.displayName}
           </Link>
-          {" · "}{product.region}
+          {" · "}{translateRegion(product.region, locale as Locale)}
         </p>
       </div>
 
@@ -106,11 +112,11 @@ export default async function ProductDetailPage({ params }: Props) {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
         <div className="bg-white border border-gray-200 rounded-lg p-4">
           <h3 className="text-sm font-medium text-gray-500 mb-1">{t("company")}</h3>
-          <p className="text-gray-900">{product.company.displayName}</p>
+          <p className="text-gray-900">{trCompany.displayName}</p>
         </div>
         <div className="bg-white border border-gray-200 rounded-lg p-4">
           <h3 className="text-sm font-medium text-gray-500 mb-1">{t("region")}</h3>
-          <p className="text-gray-900">{product.region}</p>
+          <p className="text-gray-900">{translateRegion(product.region, locale as Locale)}</p>
         </div>
         <div className="bg-white border border-gray-200 rounded-lg p-4">
           <h3 className="text-sm font-medium text-gray-500 mb-1">{t("currency")}</h3>
@@ -241,9 +247,9 @@ export default async function ProductDetailPage({ params }: Props) {
                   className="block p-4 bg-white border border-gray-200 rounded-lg hover:border-blue-300 hover:shadow-md transition-all"
                 >
                   <p className="text-sm font-semibold text-gray-900">
-                    {product.displayName} vs {other.displayName}
+                    {trProduct.displayName} vs {translateProduct(other as Parameters<typeof translateProduct>[0], locale as Locale).displayName}
                   </p>
-                  <p className="text-xs text-gray-500 mt-1">{other.company.displayName}</p>
+                  <p className="text-xs text-gray-500 mt-1">{translateCompany(other.company as Parameters<typeof translateCompany>[0], locale as Locale).displayName}</p>
                 </Link>
               );
             })}

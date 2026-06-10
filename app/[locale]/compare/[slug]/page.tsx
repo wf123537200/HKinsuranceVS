@@ -3,20 +3,24 @@ import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import CompareTable from "@/components/CompareTable";
+import { translateProduct, translateRegion } from "@/lib/translations";
+import type { Locale } from "@/i18n/config";
 
 interface Props {
   params: Promise<{ slug: string; locale: string }>;
 }
 
 export async function generateMetadata({ params }: Props) {
-  const { slug } = await params;
+  const { slug, locale } = await params;
   const comparison = await prisma.comparison.findUnique({ where: { slug }, include: { productA: true, productB: true } });
   if (!comparison) return {};
-  return { title: `${comparison.productA.displayName} vs ${comparison.productB.displayName}` };
+  const trProductA = translateProduct(comparison.productA as Parameters<typeof translateProduct>[0], locale as Locale);
+  const trProductB = translateProduct(comparison.productB as Parameters<typeof translateProduct>[0], locale as Locale);
+  return { title: `${trProductA.displayName} vs ${trProductB.displayName}` };
 }
 
 export default async function CompareDetailPage({ params }: Props) {
-  const { slug } = await params;
+  const { slug, locale } = await params;
   const t = await getTranslations("compare");
   const tc = await getTranslations("common");
 
@@ -30,13 +34,14 @@ export default async function CompareDetailPage({ params }: Props) {
 
   if (!comparison) notFound();
 
-  const { productA, productB } = comparison;
+  const productA = translateProduct(comparison.productA as Parameters<typeof translateProduct>[0], locale as Locale);
+  const productB = translateProduct(comparison.productB as Parameters<typeof translateProduct>[0], locale as Locale);
   const isCI = productA.category === "CRITICAL_ILLNESS";
 
   const basicRows: [string, string | number | null | undefined, string | number | null | undefined, boolean?][] = [
     [t("productType"), isCI ? tc("yes") : tc("no"), isCI ? tc("yes") : tc("no")],
     [t("feature") + ": " + tc("from"), productA.company.displayName, productB.company.displayName],
-    ["Region", productA.region, productB.region],
+    ["Region", translateRegion(productA.region, locale as Locale), translateRegion(productB.region, locale as Locale)],
     ["Currency", productA.currency, productB.currency],
   ];
 

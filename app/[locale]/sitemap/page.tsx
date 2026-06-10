@@ -1,17 +1,23 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { prisma } from "@/lib/prisma";
+import { translateCompany, translateProduct } from "@/lib/translations";
+import type { Locale } from "@/i18n/config";
 
 export const dynamic = "force-dynamic";
 
-export default async function SitemapPage() {
+export default async function SitemapPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const t = await getTranslations("sitemap");
   const tc = await getTranslations("common");
 
-  const [companies, products] = await Promise.all([
+  const [rawCompanies, rawProducts] = await Promise.all([
     prisma.company.findMany({ orderBy: { displayName: "asc" } }),
     prisma.product.findMany({ orderBy: { displayName: "asc" }, include: { company: true } }),
   ]);
+
+  const companies = rawCompanies.map((c) => translateCompany(c, locale as Locale));
+  const products = rawProducts.map((p) => translateProduct(p, locale as Locale));
 
   const staticPages = [
     { href: "/", label: "Home" },

@@ -3,6 +3,8 @@ import { prisma } from "@/lib/prisma";
 import CompanyLogo from "@/components/CompanyLogo";
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
+import { translateCompany } from "@/lib/translations";
+import type { Locale } from "@/i18n/config";
 
 export const dynamic = "force-dynamic";
 
@@ -11,12 +13,13 @@ export const metadata: Metadata = {
   description: "Browse insurance companies from Hong Kong and Mainland China.",
 };
 
-export default async function CompaniesPage() {
+export default async function CompaniesPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const t = await getTranslations("companies");
   const tc = await getTranslations("categories");
   const tCommon = await getTranslations("common");
 
-  const companies = await prisma.company.findMany({
+  const rawCompanies = await prisma.company.findMany({
     orderBy: { displayName: "asc" },
     include: {
       products: {
@@ -24,6 +27,8 @@ export default async function CompaniesPage() {
       },
     },
   });
+
+  const companies = rawCompanies.map((c) => translateCompany(c, locale as Locale));
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

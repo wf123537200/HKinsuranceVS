@@ -4,15 +4,18 @@ import { notFound } from "next/navigation";
 import CompanyLogo from "@/components/CompanyLogo";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { translateCompany, translateProduct, translateRegion } from "@/lib/translations";
+import type { Locale } from "@/i18n/config";
 
 interface Props {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string; locale: string }>;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
-  const company = await prisma.company.findUnique({ where: { slug } });
-  if (!company) return {};
+  const { slug, locale } = await params;
+  const rawCompany = await prisma.company.findUnique({ where: { slug } });
+  if (!rawCompany) return {};
+  const company = translateCompany(rawCompany, locale as Locale);
   return {
     title: company.displayName,
     description: company.description ?? `Learn about ${company.displayName} insurance products.`,
@@ -20,11 +23,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function CompanyDetailPage({ params }: Props) {
-  const { slug } = await params;
+  const { slug, locale } = await params;
   const t = await getTranslations("companies");
   const tc = await getTranslations("categories");
   const tCommon = await getTranslations("common");
-  const company = await prisma.company.findUnique({
+  const rawCompany = await prisma.company.findUnique({
     where: { slug },
     include: {
       products: {
@@ -34,10 +37,13 @@ export default async function CompanyDetailPage({ params }: Props) {
     },
   });
 
-  if (!company) notFound();
+  if (!rawCompany) notFound();
 
-  const ciProducts = company.products.filter((p) => p.category === "CRITICAL_ILLNESS");
-  const savingsProducts = company.products.filter((p) => p.category === "SAVINGS");
+  const company = translateCompany(rawCompany, locale as Locale);
+  const translatedProducts = rawCompany.products.map((p) => translateProduct(p, locale as Locale));
+
+  const ciProducts = translatedProducts.filter((p) => p.category === "CRITICAL_ILLNESS");
+  const savingsProducts = translatedProducts.filter((p) => p.category === "SAVINGS");
 
   // Parse tags from JSON string to array
   const parseTags = (tags: unknown): string[] => {
@@ -61,9 +67,9 @@ export default async function CompanyDetailPage({ params }: Props) {
       <div className="mb-8">
         <div className="flex items-center gap-4 mb-2">
           <CompanyLogo
-            name={company.name}
+            name={rawCompany.name}
             displayName={company.displayName}
-            logoUrl={company.logoUrl}
+            logoUrl={rawCompany.logoUrl}
             size="lg"
           />
           <div className="flex items-center gap-3">

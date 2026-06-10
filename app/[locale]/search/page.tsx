@@ -2,8 +2,11 @@ import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
+import { translateProduct, translateCompany } from "@/lib/translations";
+import type { Locale } from "@/i18n/config";
 
 interface Props {
+  params: Promise<{ locale: string }>;
   searchParams: Promise<{ q?: string }>;
 }
 
@@ -12,7 +15,8 @@ export const metadata: Metadata = {
   description: "Search insurance products, companies, and tags.",
 };
 
-export default async function SearchPage({ searchParams }: Props) {
+export default async function SearchPage({ params, searchParams }: Props) {
+  const { locale } = await params;
   const t = await getTranslations("search");
   const { q } = await searchParams;
   const query = q?.trim() || "";
@@ -23,7 +27,7 @@ export default async function SearchPage({ searchParams }: Props) {
   let products: any[] = [];
 
   if (query) {
-    [companies, products] = await Promise.all([
+    const [rawCompanies, rawProducts] = await Promise.all([
       prisma.company.findMany({
         where: {
           OR: [
@@ -47,6 +51,9 @@ export default async function SearchPage({ searchParams }: Props) {
         take: 20,
       }),
     ]);
+
+    companies = rawCompanies.map((c) => translateCompany(c, locale as Locale));
+    products = rawProducts.map((p) => translateProduct(p, locale as Locale));
   }
 
   return (

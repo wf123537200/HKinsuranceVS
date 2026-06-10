@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { getTranslations } from "next-intl/server";
+import { translateProduct } from "@/lib/translations";
+import type { Locale } from "@/i18n/config";
 import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
@@ -11,9 +13,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return { title: t("title"), description: t("description") };
 }
 
-export default async function RankingsPage() {
+export default async function RankingsPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const t = await getTranslations("rankings");
-  const [mostViewed, mostCompared] = await Promise.all([
+  const [rawViewed, rawCompared] = await Promise.all([
     prisma.product.findMany({
       orderBy: { viewCount: "desc" },
       take: 10,
@@ -25,6 +28,9 @@ export default async function RankingsPage() {
       include: { company: true },
     }),
   ]);
+
+  const mostViewed = rawViewed.map((p) => translateProduct(p, locale as Locale));
+  const mostCompared = rawCompared.map((p) => translateProduct(p, locale as Locale));
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

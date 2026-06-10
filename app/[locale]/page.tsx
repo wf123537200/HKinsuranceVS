@@ -1,10 +1,13 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { getTranslations } from "next-intl/server";
+import { translateProduct, translateCompany } from "@/lib/translations";
+import type { Locale } from "@/i18n/config";
 
 export const dynamic = "force-dynamic";
 
-export default async function HomePage() {
+export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const t = await getTranslations("home");
   const tc = await getTranslations("categories");
   const tCommon = await getTranslations("common");
@@ -14,6 +17,9 @@ export default async function HomePage() {
     prisma.product.findMany({ orderBy: { viewCount: "desc" }, take: 8, include: { company: true } }),
     prisma.comparison.findMany({ orderBy: { viewCount: "desc" }, take: 6, include: { productA: { include: { company: true } }, productB: { include: { company: true } } } }),
   ]);
+
+  const translatedProducts = products.map((p) => translateProduct(p, locale as Locale));
+  const translatedCompanies = companies.map((c) => translateCompany(c, locale as Locale));
 
   return (
     <div>
@@ -36,7 +42,7 @@ export default async function HomePage() {
             <Link href="/products" className="text-sm text-blue-600 hover:text-blue-700">{tCommon("viewAll")} &rarr;</Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {products.map((product) => (
+            {translatedProducts.map((product) => (
               <Link key={product.id} href={`/product/${product.slug}`} className="block p-4 bg-white border border-gray-200 rounded-lg hover:border-blue-300 hover:shadow-md transition-all">
                 <span className="inline-block px-2 py-0.5 text-xs font-medium rounded-full bg-blue-100 text-blue-700 mb-2">
                   {product.category === "CRITICAL_ILLNESS" ? tc("criticalIllness") : tc("savings")}
@@ -72,7 +78,7 @@ export default async function HomePage() {
             <Link href="/companies" className="text-sm text-blue-600 hover:text-blue-700">{tCommon("viewAll")} &rarr;</Link>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {companies.map((company) => (
+            {translatedCompanies.map((company) => (
               <Link key={company.id} href={`/company/${company.slug}`} className="block p-4 bg-white border border-gray-200 rounded-lg hover:border-blue-300 hover:shadow-md transition-all text-center">
                 <h3 className="font-semibold text-gray-900 text-sm">{company.displayName}</h3>
                 <p className="text-xs text-gray-400 mt-1">{company.region}</p>

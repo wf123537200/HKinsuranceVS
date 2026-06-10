@@ -1,20 +1,28 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
+import { translateProduct } from "@/lib/translations";
+import type { Locale } from "@/i18n/config";
 import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = {
-  title: "Critical Illness Insurance Rankings",
-  description: "Rankings of critical illness insurance products.",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  return {
+    title: "Critical Illness Insurance Rankings",
+    description: "Rankings of critical illness insurance products.",
+  };
+}
 
-export default async function CriticalIllnessRankingsPage() {
-  const products = await prisma.product.findMany({
+export default async function CriticalIllnessRankingsPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+
+  const rawProducts = await prisma.product.findMany({
     where: { category: "CRITICAL_ILLNESS" },
     orderBy: { viewCount: "desc" },
     include: { company: true, criticalIllnessDetail: true },
   });
+
+  const products = rawProducts.map((p) => translateProduct(p, locale as Locale));
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
