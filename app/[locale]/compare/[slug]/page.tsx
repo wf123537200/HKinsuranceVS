@@ -93,7 +93,7 @@ export default async function CompareDetailPage({ params }: Props) {
         </p>
       </div>
 
-      <CompareTable rows={basicRows} productAName={productA.displayName} productBName={productB.displayName} />
+      <CompareTable rows={basicRows.map(([label, valA, valB, isEstimated]) => ({ label, valA, valB, isEstimated }))} productAName={productA.displayName} productBName={productB.displayName} />
 
       {/* AI Comparison */}
       <section className="mt-8 mb-8 bg-blue-50 border border-blue-200 rounded-lg p-6">
