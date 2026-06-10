@@ -7,10 +7,11 @@ import type { Locale } from "@/i18n/config";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = {
-  title: "All Insurance Products",
-  description: "Browse all insurance products from Hong Kong and Mainland China.",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "products" });
+  return { title: t("title"), description: t("description") };
+}
 
 export default async function ProductsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -52,7 +53,7 @@ export default async function ProductsPage({ params }: { params: Promise<{ local
                   ? "bg-red-100 text-red-700"
                   : "bg-green-100 text-green-700"
               }`}>
-                {product.category === "CRITICAL_ILLNESS" ? "Critical Illness" : "Savings"}
+                {product.category === "CRITICAL_ILLNESS" ? tc("criticalIllness") : tc("savings")}
               </span>
               <span className="text-xs text-gray-400">{product.region}</span>
             </div>
