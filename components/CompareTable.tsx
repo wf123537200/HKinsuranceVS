@@ -66,7 +66,7 @@ export default function CompareTable({
               const bIsBigger = bothNumbers && numB > numA;
 
               return (
-                <tr key={row.label} className={idx % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                <tr key={`${row.label}-${idx}`} className={idx % 2 === 0 ? "bg-white" : "bg-gray-50"}>
                   <td className="p-4 text-sm text-gray-500 font-medium">{row.label}</td>
                   <td className={`p-4 text-sm font-medium ${row.isEstimated ? "bg-red-50 text-red-700" : aIsBigger ? "bg-green-50 text-green-700" : "text-gray-900"}`}>
                     {row.valA ?? tc("na")}
