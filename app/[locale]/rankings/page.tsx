@@ -3,7 +3,7 @@ import { prisma } from "@/lib/prisma";
 import { getTranslations } from "next-intl/server";
 import { translateProduct } from "@/lib/translations";
 import type { Locale } from "@/i18n/config";
-import type { Metadata } from "next";
+import RankingListWithSearch from "@/components/RankingListWithSearch";
 
 export const dynamic = "force-dynamic";
 
@@ -47,46 +47,13 @@ export default async function RankingsPage({ params }: { params: Promise<{ local
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {/* Most Viewed */}
         <section>
           <h2 className="text-xl font-bold text-gray-900 mb-4">{t("mostViewed")}</h2>
-          <div className="space-y-3">
-            {mostViewed.map((product, idx) => (
-              <Link
-                key={product.id}
-                href={`/product/${product.slug}`}
-                className="flex items-center gap-4 p-3 bg-white border border-gray-200 rounded-lg hover:border-blue-300 transition-all"
-              >
-                <span className="text-2xl font-bold text-gray-300 w-8">{idx + 1}</span>
-                <div className="flex-1">
-                  <h3 className="font-semibold text-gray-900 text-sm">{product.displayName}</h3>
-                  <p className="text-xs text-gray-500">{product.company.displayName} · {product.region}</p>
-                </div>
-                <span className="text-sm text-gray-400">{product.viewCount} {t("views")}</span>
-              </Link>
-            ))}
-          </div>
+          <RankingListWithSearch products={mostViewed} countField="viewCount" countLabel={t("views")} />
         </section>
-
-        {/* Most Compared */}
         <section>
           <h2 className="text-xl font-bold text-gray-900 mb-4">{t("mostCompared")}</h2>
-          <div className="space-y-3">
-            {mostCompared.map((product, idx) => (
-              <Link
-                key={product.id}
-                href={`/product/${product.slug}`}
-                className="flex items-center gap-4 p-3 bg-white border border-gray-200 rounded-lg hover:border-blue-300 transition-all"
-              >
-                <span className="text-2xl font-bold text-gray-300 w-8">{idx + 1}</span>
-                <div className="flex-1">
-                  <h3 className="font-semibold text-gray-900 text-sm">{product.displayName}</h3>
-                  <p className="text-xs text-gray-500">{product.company.displayName} · {product.region}</p>
-                </div>
-                <span className="text-sm text-gray-400">{product.compareCount} {t("compares")}</span>
-              </Link>
-            ))}
-          </div>
+          <RankingListWithSearch products={mostCompared} countField="compareCount" countLabel={t("compares")} />
         </section>
       </div>
     </div>
