@@ -94,7 +94,12 @@
     "cancerMultipleClaims": "Cancer Multiple Claims",
     "illustratedIrr": "Illustrated IRR",
     "participating": "Participating",
-    "legacy": "Legacy"
+    "legacy": "Legacy",
+    "aiaCancerCare": "AIA Cancer Care Essence",
+    "aiaEasyguardCI": "AIA EasyGuard Care Essence",
+    "aiaExecutiveCarePro2": "AIA Executive Care Pro 2",
+    "aiaLadyCarePro": "AIA Lady Care Pro",
+    "aiaEssenceOnYourSide": "AIA Essence On Your Side"
   },
   "ciDetails": {
     "title": "Critical Illness Details",

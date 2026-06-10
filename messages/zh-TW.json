@@ -94,7 +94,12 @@
     "cancerMultipleClaims": "癌症多次賠付",
     "illustratedIrr": "演示內部收益率",
     "participating": "分紅型",
-    "legacy": "傳承"
+    "legacy": "傳承",
+    "aiaCancerCare": "友邦智護癌症保",
+    "aiaEasyguardCI": "友邦守康易危疾保",
+    "aiaExecutiveCarePro2": "友邦泰然安心保2",
+    "aiaLadyCarePro": "友邦摯愛妳保障計劃",
+    "aiaEssenceOnYourSide": "友邦簡緻·愛伴航"
   },
   "ciDetails": {
     "title": "重疾險詳情",
