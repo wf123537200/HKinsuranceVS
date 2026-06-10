@@ -99,9 +99,11 @@ function getStrokeCount(char: string): number {
  * - Chinese: stroke count order (fewer strokes first)
  */
 export function sortByTranslatedName(locale: Locale) {
-  return (a: { displayName: string }, b: { displayName: string }) => {
-    const nameA = a.displayName;
-    const nameB = b.displayName;
+  return (a: { displayName?: string; title?: string }, b: { displayName?: string; title?: string }) => {
+    const nameA = a.displayName || a.title || "";
+    const nameB = b.displayName || b.title || "";
+
+    if (!nameA || !nameB) return 0;
 
     if (locale === "en") {
       // English: alphabetical order
