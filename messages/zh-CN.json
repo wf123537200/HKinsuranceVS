@@ -34,7 +34,8 @@
     "rankings": "产品排名",
     "glossary": "保险术语",
     "calculator": "计算器",
-    "sitemap": "网站地图"
+    "sitemap": "网站地图",
+    "language": "语言"
   },
   "home": {
     "heroTitle": "保险图鉴",
@@ -91,7 +92,8 @@
     "majorIllnesses": "重大疾病",
     "cancerMultipleClaims": "癌症多次赔付",
     "illustratedIrr": "演示内部收益率",
-    "participating": "分红型"
+    "participating": "分红型",
+    "legacy": "传承"
   },
   "ciDetails": {
     "title": "重疾险详情",
@@ -140,7 +142,7 @@
     "selectProducts": "选择要对比的产品",
     "compareProducts": "对比产品",
     "aiAnalysis": "AI 分析",
-    "generating": "正在生成 AI 分析...",
+    "generating": "生成中...",
     "feature": "特性",
     "productA": "产品 A",
     "productB": "产品 B",
@@ -156,7 +158,13 @@
     "recommendation": "推荐建议",
     "productType": "产品类型",
     "dataSource": "数据来源于官方产品手册",
-    "estimatedData": "预估数据 - 请以官方资料为准"
+    "estimatedData": "预估数据 - 请以官方资料为准",
+    "signInToGenerate": "登录后生成 AI 对比（每天 3 次免费）。",
+    "signIn": "登录",
+    "generateAI": "生成 AI 对比",
+    "generatedSuccess": "对比生成成功！",
+    "generateError": "生成对比失败",
+    "tryAgain": "发生错误，请重试。"
   },
   "rankings": {
     "title": "产品排名",
@@ -167,7 +175,9 @@
     "savingsDescription": "基于收益、灵活性和特点的储蓄险产品排名。",
     "rank": "排名",
     "score": "评分",
-    "views": "浏览量"
+    "views": "次浏览",
+    "mostViewed": "最多浏览产品",
+    "mostCompared": "最多对比产品"
   },
   "glossary": {
     "title": "保险术语",
@@ -229,7 +239,8 @@
     "signIn": "登录",
     "disclaimer": "保险图鉴不销售保险产品，也不提供个性化保险、财务或投资建议。所有内容仅用于资料研究和教育目的。具体产品保障、利益、费用和限制，请以保险公司官方产品手册、正式合同条款及合资格专业人士意见为准。",
     "disclaimerZH": "",
-    "copyright": "© {year} 保险图鉴。保留所有权利。"
+    "copyright": "© {year} 保险图鉴。保留所有权利。",
+    "disclaimerLabel": "免责声明："
   },
   "calculator": {
     "title": "IRR 计算器",
@@ -257,7 +268,9 @@
   "sitemap": {
     "title": "网站地图",
     "description": "保险图鉴所有页面一览。",
-    "pages": "页面"
+    "pages": "页面",
+    "companies": "保险公司",
+    "products": "保险产品"
   },
   "seo": {
     "homeTitle": "保险图鉴 - 对比香港与中国内地保险产品",

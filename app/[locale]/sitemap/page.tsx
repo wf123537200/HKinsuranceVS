@@ -50,7 +50,7 @@ export default async function SitemapPage() {
 
         {/* Companies */}
         <section>
-          <h2 className="text-lg font-semibold text-gray-900 mb-4 border-b pb-2">Companies</h2>
+          <h2 className="text-lg font-semibold text-gray-900 mb-4 border-b pb-2">{t("companies")}</h2>
           <ul className="space-y-2">
             {companies.map((co) => (
               <li key={co.id}>
@@ -65,7 +65,7 @@ export default async function SitemapPage() {
 
         {/* Products */}
         <section>
-          <h2 className="text-lg font-semibold text-gray-900 mb-4 border-b pb-2">Products</h2>
+          <h2 className="text-lg font-semibold text-gray-900 mb-4 border-b pb-2">{t("products")}</h2>
           <ul className="space-y-2">
             {products.map((p) => (
               <li key={p.id}>

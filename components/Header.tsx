@@ -27,6 +27,8 @@ export default function Header() {
     { href: "/glossary", label: t("glossary") },
   ];
 
+  const langLabel = t("language");
+
   const pathWithoutLocale = pathname.replace(/^\/(en|zh-CN|zh-TW)/, "") || "/";
 
   return (
@@ -95,7 +97,7 @@ export default function Header() {
                 </Link>
               ))}
               <div className="border-t border-gray-100 mt-2 pt-2">
-                <p className="px-3 py-1 text-xs text-gray-400">Language / 语言</p>
+                <p className="px-3 py-1 text-xs text-gray-400">{langLabel}</p>
                 {locales.map((locale) => (
                   <Link key={locale} href={`/${locale}${pathWithoutLocale}`}
                     className={`block px-3 py-2 text-sm rounded ${locale === currentLocale ? "text-blue-700 font-medium bg-blue-50" : "text-gray-600 hover:bg-gray-50"}`}

@@ -56,7 +56,7 @@ export default async function SavingsPage() {
                   <span className="text-green-600">{t("participating")}</span>
                 )}
                 {product.savingsDetail.legacyPlanning && (
-                  <span className="text-purple-600">Legacy</span>
+                  <span className="text-purple-600">{t("legacy")}</span>
                 )}
               </div>
             )}

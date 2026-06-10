@@ -34,7 +34,8 @@
     "rankings": "Rankings",
     "glossary": "Glossary",
     "calculator": "Calculator",
-    "sitemap": "Sitemap"
+    "sitemap": "Sitemap",
+    "language": "Language"
   },
   "home": {
     "heroTitle": "InsuranceAtlas",
@@ -91,7 +92,8 @@
     "majorIllnesses": "Major Illnesses",
     "cancerMultipleClaims": "Cancer Multiple Claims",
     "illustratedIrr": "Illustrated IRR",
-    "participating": "Participating"
+    "participating": "Participating",
+    "legacy": "Legacy"
   },
   "ciDetails": {
     "title": "Critical Illness Details",
@@ -140,7 +142,7 @@
     "selectProducts": "Select products to compare",
     "compareProducts": "Compare Products",
     "aiAnalysis": "AI Analysis",
-    "generating": "Generating AI analysis...",
+    "generating": "Generating...",
     "feature": "Feature",
     "productA": "Product A",
     "productB": "Product B",
@@ -156,7 +158,13 @@
     "recommendation": "Recommendation",
     "productType": "Product Type",
     "dataSource": "Data sourced from official product brochures",
-    "estimatedData": "Estimated data - verify with official sources"
+    "estimatedData": "Estimated data - verify with official sources",
+    "signInToGenerate": "Sign in to generate AI comparisons (3 free per day).",
+    "signIn": "Sign In",
+    "generateAI": "Generate AI Comparison",
+    "generatedSuccess": "Comparison generated successfully!",
+    "generateError": "Failed to generate comparison",
+    "tryAgain": "An error occurred. Please try again."
   },
   "rankings": {
     "title": "Product Rankings",
@@ -167,7 +175,9 @@
     "savingsDescription": "Rankings of savings insurance products based on returns, flexibility, and features.",
     "rank": "Rank",
     "score": "Score",
-    "views": "Views"
+    "views": "views",
+    "mostViewed": "Most Viewed Products",
+    "mostCompared": "Most Compared Products"
   },
   "glossary": {
     "title": "Insurance Glossary",
@@ -229,7 +239,8 @@
     "signIn": "Sign In",
     "disclaimer": "InsuranceAtlas does not sell insurance products and does not provide personalized insurance, financial, or investment advice. All information is provided for research and educational purposes only. Product details should be verified against official brochures, policy documents, and licensed professionals.",
     "disclaimerZH": "InsuranceAtlas 不销售保险产品，也不提供个性化保险、财务或投资建议。所有内容仅用于资料研究和教育目的。具体产品保障、利益、费用和限制，请以保险公司官方产品手册、正式合同条款及合资格专业人士意见为准。",
-    "copyright": "© {year} InsuranceAtlas. All rights reserved."
+    "copyright": "© {year} InsuranceAtlas. All rights reserved.",
+    "disclaimerLabel": "Disclaimer:"
   },
   "calculator": {
     "title": "IRR Calculator",
@@ -257,7 +268,9 @@
   "sitemap": {
     "title": "Sitemap",
     "description": "Complete overview of all pages on InsuranceAtlas.",
-    "pages": "Pages"
+    "pages": "Pages",
+    "companies": "Companies",
+    "products": "Products"
   },
   "seo": {
     "homeTitle": "InsuranceAtlas - Compare Hong Kong & Mainland China Insurance Products",

@@ -34,7 +34,8 @@
     "rankings": "產品排名",
     "glossary": "保險術語",
     "calculator": "計算器",
-    "sitemap": "網站地圖"
+    "sitemap": "網站地圖",
+    "language": "語言"
   },
   "home": {
     "heroTitle": "保險圖鑑",
@@ -91,7 +92,8 @@
     "majorIllnesses": "重大疾病",
     "cancerMultipleClaims": "癌症多次賠付",
     "illustratedIrr": "演示內部收益率",
-    "participating": "分紅型"
+    "participating": "分紅型",
+    "legacy": "傳承"
   },
   "ciDetails": {
     "title": "重疾險詳情",
@@ -140,7 +142,7 @@
     "selectProducts": "選擇要對比的產品",
     "compareProducts": "對比產品",
     "aiAnalysis": "AI 分析",
-    "generating": "正在生成 AI 分析...",
+    "generating": "生成中...",
     "feature": "特性",
     "productA": "產品 A",
     "productB": "產品 B",
@@ -156,7 +158,13 @@
     "recommendation": "推薦建議",
     "productType": "產品類型",
     "dataSource": "資料來源於官方產品手冊",
-    "estimatedData": "預估資料 - 請以官方資料為準"
+    "estimatedData": "預估資料 - 請以官方資料為準",
+    "signInToGenerate": "登入後生成 AI 對比（每天 3 次免費）。",
+    "signIn": "登入",
+    "generateAI": "生成 AI 對比",
+    "generatedSuccess": "對比生成成功！",
+    "generateError": "生成對比失敗",
+    "tryAgain": "發生錯誤，請重試。"
   },
   "rankings": {
     "title": "產品排名",
@@ -167,7 +175,9 @@
     "savingsDescription": "基於收益、靈活性和特點的儲蓄險產品排名。",
     "rank": "排名",
     "score": "評分",
-    "views": "瀏覽量"
+    "views": "次瀏覽",
+    "mostViewed": "最多瀏覽產品",
+    "mostCompared": "最多對比產品"
   },
   "glossary": {
     "title": "保險術語",
@@ -229,7 +239,8 @@
     "signIn": "登入",
     "disclaimer": "保險圖鑑不銷售保險產品，也不提供個性化保險、財務或投資建議。所有內容僅用於資料研究和教育目的。具體產品保障、利益、費用和限制，請以保險公司官方產品手冊、正式合同條款及合資格專業人士意見為準。",
     "disclaimerZH": "",
-    "copyright": "© {year} 保險圖鑑。保留所有權利。"
+    "copyright": "© {year} 保險圖鑑。保留所有權利。",
+    "disclaimerLabel": "免責聲明："
   },
   "calculator": {
     "title": "IRR 計算器",
@@ -257,7 +268,9 @@
   "sitemap": {
     "title": "網站地圖",
     "description": "保險圖鑑所有頁面一覽。",
-    "pages": "頁面"
+    "pages": "頁面",
+    "companies": "保險公司",
+    "products": "保險產品"
   },
   "seo": {
     "homeTitle": "保險圖鑑 - 對比香港與中國內地保險產品",

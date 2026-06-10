@@ -5,10 +5,11 @@ import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = {
-  title: "Insurance Product Rankings",
-  description: "Rankings of insurance products by views, comparisons, and more.",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "rankings" });
+  return { title: t("title"), description: t("description") };
+}
 
 export default async function RankingsPage() {
   const t = await getTranslations("rankings");
@@ -42,7 +43,7 @@ export default async function RankingsPage() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Most Viewed */}
         <section>
-          <h2 className="text-xl font-bold text-gray-900 mb-4">Most Viewed Products</h2>
+          <h2 className="text-xl font-bold text-gray-900 mb-4">{t("mostViewed")}</h2>
           <div className="space-y-3">
             {mostViewed.map((product, idx) => (
               <Link
@@ -55,7 +56,7 @@ export default async function RankingsPage() {
                   <h3 className="font-semibold text-gray-900 text-sm">{product.displayName}</h3>
                   <p className="text-xs text-gray-500">{product.company.displayName} · {product.region}</p>
                 </div>
-                <span className="text-sm text-gray-400">{product.viewCount} views</span>
+                <span className="text-sm text-gray-400">{product.viewCount} {t("views")}</span>
               </Link>
             ))}
           </div>
@@ -63,7 +64,7 @@ export default async function RankingsPage() {
 
         {/* Most Compared */}
         <section>
-          <h2 className="text-xl font-bold text-gray-900 mb-4">Most Compared Products</h2>
+          <h2 className="text-xl font-bold text-gray-900 mb-4">{t("mostCompared")}</h2>
           <div className="space-y-3">
             {mostCompared.map((product, idx) => (
               <Link
