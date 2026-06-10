@@ -203,6 +203,7 @@ async function main() {
       currency: "HKD",
       tags: ["critical-illness", "multiple-claims", "cancer-coverage"],
       summary: "A comprehensive critical illness plan offering coverage for multiple conditions with flexible premium terms.",
+      brochureUrl: "/pdfs/prulife-protector-ii-en.pdf",
     },
     {
       companyId: companies[0].id,
@@ -216,6 +217,7 @@ async function main() {
       supportedCurrencies: ["HKD", "USD", "CNY"],
       tags: ["savings", "multi-currency", "participating", "legacy"],
       summary: "A participating savings plan with multi-currency options designed for long-term wealth accumulation.",
+      brochureUrl: "/pdfs/pruwealth-dream-saver-en.pdf",
     },
     // AIA
     {
@@ -309,6 +311,7 @@ async function main() {
       currency: "HKD",
       tags: ["critical-illness", "defender", "multiple-claims"],
       summary: "An affordable critical illness plan with comprehensive coverage and multiple claim options.",
+      brochureUrl: "/pdfs/fwd-stand-by-u.pdf",
     },
     {
       companyId: companies[4].id,
@@ -322,6 +325,7 @@ async function main() {
       supportedCurrencies: ["HKD", "USD"],
       tags: ["savings", "evergreen", "long-term"],
       summary: "A long-term savings plan with competitive returns and flexible premium payment options.",
+      brochureUrl: "/pdfs/fwd-aecono-life-20.pdf",
     },
   ];
 
@@ -351,6 +355,7 @@ async function main() {
       currency: "CNY",
       tags: ["savings", "increasing-sum", "whole-life", "guaranteed"],
       summary: "An increasing sum insured whole life product with guaranteed cash value growth for long-term savings.",
+      brochureUrl: "/pdfs/pingan-chuan-fu-3.pdf",
     },
     // China Life
     {
@@ -401,6 +406,7 @@ async function main() {
       currency: "CNY",
       tags: ["savings", "increasing-sum", "popular", "guaranteed"],
       summary: "A popular increasing sum insured product known for competitive guaranteed returns.",
+      brochureUrl: "/pdfs/taikang-fangxin-caifu.pdf",
     },
     // CPIC
     {
@@ -426,6 +432,7 @@ async function main() {
       currency: "CNY",
       tags: ["savings", "increasing-sum", "whole-life", "evergreen"],
       summary: "A whole life savings product with steady cash value growth and flexible withdrawal options.",
+      brochureUrl: "/pdfs/cpic-xin-xiang-ban.pdf",
     },
     // New China Life
     {
