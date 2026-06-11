@@ -30,7 +30,7 @@ export default function CompareListWithSearch({ comparisons }: Props) {
     summary: `${c.productA.displayName} vs ${c.productB.displayName}`,
   }));
 
-  const handleFilter = (items: typeof searchableItems) => {
+  const handleFilter = (items: { id: string; displayName: string; company?: { displayName: string }; region?: string; summary?: string | null }[]) => {
     const ids = new Set(items.map((i) => i.id));
     setFiltered(comparisons.filter((c) => ids.has(c.id)));
   };

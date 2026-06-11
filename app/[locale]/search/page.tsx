@@ -27,13 +27,14 @@ export default async function SearchPage({ params, searchParams }: Props) {
   let products: any[] = [];
 
   if (query) {
+    const q = query.toLowerCase();
     const [rawCompanies, rawProducts] = await Promise.all([
       prisma.company.findMany({
         where: {
           OR: [
-            { name: { contains: query, mode: "insensitive" } },
-            { displayName: { contains: query, mode: "insensitive" } },
-            { description: { contains: query, mode: "insensitive" } },
+            { name: { contains: q } },
+            { displayName: { contains: q } },
+            { description: { contains: q } },
           ],
         },
         take: 10,
@@ -41,10 +42,10 @@ export default async function SearchPage({ params, searchParams }: Props) {
       prisma.product.findMany({
         where: {
           OR: [
-            { name: { contains: query, mode: "insensitive" } },
-            { displayName: { contains: query, mode: "insensitive" } },
-            { summary: { contains: query, mode: "insensitive" } },
-            { tags: { has: query.toLowerCase() } },
+            { name: { contains: q } },
+            { displayName: { contains: q } },
+            { summary: { contains: q } },
+            { tags: { contains: q } },
           ],
         },
         include: { company: true },

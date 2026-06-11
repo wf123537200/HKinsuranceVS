@@ -4,8 +4,10 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 
 interface Props {
-  items: { id: string; displayName: string; company?: { displayName: string }; region?: string; summary?: string | null }[];
-  onFilter: (filtered: typeof items) => void;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  items: any[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  onFilter: (filtered: any[]) => void;
 }
 
 export default function InlineSearch({ items, onFilter }: Props) {

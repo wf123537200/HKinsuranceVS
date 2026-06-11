@@ -39,8 +39,8 @@ export default async function CompaniesPage({ params }: { params: Promise<{ loca
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {companies.map((company) => {
-          const ciCount = company.products.filter((p) => p.category === "CRITICAL_ILLNESS").length;
-          const savingsCount = company.products.filter((p) => p.category === "SAVINGS").length;
+          const ciCount = company.products.filter((p: { category: string }) => p.category === "CRITICAL_ILLNESS").length;
+          const savingsCount = company.products.filter((p: { category: string }) => p.category === "SAVINGS").length;
 
           return (
             <Link

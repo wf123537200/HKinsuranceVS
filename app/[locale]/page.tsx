@@ -64,8 +64,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {comparisons.map((comp) => (
                 <Link key={comp.id} href={`/compare/${comp.slug}`} className="block p-4 bg-white border border-gray-200 rounded-lg hover:border-blue-300 hover:shadow-md transition-all">
-                  <h3 className="font-semibold text-gray-900 text-sm mb-1">{comp.title}</h3>
-                  <p className="text-xs text-gray-500">{comp.productA.displayName} {tCommon("vs")} {comp.productB.displayName}</p>
+                  <h3 className="font-semibold text-gray-900 text-sm mb-1">{comp.productA.displayName} {tCommon("vs")} {comp.productB.displayName}</h3>
+                  <p className="text-xs text-gray-500">{comp.basicSummary}</p>
                 </Link>
               ))}
             </div>
