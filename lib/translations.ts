@@ -41,7 +41,13 @@ const productNames: Record<string, Record<Locale, string>> = {
   "prudential-prime-eternity": { en: "Prime Eternity", "zh-CN": "保诚Prime Eternity", "zh-TW": "保誠Prime Eternity" },
   "ping-an-shengshi-jinyue": { en: "Ping An Shengshi Jinyue", "zh-CN": "平安盛世金越", "zh-TW": "平安盛世金越" },
   "taikang-zengduoduo": { en: "Taikang Zengduoduo", "zh-CN": "泰康增多多", "zh-TW": "泰康增多多" },
+  "taikang-zunxiang-shijia-zeng-e": { en: "Taikang Zunxiang Shijia (Increasing)", "zh-CN": "泰康尊享世家（增额版）", "zh-TW": "泰康尊享世家（增額版）" },
+  "taikang-zunxiang-shijia-flagship": { en: "Taikang Zunxiang Shijia (Flagship)", "zh-CN": "泰康尊享世家（旗舰版）", "zh-TW": "泰康尊享世家（旗艦版）" },
+  "taikang-lexiangjiankang-2026": { en: "Taikang Lexiang Jiankang 2026", "zh-CN": "泰康乐享健康2026", "zh-TW": "泰康樂享健康2026" },
   "cpic-evergreen-whole-life": { en: "CPIC Evergreen Whole Life", "zh-CN": "太平洋常青终身寿", "zh-TW": "太平洋常青終身壽" },
+  "cpic-xiangbanzhizun-2024s": { en: "CPIC Xiangban Zhizun 2024S", "zh-CN": "太保长相伴（至尊2024S）", "zh-TW": "太保長相伴（至尊2024S）" },
+  "cpic-jinshengwuyou-kids": { en: "CPIC Jinsheng Wuyou Kids", "zh-CN": "太保金生无忧（少儿版）", "zh-TW": "太保金生無憂（少兒版）" },
+  "cpic-wenyingjinsheng-ci": { en: "CPIC Wenying Jinsheng CI", "zh-CN": "太保稳赢金生重疾", "zh-TW": "太保穩贏金生重疾" },
 };
 
 // Stroke count for Chinese characters (common characters used in company/product names)
@@ -173,9 +179,15 @@ const productSummaries: Record<string, Record<Locale, string>> = {
   "prudential-evergreen-growth": { en: "Long-term savings for retirement, education or passing down wealth through the generations.", "zh-CN": "长期储蓄，用于退休、教育或代际财富传承。", "zh-TW": "長期儲蓄，用於退休、教育或代際財富傳承。" },
   "prudential-prime-ace": { en: "The accelerated path to get ahead, build your wealth, and craft a legacy with just 3 years of premiums.", "zh-CN": "仅需3年缴费，快速积累财富、打造传承。", "zh-TW": "僅需3年繳費，快速累積財富、打造傳承。" },
   "prudential-prime-eternity": { en: "Crafting Prime Eternity wealth begins with a single premium: seamlessly grow, access and pass on your wealth for generations.", "zh-CN": "一次性缴费，无缝增长、提取并传承财富。", "zh-TW": "一次性繳費，無縫增長、提取並傳承財富。" },
-  "ping-an-shengshi-jinyue": { en: "An increasing sum insured whole life product with guaranteed cash value growth for long-term savings.", "zh-CN": "增额终身寿险，保证现金价值增长，适合长期储蓄。", "zh-TW": "增額終身壽險，保證現金價值增長，適合長期儲蓄。" },
-  "taikang-zengduoduo": { en: "A popular increasing sum insured product known for competitive guaranteed returns.", "zh-CN": "热门增额产品，以具竞争力的保证回报著称。", "zh-TW": "熱門增額產品，以具競爭力的保證回報著稱。" },
-  "cpic-evergreen-whole-life": { en: "A whole life savings product with steady cash value growth and flexible withdrawal options.", "zh-CN": "终身储蓄产品，现金价值稳步增长，提取方式灵活。", "zh-TW": "終身儲蓄產品，現金價值穩步增長，提取方式靈活。" },
+  "ping-an-shengshi-jinyue-premium": { en: "Premium edition increasing sum insured whole life product with guaranteed cash value growth.", "zh-CN": "增额终身寿险尊享版，保证现金价值增长，适合长期储蓄。", "zh-TW": "增額終身壽險尊享版，保證現金價值增長，適合長期儲蓄。" },
+  "pingan-ruyi-quanneng-ci": { en: "Critical illness rider providing advance payment for major diseases.", "zh-CN": "提前给付重大疾病保险附加险，提供重疾保障。", "zh-TW": "提前給付重大疾病保險附加險，提供重疾保障。" },
+  "pingan-ruyi-quanneng-main": { en: "Endowment insurance plan paired with critical illness coverage.", "zh-CN": "两全保险搭配重疾保障，提供全面保障。", "zh-TW": "兩全保險搭配重疾保障，提供全面保障。" },
+  "taikang-zunxiang-shijia-zeng-e": { en: "Premium increasing sum insured whole life product for long-term wealth accumulation.", "zh-CN": "增额终身寿险高端版，适合长期财富积累。", "zh-TW": "增額終身壽險高端版，適合長期財富累積。" },
+  "taikang-zunxiang-shijia-flagship": { en: "Flagship whole life product with comprehensive wealth management features.", "zh-CN": "旗舰版终身寿险，具备全面财富管理功能。", "zh-TW": "旗艦版終身壽險，具備全面財富管理功能。" },
+  "taikang-lexiangjiankang-2026": { en: "Comprehensive critical illness insurance covering major and minor conditions with 2026 updates.", "zh-CN": "全面重疾保险，涵盖重大和轻度疾病，2026年更新版。", "zh-TW": "全面重疾保險，涵蓋重大和輕度疾病，2026年更新版。" },
+  "cpic-xiangbanzhizun-2024s": { en: "Participating whole life savings plan with premium benefits and dividend distribution.", "zh-CN": "分红型终身寿险储蓄计划，具备高端权益和红利分配。", "zh-TW": "分紅型終身壽險儲蓄計劃，具備高端權益和紅利分配。" },
+  "cpic-jinshengwuyou-kids": { en: "Children's critical illness insurance covering major and minor conditions.", "zh-CN": "少儿重疾保险，涵盖重大和轻度疾病。", "zh-TW": "少兒重疾保險，涵蓋重大和輕度疾病。" },
+  "cpic-wenyingjinsheng-ci": { en: "Stable critical illness rider providing comprehensive coverage for major diseases.", "zh-CN": "稳赢金生重疾附加险，提供重大疾病全面保障。", "zh-TW": "穩贏金生重疾附加險，提供重大疾病全面保障。" },
   // New AIA 2026 product summaries
   "aia-on-your-side-2": { en: "Participating critical illness plan providing comprehensive protection with loyalty benefits.", "zh-CN": "分红型重疾计划，提供全面保障和忠诚客户权益。", "zh-TW": "分紅型重疾計劃，提供全面保障和忠誠客戶權益。" },
   "aia-cancer-guardian-3": { en: "Comprehensive cancer protection plan with multiple claim benefits and recovery support.", "zh-CN": "全面癌症保障计划，多次赔付和康复支持。", "zh-TW": "全面癌症保障計劃，多次賠付和康復支援。" },
