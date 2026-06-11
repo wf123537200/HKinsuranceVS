@@ -29,8 +29,7 @@ const productNames: Record<string, Record<Locale, string>> = {
   "pru-guardian-ci-series": { en: "Prudential Guardian CI Plan Series", "zh-CN": "保诚诚保一生危疾保", "zh-TW": "保誠誠保一生危疾保" },
   "pru-ci-extended-care-iii": { en: "Prudential CI Extended Care III", "zh-CN": "保诚危疾加护保III", "zh-TW": "保誠危疾加護保III" },
   "pru-entrust-multi-currency": { en: "Prudential Entrust Multi-Currency Plan", "zh-CN": "保诚信守明天多元货币计划", "zh-TW": "保誠信守明天多元貨幣計劃" },
-  "pru-retirement-deferred-annuity": { en: "Prudential Retirement Deferred Annuity Plan", "zh-CN": "保诚隽逸人生延期年金计划", "zh-TW": "保誠雋逸人生延期年金計劃" },
-  "pru-evergreen-wealth-income-plus": { en: "Prudential Evergreen Wealth Income Plus", "zh-CN": "保诚隽享入息传承计划", "zh-TW": "保誠雋享入息傳承計劃" },
+
   "prudential-enlit-savings": { en: "Prudential Enlight Savings", "zh-CN": "保诚启耀未来储蓄", "zh-TW": "保誠啟耀未來儲蓄" },
   "prudential-evergreen-growth": { en: "Evergreen Growth Saver Plus II", "zh-CN": "保诚常青增长储蓄保II", "zh-TW": "保誠常青增長儲蓄保II" },
   "prudential-prime-ace": { en: "Prime Ace Insurance Plan", "zh-CN": "保诚Prime Ace储蓄计划", "zh-TW": "保誠Prime Ace儲蓄計劃" },
@@ -176,8 +175,7 @@ const productSummaries: Record<string, Record<Locale, string>> = {
   "pru-guardian-ci-series": { en: "Participating critical illness plan series offering comprehensive protection for the whole family.", "zh-CN": "分红型重疾保障系列，为全家提供全面保障。", "zh-TW": "分紅型重疾保障系列，為全家提供全面保障。" },
   "pru-ci-extended-care-iii": { en: "Extended critical illness care with multiple claims and comprehensive condition coverage.", "zh-CN": "扩展型重疾保障，多次赔付和全面疾病覆盖。", "zh-TW": "擴展型重疾保障，多次賠付和全面疾病覆蓋。" },
   "pru-entrust-multi-currency": { en: "Multi-currency savings plan for diversified wealth management and intergenerational transfer.", "zh-CN": "多币种储蓄计划，适合多元化财富管理和代际传承。", "zh-TW": "多幣種儲蓄計劃，適合多元化財富管理和代際傳承。" },
-  "pru-retirement-deferred-annuity": { en: "Qualifying deferred annuity plan with tax deductions for retirement planning.", "zh-CN": "合资格延期年金计划，享税务扣除，适合退休规划。", "zh-TW": "合資格延期年金計劃，享稅務扣除，適合退休規劃。" },
-  "pru-evergreen-wealth-income-plus": { en: "Wealth income plan with legacy benefits for intergenerational wealth transfer.", "zh-CN": "财富入息计划，附带传承权益，适合跨代财富转移。", "zh-TW": "財富入息計劃，附帶傳承權益，適合跨代財富轉移。" },
+
 };
 
 export function translateProductSummary(slug: string, locale: Locale): string {

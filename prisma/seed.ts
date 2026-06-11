@@ -304,35 +304,6 @@ async function main() {
       summary: "Multi-currency savings plan for diversified wealth management and intergenerational transfer.",
       brochureUrl: "/pdfs/pru-entrust-multi-currency.pdf",
     },
-    // Prudential Retirement Deferred Annuity Plan
-    {
-      companyId: companies[0].id,
-      name: "Prudential Retirement Deferred Annuity Plan",
-      slug: "pru-retirement-deferred-annuity",
-      displayName: "Prudential Retirement Deferred Annuity Plan",
-      region: "Hong Kong",
-      country: "Hong Kong",
-      category: "SAVINGS" as const,
-      currency: "HKD",
-      tags: ["savings", "retirement", "annuity", "deferred", "tax-deductible"],
-      summary: "Qualifying deferred annuity plan with tax deductions for retirement planning.",
-      brochureUrl: "/pdfs/pru-retirement-deferred-annuity.pdf",
-    },
-    // Prudential Evergreen Wealth Income Plus
-    {
-      companyId: companies[0].id,
-      name: "Prudential Evergreen Wealth Income Plus",
-      slug: "pru-evergreen-wealth-income-plus",
-      displayName: "Prudential Evergreen Wealth Income Plus",
-      region: "Hong Kong",
-      country: "Hong Kong",
-      category: "SAVINGS" as const,
-      currency: "HKD",
-      supportedCurrencies: ["HKD", "USD"],
-      tags: ["savings", "income", "legacy", "wealth-transfer"],
-      summary: "Wealth income plan with legacy benefits for intergenerational wealth transfer.",
-      brochureUrl: "/pdfs/pru-evergreen-wealth-income-plus.pdf",
-    },
     // AIA - 2 products
     {
       companyId: companies[1].id,
