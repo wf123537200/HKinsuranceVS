@@ -23,6 +23,9 @@ export default async function CompareDetailPage({ params }: Props) {
   const { slug, locale } = await params;
   const t = await getTranslations("compare");
   const tc = await getTranslations("common");
+  const tCI = await getTranslations("ciDetails");
+  const tSavings = await getTranslations("savingsDetails");
+  const tProducts = await getTranslations("products");
 
   const comparison = await prisma.comparison.findUnique({
     where: { slug },
@@ -41,8 +44,8 @@ export default async function CompareDetailPage({ params }: Props) {
   const basicRows: [string, string | number | null | undefined, string | number | null | undefined, boolean?][] = [
     [t("productType"), isCI ? tc("yes") : tc("no"), isCI ? tc("yes") : tc("no")],
     [t("feature") + ": " + tc("from"), productA.company.displayName, productB.company.displayName],
-    ["Region", translateRegion(productA.region, locale as Locale), translateRegion(productB.region, locale as Locale)],
-    ["Currency", productA.currency, productB.currency],
+    [tProducts("region"), translateRegion(productA.region, locale as Locale), translateRegion(productB.region, locale as Locale)],
+    [tProducts("currency"), productA.currency, productB.currency],
   ];
 
   // Mark estimated data with isEstimated flag
@@ -50,29 +53,29 @@ export default async function CompareDetailPage({ params }: Props) {
     const a = productA.criticalIllnessDetail;
     const b = productB.criticalIllnessDetail;
     basicRows.push(
-      ["Coverage Term", a?.coverageTerm, b?.coverageTerm],
-      ["Premium Term", a?.premiumTerm, b?.premiumTerm],
-      ["Entry Age", `${a?.entryAgeMin ?? "?"}-${a?.entryAgeMax ?? "?"}`, `${b?.entryAgeMin ?? "?"}-${b?.entryAgeMax ?? "?"}`],
-      ["Waiting Period", a?.waitingPeriodDays ? `${a.waitingPeriodDays} days` : null, b?.waitingPeriodDays ? `${b.waitingPeriodDays} days` : null],
-      ["Major Illness Count", a?.majorIllnessCount, b?.majorIllnessCount, true],
-      ["Minor Illness Count", a?.minorIllnessCount, b?.minorIllnessCount, true],
-      ["Cancer Multiple Claims", a?.cancerMultipleClaims ? "Yes" : "No", b?.cancerMultipleClaims ? "Yes" : "No"],
-      ["Premium Waiver", a?.premiumWaiver ? "Yes" : "No", b?.premiumWaiver ? "Yes" : "No"],
-      ["Cash Value", a?.cashValue ? "Yes" : "No", b?.cashValue ? "Yes" : "No"],
+      [tCI("coverageTerm"), a?.coverageTerm, b?.coverageTerm],
+      [tCI("premiumTerm"), a?.premiumTerm, b?.premiumTerm],
+      [tCI("entryAge"), `${a?.entryAgeMin ?? "?"}-${a?.entryAgeMax ?? "?"}`, `${b?.entryAgeMin ?? "?"}-${b?.entryAgeMax ?? "?"}`],
+      [tCI("waitingPeriod"), a?.waitingPeriodDays ? `${a.waitingPeriodDays} ${tCI("days")}` : null, b?.waitingPeriodDays ? `${b.waitingPeriodDays} ${tCI("days")}` : null],
+      [tCI("majorIllnessCount"), a?.majorIllnessCount, b?.majorIllnessCount, true],
+      [tCI("minorIllnessCount"), a?.minorIllnessCount, b?.minorIllnessCount, true],
+      [tCI("cancerMultipleClaims"), a?.cancerMultipleClaims ? tc("yes") : tc("no"), b?.cancerMultipleClaims ? tc("yes") : tc("no")],
+      [tCI("premiumWaiver"), a?.premiumWaiver ? tc("yes") : tc("no"), b?.premiumWaiver ? tc("yes") : tc("no")],
+      [tCI("cashValue"), a?.cashValue ? tc("yes") : tc("no"), b?.cashValue ? tc("yes") : tc("no")],
     );
   } else {
     const a = productA.savingsDetail;
     const b = productB.savingsDetail;
     basicRows.push(
-      ["Premium Term", a?.premiumTerm, b?.premiumTerm],
-      ["Coverage Term", a?.coverageTerm, b?.coverageTerm],
-      ["Participating", a?.participating ? "Yes" : "No", b?.participating ? "Yes" : "No"],
-      ["Illustrated IRR", a?.illustratedIrr ? `${a.illustratedIrr}%` : null, b?.illustratedIrr ? `${b.illustratedIrr}%` : null, true],
-      ["Guaranteed IRR", a?.guaranteedIrr ? `${a.guaranteedIrr}%` : null, b?.guaranteedIrr ? `${b.guaranteedIrr}%` : null, true],
-      ["Break-even Year", a?.illustratedBreakEvenYear, b?.illustratedBreakEvenYear, true],
-      ["Terminal Bonus", a?.terminalBonus ? "Yes" : "No", b?.terminalBonus ? "Yes" : "No"],
-      ["Policy Loan", a?.policyLoan ? "Yes" : "No", b?.policyLoan ? "Yes" : "No"],
-      ["Legacy Planning", a?.legacyPlanning ? "Yes" : "No", b?.legacyPlanning ? "Yes" : "No"],
+      [tSavings("premiumTerm"), a?.premiumTerm, b?.premiumTerm],
+      [tSavings("coverageTerm"), a?.coverageTerm, b?.coverageTerm],
+      [tSavings("participating"), a?.participating ? tc("yes") : tc("no"), b?.participating ? tc("yes") : tc("no")],
+      [tSavings("illustratedIrr"), a?.illustratedIrr ? `${a.illustratedIrr}%` : null, b?.illustratedIrr ? `${b.illustratedIrr}%` : null, true],
+      [tSavings("guaranteedIrr"), a?.guaranteedIrr ? `${a.guaranteedIrr}%` : null, b?.guaranteedIrr ? `${b.guaranteedIrr}%` : null, true],
+      [tSavings("illustratedBreakEvenYear"), a?.illustratedBreakEvenYear, b?.illustratedBreakEvenYear, true],
+      [tSavings("terminalBonus"), a?.terminalBonus ? tc("yes") : tc("no"), b?.terminalBonus ? tc("yes") : tc("no")],
+      [tSavings("policyLoan"), a?.policyLoan ? tc("yes") : tc("no"), b?.policyLoan ? tc("yes") : tc("no")],
+      [tSavings("legacyPlanning"), a?.legacyPlanning ? tc("yes") : tc("no"), b?.legacyPlanning ? tc("yes") : tc("no")],
     );
   }
 

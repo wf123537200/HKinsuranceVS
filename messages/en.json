@@ -68,6 +68,7 @@
     "visitWebsite": "Visit Official Website",
     "criticalIllnessProducts": "Critical Illness Products",
     "savingsProducts": "Savings Products",
+    "noProducts": "This company currently has no listed products.",
     "learnAbout": "Learn about {name} insurance products."
   },
   "products": {

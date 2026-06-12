@@ -28,7 +28,8 @@ export default async function CompaniesPage({ params }: { params: Promise<{ loca
     },
   });
 
-  const companies = rawCompanies.map((c) => translateCompany(c, locale as Locale)).sort(sortByTranslatedName(locale as Locale));
+  const companiesWithProducts = rawCompanies.filter((c) => c.products.length > 0);
+  const companies = companiesWithProducts.map((c) => translateCompany(c, locale as Locale)).sort(sortByTranslatedName(locale as Locale));
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

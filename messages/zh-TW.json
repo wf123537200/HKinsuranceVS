@@ -68,6 +68,7 @@
     "visitWebsite": "訪問官方網站",
     "criticalIllnessProducts": "重疾險產品",
     "savingsProducts": "儲蓄險產品",
+    "noProducts": "該公司目前暫無在售產品。",
     "learnAbout": "瞭解{name}的保險產品。"
   },
   "products": {

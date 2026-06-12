@@ -173,6 +173,10 @@ export default async function CompanyDetailPage({ params }: Props) {
           </div>
         </section>
       )}
+
+      {ciProducts.length === 0 && savingsProducts.length === 0 && (
+        <p className="text-gray-500 text-center py-8">{t("noProducts")}</p>
+      )}
     </div>
   );
 }

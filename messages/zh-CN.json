@@ -68,6 +68,7 @@
     "visitWebsite": "访问官方网站",
     "criticalIllnessProducts": "重疾险产品",
     "savingsProducts": "储蓄险产品",
+    "noProducts": "该公司目前暂无在售产品。",
     "learnAbout": "了解{name}的保险产品。"
   },
   "products": {
