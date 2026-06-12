@@ -4,6 +4,7 @@ import type { Locale } from "@/i18n/config";
 const companyNames: Record<string, Record<Locale, string>> = {
   "prudential-hk": { en: "Prudential Hong Kong", "zh-CN": "保诚香港", "zh-TW": "保誠香港" },
   "aia-hk": { en: "AIA Hong Kong", "zh-CN": "友邦香港", "zh-TW": "友邦香港" },
+  "manulife-hk": { en: "Manulife Hong Kong", "zh-CN": "宏利香港", "zh-TW": "宏利香港" },
   "fwd-hk": { en: "FWD Hong Kong", "zh-CN": "富卫香港", "zh-TW": "富衛香港" },
   "ping-an": { en: "Ping An Insurance", "zh-CN": "中国平安", "zh-TW": "中國平安" },
   "taikang-life": { en: "Taikang Insurance Group", "zh-CN": "泰康保险", "zh-TW": "泰康保險" },
@@ -16,6 +17,11 @@ const productNames: Record<string, Record<Locale, string>> = {
   "aia-ci-elite": { en: "AIA Critical Illness Elite", "zh-CN": "友邦重疾精英计划", "zh-TW": "友邦重疾精英計劃" },
   "aia-savings-leader": { en: "AIA Savings Leader", "zh-CN": "友邦储蓄领先计划", "zh-TW": "友邦儲蓄領先計劃" },
   "fwd-noble-fortune": { en: "FWD Noble Fortune", "zh-CN": "富卫寰荟致富", "zh-TW": "富衛寰薈致富" },
+  "manulife-genesis-centurion": { en: "Manulife Genesis Centurion", "zh-CN": "宏利世纪传承保障计划", "zh-TW": "宏利世紀傳承保障計劃" },
+  "manulife-incomeguard-ci": { en: "Manulife IncomeGuard CI", "zh-CN": "宏利宏健守护危疾入息保障", "zh-TW": "宏利宏健守護危疾入息保障" },
+  "manulife-incomeshield-ci": { en: "Manulife IncomeShield CI", "zh-CN": "宏利IncomeShield危疾保", "zh-TW": "宏利IncomeShield危疾保" },
+  "manulife-bright-care-pro": { en: "Manulife Bright Care Pro", "zh-CN": "宏利活耀人生危疾保", "zh-TW": "宏利活耀人生危疾保" },
+  "manulife-prestige-achiever": { en: "Manulife Prestige Achiever", "zh-CN": "宏利Prestige Achiever储蓄", "zh-TW": "宏利Prestige Achiever儲蓄" },
   "fwd-crisis-one-master": { en: "FWD Crisis One Master", "zh-CN": "富卫危疾致尚保", "zh-TW": "富衛危疾緻尚保" },
   "fwd-crisis-u-supporter": { en: "FWD Crisis U Supporter", "zh-CN": "富卫危疾应援保", "zh-TW": "富衛危疾應援保" },
   "fwd-easycover-ci": { en: "FWD EasyCover CI Plan", "zh-CN": "富卫好易拣危疾保障", "zh-TW": "富衛好易揀危疾保障" },
@@ -188,6 +194,12 @@ const productSummaries: Record<string, Record<Locale, string>> = {
   "cpic-xiangbanzhizun-2024s": { en: "Participating whole life savings plan with premium benefits and dividend distribution.", "zh-CN": "分红型终身寿险储蓄计划，具备高端权益和红利分配。", "zh-TW": "分紅型終身壽險儲蓄計劃，具備高端權益和紅利分配。" },
   "cpic-jinshengwuyou-kids": { en: "Children's critical illness insurance covering major and minor conditions.", "zh-CN": "少儿重疾保险，涵盖重大和轻度疾病。", "zh-TW": "少兒重疾保險，涵蓋重大和輕度疾病。" },
   "cpic-wenyingjinsheng-ci": { en: "Stable critical illness rider providing comprehensive coverage for major diseases.", "zh-CN": "稳赢金生重疾附加险，提供重大疾病全面保障。", "zh-TW": "穩贏金生重疾附加險，提供重大疾病全面保障。" },
+  // Manulife product summaries
+  "manulife-genesis-centurion": { en: "Premium savings plan for wealth accumulation and intergenerational legacy planning.", "zh-CN": "高端储蓄计划，适合财富积累和代际传承规划。", "zh-TW": "高端儲蓄計劃，適合財富累積和代際傳承規劃。" },
+  "manulife-incomeguard-ci": { en: "Critical illness protection with regular income benefit during recovery period.", "zh-CN": "重疾保障，康复期间提供定期收入补贴。", "zh-TW": "重疾保障，康復期間提供定期收入補貼。" },
+  "manulife-incomeshield-ci": { en: "Comprehensive critical illness shield with income protection benefits.", "zh-CN": "全面重疾保障，附带收入保障权益。", "zh-TW": "全面重疾保障，附帶收入保障權益。" },
+  "manulife-bright-care-pro": { en: "Professional-grade critical illness protection with comprehensive coverage.", "zh-CN": "专业级重疾保障，涵盖全面保障。", "zh-TW": "專業級重疾保障，涵蓋全面保障。" },
+  "manulife-prestige-achiever": { en: "Prestigious savings plan for wealth achievement and long-term financial goals.", "zh-CN": "高端储蓄计划，适合财富增值和长期财务目标。", "zh-TW": "高端儲蓄計劃，適合財富增值和長期財務目標。" },
   // New AIA 2026 product summaries
   "aia-on-your-side-2": { en: "Participating critical illness plan providing comprehensive protection with loyalty benefits.", "zh-CN": "分红型重疾计划，提供全面保障和忠诚客户权益。", "zh-TW": "分紅型重疾計劃，提供全面保障和忠誠客戶權益。" },
   "aia-cancer-guardian-3": { en: "Comprehensive cancer protection plan with multiple claim benefits and recovery support.", "zh-CN": "全面癌症保障计划，多次赔付和康复支持。", "zh-TW": "全面癌症保障計劃，多次賠付和康復支援。" },
