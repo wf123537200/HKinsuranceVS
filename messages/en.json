@@ -1,6 +1,6 @@
 {
   "common": {
-    "siteName": "InsuranceAtlas",
+    "siteName": "Policy Vector",
     "siteTagline": "The Insurance Product Database",
     "signIn": "Sign In",
     "signOut": "Sign Out",
@@ -26,9 +26,12 @@
     "no": "No",
     "from": "from",
     "by": "by",
-    "sortNote": "Sorted alphabetically (A-Z)"
+    "sortNote": "Sorted alphabetically (A-Z)",
+    "allCategories": "All Categories",
+    "allRegions": "All Regions"
   },
   "nav": {
+    "home": "Home",
     "companies": "Companies",
     "products": "Products",
     "compare": "Compare",
@@ -39,14 +42,18 @@
     "language": "Language"
   },
   "home": {
-    "heroTitle": "InsuranceAtlas",
+    "heroTitle": "Policy Vector",
     "heroSubtitle": "The Insurance Product Database",
     "heroDescription": "Compare Critical Illness and Savings Insurance Products Across Hong Kong and Mainland China.",
     "criticalIllnessBtn": "Critical Illness Insurance",
     "savingsBtn": "Savings Insurance",
     "hotProducts": "Hot Products",
     "mostCompared": "Most Compared",
-    "companies": "Companies"
+    "companies": "Companies",
+    "companiesCount": "Insurance Companies",
+    "productsCount": "Products",
+    "comparisonsCount": "Comparisons",
+    "statsDescription": "Covering {companies} major insurers, {products} mainstream products — all with official PDF brochures."
   },
   "categories": {
     "criticalIllness": "Critical Illness",
@@ -68,6 +75,7 @@
     "visitWebsite": "Visit Official Website",
     "criticalIllnessProducts": "Critical Illness Products",
     "savingsProducts": "Savings Products",
+    "allProducts": "All Products",
     "noProducts": "This company currently has no listed products.",
     "learnAbout": "Learn about {name} insurance products."
   },
@@ -91,6 +99,18 @@
     "downloadBrochure": "Download PDF Brochure",
     "tags": "Tags",
     "relatedComparisons": "Related Comparisons",
+    "whySelected": "Why selected",
+    "marketAttention": "Market attention",
+    "marketAttentionHot": "Hot discussion",
+    "marketAttentionDiscussed": "Ongoing discussion",
+    "marketAttentionHistorical": "Historically hot",
+    "englishName": "English name",
+    "companyProductsTitle": "Other selected products from this company",
+    "relatedProductsTitle": "You may also be interested in",
+    "noRelatedProducts": "No related products",
+    "notInSelectedTitle": "This product is not currently listed",
+    "notInSelectedDescription": "Policy Vector currently features only 24 curated products. Please return to the product list to view selected products.",
+    "backToAllProducts": "Back to product list",
     "majorIllnesses": "Major Illnesses",
     "cancerMultipleClaims": "Cancer Multiple Claims",
     "illustratedIrr": "Illustrated IRR",
@@ -100,7 +120,10 @@
     "aiaEasyguardCI": "AIA EasyGuard Care Essence",
     "aiaExecutiveCarePro2": "AIA Executive Care Pro 2",
     "aiaLadyCarePro": "AIA Lady Care Pro",
-    "aiaEssenceOnYourSide": "AIA Essence On Your Side"
+    "aiaEssenceOnYourSide": "AIA Essence On Your Side",
+    "relatedByCategoryTitle": "Other {category} products",
+    "noRelatedByCategory": "No other products in this category yet.",
+    "viewAllCategory": "View all {category} products"
   },
   "ciDetails": {
     "title": "Critical Illness Details",
@@ -171,7 +194,12 @@
     "generateAI": "Generate AI Comparison",
     "generatedSuccess": "Comparison generated successfully!",
     "generateError": "Failed to generate comparison",
-    "tryAgain": "An error occurred. Please try again."
+    "tryAgain": "An error occurred. Please try again.",
+    "relatedComparisonsTitle": "Other comparisons in this category",
+    "relatedAnchor": "Compare {other} with similar products",
+    "exploreEachProduct": "Explore each product",
+    "viewProductProfile": "View full profile",
+    "viewCompanyProfile": "View company profile"
   },
   "rankings": {
     "title": "Product Rankings",
@@ -212,15 +240,31 @@
   },
   "login": {
     "title": "Sign In",
-    "description": "Sign in to your InsuranceAtlas account.",
+    "description": "Sign in to your Policy Vector account.",
     "email": "Email",
     "password": "Password",
     "signInBtn": "Sign In",
-    "orContinueWith": "Or continue with",
-    "google": "Google",
-    "github": "GitHub",
+    "invalidCredentials": "Invalid email or password. Please try again.",
     "noAccount": "Don't have an account?",
-    "register": "Register"
+    "register": "Create one",
+    "notConfigured": "Authentication is not configured on this server."
+  },
+  "register": {
+    "title": "Create Account",
+    "description": "Sign up for a free Policy Vector account.",
+    "email": "Email",
+    "username": "Username (optional)",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "signUpBtn": "Create account",
+    "haveAccount": "Already have an account?",
+    "signInLink": "Sign in",
+    "passwordMismatch": "The two passwords do not match.",
+    "passwordTooShort": "Password must be at least 8 characters.",
+    "notConfigured": "Authentication is not configured on this server.",
+    "checkEmailTitle": "Check your inbox",
+    "checkEmailBody": "We've sent a confirmation link to your email. Click it to finish creating your account.",
+    "backToLogin": "Back to sign in"
   },
   "admin": {
     "title": "Admin Dashboard",
@@ -245,9 +289,9 @@
     "search": "Search",
     "account": "Account",
     "signIn": "Sign In",
-    "disclaimer": "InsuranceAtlas does not sell insurance products and does not provide personalized insurance, financial, or investment advice. All information is provided for research and educational purposes only. Product details should be verified against official brochures, policy documents, and licensed professionals.",
-    "disclaimerZH": "InsuranceAtlas 不销售保险产品，也不提供个性化保险、财务或投资建议。所有内容仅用于资料研究和教育目的。具体产品保障、利益、费用和限制，请以保险公司官方产品手册、正式合同条款及合资格专业人士意见为准。",
-    "copyright": "© {year} InsuranceAtlas. All rights reserved.",
+    "disclaimer": "Policy Vector does not sell insurance products and does not provide personalized insurance, financial, or investment advice. All information is provided for research and educational purposes only. Product details should be verified against official brochures, policy documents, and licensed professionals.",
+    "disclaimerZH": "Policy Vector 不销售保险产品，也不提供个性化保险、财务或投资建议。所有内容仅用于资料研究和教育目的。具体产品保障、利益、费用和限制，请以保险公司官方产品手册、正式合同条款及合资格专业人士意见为准。",
+    "copyright": "© {year} Policy Vector. All rights reserved.",
     "disclaimerLabel": "Disclaimer:"
   },
   "calculator": {
@@ -275,13 +319,13 @@
   },
   "sitemap": {
     "title": "Sitemap",
-    "description": "Complete overview of all pages on InsuranceAtlas.",
+    "description": "Complete overview of all pages on Policy Vector.",
     "pages": "Pages",
     "companies": "Companies",
     "products": "Products"
   },
   "seo": {
-    "homeTitle": "InsuranceAtlas - Compare Hong Kong & Mainland China Insurance Products",
+    "homeTitle": "Compare Insurance Products Across Hong Kong and Mainland China",
     "homeDescription": "Compare critical illness and savings insurance products from Hong Kong and mainland China. Find the best insurance plans with detailed analysis."
   },
   "IRRCalculator": {
@@ -330,5 +374,57 @@
     "faqA2": "Enter the premium payment details and expected cash values for each product. The product with the higher IRR provides better value for the same level of risk.",
     "faqQ3": "Is the IRR calculator accurate?",
     "faqA3": "The calculator uses the Newton-Raphson method with bisection fallback for mathematical accuracy. Results depend on the cash values you enter — always use official product illustrations."
+  },
+  "geo": {
+    "common": {
+      "methodologyTitle": "Methodology",
+      "sourcesTitle": "Sources",
+      "dataExtractedFrom": "Data extracted from official product brochure on {date}.",
+      "vectorVersion": "Structured data: ProductVector v2.11 (registry id compare-field-registry-v2.11.json).",
+      "policyVectorSource": "Policy Vector insurance product database"
+    },
+    "home": {
+      "quickAnswerTitle": "What is Policy Vector?",
+      "quickAnswerText": "Policy Vector is an insurance product database and comparison platform for Hong Kong and Mainland China. We extract structured data from official PDF brochures and publish side-by-side comparisons of critical illness and savings products.",
+      "sources": [
+        { "label": "Policy Vector — Companies", "url": "https://policy-vector.com/companies" },
+        { "label": "Policy Vector — Products", "url": "https://policy-vector.com/products" }
+      ]
+    },
+    "company": {
+      "quickAnswerTitle": "What products does {name} offer?",
+      "quickAnswerText": "{name} is an insurance company in {region}. On Policy Vector we list {count} selected products from this insurer, including critical illness and savings categories.",
+      "sources": [
+        { "label": "{name} on Policy Vector", "url": "https://policy-vector.com/company/{slug}" },
+        { "label": "All insurance companies", "url": "https://policy-vector.com/companies" }
+      ]
+    },
+    "product": {
+      "quickAnswerTitle": "What is {name}?",
+      "quickAnswerText": "{name} is a {category} insurance product issued by {company} in {region}. It supports {currencies}. Read the full product analysis on Policy Vector.",
+      "faqQ1": "What type of insurance is {name}?",
+      "faqA1": "{name} is a {category} insurance product issued by {company}.",
+      "faqQ2": "Which currencies does {name} support?",
+      "faqA2": "{name} supports the following currencies: {currencies}.",
+      "faqQ3": "Where can I read the official brochure for {name}?",
+      "faqA3": "The official PDF brochure is linked on this page. Always verify terms, premiums, and benefits with the official brochure before purchasing.",
+      "sources": [
+        { "label": "{company} on Policy Vector", "url": "https://policy-vector.com/company/{companySlug}" },
+        { "label": "All {category} products", "url": "https://policy-vector.com/products/{categorySlug}" }
+      ]
+    },
+    "compare": {
+      "quickAnswerTitle": "What is the difference between {a} and {b}?",
+      "quickAnswerText": "Both {a} and {b} are {category} products. Use the comparison table on this page to see side-by-side differences in company, region, currency, premium term, coverage, illustrated IRR, and policy features.",
+      "faqQ1": "Which is better, {a} or {b}?",
+      "faqA1": "Neither product is universally better. Compare by region, currency, premium term, coverage breadth, and illustrated IRR to find the one that matches your needs.",
+      "faqQ2": "Are the comparison figures guaranteed?",
+      "faqA2": "Comparison data is extracted from official brochures and updated whenever the underlying product vector is updated. Non-guaranteed portions (such as illustrated IRR for participating policies) depend on the insurer's performance.",
+      "faqQ3": "Where can I read the official brochures?",
+      "faqA3": "Both official PDF brochures are linked on this page. Always confirm terms with the official documents before deciding."
+    },
+    "pdfGate": {
+      "lockedLabel": "Sign in to view the official product PDF"
+    }
   }
 }

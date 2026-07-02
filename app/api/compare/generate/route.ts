@@ -76,6 +76,15 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Product not found" }, { status: 404 });
     }
 
+    // Validate dataStatus - only published and manual_verified products can be AI compared
+    const allowedStatuses = ["published", "manual_verified"];
+    if (!allowedStatuses.includes(productA.dataStatus) || !allowedStatuses.includes(productB.dataStatus)) {
+      return NextResponse.json(
+        { error: "One or both products are still under source verification and cannot be used for AI comparison yet." },
+        { status: 403 }
+      );
+    }
+
     // Build AI prompt
     const isCI = productA.category === "CRITICAL_ILLNESS";
     const prompt = buildComparisonPrompt(productA, productB, isCI);

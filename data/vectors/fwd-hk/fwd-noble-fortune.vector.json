@@ -1,0 +1,354 @@
+{
+  "product_vector_version": "v2.9",
+  "base": {
+    "product_id": "fwd-noble-fortune",
+    "slug": "fwd-noble-fortune",
+    "product_name": "富卫尊贵盈家储蓄保险计划",
+    "product_name_en": "FWD Noble Fortune",
+    "company_slug": "fwd-hk",
+    "company_name": "富卫香港",
+    "region": "Hong Kong",
+    "category": "savings",
+    "category_zh": "储蓄险",
+    "subcategory": "savings",
+    "policy_currency": [
+      "USD"
+    ],
+    "policy_term": null,
+    "premium_term": null,
+    "entry_age": "投保年龄范围为5至70岁。",
+    "payment_mode": null,
+    "local_pdf_path": "/pdfs/fwd-noble-fortune.pdf",
+    "source_pdf_filename": "fwd-noble-fortune.pdf",
+    "is_hot_discussed": false,
+    "market_attention": "unknown",
+    "product_name_zh_cn": "富卫尊贵盈家储蓄保险计划",
+    "product_name_zh_hk": "富衛尊貴財富保險計劃",
+    "display_name": "富卫尊贵财富保险计划",
+    "product_name_zh_tw": "富衛尊貴盈家儲蓄保險計劃"
+  },
+  "core": {
+    "critical_illness_core": null,
+    "savings_core": {
+      "has_guaranteed_cash_value": null,
+      "has_non_guaranteed_bonus": true,
+      "bonus_types": null,
+      "highest_illustrated_irr": null,
+      "guaranteed_irr": null,
+      "highest_illustrated_return_multiple": null,
+      "has_partial_withdrawal": true,
+      "has_policy_loan": false
+    }
+  },
+  "modules": {
+    "participating_savings_module": {
+      "available": true,
+      "bonus_types": null
+    },
+    "life_protection_module": {
+      "has_death_benefit": true
+    },
+    "policy_liquidity_module": {
+      "has_policy_loan": false,
+      "has_partial_withdrawal": true,
+      "has_regular_withdrawal": false
+    },
+    "policy_flexibility_module": {
+      "supports_currency_switch": false,
+      "supports_policy_split": false,
+      "supports_change_insured": true,
+      "supports_second_insured": false,
+      "supports_second_policyholder": false
+    },
+    "risk_module": {
+      "risk_summary": [
+        "非保证利益风险",
+        "退保/流动性风险",
+        "货币风险",
+        "汇率风险",
+        "理赔限制"
+      ]
+    }
+  },
+  "compare_profile": {
+    "product_category": "savings",
+    "product_type": "savings",
+    "company_slug": "fwd-hk",
+    "product_slug": "fwd-noble-fortune",
+    "market_attention": "unknown",
+    "priority": null,
+    "policy_term": "终身",
+    "premium_terms": null,
+    "entry_age_summary": "投保年龄范围为5至70岁。",
+    "currencies": [
+      "USD"
+    ],
+    "has_guaranteed_cash_value": null,
+    "has_non_guaranteed_bonus": true,
+    "bonus_types": null,
+    "has_partial_withdrawal": true,
+    "has_regular_withdrawal": false,
+    "has_policy_loan": false,
+    "supports_currency_switch": false,
+    "supports_policy_split": false,
+    "supports_change_insured": true,
+    "supports_second_insured": false,
+    "supports_second_policyholder": false,
+    "covered_illness_total": null,
+    "major_illness_count": null,
+    "early_stage_illness_count": null,
+    "moderate_illness_count": null,
+    "child_illness_count": null,
+    "has_multiple_claims": null,
+    "has_cancer_multiple_claims": null,
+    "has_heart_stroke_multiple_claims": null,
+    "has_icu_benefit": true,
+    "cancer_claim_cap_summary": null,
+    "heart_stroke_claim_summary": null,
+    "icu_benefit_summary": null,
+    "post_claim_status_summary": null,
+    "highest_illustrated_irr": null,
+    "guaranteed_irr": 2.3,
+    "highest_illustrated_return_multiple": null,
+    "illustrated_break_even_year": null,
+    "guaranteed_break_even_year": null,
+    "risk_summary": [
+      "非保证利益风险",
+      "退保/流动性风险",
+      "货币风险",
+      "汇率风险",
+      "通胀风险",
+      "理赔限制"
+    ],
+    "bonus_type_summary": "非保证红利或分红",
+    "bonus_declaration_summary": "提供非保证红利或分红，金额并不保证，实际派发及公布以保险公司政策为准。",
+    "has_bonus_lock_in": false,
+    "bonus_lock_in_summary": null,
+    "has_bonus_unlock": false,
+    "bonus_unlock_summary": null,
+    "has_value_protection_account": false,
+    "value_protection_account_summary": null,
+    "policy_loan_summary": null,
+    "partial_withdrawal_summary": "可按条款部分提取或减保，提取会影响保单价值。",
+    "regular_withdrawal_summary": null,
+    "change_insured_summary": "支持按条款更改受保人，便于长期传承安排。",
+    "second_insured_summary": null,
+    "second_policyholder_summary": null,
+    "policy_split_summary": null,
+    "has_death_benefit_payment_option": false,
+    "death_benefit_payment_summary": null,
+    "has_beneficiary_flexible_option": false,
+    "beneficiary_option_summary": null,
+    "has_terminal_illness_benefit": false,
+    "terminal_illness_summary": null,
+    "minimum_premium_summary": "最低保费按货币、缴费期及投保安排而定，具体以条款为准。",
+    "minimum_sum_assured_summary": null
+  },
+  "product_features": [
+    {
+      "feature_id": "icu_benefit",
+      "feature_name": "深切治疗保障",
+      "category": "health_service",
+      "feature_type": "value_added_service",
+      "availability": true,
+      "short_description": "达到指定深切治疗条件时，可获得额外赔偿。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 1,
+      "compare_key": "icu_benefit",
+      "source_pages": [
+        15
+      ],
+      "evidence_quote": "Applicable in the ﬁrst 15 Policy Years, upon total amount of Partial Surrender(s) in a particular Policy Year in excess of the maximum Free Partial Surrender Amount for that Policy Year, reduction in Sum Insured or surrenders and varies by issue age of the Insured, Policy Year, sex, risk class and Sum Insured 企業可以要員保險作為公司業務延續的規劃。於首個保單年度完結後若保單仍然生效，且被保要員 仍在生時，公司保單權益人可隨時變更被保要員。被保要員之任何變更必須符合富衛當時的相關政 策及程序。於變更被保要員後，計劃主要特點維持不變，惟以下除外︰(i)",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "深切治療",
+          "深切治疗",
+          "ICU",
+          "intensive care"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "change_insured",
+      "feature_name": "更改受保人",
+      "category": "legacy_planning",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "可按条款更改受保人，延续保单规划。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 2,
+      "compare_key": "change_insured",
+      "source_pages": [
+        15
+      ],
+      "evidence_quote": "keyman. 退保費用 Surrender Charge 變更被保要員 Change insured keyman 部份退保9,10 Partial Surrender9,10 費用及收費 Summary of charges 要員保險 Keyman insurance",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "更改受保人",
+          "更換受保人",
+          "更换受保人",
+          "change of insured",
+          "change insured"
+        ],
+        "no_hard_char_truncation": true
+      }
+    }
+  ],
+  "feature_tags": [
+    "icu_benefit",
+    "change_insured"
+  ],
+  "comparison_flags": {
+    "has_guaranteed_cash_value": null,
+    "has_non_guaranteed_bonus": true,
+    "has_partial_withdrawal": true,
+    "has_regular_withdrawal": false,
+    "has_policy_loan": false,
+    "supports_currency_switch": false,
+    "supports_policy_split": false,
+    "supports_change_insured": true,
+    "supports_second_insured": false,
+    "supports_second_policyholder": false,
+    "has_multiple_claims": null,
+    "has_cancer_multiple_claims": null,
+    "has_heart_stroke_multiple_claims": null,
+    "has_icu_benefit": true
+  },
+  "source_trace": {
+    "source_type": "catalog_verified_pdf",
+    "source_pdf": "fwd-noble-fortune.pdf",
+    "source_pdf_path": "pdfs/fwd-noble-fortune.pdf",
+    "source_pdf_sha256": "e213d88380edd039ff14b72dda6fff264b02c213efb6734b0461726c39230612",
+    "page_count": 24,
+    "text_length": 34686,
+    "extraction_confidence": "medium",
+    "missing_fields": [
+      "premium_terms",
+      "entry_age"
+    ],
+    "field_evidence": {
+      "compare_profile.has_icu_benefit": {
+        "source": "local_pdf",
+        "pages": [
+          15
+        ],
+        "quote": "Applicable in the ﬁrst 15 Policy Years, upon total amount of Partial Surrender(s) in a particular Policy Year in excess of the maximum Free Partial Surrender Amount for that Policy Year, reduction in Sum Insured or surrenders and varies by issue age of the Insured, Policy Year, sex, risk class and Sum Insured 企業可以要員保險作為公司業務延續的規劃。於首個保單年度完結後若保單仍然生效，且被保要員 仍在生時，公司保單權益人可隨時變更被保要員。被保要員之任何變更必須符合富衛當時的相關政 策及程序。於變更被保要員後，計劃主要特點維持不變，惟以下除外︰(i)",
+        "confidence": "medium",
+        "method": "pdf_page_semantic_window_keyword_match_v2.9_no_hard_char_truncation",
+        "no_hard_char_truncation": true
+      },
+      "compare_profile.has_non_guaranteed_bonus": {
+        "source": "local_pdf",
+        "pages": [
+          17
+        ],
+        "quote": "d-bonus-declaration-philosoph ）︰ 派息率的理念 由富衛人壽保險（百慕達）有限公司（「富衛」或「我們」）發出 的萬用壽險保單會派發非保證利息予保單持有人（「您」）",
+        "confidence": "medium",
+        "method": "pdf_page_semantic_window_keyword_match_v2.9_no_hard_char_truncation",
+        "no_hard_char_truncation": true
+      }
+    }
+  },
+  "extraction_meta": {
+    "extracted_at": "2026-06-20T12:40:17.483012Z",
+    "method": "PRODUCT-CATALOG + selected hot TS guided heuristic extraction; no fuzzy cross-product substitution",
+    "schema_policy": "core comparable fields in compare_profile; special/non-standard features in product_features[] and feature_tags[]",
+    "v2_5_extraction": {
+      "extracted_at": "2026-06-21T08:51:56.945583Z",
+      "method": "local_pdf_regex_structured_reextract_v2.5",
+      "pdf_filename": "fwd-noble-fortune.pdf"
+    },
+    "v2_7_reextract": {
+      "generated_at": "2026-06-21T09:32:18.686669Z",
+      "method": "pdfplumber_page_window_keyword_match_v2.7",
+      "feature_count": 2,
+      "feature_evidence_matched": 2
+    },
+    "v2_8_reextract": {
+      "generated_at": "2026-06-21T10:07:30.195247Z",
+      "method": "full_truncation_sweep_and_pdf_evidence_window_repair_v2.8",
+      "ellipsis_fields_before": 2,
+      "ellipsis_fields_after": 0,
+      "nested_feature_notes_removed": 2
+    },
+    "v2_9_reextract": {
+      "generated_at": "2026-06-21T10:21:17.183855Z",
+      "method": "pdf_fulltext_reextract_no_hard_char_truncation_v2.9",
+      "note": "v2.9 移除旧抽取逻辑中的硬字符截断：对 base/compare_profile/source_trace.field_evidence/product_features.evidence_quote 做硬截断候选扫描；对 entry_age 等基础字段重新从 PDF 全文抽取完整结构化摘要；证据窗口按 PDF 页面语义窗口重取，不再按 60/80/120 字符硬截断。",
+      "hard_truncation_candidates_before": 0,
+      "hard_truncation_candidates_after": 0,
+      "fields_repaired": 5,
+      "age_refine_note": "v2.9 age fields refined from the best PDF full-text window near 投保年齡/投保范围, avoiding unrelated owner/beneficiary age clauses and hard character truncation."
+    }
+  },
+  "display_features": [
+    {
+      "title": "现金价值与分红",
+      "summary": "设有非保证红利或分红，收益并非保证。",
+      "category": "savings",
+      "priority": 2,
+      "source_tags": [],
+      "source_paths": [
+        "compare_profile.has_guaranteed_cash_value",
+        "compare_profile.has_non_guaranteed_bonus"
+      ]
+    },
+    {
+      "title": "灵活提取",
+      "summary": "可按规则提取部分保单价值，安排现金流。",
+      "category": "liquidity",
+      "priority": 4,
+      "source_tags": [],
+      "source_paths": [
+        "compare_profile.has_partial_withdrawal",
+        "compare_profile.has_regular_withdrawal"
+      ]
+    },
+    {
+      "title": "传承安排",
+      "summary": "支持更改或设置受保人，便于长期传承。",
+      "category": "legacy",
+      "priority": 6,
+      "source_tags": [
+        "change_insured"
+      ],
+      "source_paths": [
+        "compare_profile.supports_policy_split",
+        "compare_profile.supports_change_insured",
+        "compare_profile.supports_second_insured"
+      ]
+    }
+  ],
+  "product_name": "富卫尊贵盈家储蓄保险计划"
+}

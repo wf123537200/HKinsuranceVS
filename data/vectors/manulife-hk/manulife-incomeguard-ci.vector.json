@@ -1,0 +1,863 @@
+{
+  "product_vector_version": "v2.9",
+  "base": {
+    "product_id": "manulife-incomeguard-ci",
+    "slug": "manulife-incomeguard-ci",
+    "product_name": "宏利收入保障危疾保",
+    "product_name_en": "IncomeGuard Critical Illness Protector",
+    "company_slug": "manulife-hk",
+    "company_name": "宏利香港",
+    "region": "Hong Kong",
+    "category": "critical_illness",
+    "category_zh": "健康险",
+    "subcategory": "critical_illness",
+    "policy_currency": [
+      "USD",
+      "HKD"
+    ],
+    "policy_term": "终身",
+    "premium_term": [
+      "10年",
+      "20年",
+      "25年"
+    ],
+    "entry_age": "投保年龄按计划版本、缴费期及条款规定而定。",
+    "payment_mode": null,
+    "local_pdf_path": "/pdfs/manulife-incomeguard-ci.pdf",
+    "source_pdf_filename": "manulife-incomeguard-ci.pdf",
+    "is_hot_discussed": true,
+    "market_attention": "hot_discussed",
+    "product_name_zh_cn": "宏利收入保障危疾保",
+    "product_name_zh_hk": "宏利薈健危疾保",
+    "display_name": "宏利荟健危疾保",
+    "product_name_zh_tw": "宏利收入保障危疾保"
+  },
+  "core": {
+    "critical_illness_core": {
+      "covered_illness_total": 182,
+      "major_illness_count": 121,
+      "early_stage_illness_count": 44,
+      "moderate_illness_count": null,
+      "child_illness_count": 17,
+      "has_multiple_claims": true,
+      "has_cancer_multiple_claims": true,
+      "has_heart_stroke_multiple_claims": true,
+      "has_icu_benefit": false
+    },
+    "savings_core": null
+  },
+  "modules": {
+    "participating_savings_module": {
+      "available": true,
+      "bonus_types": null
+    },
+    "life_protection_module": {
+      "has_death_benefit": true
+    },
+    "policy_liquidity_module": {
+      "has_policy_loan": true,
+      "has_partial_withdrawal": true,
+      "has_regular_withdrawal": false
+    },
+    "policy_flexibility_module": {
+      "supports_currency_switch": false,
+      "supports_policy_split": false,
+      "supports_change_insured": false,
+      "supports_second_insured": false,
+      "supports_second_policyholder": false
+    },
+    "risk_module": {
+      "risk_summary": [
+        "非保证利益风险",
+        "退保/流动性风险",
+        "货币风险",
+        "汇率风险",
+        "理赔限制",
+        "保单贷款风险"
+      ]
+    }
+  },
+  "compare_profile": {
+    "product_category": "critical_illness",
+    "product_type": "critical_illness",
+    "company_slug": "manulife-hk",
+    "product_slug": "manulife-incomeguard-ci",
+    "market_attention": "hot_discussed",
+    "priority": 1,
+    "policy_term": "终身",
+    "premium_terms": [
+      "10年",
+      "20年",
+      "25年"
+    ],
+    "entry_age_summary": "投保年龄按计划版本、缴费期及条款规定而定。",
+    "currencies": [
+      "USD",
+      "HKD"
+    ],
+    "has_guaranteed_cash_value": true,
+    "has_non_guaranteed_bonus": true,
+    "bonus_types": null,
+    "has_partial_withdrawal": true,
+    "has_regular_withdrawal": false,
+    "has_policy_loan": true,
+    "supports_currency_switch": false,
+    "supports_policy_split": false,
+    "supports_change_insured": false,
+    "supports_second_insured": false,
+    "supports_second_policyholder": false,
+    "covered_illness_total": 121,
+    "major_illness_count": 121,
+    "early_stage_illness_count": 44,
+    "moderate_illness_count": null,
+    "child_illness_count": 17,
+    "has_multiple_claims": true,
+    "has_cancer_multiple_claims": true,
+    "has_heart_stroke_multiple_claims": true,
+    "has_icu_benefit": false,
+    "cancer_claim_cap_summary": "癌症相关额外或多次保障受赔付次数、等候期、保额上限及条款条件限制。",
+    "heart_stroke_claim_summary": "心脏病/中风相关赔付上限约为500%基本保额/名义金额。",
+    "icu_benefit_summary": null,
+    "post_claim_status_summary": "首次赔付后部分保障可能继续或终止，具体以产品条款为准。",
+    "highest_illustrated_irr": null,
+    "guaranteed_irr": null,
+    "highest_illustrated_return_multiple": null,
+    "illustrated_break_even_year": null,
+    "guaranteed_break_even_year": null,
+    "risk_summary": [
+      "非保证利益风险",
+      "退保/流动性风险",
+      "货币风险",
+      "汇率风险",
+      "保单贷款风险",
+      "通胀风险",
+      "理赔限制"
+    ],
+    "has_death_benefit": true,
+    "major_illness_payout_summary": "严重危疾赔偿为名义金额100%。",
+    "early_stage_payout_summary": "早期危疾每次索偿为名义金额20%。",
+    "max_claim_count_summary": "保障最高可达名义金额1000%。",
+    "cancer_claim_summary": "首次100%加癌症额外800%，癌症相关合计最高约名义金额900%。",
+    "multiple_claim_waiting_period_summary": "多次赔付通常设有等候期，具体间隔以产品条款为准。",
+    "survival_period_summary": "多次赔付可能设有生存期要求，具体以产品条款为准。",
+    "early_stage_premium_waiver": "早期疾病赔付后可能提供保费豁免，具体以条款为准。",
+    "major_claim_premium_waiver": "严重疾病赔付后可能豁免后续保费，具体以条款为准。",
+    "family_premium_waiver_summary": null,
+    "bonus_type_summary": "提供非保证红利或分红，实际金额并不保证。",
+    "death_benefit_summary": "首10个保单年度后身故赔偿可按名义金额100%或已交保费110%较高者。",
+    "healthcare_service_summary": "提供医疗咨询或健康支援服务，具体安排以服务条款为准。",
+    "max_total_claim_percent": 1000,
+    "major_illness_payout_percent": 100,
+    "early_stage_payout_percent": 20,
+    "child_illness_payout_percent": 20,
+    "child_illness_payout_summary": "儿童疾病危疾赔偿通常为名义金额20%。",
+    "multiple_claim_per_claim_percent": 100,
+    "multiple_claim_per_claim_summary": "癌症、心脏病及中风多重保障每次可高达名义金额100%。",
+    "cancer_claim_additional_percent": 800,
+    "cancer_claim_max_percent": 900,
+    "heart_stroke_claim_additional_percent": 400,
+    "heart_stroke_claim_max_percent": 500,
+    "death_benefit_first_10_year_percent": 200,
+    "death_benefit_percent": 100
+  },
+  "product_features": [
+    {
+      "feature_id": "policy_loan",
+      "feature_name": "保单贷款",
+      "category": "liquidity",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "可按条款申请保单贷款，提升保单资金流动性。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 1,
+      "compare_key": "policy_loan",
+      "source_pages": [
+        21
+      ],
+      "evidence_quote": "11. 保單貸款 您可以申請不多於扣除欠款後的貸款價值作保單貸款 。 貸款價值為保證現金價值與累積已鎖定終期紅利的總和之90%（由本公司釐定並不時修改而不 作另行通知）。 保單貸款需要支付利息 ， 金額以每年複利計算（即利息會產生進一步利息）， 利率由本公司釐定並有權不時加以修訂 。 若於任何時間欠 款相等於或超過保證現金價值與任何累積已鎖定終期紅利的總和 ， 保單將會終止而我們不會給予您任何款項 。 保單貸款會減低保單的身故賠償 ， 危 疾賠償及現金價值 。 詳情請參閱保單條款內的 「保單貸款」 、 「自動貸款代繳保費」 及 「貸款規定」 條款",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "保單貸款借入",
+          "保单贷款借入",
+          "借入高達",
+          "借入高达",
+          "通過保單貸款",
+          "通过保单贷款",
+          "policy loan"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "death_benefit_payment_option",
+      "feature_name": "身故赔偿支付办法",
+      "category": "legacy_planning",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "可按条款安排身故赔偿支付方式，配合传承规划。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 2,
+      "compare_key": "death_benefit_payment_option",
+      "source_pages": [
+        21
+      ],
+      "evidence_quote": "保單貸款 您可以申請不多於扣除欠款後的貸款價值作保單貸款 。 貸款價值為保證現金價值與累積已鎖定終期紅利的總和之90%（由本公司釐定並不時修改而不 作另行通知）。 保單貸款需要支付利息 ， 金額以每年複利計算（即利息會產生進一步利息）， 利率由本公司釐定並有權不時加以修訂 。 若於任何時間欠 款相等於或超過保證現金價值與任何累積已鎖定終期紅利的總和 ， 保單將會終止而我們不會給予您任何款項 。 保單貸款會減低保單的身故賠償 ， 危 疾賠償及現金價值 。 詳情請參閱保單條款內的 「保單貸款」 、 「自動貸款代繳保費」 及 「貸款規定」 條款",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "身故賠償支付",
+          "身故赔偿支付",
+          "身故賠償",
+          "身故赔偿",
+          "death benefit payment"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "terminal_illness_benefit",
+      "feature_name": "末期疾病利益",
+      "category": "special_option",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "达到末期疾病条件时，可按条款预支或获得相关利益。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 3,
+      "compare_key": "terminal_illness_benefit",
+      "source_pages": [
+        13
+      ],
+      "evidence_quote": "系統性硬化 末期疾病 完全及永久傷殘 宏健守護危疾入息保障 受保危疾列表 註 計劃概覽 個案 增值服務",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "末期疾病",
+          "terminal illness"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "bonus_lock_in",
+      "feature_name": "红利/分红锁定选项",
+      "category": "bonus_management",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "可按条款锁定部分红利或分红，便于资金安排。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 4,
+      "compare_key": "bonus_lock_in",
+      "source_pages": [
+        19
+      ],
+      "evidence_quote": "付任何保證現金價值 。 終期紅利並非保證 。 我們將最少每月作出一次有關終期紅利的檢討及調整 ， 並且我們或會作出更經常的檢討及調整 。 請參閱以下 「重要事項」 的 「影響非保證終期紅利 、 適用於已鎖定終期紅利之積存利率的主要風險」 部分 。 您可於終期紅利鎖定周年日（指第20個保單周年日或其後每5個保單周年日）起計31日內及受保人在世期間 ， 行使終期紅利鎖定權益 。 如欲行使 「終期紅利鎖定權益」 ， 您必須透過提交一份按照我們要求規定格式的書面申請 。 行使該權益的申請一經提交 ， 該申請將無法撤回 ， 而已鎖定終期 紅利將不可被還原 。 行使 「終期紅利鎖定權益」 將會減少隨後之終期紅利 。 於支付保單退保或行使終期紅利鎖定權益時 ， 特別是當市場出現大幅 波動的時候 ， 或會出現延遲 。 實際可得到的終期紅利只會在您的申請被處理後而釐定 。 在特定情況下 ， 例如該申請並非在我們現行的截止時間 前收到 ， 或並非按我們指定的書信格式提交 ， 該金額可能會比您提交申請時暫時向您所示的終期紅利金額較低或較高 。 於行使終期紅利鎖定權 益前 ， 請向宏利查詢現行的運作規則以及您保單下最新的終期紅利金額 。 累積已鎖定終期紅利將在本保單退保 、 支付嚴重危疾賠償時 、 保單期 滿、 受保人身故或本保單終止時支付",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "終期紅利鎖定選項",
+          "终期红利锁定选项",
+          "鎖定至",
+          "锁定至",
+          "紅利鎖定戶口",
+          "红利锁定户口",
+          "lock-in",
+          "lock in"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "neurodegenerative_annuity",
+      "feature_name": "脑退化/柏金森年金",
+      "category": "special_option",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "指定脑退化疾病或柏金森病可按条款提供年金赔偿。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 5,
+      "compare_key": "neurodegenerative_annuity",
+      "source_pages": [
+        13
+      ],
+      "evidence_quote": "亞爾茲默氏症／不可還原之 器質腦退化性疾病（痴呆） 肌萎縮性脊髓側索硬化 植物人 再生障礙性貧血 細菌性腦（脊）膜炎",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "腦退化",
+          "脑退化",
+          "柏金森",
+          "阿爾茨海默",
+          "阿尔茨海默",
+          "annuity"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "child_growth_benefit",
+      "feature_name": "儿童成长保障",
+      "category": "child_protection",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "该特色按产品条款提供，具体内容以官方PDF为准。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 6,
+      "compare_key": "child_growth_benefit",
+      "source_pages": [
+        4,
+        6,
+        14,
+        16,
+        17
+      ],
+      "evidence_quote": null,
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "not_found",
+        "evidence_method": "pdfplumber_page_window_keyword_match_v2.7",
+        "keywords": [
+          "儿童成长保障"
+        ]
+      }
+    },
+    {
+      "feature_id": "extra_premium_option",
+      "feature_name": "额外保费方式",
+      "category": "premium_payment",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "该特色按产品条款提供，具体内容以官方PDF为准。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 7,
+      "compare_key": "extra_premium_option",
+      "source_pages": [
+        19
+      ],
+      "evidence_quote": null,
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "not_found",
+        "evidence_method": "pdfplumber_page_window_keyword_match_v2.7",
+        "keywords": [
+          "额外保费方式"
+        ]
+      }
+    },
+    {
+      "feature_id": "healthcare_service",
+      "feature_name": "医疗支援服务",
+      "category": "health_service",
+      "feature_type": "value_added_service",
+      "availability": true,
+      "short_description": "提供医疗咨询、肿瘤或跨境医疗相关支援。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 8,
+      "compare_key": "healthcare_service",
+      "source_pages": [
+        12
+      ],
+      "evidence_quote": "費用（如藥物 、 測試和檢查）需由客戶自行支付 。 個人醫療諮詢服務須受有關條款及細則約束 ， 詳情請參閱有關之單張 。 ^^ 每位合資格的受保人一生可獲得一次癌症藥物支援服務 ， 不論其受保的合資格保單數量 。 處方藥物應為專科醫生處方並用以治療 癌症的口服藥物 ， 且不包括任何以注射或輸注的製劑 。 癌症藥物支援服務須受有關條款及細則約束 ， 詳情請參閱有關單張",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "醫療支援",
+          "医疗支援",
+          "醫療諮詢",
+          "医疗咨询",
+          "腫瘤支援",
+          "肿瘤支援",
+          "medical service",
+          "medical consultation"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "premium_waiver",
+      "feature_name": "保费豁免",
+      "category": "premium_payment",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "达到指定理赔或家庭事件时，可按条款豁免保费。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 9,
+      "compare_key": "premium_waiver",
+      "source_pages": [
+        22
+      ],
+      "evidence_quote": "vi. 名義金額降低 ； vii. 對任何完全傷殘保費豁免權益賠償 ， 例如傷殘豁免保費保障或保費支付人利益保障（如適用）已作出索賠",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "保費豁免",
+          "保费豁免",
+          "豁免保費",
+          "豁免保费",
+          "premium waiver"
+        ],
+        "no_hard_char_truncation": true
+      }
+    }
+  ],
+  "feature_tags": [
+    "policy_loan",
+    "death_benefit_payment_option",
+    "terminal_illness_benefit",
+    "bonus_lock_in",
+    "neurodegenerative_annuity",
+    "child_growth_benefit",
+    "extra_premium_option",
+    "healthcare_service",
+    "premium_waiver"
+  ],
+  "comparison_flags": {
+    "has_guaranteed_cash_value": true,
+    "has_non_guaranteed_bonus": true,
+    "has_partial_withdrawal": true,
+    "has_regular_withdrawal": false,
+    "has_policy_loan": true,
+    "supports_currency_switch": false,
+    "supports_policy_split": false,
+    "supports_change_insured": false,
+    "supports_second_insured": false,
+    "supports_second_policyholder": false,
+    "has_multiple_claims": true,
+    "has_cancer_multiple_claims": true,
+    "has_heart_stroke_multiple_claims": true,
+    "has_icu_benefit": false
+  },
+  "source_trace": {
+    "source_type": "catalog_verified_pdf",
+    "source_pdf": "manulife-incomeguard-ci.pdf",
+    "source_pdf_path": "pdfs/manulife-incomeguard-ci.pdf",
+    "source_pdf_sha256": "8ca22d90cad537018d8ee7e810befdd59b213a4fc55d9914df48193356cc13d9",
+    "page_count": 24,
+    "text_length": 26096,
+    "extraction_confidence": "medium",
+    "missing_fields": [],
+    "field_evidence": {
+      "compare_profile.has_cancer_multiple_claims": {
+        "source": "local_pdf",
+        "page": null,
+        "quote": "確診危疾及治療期間 ， 每年入息無間斷 從確診 、 治療 、 到再復發及治療 ， B小姐即使無法工作 ， 仍可獲得賠償，讓她支付按揭和日常開 支 ， 並妥善照顧父母 ， 維持家庭生活水平 ， 使她能夠安心地專注於康復",
+        "confidence": "medium",
+        "pages": [
+          11
+        ],
+        "method": "pdf_page_semantic_window_keyword_match_v2.9_no_hard_char_truncation",
+        "no_hard_char_truncation": true
+      },
+      "compare_profile.has_guaranteed_cash_value": {
+        "source": "local_pdf",
+        "pages": [
+          21
+        ],
+        "quote": "保費年期及欠繳保費的後果 您須於整個保費繳付期按時繳付保費 。 保費若於到期日仍未繳清 ， 由到期日起計您可獲31天寬限期 ， 而期間保單仍然有效 。 若您於31天寬限期後仍 未繳交保費 ， 只要保單擁有足夠保證現金價值及累積已鎖定終期紅利 ， 我們將提供 「自動貸款代繳保費」 （請參閱下述第11項）以維持保單生效 。 若保 單沒有足夠保證現金價值及累積已鎖定終期紅利 ， 保單將告失效 ， 而受保人亦不再受保障 。 在這情況下 ， 本公司將不向您支付任何金額",
+        "confidence": "medium",
+        "method": "pdf_page_semantic_window_keyword_match_v2.9_no_hard_char_truncation",
+        "no_hard_char_truncation": true
+      },
+      "compare_profile.has_non_guaranteed_bonus": {
+        "source": "local_pdf",
+        "pages": [
+          21
+        ],
+        "quote": "您可把所得已鎖定終期紅利保留於本公司積存生息 。 本公司會因應投資回報 、 市場情況及預期保單持有人選擇積存已鎖定終期紅利的時間長短等因 素 ， 釐定分紅保單可享的利率 ， 而該利率也屬非保證 ， 且會因外在投資環境的轉變而不時變動",
+        "confidence": "medium",
+        "method": "pdf_page_semantic_window_keyword_match_v2.9_no_hard_char_truncation",
+        "no_hard_char_truncation": true
+      },
+      "compare_profile.has_policy_loan": {
+        "source": "local_pdf",
+        "pages": [
+          21
+        ],
+        "quote": "11. 保單貸款 您可以申請不多於扣除欠款後的貸款價值作保單貸款 。 貸款價值為保證現金價值與累積已鎖定終期紅利的總和之90%（由本公司釐定並不時修改而不 作另行通知）。 保單貸款需要支付利息 ， 金額以每年複利計算（即利息會產生進一步利息）， 利率由本公司釐定並有權不時加以修訂 。 若於任何時間欠 款相等於或超過保證現金價值與任何累積已鎖定終期紅利的總和 ， 保單將會終止而我們不會給予您任何款項 。 保單貸款會減低保單的身故賠償 ， 危 疾賠償及現金價值 。 詳情請參閱保單條款內的 「保單貸款」 、 「自動貸款代繳保費」 及 「貸款規定」 條款",
+        "confidence": "medium",
+        "method": "pdf_page_semantic_window_keyword_match_v2.9_no_hard_char_truncation",
+        "no_hard_char_truncation": true
+      },
+      "compare_profile.max_total_claim_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "發性心臟病／中風的持續守護保障賠 續治療保障將會額外支付每次可高達名義金額 償，而您需就同一危疾接受後續和特定的複雜 的100%的賠償，總賠償上限為名義金額的 手術或大型手術，並為必須之醫療服務及／或 800%（見註10） 。 必須之手術服務，突發性心臟病／中風的持續 治療保障將額外支付每次可高達名義金額的 100%的賠償（見註8及註12） 。 市場首創 此兩項保障的總賠償上限為名義金額的400%。 有關複雜手術表或大型手術表， 請瀏覽  癌症、心臟病及中風多重保障的賠償摘要如下： 保障高達名義金額的 1,000%",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.max_claim_count_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "發性心臟病／中風的持續守護保障賠 續治療保障將會額外支付每次可高達名義金額 償，而您需就同一危疾接受後續和特定的複雜 的100%的賠償，總賠償上限為名義金額的 手術或大型手術，並為必須之醫療服務及／或 800%（見註10） 。 必須之手術服務，突發性心臟病／中風的持續 治療保障將額外支付每次可高達名義金額的 100%的賠償（見註8及註12） 。 市場首創 此兩項保障的總賠償上限為名義金額的400%。 有關複雜手術表或大型手術表， 請瀏覽  癌症、心臟病及中風多重保障的賠償摘要如下： 保障高達名義金額的 1,000%",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.major_illness_payout_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "支付予該危疾及／ 或疾病賠償金額的100% 。 （見註5） 保費豁免 當危疾來襲，保單的保費有可能成為您的額外經濟負擔。因此，當我們已作嚴重危疾賠償後，將 由危疾的診斷日期後起，豁免基本計劃的所有未來保費。此外，當我們已作早期危疾賠償或兒童 疾病危疾賠償後，將由該疾病診斷日期後的保費到期日起，豁免基本計劃的12個月的保費。受保 人在上述情況均可繼續享有保障。 （見註6） 我們將支付上述賠償的摘要如下（見註2、註3及註4） ： 涵蓋多達121種危疾及疾病 60 種 44 種 17 種 嚴重危疾 早期危疾 兒童疾病 直",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.major_illness_payout_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "支付予該危疾及／ 或疾病賠償金額的100% 。 （見註5） 保費豁免 當危疾來襲，保單的保費有可能成為您的額外經濟負擔。因此，當我們已作嚴重危疾賠償後，將 由危疾的診斷日期後起，豁免基本計劃的所有未來保費。此外，當我們已作早期危疾賠償或兒童 疾病危疾賠償後，將由該疾病診斷日期後的保費到期日起，豁免基本計劃的12個月的保費。受保 人在上述情況均可繼續享有保障。 （見註6） 我們將支付上述賠償的摘要如下（見註2、註3及註4） ： 涵蓋多達121種危疾及疾病 60 種 44 種 17 種 嚴重危疾 早期危疾 兒童疾病 直",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.early_stage_payout_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "確實條款及細則。我們可按閣下 斷受到保單保障。請參閱以下有關服務的內容以獲取更多信息。 要求提供該複本。 計劃特點 其他特點 增值服務 個案 計劃概覽 註 重要事項 計劃特點 其他特點 增值服務 個案 計劃概覽 註 重要事項 保費保證不變，提供周全保障 在此計劃下，您可以獲得以下周全保障，而且保費保證不變及於整個保費繳付期內不會增加 （見註1） ，令您加倍安心。 涵蓋多達121種危疾和疾病 危疾加護保障 （見註2、註3及註4） • 60種嚴重危疾 ‒ 包括癌症、心臟病及 為進一步守護您的健康，我們將於首10 中風",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.early_stage_payout_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "確實條款及細則。我們可按閣下 斷受到保單保障。請參閱以下有關服務的內容以獲取更多信息。 要求提供該複本。 計劃特點 其他特點 增值服務 個案 計劃概覽 註 重要事項 計劃特點 其他特點 增值服務 個案 計劃概覽 註 重要事項 保費保證不變，提供周全保障 在此計劃下，您可以獲得以下周全保障，而且保費保證不變及於整個保費繳付期內不會增加 （見註1） ，令您加倍安心。 涵蓋多達121種危疾和疾病 危疾加護保障 （見註2、註3及註4） • 60種嚴重危疾 ‒ 包括癌症、心臟病及 為進一步守護您的健康，我們將於首10 中風",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.child_illness_payout_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "點 其他特點 增值服務 個案 計劃概覽 註 重要事項 保費保證不變，提供周全保障 在此計劃下，您可以獲得以下周全保障，而且保費保證不變及於整個保費繳付期內不會增加 （見註1） ，令您加倍安心。 涵蓋多達121種危疾和疾病 危疾加護保障 （見註2、註3及註4） • 60種嚴重危疾 ‒ 包括癌症、心臟病及 為進一步守護您的健康，我們將於首10 中風 個保單年度提供以下額外保障： • 44種早期危疾 ‒ 包括原位癌及早期 • 若受保人患上嚴重危疾，我們將額外給予 甲狀腺癌 相等於已支付的嚴重危疾賠償（不包括非保 證終期紅",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.child_illness_payout_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "點 其他特點 增值服務 個案 計劃概覽 註 重要事項 保費保證不變，提供周全保障 在此計劃下，您可以獲得以下周全保障，而且保費保證不變及於整個保費繳付期內不會增加 （見註1） ，令您加倍安心。 涵蓋多達121種危疾和疾病 危疾加護保障 （見註2、註3及註4） • 60種嚴重危疾 ‒ 包括癌症、心臟病及 為進一步守護您的健康，我們將於首10 中風 個保單年度提供以下額外保障： • 44種早期危疾 ‒ 包括原位癌及早期 • 若受保人患上嚴重危疾，我們將額外給予 甲狀腺癌 相等於已支付的嚴重危疾賠償（不包括非保 證終期紅",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.multiple_claim_per_claim_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "的持續守護保 。 9） 障會額外支付每次可高達名義金額的100%的賠 償（見註11） 。 若您早前已就癌症獲得嚴重危疾賠償或癌症確 診保障賠償，而您亦進行後續的癌症積極治療 另外，若您早前已就心臟病或中風獲嚴重危疾 或晚期護理，並為必須之醫療服務，癌症的持 賠償或突發性心臟病／中風的持續守護保障賠 續治療保障將會額外支付每次可高達名義金額 償，而您需就同一危疾接受後續和特定的複雜 的100%的賠償，總賠償上限為名義金額的 手術或大型手術，並為必須之醫療服務及／或 800%（見註10） 。 必須之手術服務，突發性心臟",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.multiple_claim_per_claim_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "的持續守護保 。 9） 障會額外支付每次可高達名義金額的100%的賠 償（見註11） 。 若您早前已就癌症獲得嚴重危疾賠償或癌症確 診保障賠償，而您亦進行後續的癌症積極治療 另外，若您早前已就心臟病或中風獲嚴重危疾 或晚期護理，並為必須之醫療服務，癌症的持 賠償或突發性心臟病／中風的持續守護保障賠 續治療保障將會額外支付每次可高達名義金額 償，而您需就同一危疾接受後續和特定的複雜 的100%的賠償，總賠償上限為名義金額的 手術或大型手術，並為必須之醫療服務及／或 800%（見註10） 。 必須之手術服務，突發性心臟",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.cancer_claim_additional_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "之手術服務，突發性心臟病／中風的持續 治療保障將額外支付每次可高達名義金額的 100%的賠償（見註8及註12） 。 市場首創 此兩項保障的總賠償上限為名義金額的400%。 有關複雜手術表或大型手術表， 請瀏覽  癌症、心臟病及中風多重保障的賠償摘要如下： 保障高達名義金額的 1,000% 100% + 總保障 額外高達900% （見註8） 首次嚴重 在癌症確診保障及癌症的持續治療保 在突發性心臟病／中風的持續守護保 危疾之索償 障下 : 障及突發性心臟病／中風的持續治療 保障下 : 額外高達名義金額的 800% 癌",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.cancer_claim_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "之手術服務，突發性心臟病／中風的持續 治療保障將額外支付每次可高達名義金額的 100%的賠償（見註8及註12） 。 市場首創 此兩項保障的總賠償上限為名義金額的400%。 有關複雜手術表或大型手術表， 請瀏覽  癌症、心臟病及中風多重保障的賠償摘要如下： 保障高達名義金額的 1,000% 100% + 總保障 額外高達900% （見註8） 首次嚴重 在癌症確診保障及癌症的持續治療保 在突發性心臟病／中風的持續守護保 危疾之索償 障下 : 障及突發性心臟病／中風的持續治療 保障下 : 額外高達名義金額的 800% 癌",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.cancer_claim_max_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "之手術服務，突發性心臟病／中風的持續 治療保障將額外支付每次可高達名義金額的 100%的賠償（見註8及註12） 。 市場首創 此兩項保障的總賠償上限為名義金額的400%。 有關複雜手術表或大型手術表， 請瀏覽  癌症、心臟病及中風多重保障的賠償摘要如下： 保障高達名義金額的 1,000% 100% + 總保障 額外高達900% （見註8） 首次嚴重 在癌症確診保障及癌症的持續治療保 在突發性心臟病／中風的持續守護保 危疾之索償 障下 : 障及突發性心臟病／中風的持續治療 保障下 : 額外高達名義金額的 800% 癌",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.heart_stroke_claim_additional_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "（見註8及註12） 。 市場首創 此兩項保障的總賠償上限為名義金額的400%。 有關複雜手術表或大型手術表， 請瀏覽  癌症、心臟病及中風多重保障的賠償摘要如下： 保障高達名義金額的 1,000% 100% + 總保障 額外高達900% （見註8） 首次嚴重 在癌症確診保障及癌症的持續治療保 在突發性心臟病／中風的持續守護保 危疾之索償 障下 : 障及突發性心臟病／中風的持續治療 保障下 : 額外高達名義金額的 800% 癌症保 （保障至100歲） 障，包括確診和後續的積極治療或晚 額外高達名義金額的 400% 心",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.heart_stroke_claim_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "（見註8及註12） 。 市場首創 此兩項保障的總賠償上限為名義金額的400%。 有關複雜手術表或大型手術表， 請瀏覽  癌症、心臟病及中風多重保障的賠償摘要如下： 保障高達名義金額的 1,000% 100% + 總保障 額外高達900% （見註8） 首次嚴重 在癌症確診保障及癌症的持續治療保 在突發性心臟病／中風的持續守護保 危疾之索償 障下 : 障及突發性心臟病／中風的持續治療 保障下 : 額外高達名義金額的 800% 癌症保 （保障至100歲） 障，包括確診和後續的積極治療或晚 額外高達名義金額的 400% 心",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.heart_stroke_claim_max_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "（見註8及註12） 。 市場首創 此兩項保障的總賠償上限為名義金額的400%。 有關複雜手術表或大型手術表， 請瀏覽  癌症、心臟病及中風多重保障的賠償摘要如下： 保障高達名義金額的 1,000% 100% + 總保障 額外高達900% （見註8） 首次嚴重 在癌症確診保障及癌症的持續治療保 在突發性心臟病／中風的持續守護保 危疾之索償 障下 : 障及突發性心臟病／中風的持續治療 保障下 : 額外高達名義金額的 800% 癌症保 （保障至100歲） 障，包括確診和後續的積極治療或晚 額外高達名義金額的 400% 心",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.death_benefit_first_10_year_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "本計劃的12個月的保費。受保 人在上述情況均可繼續享有保障。 （見註6） 我們將支付上述賠償的摘要如下（見註2、註3及註4） ： 涵蓋多達121種危疾及疾病 60 種 44 種 17 種 嚴重危疾 早期危疾 兒童疾病 直至100歲 直至100歲@ 直至18歲 名義金額的100% 每次索償可高達 每次索償可高達 （扣除任何已支付的危疾賠償 - 名義金額的20% 名義金額的20% 見註7） 總賠償額可高達名義金額的80% + 已支付的嚴重危疾賠償 （不包括非保證終期紅利）及 復原保障（如有）金額的100% + 已支付予",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.death_benefit_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "支付予該危疾及／ 或疾病賠償金額的100% 。 （見註5） 保費豁免 當危疾來襲，保單的保費有可能成為您的額外經濟負擔。因此，當我們已作嚴重危疾賠償後，將 由危疾的診斷日期後起，豁免基本計劃的所有未來保費。此外，當我們已作早期危疾賠償或兒童 疾病危疾賠償後，將由該疾病診斷日期後的保費到期日起，豁免基本計劃的12個月的保費。受保 人在上述情況均可繼續享有保障。 （見註6） 我們將支付上述賠償的摘要如下（見註2、註3及註4） ： 涵蓋多達121種危疾及疾病 60 種 44 種 17 種 嚴重危疾 早期危疾 兒童疾病 直",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.death_benefit_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "支付予該危疾及／ 或疾病賠償金額的100% 。 （見註5） 保費豁免 當危疾來襲，保單的保費有可能成為您的額外經濟負擔。因此，當我們已作嚴重危疾賠償後，將 由危疾的診斷日期後起，豁免基本計劃的所有未來保費。此外，當我們已作早期危疾賠償或兒童 疾病危疾賠償後，將由該疾病診斷日期後的保費到期日起，豁免基本計劃的12個月的保費。受保 人在上述情況均可繼續享有保障。 （見註6） 我們將支付上述賠償的摘要如下（見註2、註3及註4） ： 涵蓋多達121種危疾及疾病 60 種 44 種 17 種 嚴重危疾 早期危疾 兒童疾病 直",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      }
+    }
+  },
+  "extraction_meta": {
+    "extracted_at": "2026-06-20T12:40:20.080864Z",
+    "method": "PRODUCT-CATALOG + selected hot TS guided heuristic extraction; no fuzzy cross-product substitution",
+    "schema_policy": "core comparable fields in compare_profile; special/non-standard features in product_features[] and feature_tags[]",
+    "v2_5_extraction": {
+      "extracted_at": "2026-06-21T08:51:58.469027Z",
+      "method": "local_pdf_regex_structured_reextract_v2.5",
+      "pdf_filename": "manulife-incomeguard-ci.pdf"
+    },
+    "v2_7_reextract": {
+      "generated_at": "2026-06-21T09:32:22.666582Z",
+      "method": "pdfplumber_page_window_keyword_match_v2.7",
+      "feature_count": 9,
+      "feature_evidence_matched": 5
+    },
+    "v2_8_reextract": {
+      "generated_at": "2026-06-21T10:07:31.592281Z",
+      "method": "full_truncation_sweep_and_pdf_evidence_window_repair_v2.8",
+      "ellipsis_fields_before": 3,
+      "ellipsis_fields_after": 0,
+      "nested_feature_notes_removed": 9
+    },
+    "v2_9_reextract": {
+      "generated_at": "2026-06-21T10:21:20.320287Z",
+      "method": "pdf_fulltext_reextract_no_hard_char_truncation_v2.9",
+      "note": "v2.9 移除旧抽取逻辑中的硬字符截断：对 base/compare_profile/source_trace.field_evidence/product_features.evidence_quote 做硬截断候选扫描；对 entry_age 等基础字段重新从 PDF 全文抽取完整结构化摘要；证据窗口按 PDF 页面语义窗口重取，不再按 60/80/120 字符硬截断。",
+      "hard_truncation_candidates_before": 0,
+      "hard_truncation_candidates_after": 0,
+      "fields_repaired": 11,
+      "age_refine_note": "v2.9 age fields refined from the best PDF full-text window near 投保年齡/投保范围, avoiding unrelated owner/beneficiary age clauses and hard character truncation."
+    },
+    "payout_ratio_extraction": {
+      "version": "v2.10",
+      "method": "pdf_text_percentage_patterns",
+      "note": "只在 PDF 文本出现可量化保额百分比时写入；未抽到不从 display_features/product_features 反推。",
+      "updated_fields": [
+        "max_total_claim_percent"
+      ]
+    },
+    "payout_ratio_extraction_v2_11": {
+      "version": "v2.11",
+      "method": "full_ci_pdf_percentage_scan_with_product_rules",
+      "note": "全量重疾产品均重新扫描；只在 PDF 文本存在明确基本保额/名义金额/原有投保额等比例时写入。",
+      "updated_fields": [
+        "cancer_claim_additional_percent",
+        "cancer_claim_max_percent",
+        "child_illness_payout_percent",
+        "death_benefit_first_10_year_percent",
+        "death_benefit_percent",
+        "early_stage_payout_percent",
+        "heart_stroke_claim_additional_percent",
+        "heart_stroke_claim_max_percent",
+        "major_illness_payout_percent",
+        "max_total_claim_percent",
+        "multiple_claim_per_claim_percent"
+      ],
+      "ratio_field_count": 11,
+      "applied_at": "2026-06-21T11:04:47.351047Z"
+    }
+  },
+  "display_features": [
+    {
+      "title": "疾病覆盖广",
+      "summary": "覆盖182种疾病，含121种重疾、44种早期疾病、17种儿童疾病。",
+      "category": "protection",
+      "priority": 1,
+      "source_tags": [],
+      "source_paths": [
+        "compare_profile.covered_illness_total"
+      ]
+    },
+    {
+      "title": "多次赔付",
+      "summary": "指定疾病可在首次赔付后继续获得保障。",
+      "category": "protection",
+      "priority": 2,
+      "source_tags": [],
+      "source_paths": [
+        "compare_profile.has_multiple_claims"
+      ]
+    },
+    {
+      "title": "癌症持续保障",
+      "summary": "癌症达到约定条件后，可申请额外或多次赔付。",
+      "category": "protection",
+      "priority": 3,
+      "source_tags": [],
+      "source_paths": [
+        "compare_profile.has_cancer_multiple_claims"
+      ]
+    },
+    {
+      "title": "心脑血管保障",
+      "summary": "心脏病或中风达到条件后，可获额外支持。",
+      "category": "protection",
+      "priority": 4,
+      "source_tags": [
+        "heart_stroke_multiple_claims"
+      ],
+      "source_paths": [
+        "compare_profile.has_heart_stroke_multiple_claims"
+      ]
+    },
+    {
+      "title": "脑退化支持",
+      "summary": "脑退化或柏金森等指定疾病可获长期支持。",
+      "category": "protection",
+      "priority": 6,
+      "source_tags": [
+        "neurodegenerative_annuity"
+      ],
+      "source_paths": []
+    },
+    {
+      "title": "儿童保障",
+      "summary": "包含儿童相关疾病或成长保障责任。",
+      "category": "protection",
+      "priority": 7,
+      "source_tags": [
+        "child_growth_benefit"
+      ],
+      "source_paths": []
+    }
+  ],
+  "product_name": "宏利收入保障危疾保"
+}

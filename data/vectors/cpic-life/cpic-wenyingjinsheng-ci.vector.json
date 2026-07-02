@@ -1,0 +1,281 @@
+{
+  "product_vector_version": "v2.9",
+  "base": {
+    "product_id": "cpic-wenyingjinsheng-ci",
+    "slug": "cpic-wenyingjinsheng-ci",
+    "product_name": "太保附加稳赢金生重大疾病保险",
+    "product_name_en": null,
+    "company_slug": "cpic-life",
+    "company_name": "中国太保",
+    "region": "Mainland China",
+    "category": "critical_illness",
+    "category_zh": "健康险",
+    "subcategory": "critical_illness",
+    "policy_currency": [
+      "CNY"
+    ],
+    "policy_term": null,
+    "premium_term": [
+      "5年",
+      "10年",
+      "15年",
+      "20年"
+    ],
+    "entry_age": "投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满28日。",
+    "payment_mode": null,
+    "local_pdf_path": "/pdfs/cpic-wenyingjinsheng-ci.pdf",
+    "source_pdf_filename": "cpic-wenyingjinsheng-ci.pdf",
+    "is_hot_discussed": false,
+    "market_attention": "unknown",
+    "product_name_zh_cn": "太保附加稳赢金生重大疾病保险",
+    "product_name_zh_hk": "太保附加穩贏金生重大疾病保險",
+    "display_name": "太保附加稳赢金生重大疾病保险",
+    "product_name_zh_tw": "太保附加穩贏金生重大疾病保險"
+  },
+  "core": {
+    "critical_illness_core": {
+      "covered_illness_total": 120,
+      "major_illness_count": 120,
+      "early_stage_illness_count": null,
+      "moderate_illness_count": null,
+      "child_illness_count": null,
+      "has_multiple_claims": false,
+      "has_cancer_multiple_claims": false,
+      "has_heart_stroke_multiple_claims": false,
+      "has_icu_benefit": false
+    },
+    "savings_core": null
+  },
+  "modules": {
+    "participating_savings_module": {
+      "available": true,
+      "bonus_types": null
+    },
+    "life_protection_module": {
+      "has_death_benefit": true
+    },
+    "policy_liquidity_module": {
+      "has_policy_loan": false,
+      "has_partial_withdrawal": false,
+      "has_regular_withdrawal": false
+    },
+    "policy_flexibility_module": {
+      "supports_currency_switch": false,
+      "supports_policy_split": false,
+      "supports_change_insured": false,
+      "supports_second_insured": false,
+      "supports_second_policyholder": false
+    },
+    "risk_module": {
+      "risk_summary": [
+        "退保/流动性风险",
+        "货币风险"
+      ]
+    }
+  },
+  "compare_profile": {
+    "product_category": "critical_illness",
+    "product_type": "critical_illness",
+    "company_slug": "cpic-life",
+    "product_slug": "cpic-wenyingjinsheng-ci",
+    "market_attention": "unknown",
+    "priority": null,
+    "policy_term": null,
+    "premium_terms": [
+      "5年",
+      "10年",
+      "15年",
+      "20年"
+    ],
+    "entry_age_summary": "投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满28日。",
+    "currencies": [
+      "CNY"
+    ],
+    "has_guaranteed_cash_value": true,
+    "has_non_guaranteed_bonus": null,
+    "bonus_types": null,
+    "has_partial_withdrawal": false,
+    "has_regular_withdrawal": false,
+    "has_policy_loan": false,
+    "supports_currency_switch": false,
+    "supports_policy_split": false,
+    "supports_change_insured": false,
+    "supports_second_insured": false,
+    "supports_second_policyholder": false,
+    "covered_illness_total": 120,
+    "major_illness_count": 120,
+    "early_stage_illness_count": null,
+    "moderate_illness_count": null,
+    "child_illness_count": null,
+    "has_multiple_claims": false,
+    "has_cancer_multiple_claims": false,
+    "has_heart_stroke_multiple_claims": false,
+    "has_icu_benefit": false,
+    "cancer_claim_cap_summary": null,
+    "heart_stroke_claim_summary": null,
+    "icu_benefit_summary": null,
+    "post_claim_status_summary": "部分保险金不可兼得，给付后保单责任可能终止或调整。",
+    "highest_illustrated_irr": null,
+    "guaranteed_irr": null,
+    "highest_illustrated_return_multiple": null,
+    "illustrated_break_even_year": null,
+    "guaranteed_break_even_year": null,
+    "risk_summary": [
+      "退保/流动性风险",
+      "货币风险"
+    ],
+    "has_death_benefit": true,
+    "major_illness_payout_summary": "重大疾病保险金至少按附加险基本保险金额给付，并与现金价值、已交保费比较取大。",
+    "early_stage_payout_summary": null,
+    "max_claim_count_summary": null,
+    "cancer_claim_summary": null,
+    "multiple_claim_waiting_period_summary": null,
+    "survival_period_summary": null,
+    "early_stage_premium_waiver": null,
+    "major_claim_premium_waiver": null,
+    "family_premium_waiver_summary": null,
+    "bonus_type_summary": null,
+    "death_benefit_summary": "身故赔付比例约为150%。",
+    "healthcare_service_summary": null,
+    "major_illness_payout_percent": 100,
+    "death_benefit_premium_percent": 150,
+    "death_benefit_percent": 150
+  },
+  "product_features": [],
+  "feature_tags": [],
+  "comparison_flags": {
+    "has_guaranteed_cash_value": true,
+    "has_non_guaranteed_bonus": null,
+    "has_partial_withdrawal": false,
+    "has_regular_withdrawal": false,
+    "has_policy_loan": false,
+    "supports_currency_switch": false,
+    "supports_policy_split": false,
+    "supports_change_insured": false,
+    "supports_second_insured": false,
+    "supports_second_policyholder": false,
+    "has_multiple_claims": false,
+    "has_cancer_multiple_claims": false,
+    "has_heart_stroke_multiple_claims": false,
+    "has_icu_benefit": false
+  },
+  "source_trace": {
+    "source_type": "catalog_verified_pdf",
+    "source_pdf": "cpic-wenyingjinsheng-ci.pdf",
+    "source_pdf_path": "pdfs/cpic-wenyingjinsheng-ci.pdf",
+    "source_pdf_sha256": "5dcd38129059d46f15b90a00e993720996df77bc9602e171f6495c8367b64d7d",
+    "page_count": 6,
+    "text_length": 5234,
+    "extraction_confidence": "medium",
+    "missing_fields": [],
+    "field_evidence": {
+      "compare_profile.major_illness_payout_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "险金或全残 保险金，主险合同及本附加险合同同时终止: ①被保险人身故或确定全残时投保人根据主险合同及本附加险合同约定已支付的保险 费总额×150%； ②被保险人身故或确定全残时主险合同及本附加险合同的现金价值。 若被保险人在本附加险合同生效或最后一次复效（以较迟者为准）之日起 180 日内因意 外伤害以外的原因导致身故或全残，本公司按投保人根据主险合同及本附加险合同约定已支 付的保险费总额给付身故保险金或全残保险金，主险合同及本附加险合同同时终止。 （二）在主险合同养老金领取起始日（含该日）后身故或全残，本公司不承",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.major_illness_payout_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "险金或全残 保险金，主险合同及本附加险合同同时终止: ①被保险人身故或确定全残时投保人根据主险合同及本附加险合同约定已支付的保险 费总额×150%； ②被保险人身故或确定全残时主险合同及本附加险合同的现金价值。 若被保险人在本附加险合同生效或最后一次复效（以较迟者为准）之日起 180 日内因意 外伤害以外的原因导致身故或全残，本公司按投保人根据主险合同及本附加险合同约定已支 付的保险费总额给付身故保险金或全残保险金，主险合同及本附加险合同同时终止。 （二）在主险合同养老金领取起始日（含该日）后身故或全残，本公司不承",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.death_benefit_premium_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "合同生效或最后一次复效 （以较迟者为准）之日起 180 日后因意外伤害以外的原因导致身故或全残： (1)被保险人未满 18 周岁的，本公司按以下两项中金额较大者给付身故保险金或全残 保险金，主险合同及本附加险合同同时终止: ①被保险人身故或确定全残时投保人根据主险合同及本附加险合同约定已支付的保险 费总额； ②被保险人身故或确定全残时主险合同及本附加险合同的现金价值。 (2)被保险人年满 18 周岁的，本公司按以下两项中金额较大者给付身故保险金或全残 保险金，主险合同及本附加险合同同时终止: ①被保险人身故或确定全",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.death_benefit_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "键期，关爱家庭有传承。 三、投保范围及保险期间 1、投保范围 本产品接受的被保险人的投保年龄范围为 0 周岁（须出生满 28 日）至 53 周岁，且须符 合投保当时本公司的规定。 2、保险期间 本产品的保险期间分为至被保险人年满 74 周岁后的首个合同生效日对应日 24 时止、 至被保险人年满 79 周岁后的首个合同生效日对应日 24 时止、至被保险人年满 84 周岁后的 首个合同生效日对应日 24 时止和至被保险人年满 89 周岁后的首个合同生效日对应日 24 时 止四种。 四、保险金额及保障责任 1、基本保险金",
+        "confidence": "medium",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.death_benefit_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "键期，关爱家庭有传承。 三、投保范围及保险期间 1、投保范围 本产品接受的被保险人的投保年龄范围为 0 周岁（须出生满 28 日）至 53 周岁，且须符 合投保当时本公司的规定。 2、保险期间 本产品的保险期间分为至被保险人年满 74 周岁后的首个合同生效日对应日 24 时止、 至被保险人年满 79 周岁后的首个合同生效日对应日 24 时止、至被保险人年满 84 周岁后的 首个合同生效日对应日 24 时止和至被保险人年满 89 周岁后的首个合同生效日对应日 24 时 止四种。 四、保险金额及保障责任 1、基本保险金",
+        "confidence": "medium",
+        "extraction_version": "v2.11"
+      }
+    }
+  },
+  "extraction_meta": {
+    "extracted_at": "2026-06-20T12:40:16.287256Z",
+    "method": "PRODUCT-CATALOG + selected hot TS guided heuristic extraction; no fuzzy cross-product substitution",
+    "schema_policy": "core comparable fields in compare_profile; special/non-standard features in product_features[] and feature_tags[]",
+    "v2_5_extraction": {
+      "extracted_at": "2026-06-21T08:51:54.817347Z",
+      "method": "local_pdf_regex_structured_reextract_v2.5",
+      "pdf_filename": "cpic-wenyingjinsheng-ci.pdf"
+    },
+    "v2_7_reextract": {
+      "generated_at": "2026-06-21T09:32:15.163598Z",
+      "method": "pdfplumber_page_window_keyword_match_v2.7",
+      "feature_count": 0,
+      "feature_evidence_matched": 0
+    },
+    "v2_8_reextract": {
+      "generated_at": "2026-06-21T10:07:29.437872Z",
+      "method": "full_truncation_sweep_and_pdf_evidence_window_repair_v2.8",
+      "ellipsis_fields_before": 1,
+      "ellipsis_fields_after": 0,
+      "nested_feature_notes_removed": 0
+    },
+    "v2_9_reextract": {
+      "generated_at": "2026-06-21T10:21:14.542704Z",
+      "method": "pdf_fulltext_reextract_no_hard_char_truncation_v2.9",
+      "note": "v2.9 移除旧抽取逻辑中的硬字符截断：对 base/compare_profile/source_trace.field_evidence/product_features.evidence_quote 做硬截断候选扫描；对 entry_age 等基础字段重新从 PDF 全文抽取完整结构化摘要；证据窗口按 PDF 页面语义窗口重取，不再按 60/80/120 字符硬截断。",
+      "hard_truncation_candidates_before": 2,
+      "hard_truncation_candidates_after": 0,
+      "fields_repaired": 3,
+      "age_refine_note": "v2.9 age fields refined from the best PDF full-text window near 投保年齡/投保范围, avoiding unrelated owner/beneficiary age clauses and hard character truncation."
+    },
+    "payout_ratio_extraction": {
+      "version": "v2.10",
+      "method": "pdf_text_percentage_patterns",
+      "note": "只在 PDF 文本出现可量化保额百分比时写入；未抽到不从 display_features/product_features 反推。",
+      "updated_fields": []
+    },
+    "payout_ratio_extraction_v2_11": {
+      "version": "v2.11",
+      "method": "full_ci_pdf_percentage_scan_with_product_rules",
+      "note": "全量重疾产品均重新扫描；只在 PDF 文本存在明确基本保额/名义金额/原有投保额等比例时写入。",
+      "updated_fields": [
+        "death_benefit_percent",
+        "death_benefit_premium_percent",
+        "major_illness_payout_percent"
+      ],
+      "ratio_field_count": 3,
+      "applied_at": "2026-06-21T11:04:46.931119Z"
+    }
+  },
+  "display_features": [
+    {
+      "title": "疾病覆盖广",
+      "summary": "覆盖120种疾病，含120种重疾。",
+      "category": "protection",
+      "priority": 1,
+      "source_tags": [],
+      "source_paths": [
+        "compare_profile.covered_illness_total"
+      ]
+    },
+    {
+      "title": "现金价值",
+      "summary": "兼具现金价值或分红元素，适合长期配置。",
+      "category": "savings",
+      "priority": 10,
+      "source_tags": [],
+      "source_paths": [
+        "compare_profile.has_guaranteed_cash_value"
+      ]
+    }
+  ]
+}

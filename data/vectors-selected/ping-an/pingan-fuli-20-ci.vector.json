@@ -1,0 +1,479 @@
+{
+  "product_vector_version": "v2.9",
+  "base": {
+    "product_id": "pingan-fuli-20-ci",
+    "slug": "pingan-fuli-20-ci",
+    "product_name": "平安福 20 重大疾病保险",
+    "product_name_en": null,
+    "company_slug": "ping-an",
+    "company_name": "中国平安",
+    "region": "Mainland China",
+    "category": "critical_illness",
+    "category_zh": "健康险",
+    "subcategory": "critical_illness",
+    "policy_currency": [
+      "CNY"
+    ],
+    "policy_term": "终身",
+    "premium_term": [
+      "20年"
+    ],
+    "entry_age": "投保年龄按计划版本、缴费期及条款规定而定。",
+    "payment_mode": null,
+    "local_pdf_path": "/pdfs/pingan-fuli-20-ci.pdf",
+    "source_pdf_filename": "pingan-fuli-20-ci.pdf",
+    "is_hot_discussed": true,
+    "market_attention": "historically_hot_discussed",
+    "product_name_zh_cn": "平安福 20 重大疾病保险",
+    "product_name_zh_hk": "平安福20重大疾病保險",
+    "display_name": "平安福20重大疾病保险",
+    "product_name_zh_tw": "平安福 20 重大疾病保險"
+  },
+  "core": {
+    "critical_illness_core": {
+      "covered_illness_total": 100,
+      "major_illness_count": 100,
+      "early_stage_illness_count": null,
+      "moderate_illness_count": null,
+      "child_illness_count": null,
+      "has_multiple_claims": false,
+      "has_cancer_multiple_claims": false,
+      "has_heart_stroke_multiple_claims": true,
+      "has_icu_benefit": false
+    },
+    "savings_core": null
+  },
+  "modules": {
+    "participating_savings_module": {
+      "available": true,
+      "bonus_types": null
+    },
+    "life_protection_module": {
+      "has_death_benefit": true
+    },
+    "policy_liquidity_module": {
+      "has_policy_loan": true,
+      "has_partial_withdrawal": false,
+      "has_regular_withdrawal": false
+    },
+    "policy_flexibility_module": {
+      "supports_currency_switch": false,
+      "supports_policy_split": false,
+      "supports_change_insured": false,
+      "supports_second_insured": false,
+      "supports_second_policyholder": false
+    },
+    "risk_module": {
+      "risk_summary": [
+        "退保/流动性风险",
+        "理赔限制",
+        "保单贷款风险"
+      ]
+    }
+  },
+  "compare_profile": {
+    "product_category": "critical_illness",
+    "product_type": "critical_illness",
+    "company_slug": "ping-an",
+    "product_slug": "pingan-fuli-20-ci",
+    "market_attention": "hot_discussed",
+    "priority": 1,
+    "policy_term": "终身",
+    "premium_terms": [
+      "20年"
+    ],
+    "entry_age_summary": "投保年龄按计划版本、缴费期及条款规定而定。",
+    "currencies": [
+      "CNY"
+    ],
+    "has_guaranteed_cash_value": true,
+    "has_non_guaranteed_bonus": null,
+    "bonus_types": null,
+    "has_partial_withdrawal": false,
+    "has_regular_withdrawal": false,
+    "has_policy_loan": true,
+    "supports_currency_switch": false,
+    "supports_policy_split": false,
+    "supports_change_insured": false,
+    "supports_second_insured": false,
+    "supports_second_policyholder": false,
+    "covered_illness_total": 100,
+    "major_illness_count": 100,
+    "early_stage_illness_count": null,
+    "moderate_illness_count": null,
+    "child_illness_count": null,
+    "has_multiple_claims": false,
+    "has_cancer_multiple_claims": true,
+    "has_heart_stroke_multiple_claims": true,
+    "has_icu_benefit": false,
+    "cancer_claim_cap_summary": null,
+    "heart_stroke_claim_summary": "心脏病或中风达到指定条件时，可按条款提供额外赔付。",
+    "icu_benefit_summary": null,
+    "post_claim_status_summary": null,
+    "highest_illustrated_irr": null,
+    "guaranteed_irr": null,
+    "highest_illustrated_return_multiple": null,
+    "illustrated_break_even_year": null,
+    "guaranteed_break_even_year": null,
+    "risk_summary": [
+      "退保/流动性风险",
+      "保单贷款风险"
+    ],
+    "has_death_benefit": true,
+    "major_illness_payout_summary": "70周岁前发生过三次特定轻度重疾后，重大疾病可额外给付最高60%基本保额。",
+    "early_stage_payout_summary": "特定轻度重疾保险金为基本保险金额20%，累计以三次为限。",
+    "max_claim_count_summary": null,
+    "cancer_claim_summary": "癌症持续、复发或扩散达到条件时，可按条款继续获得赔偿。",
+    "multiple_claim_waiting_period_summary": "多次赔付或相关保障设等待期，具体以产品条款为准。",
+    "survival_period_summary": null,
+    "early_stage_premium_waiver": null,
+    "major_claim_premium_waiver": null,
+    "family_premium_waiver_summary": null,
+    "bonus_type_summary": null,
+    "death_benefit_summary": "身故赔付比例约为20%。",
+    "healthcare_service_summary": null,
+    "major_illness_payout_percent": 100,
+    "early_stage_payout_percent": 20,
+    "early_stage_sports_bonus_percent": 2,
+    "major_extra_after_early_max_percent": 60,
+    "death_benefit_percent": 20
+  },
+  "product_features": [
+    {
+      "feature_id": "policy_loan",
+      "feature_name": "保单贷款",
+      "category": "liquidity",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "可按条款申请保单贷款，提升保单资金流动性。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 1,
+      "compare_key": "policy_loan",
+      "source_pages": [
+        12
+      ],
+      "evidence_quote": "保单贷款 您可申请使用保单贷款功能。 在本主险合同保险期间内，经我们审核同意后您可办理保单贷款。贷款金额 不得超过保险合同现金价值扣除各项欠款后余额的80%，每次贷款期限最长 不超过6 个月，贷款利率按您与我们签订的贷款协议中约定的利率执行。贷 款本息在贷款到期时一并归还。若您到期未能足额偿还贷款本息，则您所欠 的贷款本金及利息将作为新的贷款本金计息",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "保單貸款借入",
+          "保单贷款借入",
+          "借入高達",
+          "借入高达",
+          "通過保單貸款",
+          "通过保单贷款",
+          "policy loan"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "neurodegenerative_annuity",
+      "feature_name": "脑退化/柏金森年金",
+      "category": "special_option",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "指定脑退化疾病或柏金森病可按条款提供年金赔偿。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 2,
+      "compare_key": "neurodegenerative_annuity",
+      "source_pages": [
+        29
+      ],
+      "evidence_quote": "项或三项以上。 非阿尔茨海默病所 致严重痴呆 指因阿尔茨海默病以外的脑的器质性疾病造成脑功能衰竭导致永久不可逆 性的严重痴呆，临床表现为明显的认知能力障碍、行为异常和社交能力减 退。被保险人自主生活能力完全丧失，无法独立完成六项基本日常生活活 动中的三项或三项以上，日常生活必须持续受到他人监护。导致痴呆的疾 病必须经专科医生明确诊断，并且由完整的临床、实验室和影像学检查结 果证实",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "腦退化",
+          "脑退化",
+          "柏金森",
+          "阿爾茨海默",
+          "阿尔茨海默",
+          "annuity"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "premium_waiver",
+      "feature_name": "保费豁免",
+      "category": "premium_payment",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "达到指定理赔或家庭事件时，可按条款豁免保费。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 3,
+      "compare_key": "premium_waiver",
+      "source_pages": [
+        6,
+        9
+      ],
+      "evidence_quote": null,
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "not_found",
+        "evidence_method": "pdfplumber_page_window_keyword_match_v2.7",
+        "keywords": [
+          "保費豁免",
+          "保费豁免",
+          "豁免保費",
+          "豁免保费",
+          "premium waiver"
+        ]
+      }
+    }
+  ],
+  "feature_tags": [
+    "policy_loan",
+    "neurodegenerative_annuity",
+    "premium_waiver"
+  ],
+  "comparison_flags": {
+    "has_guaranteed_cash_value": true,
+    "has_non_guaranteed_bonus": null,
+    "has_partial_withdrawal": false,
+    "has_regular_withdrawal": false,
+    "has_policy_loan": true,
+    "supports_currency_switch": false,
+    "supports_policy_split": false,
+    "supports_change_insured": false,
+    "supports_second_insured": false,
+    "supports_second_policyholder": false,
+    "has_multiple_claims": false,
+    "has_cancer_multiple_claims": false,
+    "has_heart_stroke_multiple_claims": true,
+    "has_icu_benefit": false
+  },
+  "source_trace": {
+    "source_type": "catalog_verified_pdf",
+    "source_pdf": "pingan-fuli-20-ci.pdf",
+    "source_pdf_path": "pdfs/pingan-fuli-20-ci.pdf",
+    "source_pdf_sha256": "66ffd71e4f31f727165de7538da8b9eac01ca11cd9bf9a131a476d6e423ffe54",
+    "page_count": 36,
+    "text_length": 42978,
+    "extraction_confidence": "medium",
+    "missing_fields": [],
+    "field_evidence": {
+      "compare_profile.has_cancer_multiple_claims": {
+        "source": "local_pdf",
+        "page": null,
+        "quote": "恶性肿瘤 指恶性细胞不受控制的进行性增长和扩散，浸润和破坏周围正常组织，可 以经血管、淋巴管和体腔扩散转移到身体其它部位的疾病。经病理学检查 结果明确诊断，临床诊断属于世界卫生组织《疾病和有关健康问题的国际 统计分类》（ICD-10）的恶性肿瘤范畴。下列疾病不在保障范围内： （1）原位癌",
+        "confidence": "medium",
+        "pages": [
+          20
+        ],
+        "method": "pdf_page_semantic_window_keyword_match_v2.9_no_hard_char_truncation",
+        "no_hard_char_truncation": true
+      },
+      "compare_profile.covered_illness_total": {
+        "source": "local_pdf",
+        "page": null,
+        "quote": "因酗酒、药物滥用、捐赠肝脏而实施的肝叶切除均不在保障范围内。 非严重型再生障碍 性贫血 指因急性可逆性的骨髓造血功能衰竭而导致贫血、中性粒细胞减少和血小 板减少，但未达到本主险合同所指重大疾病“重型再生障碍性贫血”的标 19 六项基本日常生活活动：六项基本日常生活活动是指： （1）穿衣：自己能够穿衣及脱衣",
+        "confidence": "medium"
+      },
+      "compare_profile.has_policy_loan": {
+        "source": "local_pdf",
+        "pages": [
+          12
+        ],
+        "quote": "保单贷款 您可申请使用保单贷款功能。 在本主险合同保险期间内，经我们审核同意后您可办理保单贷款。贷款金额 不得超过保险合同现金价值扣除各项欠款后余额的80%，每次贷款期限最长 不超过6 个月，贷款利率按您与我们签订的贷款协议中约定的利率执行。贷 款本息在贷款到期时一并归还。若您到期未能足额偿还贷款本息，则您所欠 的贷款本金及利息将作为新的贷款本金计息",
+        "confidence": "medium",
+        "method": "pdf_page_semantic_window_keyword_match_v2.9_no_hard_char_truncation",
+        "no_hard_char_truncation": true
+      },
+      "compare_profile.major_illness_payout_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "平安人寿[2020]疾病保险 113 号 阅 读 指 引 请扫描以查询验证条款 平安平安福 20 重大疾病保险产品提供特定轻度重疾、重疾及身故保障   被保险人就是受保险合同保障的人。 为了帮助您更好地了解产品，我们先介绍几个保险条款中常用的术语  投保人就是购买保险并交纳保险费的人。  受益人就是发生保险事故后领取保险金的人。  保险人就是保险公司。  下面我们举例说明本产品提供哪些保障 例子：王先生为妻子李女士（30 周岁）投保平安平安福 20 重大疾病保险（简称平安福 20） ， 基本保险金额",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.major_illness_payout_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "疾 大疾病额外给付的重大 重大疾病额外给付的重大疾 合计 ⑤70 周岁的保单周年日前 病保险金 疾病保险金 病保险金 （不含该保单周年日）发生 过两次特定轻度重疾 ⑥70 周岁的保单周年日前 （不含该保单周年日）发生 过三次特定轻度重疾 ① 30 万元 / / 30 万元 ①② 30 万元 30 万元×5%=1.5 万元 / 31.5 万元 ①③ 30 万元 30 万元×10%=3 万元 / 33 万元 ①④ 30 万元 / 30 万元×20%=6 万元 36 万元 ①⑤ 30 万元 / 30 万元×40%=12",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.early_stage_payout_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "平安人寿[2020]疾病保险 113 号 阅 读 指 引 请扫描以查询验证条款 平安平安福 20 重大疾病保险产品提供特定轻度重疾、重疾及身故保障   被保险人就是受保险合同保障的人。 为了帮助您更好地了解产品，我们先介绍几个保险条款中常用的术语  投保人就是购买保险并交纳保险费的人。  受益人就是发生保险事故后领取保险金的人。  保险人就是保险公司。  下面我们举例说明本产品提供哪些保障 例子：王先生为妻子李女士（30 周岁）投保平安平安福 20 重大疾病保险（简称平安福 20） ， 基本保险金额",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.early_stage_payout_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "平安人寿[2020]疾病保险 113 号 阅 读 指 引 请扫描以查询验证条款 平安平安福 20 重大疾病保险产品提供特定轻度重疾、重疾及身故保障   被保险人就是受保险合同保障的人。 为了帮助您更好地了解产品，我们先介绍几个保险条款中常用的术语  投保人就是购买保险并交纳保险费的人。  受益人就是发生保险事故后领取保险金的人。  保险人就是保险公司。  下面我们举例说明本产品提供哪些保障 例子：王先生为妻子李女士（30 周岁）投保平安平安福 20 重大疾病保险（简称平安福 20） ， 基本保险金额",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.early_stage_sports_bonus_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "保险金、重大疾病保险金受益人， 小王为身故保险金受益人，平安人寿为保险人。 假设李女士在第 3 个保单年度开始后发生本主险合同所定义的特定轻度重疾，不同情况下特定 轻度重疾保险金赔付如下表所示： 领取条件 特定轻度重疾保险金给付金额 ①被保险人发生特定轻度重疾 达到运动标准后发生特定轻 基本特定轻度重疾 ②达到运动标准一 度重疾额外给付的特定轻度 合计 保险金 ③达到运动标准二 重疾保险金 ① 30 万元×20%=6 万元 / 6 万元 ①② 30 万元×20%=6 万元 30 万元×1%=0.3 万元 6.3 万",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.major_extra_after_early_max_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "疾 大疾病额外给付的重大 重大疾病额外给付的重大疾 合计 ⑤70 周岁的保单周年日前 病保险金 疾病保险金 病保险金 （不含该保单周年日）发生 过两次特定轻度重疾 ⑥70 周岁的保单周年日前 （不含该保单周年日）发生 过三次特定轻度重疾 ① 30 万元 / / 30 万元 ①② 30 万元 30 万元×5%=1.5 万元 / 31.5 万元 ①③ 30 万元 30 万元×10%=3 万元 / 33 万元 ①④ 30 万元 / 30 万元×20%=6 万元 36 万元 ①⑤ 30 万元 / 30 万元×40%=12",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.death_benefit_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "平安人寿[2020]疾病保险 113 号 阅 读 指 引 请扫描以查询验证条款 平安平安福 20 重大疾病保险产品提供特定轻度重疾、重疾及身故保障   被保险人就是受保险合同保障的人。 为了帮助您更好地了解产品，我们先介绍几个保险条款中常用的术语  投保人就是购买保险并交纳保险费的人。  受益人就是发生保险事故后领取保险金的人。  保险人就是保险公司。  下面我们举例说明本产品提供哪些保障 例子：王先生为妻子李女士（30 周岁）投保平安平安福 20 重大疾病保险（简称平安福 20） ， 基本保险金额",
+        "confidence": "medium",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.death_benefit_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "平安人寿[2020]疾病保险 113 号 阅 读 指 引 请扫描以查询验证条款 平安平安福 20 重大疾病保险产品提供特定轻度重疾、重疾及身故保障   被保险人就是受保险合同保障的人。 为了帮助您更好地了解产品，我们先介绍几个保险条款中常用的术语  投保人就是购买保险并交纳保险费的人。  受益人就是发生保险事故后领取保险金的人。  保险人就是保险公司。  下面我们举例说明本产品提供哪些保障 例子：王先生为妻子李女士（30 周岁）投保平安平安福 20 重大疾病保险（简称平安福 20） ， 基本保险金额",
+        "confidence": "medium",
+        "extraction_version": "v2.11"
+      }
+    }
+  },
+  "extraction_meta": {
+    "extracted_at": "2026-06-20T12:40:21.793586Z",
+    "method": "PRODUCT-CATALOG + selected hot TS guided heuristic extraction; no fuzzy cross-product substitution",
+    "schema_policy": "core comparable fields in compare_profile; special/non-standard features in product_features[] and feature_tags[]",
+    "v2_5_extraction": {
+      "extracted_at": "2026-06-21T08:52:00.275767Z",
+      "method": "local_pdf_regex_structured_reextract_v2.5",
+      "pdf_filename": "pingan-fuli-20-ci.pdf"
+    },
+    "v2_7_reextract": {
+      "generated_at": "2026-06-21T09:32:26.298737Z",
+      "method": "pdfplumber_page_window_keyword_match_v2.7",
+      "feature_count": 3,
+      "feature_evidence_matched": 2
+    },
+    "v2_8_reextract": {
+      "generated_at": "2026-06-21T10:07:33.188598Z",
+      "method": "full_truncation_sweep_and_pdf_evidence_window_repair_v2.8",
+      "ellipsis_fields_before": 3,
+      "ellipsis_fields_after": 0,
+      "nested_feature_notes_removed": 3
+    },
+    "v2_9_reextract": {
+      "generated_at": "2026-06-21T10:21:23.180101Z",
+      "method": "pdf_fulltext_reextract_no_hard_char_truncation_v2.9",
+      "note": "v2.9 移除旧抽取逻辑中的硬字符截断：对 base/compare_profile/source_trace.field_evidence/product_features.evidence_quote 做硬截断候选扫描；对 entry_age 等基础字段重新从 PDF 全文抽取完整结构化摘要；证据窗口按 PDF 页面语义窗口重取，不再按 60/80/120 字符硬截断。",
+      "hard_truncation_candidates_before": 3,
+      "hard_truncation_candidates_after": 0,
+      "fields_repaired": 6,
+      "age_refine_note": "v2.9 age fields refined from the best PDF full-text window near 投保年齡/投保范围, avoiding unrelated owner/beneficiary age clauses and hard character truncation."
+    },
+    "payout_ratio_extraction": {
+      "version": "v2.10",
+      "method": "pdf_text_percentage_patterns",
+      "note": "只在 PDF 文本出现可量化保额百分比时写入；未抽到不从 display_features/product_features 反推。",
+      "updated_fields": []
+    },
+    "payout_ratio_extraction_v2_11": {
+      "version": "v2.11",
+      "method": "full_ci_pdf_percentage_scan_with_product_rules",
+      "note": "全量重疾产品均重新扫描；只在 PDF 文本存在明确基本保额/名义金额/原有投保额等比例时写入。",
+      "updated_fields": [
+        "death_benefit_percent",
+        "early_stage_payout_percent",
+        "early_stage_sports_bonus_percent",
+        "major_extra_after_early_max_percent",
+        "major_illness_payout_percent"
+      ],
+      "ratio_field_count": 5,
+      "applied_at": "2026-06-21T11:04:48.413492Z"
+    }
+  },
+  "display_features": [
+    {
+      "title": "疾病覆盖广",
+      "summary": "覆盖100种疾病，含100种重疾。",
+      "category": "protection",
+      "priority": 1,
+      "source_tags": [],
+      "source_paths": [
+        "compare_profile.covered_illness_total"
+      ]
+    },
+    {
+      "title": "心脑血管保障",
+      "summary": "心脏病或中风达到条件后，可获额外支持。",
+      "category": "protection",
+      "priority": 4,
+      "source_tags": [
+        "heart_stroke_multiple_claims"
+      ],
+      "source_paths": [
+        "compare_profile.has_heart_stroke_multiple_claims"
+      ]
+    },
+    {
+      "title": "脑退化支持",
+      "summary": "脑退化或柏金森等指定疾病可获长期支持。",
+      "category": "protection",
+      "priority": 6,
+      "source_tags": [
+        "neurodegenerative_annuity"
+      ],
+      "source_paths": []
+    },
+    {
+      "title": "保费豁免",
+      "summary": "达到约定条件后，可豁免后续部分或全部保费。",
+      "category": "premium",
+      "priority": 8,
+      "source_tags": [
+        "premium_waiver"
+      ],
+      "source_paths": []
+    }
+  ],
+  "product_name": "平安福 20 重大疾病保险"
+}

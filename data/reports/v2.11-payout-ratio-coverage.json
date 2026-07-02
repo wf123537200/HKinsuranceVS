@@ -1,0 +1,135 @@
+[
+  {
+    "product_id": "aia-essence-on-your-side",
+    "product_name": "友邦守护在您身边医疗保险",
+    "ratio_fields": 8,
+    "core_filled": "major_illness_payout_percent|early_stage_payout_percent|heart_stroke_claim_max_percent|max_total_claim_percent|death_benefit_percent",
+    "status": "extracted"
+  },
+  {
+    "product_id": "aia-on-your-side-2",
+    "product_name": "友邦爱伴航保险计划2",
+    "ratio_fields": 17,
+    "core_filled": "major_illness_payout_percent|early_stage_payout_percent|child_illness_payout_percent|icu_benefit_percent|multiple_claim_per_claim_percent|cancer_claim_max_percent|heart_stroke_claim_max_percent|max_total_claim_percent|death_benefit_percent",
+    "status": "extracted"
+  },
+  {
+    "product_id": "axa-loving-care-ci-enhanced",
+    "product_name": "安盛爱唯守危疾保障升级版",
+    "ratio_fields": 16,
+    "core_filled": "major_illness_payout_percent|early_stage_payout_percent|icu_benefit_percent|multiple_claim_per_claim_percent|cancer_claim_max_percent|max_total_claim_percent|death_benefit_percent",
+    "status": "extracted"
+  },
+  {
+    "product_id": "cpic-jinshengwuyou-2024-kids",
+    "product_name": "太保金生无忧2024少儿版重大疾病保险",
+    "ratio_fields": 3,
+    "core_filled": "major_illness_payout_percent|early_stage_payout_percent|death_benefit_percent",
+    "status": "extracted"
+  },
+  {
+    "product_id": "cpic-jinshengwuyou-kids",
+    "product_name": "太保金生无忧2024少儿版重大疾病保险",
+    "ratio_fields": 3,
+    "core_filled": "major_illness_payout_percent|early_stage_payout_percent|death_benefit_percent",
+    "status": "extracted"
+  },
+  {
+    "product_id": "cpic-wenyingjinsheng-ci",
+    "product_name": "太保附加稳赢金生重大疾病保险",
+    "ratio_fields": 3,
+    "core_filled": "major_illness_payout_percent|death_benefit_percent",
+    "status": "extracted"
+  },
+  {
+    "product_id": "fwd-crisis-one-master",
+    "product_name": "富卫危疾一保",
+    "ratio_fields": 9,
+    "core_filled": "major_illness_payout_percent|child_illness_payout_percent|cancer_claim_max_percent|heart_stroke_claim_max_percent|max_total_claim_percent|death_benefit_percent",
+    "status": "extracted"
+  },
+  {
+    "product_id": "fwd-crisis-u-supporter",
+    "product_name": "富卫危疾应援保",
+    "ratio_fields": 20,
+    "core_filled": "major_illness_payout_percent|early_stage_payout_percent|icu_benefit_percent|multiple_claim_first_two_percent|heart_stroke_claim_max_percent|max_total_claim_percent|death_benefit_percent",
+    "status": "extracted"
+  },
+  {
+    "product_id": "fwd-easycover-ci",
+    "product_name": "富卫简易保危疾计划",
+    "ratio_fields": 7,
+    "core_filled": "major_illness_payout_percent|early_stage_payout_percent|heart_stroke_claim_max_percent|death_benefit_percent",
+    "status": "extracted"
+  },
+  {
+    "product_id": "manulife-bright-care-pro",
+    "product_name": "宏利活耀人生危疾保 Pro",
+    "ratio_fields": 14,
+    "core_filled": "major_illness_payout_percent|early_stage_payout_percent|child_illness_payout_percent|icu_benefit_percent|multiple_claim_per_claim_percent|cancer_claim_max_percent|heart_stroke_claim_max_percent|max_total_claim_percent|death_benefit_percent",
+    "status": "extracted"
+  },
+  {
+    "product_id": "manulife-incomeguard-ci",
+    "product_name": "宏利荟健危疾保",
+    "ratio_fields": 11,
+    "core_filled": "major_illness_payout_percent|early_stage_payout_percent|child_illness_payout_percent|multiple_claim_per_claim_percent|cancer_claim_max_percent|heart_stroke_claim_max_percent|max_total_claim_percent|death_benefit_percent",
+    "status": "extracted"
+  },
+  {
+    "product_id": "manulife-incomeshield-ci",
+    "product_name": "宏利护健危疾保",
+    "ratio_fields": 9,
+    "core_filled": "major_illness_payout_percent|early_stage_payout_percent|multiple_claim_per_claim_percent|cancer_claim_max_percent|heart_stroke_claim_max_percent|max_total_claim_percent|death_benefit_percent",
+    "status": "extracted"
+  },
+  {
+    "product_id": "pingan-fuli-20-ci",
+    "product_name": "平安福20重大疾病保险",
+    "ratio_fields": 5,
+    "core_filled": "major_illness_payout_percent|early_stage_payout_percent|death_benefit_percent",
+    "status": "extracted"
+  },
+  {
+    "product_id": "pingan-ruyi-quanneng-2025-ci",
+    "product_name": "平安附加如意全能2025提前给付重大疾病保险",
+    "ratio_fields": 3,
+    "core_filled": "major_illness_payout_percent|early_stage_payout_percent|moderate_illness_payout_percent",
+    "status": "extracted"
+  },
+  {
+    "product_id": "pingan-ruyi-quanneng-ci",
+    "product_name": "平安附加如意全能提前给付重大疾病保险",
+    "ratio_fields": 3,
+    "core_filled": "major_illness_payout_percent|early_stage_payout_percent|moderate_illness_payout_percent",
+    "status": "extracted"
+  },
+  {
+    "product_id": "pru-ci-extended-care-iii",
+    "product_name": "保诚危疾加护保 III",
+    "ratio_fields": 12,
+    "core_filled": "major_illness_payout_percent|early_stage_payout_percent|icu_benefit_percent|multiple_claim_per_claim_percent|cancer_claim_max_percent|heart_stroke_claim_max_percent|max_total_claim_percent|death_benefit_percent",
+    "status": "extracted"
+  },
+  {
+    "product_id": "pru-guardian-ci-series",
+    "product_name": "保诚诚保一生危疾保",
+    "ratio_fields": 15,
+    "core_filled": "major_illness_payout_percent|early_stage_payout_percent|child_illness_payout_percent|icu_benefit_percent|multiple_claim_per_claim_percent|cancer_claim_max_percent|heart_stroke_claim_max_percent|max_total_claim_percent|death_benefit_percent",
+    "status": "extracted"
+  },
+  {
+    "product_id": "taikang-lexiangjiankang-2026",
+    "product_name": "泰康乐享健康2026重大疾病保险",
+    "ratio_fields": 2,
+    "core_filled": "major_illness_payout_percent|death_benefit_percent",
+    "status": "extracted"
+  },
+  {
+    "product_id": "taikang-lexiangjiankang-kids",
+    "product_name": "泰康乐享健康少儿B款重大疾病保险",
+    "ratio_fields": 6,
+    "core_filled": "major_illness_payout_percent|early_stage_payout_percent|moderate_illness_payout_percent|multiple_claim_per_claim_percent|max_total_claim_percent",
+    "status": "extracted"
+  }
+]

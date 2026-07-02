@@ -2,19 +2,33 @@ import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
+import type { Locale } from "@/i18n/config";
+import { buildMetadata } from "@/lib/seo";
 
 interface Props {
-  params: Promise<{ id: string }>;
+  params: Promise<{ id: string; locale: string }>;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { id } = await params;
+  const { id, locale } = await params;
+  const localeTyped = locale as Locale;
   const discussion = await prisma.discussion.findUnique({ where: { id } });
-  if (!discussion) return {};
-  return {
+  if (!discussion) {
+    return buildMetadata({
+      path: `/discussions/${id}`,
+      locale: localeTyped,
+      title: "Discussion Not Found",
+      description: "The discussion you are looking for is not available on Policy Vector.",
+      robots: { index: false, follow: false },
+    });
+  }
+  return buildMetadata({
+    path: `/discussions/${id}`,
+    locale: localeTyped,
     title: discussion.title,
-    description: discussion.content.slice(0, 160),
-  };
+    description: discussion.content.slice(0, 200).replace(/\s+/g, " ").trim(),
+    ogType: "article",
+  });
 }
 
 export default async function DiscussionDetailPage({ params }: Props) {

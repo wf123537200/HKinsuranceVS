@@ -1,0 +1,116 @@
+[
+  {
+    "severity": "P2",
+    "db_slug": "axa-wealth-advance-savings-ii-ultimate",
+    "issue": "Missing field",
+    "detail": "entry_age"
+  },
+  {
+    "severity": "P2",
+    "db_slug": "fwd-noble-fortune",
+    "issue": "Missing field",
+    "detail": "premium_terms"
+  },
+  {
+    "severity": "P2",
+    "db_slug": "fwd-noble-fortune",
+    "issue": "Missing field",
+    "detail": "entry_age"
+  },
+  {
+    "severity": "P2",
+    "db_slug": "manulife-genesis-centurion",
+    "issue": "Missing field",
+    "detail": "entry_age"
+  },
+  {
+    "severity": "P2",
+    "db_slug": "manulife-manucentury",
+    "issue": "Missing field",
+    "detail": "entry_age"
+  },
+  {
+    "severity": "P2",
+    "db_slug": "pingan-yuxiang-jinyue-2025",
+    "issue": "Missing field",
+    "detail": "premium_terms"
+  },
+  {
+    "severity": "P2",
+    "db_slug": "pingan-shengshi-jinyue-zunxiang-26II",
+    "issue": "Missing field",
+    "detail": "premium_terms"
+  },
+  {
+    "severity": "P2",
+    "db_slug": "ping-an-shengshi-jinyue-premium",
+    "issue": "Missing field",
+    "detail": "premium_terms"
+  },
+  {
+    "severity": "P2",
+    "db_slug": "pingan-ruyi-quanneng-ci",
+    "issue": "Missing field",
+    "detail": "premium_terms"
+  },
+  {
+    "severity": "P2",
+    "db_slug": "pingan-ruyi-quanneng-2025-ci",
+    "issue": "Missing field",
+    "detail": "premium_terms"
+  },
+  {
+    "severity": "P2",
+    "db_slug": "prudential-evergreen-growth",
+    "issue": "Missing field",
+    "detail": "premium_terms"
+  },
+  {
+    "severity": "P2",
+    "db_slug": "prudential-evergreen-growth",
+    "issue": "Missing field",
+    "detail": "entry_age"
+  },
+  {
+    "severity": "P2",
+    "db_slug": "prudential-prime-ace",
+    "issue": "Missing field",
+    "detail": "entry_age"
+  },
+  {
+    "severity": "P2",
+    "db_slug": "prudential-prime-eternity",
+    "issue": "Missing field",
+    "detail": "premium_terms"
+  },
+  {
+    "severity": "P2",
+    "db_slug": "prudential-prime-eternity",
+    "issue": "Missing field",
+    "detail": "entry_age"
+  },
+  {
+    "severity": "P2",
+    "db_slug": "prudential-enlit-savings",
+    "issue": "Missing field",
+    "detail": "premium_terms"
+  },
+  {
+    "severity": "P2",
+    "db_slug": "prudential-enlit-savings",
+    "issue": "Missing field",
+    "detail": "entry_age"
+  },
+  {
+    "severity": "P2",
+    "db_slug": "taikang-zengduoduo",
+    "issue": "Missing field",
+    "detail": "premium_terms"
+  },
+  {
+    "severity": "P2",
+    "db_slug": "taikang-zengduoduo",
+    "issue": "Missing field",
+    "detail": "entry_age"
+  }
+]

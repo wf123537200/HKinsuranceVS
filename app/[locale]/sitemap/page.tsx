@@ -3,17 +3,36 @@ import { getTranslations } from "next-intl/server";
 import { prisma } from "@/lib/prisma";
 import { translateCompany, translateProduct, sortByTranslatedName } from "@/lib/translations";
 import type { Locale } from "@/i18n/config";
+import { getSiteProductSlugs, getSelectedProducts } from "@/lib/selected-products";
+import { buildMetadata } from "@/lib/seo";
+import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return buildMetadata({
+    path: "/sitemap",
+    locale: locale as Locale,
+    title: "Sitemap",
+    description: "Complete overview of all pages on Policy Vector, including companies, products, comparisons, glossary, and resources.",
+  });
+}
 
 export default async function SitemapPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations("sitemap");
   const tc = await getTranslations("common");
 
+  const siteSlugs = await getSiteProductSlugs();
+  const productsWithCompany = await prisma.product.findMany({
+    where: { slug: { in: siteSlugs } },
+    select: { company: { select: { slug: true } } },
+  });
+  const companySlugs = Array.from(new Set(productsWithCompany.map((p) => p.company.slug)));
   const [rawCompanies, rawProducts] = await Promise.all([
-    prisma.company.findMany({ orderBy: { displayName: "asc" } }),
-    prisma.product.findMany({ orderBy: { displayName: "asc" }, include: { company: true } }),
+    prisma.company.findMany({ where: { slug: { in: companySlugs } }, orderBy: { displayName: "asc" } }),
+    prisma.product.findMany({ where: { slug: { in: siteSlugs } }, orderBy: { displayName: "asc" }, include: { company: true } }),
   ]);
 
   const companies = rawCompanies.map((c) => translateCompany(c, locale as Locale)).sort(sortByTranslatedName(locale as Locale));
@@ -26,9 +45,6 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
     { href: "/products/critical-illness", label: "Critical Illness" },
     { href: "/products/savings", label: "Savings" },
     { href: "/compare", label: "Compare" },
-    { href: "/rankings", label: "Rankings" },
-    { href: "/rankings/critical-illness", label: "CI Rankings" },
-    { href: "/rankings/savings", label: "Savings Rankings" },
     { href: "/calculator", label: "Calculator" },
     { href: "/glossary", label: "Glossary" },
     { href: "/search", label: "Search" },

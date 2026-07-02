@@ -1,0 +1,279 @@
+{
+  "product_vector_version": "v2.9",
+  "base": {
+    "product_id": "taikang-lexiangjiankang-2026",
+    "slug": "taikang-lexiangjiankang-2026",
+    "product_name": "泰康乐享健康 2026 重大疾病保险",
+    "product_name_en": null,
+    "company_slug": "taikang-life",
+    "company_name": "泰康保险",
+    "region": "Mainland China",
+    "category": "critical_illness",
+    "category_zh": "健康险",
+    "subcategory": "critical_illness",
+    "policy_currency": [
+      "CNY"
+    ],
+    "policy_term": "终身",
+    "premium_term": [
+      "一次性",
+      "3年",
+      "5年",
+      "10年",
+      "15年",
+      "20年",
+      "25年",
+      "30年"
+    ],
+    "entry_age": "投保年龄按计划版本、缴费期及条款规定而定。",
+    "payment_mode": null,
+    "local_pdf_path": "/pdfs/taikang-lexiangjiankang-2026.pdf",
+    "source_pdf_filename": "taikang-lexiangjiankang-2026.pdf",
+    "is_hot_discussed": true,
+    "market_attention": "hot_discussed",
+    "product_name_zh_cn": "泰康乐享健康 2026 重大疾病保险",
+    "product_name_zh_hk": "泰康樂享健康2026重大疾病保險",
+    "display_name": "泰康乐享健康2026重大疾病保险",
+    "product_name_zh_tw": "泰康樂享健康 2026 重大疾病保險"
+  },
+  "core": {
+    "critical_illness_core": {
+      "covered_illness_total": 120,
+      "major_illness_count": 120,
+      "early_stage_illness_count": null,
+      "moderate_illness_count": null,
+      "child_illness_count": null,
+      "has_multiple_claims": false,
+      "has_cancer_multiple_claims": false,
+      "has_heart_stroke_multiple_claims": false,
+      "has_icu_benefit": false
+    },
+    "savings_core": null
+  },
+  "modules": {
+    "participating_savings_module": {
+      "available": true,
+      "bonus_types": null
+    },
+    "life_protection_module": {
+      "has_death_benefit": true
+    },
+    "policy_liquidity_module": {
+      "has_policy_loan": false,
+      "has_partial_withdrawal": true,
+      "has_regular_withdrawal": false
+    },
+    "policy_flexibility_module": {
+      "supports_currency_switch": false,
+      "supports_policy_split": false,
+      "supports_change_insured": false,
+      "supports_second_insured": false,
+      "supports_second_policyholder": false
+    },
+    "risk_module": {
+      "risk_summary": [
+        "退保/流动性风险"
+      ]
+    }
+  },
+  "compare_profile": {
+    "product_category": "critical_illness",
+    "product_type": "critical_illness",
+    "company_slug": "taikang-life",
+    "product_slug": "taikang-lexiangjiankang-2026",
+    "market_attention": "hot_discussed",
+    "priority": 1,
+    "policy_term": "终身",
+    "premium_terms": [
+      "一次性",
+      "3年",
+      "5年",
+      "10年",
+      "15年",
+      "20年",
+      "25年",
+      "30年"
+    ],
+    "entry_age_summary": "投保年龄按计划版本、缴费期及条款规定而定。",
+    "currencies": [
+      "CNY"
+    ],
+    "has_guaranteed_cash_value": true,
+    "has_non_guaranteed_bonus": null,
+    "bonus_types": null,
+    "has_partial_withdrawal": true,
+    "has_regular_withdrawal": false,
+    "has_policy_loan": false,
+    "supports_currency_switch": false,
+    "supports_policy_split": false,
+    "supports_change_insured": false,
+    "supports_second_insured": false,
+    "supports_second_policyholder": false,
+    "covered_illness_total": 120,
+    "major_illness_count": 120,
+    "early_stage_illness_count": null,
+    "moderate_illness_count": null,
+    "child_illness_count": null,
+    "has_multiple_claims": false,
+    "has_cancer_multiple_claims": false,
+    "has_heart_stroke_multiple_claims": false,
+    "has_icu_benefit": false,
+    "cancer_claim_cap_summary": null,
+    "heart_stroke_claim_summary": null,
+    "icu_benefit_summary": null,
+    "post_claim_status_summary": null,
+    "highest_illustrated_irr": null,
+    "guaranteed_irr": null,
+    "highest_illustrated_return_multiple": null,
+    "illustrated_break_even_year": null,
+    "guaranteed_break_even_year": null,
+    "risk_summary": [
+      "退保/流动性风险"
+    ],
+    "has_death_benefit": null,
+    "major_illness_payout_summary": "重大疾病保险金按基本保险金额、已交保费、现金价值三者较大者给付；以基本保额口径至少为100%。",
+    "early_stage_payout_summary": null,
+    "max_claim_count_summary": null,
+    "cancer_claim_summary": null,
+    "multiple_claim_waiting_period_summary": "多次赔付或相关保障设等待期，具体以产品条款为准。",
+    "survival_period_summary": null,
+    "early_stage_premium_waiver": null,
+    "major_claim_premium_waiver": null,
+    "family_premium_waiver_summary": null,
+    "bonus_type_summary": null,
+    "death_benefit_summary": "18周岁后身故/全残/疾病终末期保险金按基本保险金额、已交保费、现金价值三者较大者给付。",
+    "healthcare_service_summary": null,
+    "major_illness_payout_percent": 100,
+    "death_benefit_percent": 100
+  },
+  "product_features": [],
+  "feature_tags": [],
+  "comparison_flags": {
+    "has_guaranteed_cash_value": true,
+    "has_non_guaranteed_bonus": null,
+    "has_partial_withdrawal": true,
+    "has_regular_withdrawal": false,
+    "has_policy_loan": false,
+    "supports_currency_switch": false,
+    "supports_policy_split": false,
+    "supports_change_insured": false,
+    "supports_second_insured": false,
+    "supports_second_policyholder": false,
+    "has_multiple_claims": false,
+    "has_cancer_multiple_claims": false,
+    "has_heart_stroke_multiple_claims": false,
+    "has_icu_benefit": false
+  },
+  "source_trace": {
+    "source_type": "catalog_verified_pdf",
+    "source_pdf": "taikang-lexiangjiankang-2026.pdf",
+    "source_pdf_path": "pdfs/taikang-lexiangjiankang-2026.pdf",
+    "source_pdf_sha256": "ed8a74ee6a1d8aab8bf160986040b87380f266a3e1c67617ffe2ff30aaf79c86",
+    "page_count": 5,
+    "text_length": 5925,
+    "extraction_confidence": "medium",
+    "missing_fields": [],
+    "field_evidence": {
+      "compare_profile.major_illness_payout_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "订立的“泰康 乐享健康 2026 重大疾病保险合同”，“被保险人”指本合同的被保险人。 为方便您了解和购买本产品，请您仔细阅读本产品说明书： 一、 产品基本特征 （一）投保范围 本产品接受的被保险人的投保年龄范围为 0 周岁至 70 周岁，且须符合我们当时的投保相关要求。 （二）保险期间 本产品的保险期间为被保险人终身，自本合同生效日零时开始。 （三）交费方式及交费期间 本产品的交费方式为一次性支付和分期支付；交费期间为一次性交、3 年交、5 年交、10 年交、15 年交、20 年交、25 年交、30 年交。 （四",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.major_illness_payout_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "订立的“泰康 乐享健康 2026 重大疾病保险合同”，“被保险人”指本合同的被保险人。 为方便您了解和购买本产品，请您仔细阅读本产品说明书： 一、 产品基本特征 （一）投保范围 本产品接受的被保险人的投保年龄范围为 0 周岁至 70 周岁，且须符合我们当时的投保相关要求。 （二）保险期间 本产品的保险期间为被保险人终身，自本合同生效日零时开始。 （三）交费方式及交费期间 本产品的交费方式为一次性支付和分期支付；交费期间为一次性交、3 年交、5 年交、10 年交、15 年交、20 年交、25 年交、30 年交。 （四",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.death_benefit_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "或者多 泰康乐享健康 2026 重大疾病保险产品说明书 种），我们将向疾病保险金受益人给付重大疾病保险金，本合同终止。重大疾病保险金的数额为下 列三者中的最大值： （1） 本合同的基本保险金额； （2） 您累计已交纳的本合同的保险费； （3） 被保险人初次确诊重大疾病之日本合同的现金价值。 全残保险金： 被保险人在等待期后发生全残，我们将向疾病保险金受益人给付全残保险金，本合同终止。全残保 险金的数额为： 被保险人全残时的年龄 全残保险金数额 您累计已交纳的本合同保险费与被保险人全残之日本 未满 18 周岁（不含",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.death_benefit_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "或者多 泰康乐享健康 2026 重大疾病保险产品说明书 种），我们将向疾病保险金受益人给付重大疾病保险金，本合同终止。重大疾病保险金的数额为下 列三者中的最大值： （1） 本合同的基本保险金额； （2） 您累计已交纳的本合同的保险费； （3） 被保险人初次确诊重大疾病之日本合同的现金价值。 全残保险金： 被保险人在等待期后发生全残，我们将向疾病保险金受益人给付全残保险金，本合同终止。全残保 险金的数额为： 被保险人全残时的年龄 全残保险金数额 您累计已交纳的本合同保险费与被保险人全残之日本 未满 18 周岁（不含",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      }
+    }
+  },
+  "extraction_meta": {
+    "extracted_at": "2026-06-20T12:40:24.918268Z",
+    "method": "PRODUCT-CATALOG + selected hot TS guided heuristic extraction; no fuzzy cross-product substitution",
+    "schema_policy": "core comparable fields in compare_profile; special/non-standard features in product_features[] and feature_tags[]",
+    "v2_5_extraction": {
+      "extracted_at": "2026-06-21T08:52:05.398170Z",
+      "method": "local_pdf_regex_structured_reextract_v2.5",
+      "pdf_filename": "taikang-lexiangjiankang-2026.pdf"
+    },
+    "v2_7_reextract": {
+      "generated_at": "2026-06-21T09:32:33.747401Z",
+      "method": "pdfplumber_page_window_keyword_match_v2.7",
+      "feature_count": 0,
+      "feature_evidence_matched": 0
+    },
+    "v2_8_reextract": {
+      "generated_at": "2026-06-21T10:07:35.120834Z",
+      "method": "full_truncation_sweep_and_pdf_evidence_window_repair_v2.8",
+      "ellipsis_fields_before": 1,
+      "ellipsis_fields_after": 0,
+      "nested_feature_notes_removed": 0
+    },
+    "v2_9_reextract": {
+      "generated_at": "2026-06-21T10:21:29.830153Z",
+      "method": "pdf_fulltext_reextract_no_hard_char_truncation_v2.9",
+      "note": "v2.9 移除旧抽取逻辑中的硬字符截断：对 base/compare_profile/source_trace.field_evidence/product_features.evidence_quote 做硬截断候选扫描；对 entry_age 等基础字段重新从 PDF 全文抽取完整结构化摘要；证据窗口按 PDF 页面语义窗口重取，不再按 60/80/120 字符硬截断。",
+      "hard_truncation_candidates_before": 0,
+      "hard_truncation_candidates_after": 0,
+      "fields_repaired": 3,
+      "age_refine_note": "v2.9 age fields refined from the best PDF full-text window near 投保年齡/投保范围, avoiding unrelated owner/beneficiary age clauses and hard character truncation."
+    },
+    "payout_ratio_extraction": {
+      "version": "v2.10",
+      "method": "pdf_text_percentage_patterns",
+      "note": "只在 PDF 文本出现可量化保额百分比时写入；未抽到不从 display_features/product_features 反推。",
+      "updated_fields": []
+    },
+    "payout_ratio_extraction_v2_11": {
+      "version": "v2.11",
+      "method": "full_ci_pdf_percentage_scan_with_product_rules",
+      "note": "全量重疾产品均重新扫描；只在 PDF 文本存在明确基本保额/名义金额/原有投保额等比例时写入。",
+      "updated_fields": [
+        "death_benefit_percent",
+        "major_illness_payout_percent"
+      ],
+      "ratio_field_count": 2,
+      "applied_at": "2026-06-21T11:04:47.706358Z"
+    }
+  },
+  "display_features": [
+    {
+      "title": "疾病覆盖广",
+      "summary": "覆盖120种疾病，含120种重疾。",
+      "category": "protection",
+      "priority": 1,
+      "source_tags": [],
+      "source_paths": [
+        "compare_profile.covered_illness_total"
+      ]
+    },
+    {
+      "title": "现金价值",
+      "summary": "兼具现金价值或分红元素，适合长期配置。",
+      "category": "savings",
+      "priority": 10,
+      "source_tags": [],
+      "source_paths": [
+        "compare_profile.has_guaranteed_cash_value"
+      ]
+    }
+  ],
+  "product_name": "泰康乐享健康 2026 重大疾病保险"
+}

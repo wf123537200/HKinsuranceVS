@@ -1,0 +1,452 @@
+[
+  {
+    "product_id": "aia-essence-on-your-side",
+    "company_slug": "aia-hk",
+    "is_selected": false,
+    "candidates_before": 4,
+    "candidates_after": 2,
+    "fields_repaired": 11,
+    "remaining_paths": "product_features[0].evidence_quote | source_trace.field_evidence.compare_profile.has_policy_loan.quote",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | product_features[0].evidence_quote | product_features[1].evidence_quote | product_features[2].evidence_quote | product_features[3].evidence_quote | product_features[4].evidence_quote | source_trace.field_evidence.compare_profile.has_cancer_multiple_claims.quote | source_trace.field_evidence.compare_profile.has_guaranteed_cash_value.quote | source_trace.field_evidence.compare_profile.has_non_guaranteed_bonus.quote | source_trace.field_evidence.compare_profile.has_policy_loan.quote"
+  },
+  {
+    "product_id": "aia-globalflexi-savings",
+    "company_slug": "aia-hk",
+    "is_selected": false,
+    "candidates_before": 10,
+    "candidates_after": 0,
+    "fields_repaired": 18,
+    "remaining_paths": "",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | product_features[0].evidence_quote | product_features[1].evidence_quote | product_features[2].evidence_quote | product_features[3].evidence_quote | product_features[5].evidence_quote | product_features[6].evidence_quote | product_features[8].evidence_quote | product_features[9].evidence_quote | product_features[10].evidence_quote | product_features[11].evidence_quote | product_features[12].evidence_quote | product_features[14].evidence_quote | source_trace.field_evidence.compare_profile.has_guaranteed_cash_value.quote | source_trace.field_evidence.compare_profile.has_non_guaranteed_bonus.quote | source_trace.field_evidence.compare_profile.supports_policy_split.quote | source_trace.field_evidence.compare_profile.supports_change_insured.quote"
+  },
+  {
+    "product_id": "aia-on-your-side-2",
+    "company_slug": "aia-hk",
+    "is_selected": false,
+    "candidates_before": 6,
+    "candidates_after": 4,
+    "fields_repaired": 13,
+    "remaining_paths": "product_features[1].evidence_quote | product_features[3].evidence_quote | product_features[9].evidence_quote | source_trace.field_evidence.compare_profile.has_icu_benefit.quote",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | product_features[0].evidence_quote | product_features[2].evidence_quote | product_features[3].evidence_quote | product_features[5].evidence_quote | product_features[6].evidence_quote | source_trace.field_evidence.compare_profile.has_multiple_claims.quote | source_trace.field_evidence.compare_profile.has_cancer_multiple_claims.quote | source_trace.field_evidence.compare_profile.has_icu_benefit.quote | source_trace.field_evidence.compare_profile.has_guaranteed_cash_value.quote | source_trace.field_evidence.compare_profile.has_non_guaranteed_bonus.quote | source_trace.field_evidence.compare_profile.has_policy_loan.quote"
+  },
+  {
+    "product_id": "axa-loving-care-ci-enhanced",
+    "company_slug": "axa-hk",
+    "is_selected": false,
+    "candidates_before": 4,
+    "candidates_after": 4,
+    "fields_repaired": 7,
+    "remaining_paths": "product_features[2].evidence_quote | source_trace.field_evidence.compare_profile.has_icu_benefit.quote | source_trace.field_evidence.compare_profile.has_guaranteed_cash_value.quote | source_trace.field_evidence.compare_profile.has_non_guaranteed_bonus.quote",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | product_features[0].evidence_quote | product_features[1].evidence_quote | product_features[4].evidence_quote | product_features[6].evidence_quote | source_trace.field_evidence.compare_profile.has_cancer_multiple_claims.quote"
+  },
+  {
+    "product_id": "axa-wealth-advance-savings-ii-ultimate",
+    "company_slug": "axa-hk",
+    "is_selected": false,
+    "candidates_before": 2,
+    "candidates_after": 0,
+    "fields_repaired": 10,
+    "remaining_paths": "",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | product_features[0].evidence_quote | product_features[2].evidence_quote | product_features[3].evidence_quote | product_features[4].evidence_quote | product_features[6].evidence_quote | source_trace.field_evidence.compare_profile.has_non_guaranteed_bonus.quote | source_trace.field_evidence.compare_profile.has_policy_loan.quote | source_trace.field_evidence.compare_profile.supports_policy_split.quote"
+  },
+  {
+    "product_id": "cpic-evergreen-whole-life",
+    "company_slug": "cpic-life",
+    "is_selected": false,
+    "candidates_before": 2,
+    "candidates_after": 2,
+    "fields_repaired": 2,
+    "remaining_paths": "product_features[0].evidence_quote | source_trace.field_evidence.compare_profile.has_policy_loan.quote",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary"
+  },
+  {
+    "product_id": "cpic-jinshengwuyou-2024-kids",
+    "company_slug": "cpic-life",
+    "is_selected": false,
+    "candidates_before": 2,
+    "candidates_after": 0,
+    "fields_repaired": 3,
+    "remaining_paths": "",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | compare_profile.premium_terms"
+  },
+  {
+    "product_id": "cpic-jinshengwuyou-kids",
+    "company_slug": "cpic-life",
+    "is_selected": false,
+    "candidates_before": 2,
+    "candidates_after": 0,
+    "fields_repaired": 3,
+    "remaining_paths": "",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | compare_profile.premium_terms"
+  },
+  {
+    "product_id": "cpic-wenyingjinsheng-ci",
+    "company_slug": "cpic-life",
+    "is_selected": false,
+    "candidates_before": 2,
+    "candidates_after": 0,
+    "fields_repaired": 3,
+    "remaining_paths": "",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | compare_profile.premium_terms"
+  },
+  {
+    "product_id": "cpic-xiangbanzhizun-2024s",
+    "company_slug": "cpic-life",
+    "is_selected": false,
+    "candidates_before": 2,
+    "candidates_after": 0,
+    "fields_repaired": 5,
+    "remaining_paths": "",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | compare_profile.premium_terms | product_features[0].evidence_quote | source_trace.field_evidence.compare_profile.has_non_guaranteed_bonus.quote"
+  },
+  {
+    "product_id": "fwd-crisis-one-master",
+    "company_slug": "fwd-hk",
+    "is_selected": false,
+    "candidates_before": 2,
+    "candidates_after": 2,
+    "fields_repaired": 8,
+    "remaining_paths": "product_features[0].evidence_quote | source_trace.field_evidence.compare_profile.has_policy_loan.quote",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | product_features[0].evidence_quote | product_features[2].evidence_quote | product_features[7].evidence_quote | source_trace.field_evidence.compare_profile.has_multiple_claims.quote | source_trace.field_evidence.compare_profile.has_cancer_multiple_claims.quote | source_trace.field_evidence.compare_profile.has_guaranteed_cash_value.quote"
+  },
+  {
+    "product_id": "fwd-crisis-u-supporter",
+    "company_slug": "fwd-hk",
+    "is_selected": false,
+    "candidates_before": 2,
+    "candidates_after": 2,
+    "fields_repaired": 7,
+    "remaining_paths": "product_features[0].evidence_quote | source_trace.field_evidence.compare_profile.has_policy_loan.quote",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | compare_profile.premium_terms | product_features[0].evidence_quote | product_features[3].evidence_quote | product_features[5].evidence_quote | source_trace.field_evidence.compare_profile.has_icu_benefit.quote"
+  },
+  {
+    "product_id": "fwd-easycover-ci",
+    "company_slug": "fwd-hk",
+    "is_selected": false,
+    "candidates_before": 4,
+    "candidates_after": 5,
+    "fields_repaired": 5,
+    "remaining_paths": "product_features[0].evidence_quote | product_features[3].evidence_quote | source_trace.field_evidence.compare_profile.has_icu_benefit.quote | source_trace.field_evidence.compare_profile.has_non_guaranteed_bonus.quote | source_trace.field_evidence.compare_profile.has_policy_loan.quote",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | compare_profile.premium_terms | product_features[0].evidence_quote | source_trace.field_evidence.compare_profile.has_policy_loan.quote"
+  },
+  {
+    "product_id": "fwd-maxfocus-legacy-ii",
+    "company_slug": "fwd-hk",
+    "is_selected": false,
+    "candidates_before": 1,
+    "candidates_after": 0,
+    "fields_repaired": 9,
+    "remaining_paths": "",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | compare_profile.premium_terms | product_features[0].evidence_quote | product_features[2].evidence_quote | product_features[3].evidence_quote | product_features[5].evidence_quote | source_trace.field_evidence.compare_profile.has_guaranteed_cash_value.quote | source_trace.field_evidence.compare_profile.supports_policy_split.quote"
+  },
+  {
+    "product_id": "fwd-noble-fortune",
+    "company_slug": "fwd-hk",
+    "is_selected": false,
+    "candidates_before": 0,
+    "candidates_after": 0,
+    "fields_repaired": 5,
+    "remaining_paths": "",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | product_features[0].evidence_quote | product_features[1].evidence_quote | source_trace.field_evidence.compare_profile.has_icu_benefit.quote"
+  },
+  {
+    "product_id": "fwd-wealthicon-horizon",
+    "company_slug": "fwd-hk",
+    "is_selected": false,
+    "candidates_before": 2,
+    "candidates_after": 4,
+    "fields_repaired": 7,
+    "remaining_paths": "product_features[0].evidence_quote | product_features[2].evidence_quote | source_trace.field_evidence.compare_profile.has_non_guaranteed_bonus.quote | source_trace.field_evidence.compare_profile.has_policy_loan.quote",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | product_features[0].evidence_quote | product_features[2].evidence_quote | product_features[3].evidence_quote | source_trace.field_evidence.compare_profile.has_guaranteed_cash_value.quote | source_trace.field_evidence.compare_profile.supports_policy_split.quote"
+  },
+  {
+    "product_id": "fwd-wealthicon-supreme-iii",
+    "company_slug": "fwd-hk",
+    "is_selected": false,
+    "candidates_before": 1,
+    "candidates_after": 0,
+    "fields_repaired": 8,
+    "remaining_paths": "",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | product_features[0].evidence_quote | product_features[1].evidence_quote | product_features[2].evidence_quote | source_trace.field_evidence.compare_profile.has_guaranteed_cash_value.quote | source_trace.field_evidence.compare_profile.has_policy_loan.quote | source_trace.field_evidence.compare_profile.supports_policy_split.quote"
+  },
+  {
+    "product_id": "manulife-bright-care-pro",
+    "company_slug": "manulife-hk",
+    "is_selected": false,
+    "candidates_before": 2,
+    "candidates_after": 0,
+    "fields_repaired": 12,
+    "remaining_paths": "",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | product_features[0].evidence_quote | product_features[1].evidence_quote | product_features[2].evidence_quote | product_features[3].evidence_quote | product_features[4].evidence_quote | product_features[7].evidence_quote | source_trace.field_evidence.compare_profile.has_cancer_multiple_claims.quote | source_trace.field_evidence.compare_profile.has_icu_benefit.quote | source_trace.field_evidence.compare_profile.has_non_guaranteed_bonus.quote | source_trace.field_evidence.compare_profile.has_policy_loan.quote"
+  },
+  {
+    "product_id": "manulife-genesis-centurion",
+    "company_slug": "manulife-hk",
+    "is_selected": false,
+    "candidates_before": 2,
+    "candidates_after": 1,
+    "fields_repaired": 14,
+    "remaining_paths": "source_trace.field_evidence.compare_profile.has_non_guaranteed_bonus.quote",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | product_features[0].evidence_quote | product_features[1].evidence_quote | product_features[2].evidence_quote | product_features[3].evidence_quote | product_features[4].evidence_quote | product_features[5].evidence_quote | product_features[6].evidence_quote | product_features[7].evidence_quote | product_features[8].evidence_quote | source_trace.field_evidence.compare_profile.has_non_guaranteed_bonus.quote | source_trace.field_evidence.compare_profile.supports_policy_split.quote | source_trace.field_evidence.compare_profile.supports_change_insured.quote"
+  },
+  {
+    "product_id": "manulife-incomeguard-ci",
+    "company_slug": "manulife-hk",
+    "is_selected": false,
+    "candidates_before": 0,
+    "candidates_after": 0,
+    "fields_repaired": 11,
+    "remaining_paths": "",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | product_features[0].evidence_quote | product_features[1].evidence_quote | product_features[2].evidence_quote | product_features[3].evidence_quote | product_features[7].evidence_quote | product_features[8].evidence_quote | source_trace.field_evidence.compare_profile.has_cancer_multiple_claims.quote | source_trace.field_evidence.compare_profile.has_guaranteed_cash_value.quote | source_trace.field_evidence.compare_profile.has_policy_loan.quote"
+  },
+  {
+    "product_id": "manulife-incomeshield-ci",
+    "company_slug": "manulife-hk",
+    "is_selected": false,
+    "candidates_before": 1,
+    "candidates_after": 0,
+    "fields_repaired": 10,
+    "remaining_paths": "",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | product_features[0].evidence_quote | product_features[1].evidence_quote | product_features[2].evidence_quote | product_features[4].evidence_quote | product_features[5].evidence_quote | source_trace.field_evidence.compare_profile.has_cancer_multiple_claims.quote | source_trace.field_evidence.compare_profile.has_guaranteed_cash_value.quote | source_trace.field_evidence.compare_profile.has_policy_loan.quote"
+  },
+  {
+    "product_id": "manulife-manucentury",
+    "company_slug": "manulife-hk",
+    "is_selected": false,
+    "candidates_before": 2,
+    "candidates_after": 1,
+    "fields_repaired": 14,
+    "remaining_paths": "source_trace.field_evidence.compare_profile.has_non_guaranteed_bonus.quote",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | product_features[0].evidence_quote | product_features[1].evidence_quote | product_features[2].evidence_quote | product_features[3].evidence_quote | product_features[4].evidence_quote | product_features[5].evidence_quote | product_features[6].evidence_quote | product_features[7].evidence_quote | product_features[8].evidence_quote | source_trace.field_evidence.compare_profile.has_non_guaranteed_bonus.quote | source_trace.field_evidence.compare_profile.supports_policy_split.quote | source_trace.field_evidence.compare_profile.supports_change_insured.quote"
+  },
+  {
+    "product_id": "manulife-prestige-achiever",
+    "company_slug": "manulife-hk",
+    "is_selected": false,
+    "candidates_before": 4,
+    "candidates_after": 1,
+    "fields_repaired": 14,
+    "remaining_paths": "source_trace.field_evidence.compare_profile.has_non_guaranteed_bonus.quote",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | product_features[0].evidence_quote | product_features[1].evidence_quote | product_features[2].evidence_quote | product_features[3].evidence_quote | product_features[4].evidence_quote | product_features[5].evidence_quote | product_features[6].evidence_quote | product_features[7].evidence_quote | product_features[8].evidence_quote | source_trace.field_evidence.compare_profile.has_non_guaranteed_bonus.quote | source_trace.field_evidence.compare_profile.supports_policy_split.quote | source_trace.field_evidence.compare_profile.supports_change_insured.quote"
+  },
+  {
+    "product_id": "new-china-life-rongyao-shijia",
+    "company_slug": "new-china-life",
+    "is_selected": false,
+    "candidates_before": 2,
+    "candidates_after": 0,
+    "fields_repaired": 5,
+    "remaining_paths": "",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | compare_profile.premium_terms | product_features[0].evidence_quote | source_trace.field_evidence.compare_profile.has_policy_loan.quote"
+  },
+  {
+    "product_id": "new-china-life-rongyao-xinxiang",
+    "company_slug": "new-china-life",
+    "is_selected": false,
+    "candidates_before": 2,
+    "candidates_after": 0,
+    "fields_repaired": 5,
+    "remaining_paths": "",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | compare_profile.premium_terms | product_features[0].evidence_quote | source_trace.field_evidence.compare_profile.has_policy_loan.quote"
+  },
+  {
+    "product_id": "ping-an-shengshi-jinyue-premium",
+    "company_slug": "ping-an",
+    "is_selected": false,
+    "candidates_before": 0,
+    "candidates_after": 0,
+    "fields_repaired": 2,
+    "remaining_paths": "",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary"
+  },
+  {
+    "product_id": "pingan-fuli-20-ci",
+    "company_slug": "ping-an",
+    "is_selected": false,
+    "candidates_before": 3,
+    "candidates_after": 0,
+    "fields_repaired": 6,
+    "remaining_paths": "",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | product_features[0].evidence_quote | product_features[1].evidence_quote | source_trace.field_evidence.compare_profile.has_cancer_multiple_claims.quote | source_trace.field_evidence.compare_profile.has_policy_loan.quote"
+  },
+  {
+    "product_id": "pingan-ruyi-quanneng-2025-ci",
+    "company_slug": "ping-an",
+    "is_selected": false,
+    "candidates_before": 0,
+    "candidates_after": 0,
+    "fields_repaired": 2,
+    "remaining_paths": "",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary"
+  },
+  {
+    "product_id": "pingan-ruyi-quanneng-ci",
+    "company_slug": "ping-an",
+    "is_selected": false,
+    "candidates_before": 0,
+    "candidates_after": 0,
+    "fields_repaired": 2,
+    "remaining_paths": "",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary"
+  },
+  {
+    "product_id": "pingan-shengshi-jinyue-zunxiang-26II",
+    "company_slug": "ping-an",
+    "is_selected": false,
+    "candidates_before": 1,
+    "candidates_after": 0,
+    "fields_repaired": 3,
+    "remaining_paths": "",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | source_trace.field_evidence.compare_profile.has_non_guaranteed_bonus.quote"
+  },
+  {
+    "product_id": "pingan-yuxiang-jinyue-2025",
+    "company_slug": "ping-an",
+    "is_selected": false,
+    "candidates_before": 0,
+    "candidates_after": 0,
+    "fields_repaired": 2,
+    "remaining_paths": "",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary"
+  },
+  {
+    "product_id": "pru-ci-extended-care-iii",
+    "company_slug": "prudential-hk",
+    "is_selected": false,
+    "candidates_before": 1,
+    "candidates_after": 0,
+    "fields_repaired": 14,
+    "remaining_paths": "",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | compare_profile.premium_terms | product_features[0].evidence_quote | product_features[1].evidence_quote | product_features[2].evidence_quote | product_features[3].evidence_quote | product_features[5].evidence_quote | product_features[6].evidence_quote | source_trace.field_evidence.compare_profile.has_cancer_multiple_claims.quote | source_trace.field_evidence.compare_profile.has_icu_benefit.quote | source_trace.field_evidence.compare_profile.has_guaranteed_cash_value.quote | source_trace.field_evidence.compare_profile.has_non_guaranteed_bonus.quote | source_trace.field_evidence.compare_profile.has_policy_loan.quote"
+  },
+  {
+    "product_id": "pru-entrust-multi-currency",
+    "company_slug": "prudential-hk",
+    "is_selected": false,
+    "candidates_before": 3,
+    "candidates_after": 2,
+    "fields_repaired": 12,
+    "remaining_paths": "product_features[5].evidence_quote | source_trace.field_evidence.compare_profile.supports_change_insured.quote",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | product_features[0].evidence_quote | product_features[3].evidence_quote | product_features[5].evidence_quote | product_features[6].evidence_quote | product_features[7].evidence_quote | product_features[9].evidence_quote | product_features[11].evidence_quote | source_trace.field_evidence.compare_profile.has_guaranteed_cash_value.quote | source_trace.field_evidence.compare_profile.has_non_guaranteed_bonus.quote | source_trace.field_evidence.compare_profile.supports_change_insured.quote"
+  },
+  {
+    "product_id": "pru-guardian-ci-series",
+    "company_slug": "prudential-hk",
+    "is_selected": false,
+    "candidates_before": 2,
+    "candidates_after": 4,
+    "fields_repaired": 13,
+    "remaining_paths": "product_features[0].evidence_quote | product_features[8].evidence_quote | product_features[9].evidence_quote | source_trace.field_evidence.compare_profile.has_policy_loan.quote",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | product_features[0].evidence_quote | product_features[1].evidence_quote | product_features[3].evidence_quote | product_features[4].evidence_quote | product_features[5].evidence_quote | product_features[7].evidence_quote | product_features[8].evidence_quote | source_trace.field_evidence.compare_profile.has_cancer_multiple_claims.quote | source_trace.field_evidence.compare_profile.has_icu_benefit.quote | source_trace.field_evidence.compare_profile.has_guaranteed_cash_value.quote | source_trace.field_evidence.compare_profile.has_policy_loan.quote"
+  },
+  {
+    "product_id": "prudential-enlit-savings",
+    "company_slug": "prudential-hk",
+    "is_selected": false,
+    "candidates_before": 0,
+    "candidates_after": 0,
+    "fields_repaired": 8,
+    "remaining_paths": "",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | product_features[0].evidence_quote | product_features[2].evidence_quote | source_trace.field_evidence.compare_profile.has_icu_benefit.quote | source_trace.field_evidence.compare_profile.has_guaranteed_cash_value.quote | source_trace.field_evidence.compare_profile.has_non_guaranteed_bonus.quote | source_trace.field_evidence.compare_profile.has_policy_loan.quote"
+  },
+  {
+    "product_id": "prudential-evergreen-growth",
+    "company_slug": "prudential-hk",
+    "is_selected": false,
+    "candidates_before": 0,
+    "candidates_after": 0,
+    "fields_repaired": 6,
+    "remaining_paths": "",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | product_features[0].evidence_quote | source_trace.field_evidence.compare_profile.has_guaranteed_cash_value.quote | source_trace.field_evidence.compare_profile.has_non_guaranteed_bonus.quote | source_trace.field_evidence.compare_profile.has_policy_loan.quote"
+  },
+  {
+    "product_id": "prudential-prime-ace",
+    "company_slug": "prudential-hk",
+    "is_selected": false,
+    "candidates_before": 0,
+    "candidates_after": 0,
+    "fields_repaired": 6,
+    "remaining_paths": "",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | product_features[0].evidence_quote | product_features[1].evidence_quote | source_trace.field_evidence.compare_profile.has_non_guaranteed_bonus.quote | source_trace.field_evidence.compare_profile.has_policy_loan.quote"
+  },
+  {
+    "product_id": "prudential-prime-eternity",
+    "company_slug": "prudential-hk",
+    "is_selected": false,
+    "candidates_before": 0,
+    "candidates_after": 0,
+    "fields_repaired": 6,
+    "remaining_paths": "",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | product_features[1].evidence_quote | product_features[2].evidence_quote | product_features[5].evidence_quote | source_trace.field_evidence.compare_profile.has_non_guaranteed_bonus.quote"
+  },
+  {
+    "product_id": "taikang-lexiangjiankang-2026",
+    "company_slug": "taikang-life",
+    "is_selected": false,
+    "candidates_before": 0,
+    "candidates_after": 0,
+    "fields_repaired": 3,
+    "remaining_paths": "",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | compare_profile.premium_terms"
+  },
+  {
+    "product_id": "taikang-lexiangjiankang-kids",
+    "company_slug": "taikang-life",
+    "is_selected": false,
+    "candidates_before": 0,
+    "candidates_after": 0,
+    "fields_repaired": 2,
+    "remaining_paths": "",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary"
+  },
+  {
+    "product_id": "taikang-xinxingshijia-2026-qingdianban",
+    "company_slug": "taikang-life",
+    "is_selected": false,
+    "candidates_before": 0,
+    "candidates_after": 0,
+    "fields_repaired": 3,
+    "remaining_paths": "",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | compare_profile.premium_terms"
+  },
+  {
+    "product_id": "taikang-xinxingshijia-2026-zunxiangban-b",
+    "company_slug": "taikang-life",
+    "is_selected": false,
+    "candidates_before": 0,
+    "candidates_after": 0,
+    "fields_repaired": 3,
+    "remaining_paths": "",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | compare_profile.premium_terms"
+  },
+  {
+    "product_id": "taikang-zengduoduo",
+    "company_slug": "taikang-life",
+    "is_selected": false,
+    "candidates_before": 0,
+    "candidates_after": 0,
+    "fields_repaired": 2,
+    "remaining_paths": "",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary"
+  },
+  {
+    "product_id": "taikang-zunxiang-shijia-flagship",
+    "company_slug": "taikang-life",
+    "is_selected": false,
+    "candidates_before": 0,
+    "candidates_after": 0,
+    "fields_repaired": 3,
+    "remaining_paths": "",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary | compare_profile.premium_terms"
+  },
+  {
+    "product_id": "taikang-zunxiang-shijia-zeng-e",
+    "company_slug": "taikang-life",
+    "is_selected": false,
+    "candidates_before": 0,
+    "candidates_after": 0,
+    "fields_repaired": 2,
+    "remaining_paths": "",
+    "repaired_paths": "base.entry_age | compare_profile.entry_age_summary"
+  }
+]

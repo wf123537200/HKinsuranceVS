@@ -1,0 +1,474 @@
+{
+  "product_vector_version": "v2.9",
+  "base": {
+    "product_id": "prudential-evergreen-growth",
+    "slug": "prudential-evergreen-growth",
+    "product_name": "保诚恒常增长储蓄保险计划 II",
+    "product_name_en": "Evergreen Growth Saver Plus II",
+    "company_slug": "prudential-hk",
+    "company_name": "保诚香港",
+    "region": "Hong Kong",
+    "category": "savings",
+    "category_zh": "储蓄险",
+    "subcategory": "whole_life_savings",
+    "policy_currency": [
+      "USD",
+      "HKD",
+      "CNY"
+    ],
+    "policy_term": "终身",
+    "premium_term": [
+      "12年"
+    ],
+    "entry_age": "投保年龄按计划版本、缴费期及条款规定而定。",
+    "payment_mode": null,
+    "local_pdf_path": "/pdfs/prudential-evergreen-growth.pdf",
+    "source_pdf_filename": "prudential-evergreen-growth.pdf",
+    "is_hot_discussed": false,
+    "market_attention": "unknown",
+    "product_name_zh_cn": "保诚恒常增长储蓄保险计划 II",
+    "product_name_zh_hk": "保誠雋富多元貨幣計劃 II",
+    "display_name": "保诚隽富多元货币计划 II",
+    "product_name_zh_tw": "保誠恆常增長儲蓄保險計劃 II"
+  },
+  "core": {
+    "critical_illness_core": null,
+    "savings_core": {
+      "has_guaranteed_cash_value": true,
+      "has_non_guaranteed_bonus": true,
+      "bonus_types": [
+        "复归红利",
+        "特别红利"
+      ],
+      "highest_illustrated_irr": null,
+      "guaranteed_irr": null,
+      "highest_illustrated_return_multiple": null,
+      "has_partial_withdrawal": false,
+      "has_policy_loan": true
+    }
+  },
+  "modules": {
+    "participating_savings_module": {
+      "available": true,
+      "bonus_types": [
+        "复归红利",
+        "特别红利"
+      ]
+    },
+    "life_protection_module": {
+      "has_death_benefit": true
+    },
+    "policy_liquidity_module": {
+      "has_policy_loan": true,
+      "has_partial_withdrawal": false,
+      "has_regular_withdrawal": false
+    },
+    "policy_flexibility_module": {
+      "supports_currency_switch": false,
+      "supports_policy_split": false,
+      "supports_change_insured": false,
+      "supports_second_insured": false,
+      "supports_second_policyholder": false
+    },
+    "risk_module": {
+      "risk_summary": null
+    }
+  },
+  "compare_profile": {
+    "product_category": "savings",
+    "product_type": "whole_life_savings",
+    "company_slug": "prudential-hk",
+    "product_slug": "prudential-evergreen-growth",
+    "market_attention": "unknown",
+    "priority": null,
+    "policy_term": "终身",
+    "premium_terms": [
+      "12年"
+    ],
+    "entry_age_summary": "投保年龄按计划版本、缴费期及条款规定而定。",
+    "currencies": [
+      "USD",
+      "HKD",
+      "RMB"
+    ],
+    "has_guaranteed_cash_value": true,
+    "has_non_guaranteed_bonus": true,
+    "bonus_types": [
+      "复归红利",
+      "特别红利"
+    ],
+    "has_partial_withdrawal": true,
+    "has_regular_withdrawal": false,
+    "has_policy_loan": true,
+    "supports_currency_switch": false,
+    "supports_policy_split": false,
+    "supports_change_insured": false,
+    "supports_second_insured": false,
+    "supports_second_policyholder": false,
+    "covered_illness_total": null,
+    "major_illness_count": null,
+    "early_stage_illness_count": null,
+    "moderate_illness_count": null,
+    "child_illness_count": null,
+    "has_multiple_claims": null,
+    "has_cancer_multiple_claims": null,
+    "has_heart_stroke_multiple_claims": null,
+    "has_icu_benefit": true,
+    "cancer_claim_cap_summary": null,
+    "heart_stroke_claim_summary": null,
+    "icu_benefit_summary": null,
+    "post_claim_status_summary": null,
+    "highest_illustrated_irr": null,
+    "guaranteed_irr": 135,
+    "highest_illustrated_return_multiple": null,
+    "illustrated_break_even_year": null,
+    "guaranteed_break_even_year": null,
+    "risk_summary": [],
+    "bonus_type_summary": "非保证红利或分红",
+    "bonus_declaration_summary": "提供非保证红利或分红，金额并不保证，实际派发及公布以保险公司政策为准。",
+    "has_bonus_lock_in": false,
+    "bonus_lock_in_summary": null,
+    "has_bonus_unlock": false,
+    "bonus_unlock_summary": null,
+    "has_value_protection_account": false,
+    "value_protection_account_summary": null,
+    "policy_loan_summary": "可按条款申请保单贷款，贷款会影响保单价值。",
+    "partial_withdrawal_summary": "可按条款部分提取或减保，提取会影响保单价值。",
+    "regular_withdrawal_summary": null,
+    "change_insured_summary": null,
+    "second_insured_summary": null,
+    "second_policyholder_summary": null,
+    "policy_split_summary": null,
+    "has_death_benefit_payment_option": false,
+    "death_benefit_payment_summary": null,
+    "has_beneficiary_flexible_option": false,
+    "beneficiary_option_summary": null,
+    "has_terminal_illness_benefit": false,
+    "terminal_illness_summary": null,
+    "minimum_premium_summary": null,
+    "minimum_sum_assured_summary": null
+  },
+  "product_features": [
+    {
+      "feature_id": "policy_loan",
+      "feature_name": "保单贷款",
+      "category": "liquidity",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "可按条款申请保单贷款，提升保单资金流动性。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 1,
+      "compare_key": "policy_loan",
+      "source_pages": [
+        4
+      ],
+      "evidence_quote": "in force. There is more about our “Cash value withdrawal” and “Policy loan” in the “More about the plan”",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "保單貸款借入",
+          "保单贷款借入",
+          "借入高達",
+          "借入高达",
+          "通過保單貸款",
+          "通过保单贷款",
+          "policy loan"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "icu_benefit",
+      "feature_name": "深切治疗保障",
+      "category": "health_service",
+      "feature_type": "value_added_service",
+      "availability": true,
+      "short_description": "达到指定深切治疗条件时，可获得额外赔偿。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 2,
+      "compare_key": "icu_benefit",
+      "source_pages": [
+        14
+      ],
+      "evidence_quote": "An account holder who knowingly or recklessly provides a statement that is misleading, false or incorrect in a material particular in making a self-certification to a reporting financial institution is liable on conviction to a fine at level 3 (HKD 10,000).",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "深切治療",
+          "深切治疗",
+          "ICU",
+          "intensive care"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "academic_reward",
+      "feature_name": "学业奖励",
+      "category": "special_option",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "达成指定学业成就时，可按条款获得奖励或相关权益。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 3,
+      "compare_key": "academic_reward",
+      "source_pages": [
+        2
+      ],
+      "evidence_quote": "Reward your child’s academic success Pass down wealth through",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "學術優異",
+          "学术优异",
+          "卓越成績",
+          "卓越成绩",
+          "academic",
+          "成績獎",
+          "成绩奖"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "accidental_death_benefit",
+      "feature_name": "意外身故保障",
+      "category": "life_protection",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "受保人身故时，可按条款向受益人支付身故赔偿。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 4,
+      "compare_key": "accidental_death_benefit",
+      "source_pages": [
+        4,
+        2,
+        6,
+        7,
+        8
+      ],
+      "evidence_quote": "accidental death Death benefit We will pay a death benefit to the beneficiary you choose if the life assured passes away while the plan is in force. If the life assured dies, we will pay a death benefit with a guaranteed amount of 100% of the total basic premiums you paid, which we increase by 3.5% on each policy anniversary",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_page_window",
+        "evidence_method": "pdfplumber_page_window_keyword_match_v2.7",
+        "keywords": [
+          "身故保障",
+          "身故賠償",
+          "身故赔偿",
+          "death benefit"
+        ]
+      }
+    }
+  ],
+  "feature_tags": [
+    "policy_loan",
+    "icu_benefit",
+    "academic_reward",
+    "accidental_death_benefit"
+  ],
+  "comparison_flags": {
+    "has_guaranteed_cash_value": true,
+    "has_non_guaranteed_bonus": true,
+    "has_partial_withdrawal": false,
+    "has_regular_withdrawal": false,
+    "has_policy_loan": true,
+    "supports_currency_switch": false,
+    "supports_policy_split": false,
+    "supports_change_insured": false,
+    "supports_second_insured": false,
+    "supports_second_policyholder": false,
+    "has_multiple_claims": null,
+    "has_cancer_multiple_claims": null,
+    "has_heart_stroke_multiple_claims": null,
+    "has_icu_benefit": true
+  },
+  "source_trace": {
+    "source_type": "catalog_verified_pdf",
+    "source_pdf": "prudential-evergreen-growth.pdf",
+    "source_pdf_path": "pdfs/prudential-evergreen-growth.pdf",
+    "source_pdf_sha256": "5f4821662489986e75d8d025bc212b25837d0cc57cb66ca2573032968d720146",
+    "page_count": 16,
+    "text_length": 42064,
+    "extraction_confidence": "medium",
+    "missing_fields": [
+      "premium_terms",
+      "entry_age"
+    ],
+    "field_evidence": {
+      "compare_profile.has_icu_benefit": {
+        "source": "local_pdf",
+        "pages": [
+          14
+        ],
+        "quote": "An account holder who knowingly or recklessly provides a statement that is misleading, false or incorrect in a material particular in making a self-certification to a reporting financial institution is liable on conviction to a fine at level 3 (HKD 10,000).",
+        "confidence": "medium",
+        "method": "pdf_page_semantic_window_keyword_match_v2.9_no_hard_char_truncation",
+        "no_hard_char_truncation": true
+      },
+      "compare_profile.has_guaranteed_cash_value": {
+        "source": "local_pdf",
+        "pages": [
+          3
+        ],
+        "quote": "Savings growth with Evergreen Growth Saver Plus II can come from 3 sources: a guaranteed cash value, a non-guaranteed reversionary bonus and a non-guaranteed special bonus.",
+        "confidence": "medium",
+        "method": "pdf_page_semantic_window_keyword_match_v2.9_no_hard_char_truncation",
+        "no_hard_char_truncation": true
+      },
+      "compare_profile.has_non_guaranteed_bonus": {
+        "source": "local_pdf",
+        "pages": [
+          10
+        ],
+        "quote": "through the addition of non-guaranteed bonus. We aim to protect all policyholders’ respective rights and reasonable expectations by providing payments that are fair across different groups of policyholders. While the value of the plan is mostly affected by the overall performance of the Fund, smoothing may be applied to produce more stable returns over the long-term.",
+        "confidence": "medium",
+        "method": "pdf_page_semantic_window_keyword_match_v2.9_no_hard_char_truncation",
+        "no_hard_char_truncation": true
+      },
+      "compare_profile.has_policy_loan": {
+        "source": "local_pdf",
+        "pages": [
+          4
+        ],
+        "quote": "in force. There is more about our “Cash value withdrawal” and “Policy loan” in the “More about the plan”",
+        "confidence": "medium",
+        "method": "pdf_page_semantic_window_keyword_match_v2.9_no_hard_char_truncation",
+        "no_hard_char_truncation": true
+      }
+    }
+  },
+  "extraction_meta": {
+    "extracted_at": "2026-06-20T12:40:22.094366Z",
+    "method": "PRODUCT-CATALOG + selected hot TS guided heuristic extraction; no fuzzy cross-product substitution",
+    "schema_policy": "core comparable fields in compare_profile; special/non-standard features in product_features[] and feature_tags[]",
+    "v2_5_extraction": {
+      "extracted_at": "2026-06-21T08:52:03.528385Z",
+      "method": "local_pdf_regex_structured_reextract_v2.5",
+      "pdf_filename": "prudential-evergreen-growth.pdf"
+    },
+    "v2_7_reextract": {
+      "generated_at": "2026-06-21T09:32:31.196049Z",
+      "method": "pdfplumber_page_window_keyword_match_v2.7",
+      "feature_count": 4,
+      "feature_evidence_matched": 4
+    },
+    "v2_8_reextract": {
+      "generated_at": "2026-06-21T10:07:34.474009Z",
+      "method": "full_truncation_sweep_and_pdf_evidence_window_repair_v2.8",
+      "ellipsis_fields_before": 1,
+      "ellipsis_fields_after": 0,
+      "nested_feature_notes_removed": 4
+    },
+    "v2_9_reextract": {
+      "generated_at": "2026-06-21T10:21:27.621298Z",
+      "method": "pdf_fulltext_reextract_no_hard_char_truncation_v2.9",
+      "note": "v2.9 移除旧抽取逻辑中的硬字符截断：对 base/compare_profile/source_trace.field_evidence/product_features.evidence_quote 做硬截断候选扫描；对 entry_age 等基础字段重新从 PDF 全文抽取完整结构化摘要；证据窗口按 PDF 页面语义窗口重取，不再按 60/80/120 字符硬截断。",
+      "hard_truncation_candidates_before": 0,
+      "hard_truncation_candidates_after": 0,
+      "fields_repaired": 6,
+      "age_refine_note": "v2.9 age fields refined from the best PDF full-text window near 投保年齡/投保范围, avoiding unrelated owner/beneficiary age clauses and hard character truncation."
+    }
+  },
+  "display_features": [
+    {
+      "title": "多货币配置",
+      "summary": "支持多种保单货币，便于跨币种安排。",
+      "category": "currency",
+      "priority": 1,
+      "source_tags": [],
+      "source_paths": [
+        "compare_profile.currencies",
+        "compare_profile.supports_currency_switch"
+      ]
+    },
+    {
+      "title": "现金价值与分红",
+      "summary": "提供保证现金价值，并有机会获得非保证红利。",
+      "category": "savings",
+      "priority": 2,
+      "source_tags": [],
+      "source_paths": [
+        "compare_profile.has_guaranteed_cash_value",
+        "compare_profile.has_non_guaranteed_bonus"
+      ]
+    },
+    {
+      "title": "保单贷款",
+      "summary": "可按规则申请保单贷款，补充现金流。",
+      "category": "liquidity",
+      "priority": 4,
+      "source_tags": [
+        "policy_loan"
+      ],
+      "source_paths": [
+        "compare_profile.has_policy_loan"
+      ]
+    },
+    {
+      "title": "学业奖励",
+      "summary": "设有学业奖励或成长相关额外安排。",
+      "category": "other",
+      "priority": 9,
+      "source_tags": [
+        "academic_reward"
+      ],
+      "source_paths": []
+    }
+  ],
+  "product_name": "保诚恒常增长储蓄保险计划 II"
+}

@@ -1,0 +1,410 @@
+{
+  "product_vector_version": "v2.9",
+  "base": {
+    "product_id": "taikang-lexiangjiankang-kids",
+    "slug": "taikang-lexiangjiankang-kids",
+    "product_name": "泰康乐享健康（少儿 B 款）重大疾病保险",
+    "product_name_en": null,
+    "company_slug": "taikang-life",
+    "company_name": "泰康保险",
+    "region": "Mainland China",
+    "category": "critical_illness",
+    "category_zh": "健康险",
+    "subcategory": "critical_illness",
+    "policy_currency": [
+      "CNY"
+    ],
+    "policy_term": "终身",
+    "premium_term": [
+      "一次性",
+      "3年",
+      "5年",
+      "10年",
+      "15年",
+      "18年",
+      "23年",
+      "28年"
+    ],
+    "entry_age": "投保年龄按计划版本、缴费期及条款规定而定。",
+    "payment_mode": null,
+    "local_pdf_path": "/pdfs/taikang-lexiangjiankang-kids.pdf",
+    "source_pdf_filename": "taikang-lexiangjiankang-kids.pdf",
+    "is_hot_discussed": false,
+    "market_attention": "unknown",
+    "product_name_zh_cn": "泰康乐享健康（少儿 B 款）重大疾病保险",
+    "product_name_zh_hk": "泰康樂享健康少兒B款重大疾病保險",
+    "display_name": "泰康乐享健康少儿B款重大疾病保险",
+    "product_name_zh_tw": "泰康樂享健康（少兒 B 款）重大疾病保險"
+  },
+  "core": {
+    "critical_illness_core": {
+      "covered_illness_total": 120,
+      "major_illness_count": 120,
+      "early_stage_illness_count": null,
+      "moderate_illness_count": null,
+      "child_illness_count": null,
+      "has_multiple_claims": true,
+      "has_cancer_multiple_claims": false,
+      "has_heart_stroke_multiple_claims": false,
+      "has_icu_benefit": false
+    },
+    "savings_core": null
+  },
+  "modules": {
+    "participating_savings_module": {
+      "available": true,
+      "bonus_types": null
+    },
+    "life_protection_module": {
+      "has_death_benefit": true
+    },
+    "policy_liquidity_module": {
+      "has_policy_loan": false,
+      "has_partial_withdrawal": true,
+      "has_regular_withdrawal": false
+    },
+    "policy_flexibility_module": {
+      "supports_currency_switch": false,
+      "supports_policy_split": false,
+      "supports_change_insured": false,
+      "supports_second_insured": false,
+      "supports_second_policyholder": false
+    },
+    "risk_module": {
+      "risk_summary": [
+        "退保/流动性风险"
+      ]
+    }
+  },
+  "compare_profile": {
+    "product_category": "critical_illness",
+    "product_type": "critical_illness",
+    "company_slug": "taikang-life",
+    "product_slug": "taikang-lexiangjiankang-kids",
+    "market_attention": "unknown",
+    "priority": null,
+    "policy_term": "终身",
+    "premium_terms": [
+      "一次性",
+      "3年",
+      "5年",
+      "10年",
+      "15年",
+      "18年",
+      "23年",
+      "28年"
+    ],
+    "entry_age_summary": "投保年龄按计划版本、缴费期及条款规定而定。",
+    "currencies": [
+      "CNY"
+    ],
+    "has_guaranteed_cash_value": true,
+    "has_non_guaranteed_bonus": null,
+    "bonus_types": null,
+    "has_partial_withdrawal": true,
+    "has_regular_withdrawal": false,
+    "has_policy_loan": false,
+    "supports_currency_switch": false,
+    "supports_policy_split": false,
+    "supports_change_insured": false,
+    "supports_second_insured": false,
+    "supports_second_policyholder": false,
+    "covered_illness_total": 120,
+    "major_illness_count": 120,
+    "early_stage_illness_count": null,
+    "moderate_illness_count": null,
+    "child_illness_count": null,
+    "has_multiple_claims": true,
+    "has_cancer_multiple_claims": false,
+    "has_heart_stroke_multiple_claims": false,
+    "has_icu_benefit": false,
+    "cancer_claim_cap_summary": null,
+    "heart_stroke_claim_summary": null,
+    "icu_benefit_summary": null,
+    "post_claim_status_summary": "首次赔付后部分保障可能继续或终止，具体以产品条款为准。",
+    "highest_illustrated_irr": null,
+    "guaranteed_irr": null,
+    "highest_illustrated_return_multiple": null,
+    "illustrated_break_even_year": null,
+    "guaranteed_break_even_year": null,
+    "risk_summary": [
+      "退保/流动性风险"
+    ],
+    "has_death_benefit": null,
+    "major_illness_payout_summary": "每次重大疾病保险金按基本保险金额与已交保费较大者给付；以基本保额口径至少为100%。",
+    "early_stage_payout_summary": "轻度疾病保险金按基本保险金额25%给付，累计以六次为限。",
+    "max_claim_count_summary": "重大疾病分5组累计给付以五次为限，按基本保额口径最高约500%。",
+    "cancer_claim_summary": null,
+    "multiple_claim_waiting_period_summary": "多次赔付通常设有等候期，具体间隔以产品条款为准。",
+    "survival_period_summary": "多次赔付可能设有生存期要求，具体以产品条款为准。",
+    "early_stage_premium_waiver": null,
+    "major_claim_premium_waiver": null,
+    "family_premium_waiver_summary": null,
+    "bonus_type_summary": null,
+    "death_benefit_summary": null,
+    "healthcare_service_summary": null,
+    "early_stage_payout_percent": 25,
+    "moderate_illness_payout_percent": 50,
+    "moderate_illness_payout_summary": "中度疾病保险金按基本保险金额50%给付。",
+    "major_illness_payout_percent": 100,
+    "multiple_claim_per_claim_percent": 100,
+    "multiple_claim_per_claim_summary": "重大疾病分5组，最多给付5次，每次按基本保险金额与已交保费较大者给付。",
+    "max_total_claim_percent": 500,
+    "critical_child_extra_percent": 50,
+    "critical_child_extra_summary": "30周岁及以下首次重大疾病除首次重大疾病保险金外，再给付基本保险金额50%。"
+  },
+  "product_features": [
+    {
+      "feature_id": "premium_waiver",
+      "feature_name": "保费豁免",
+      "category": "premium_payment",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "达到指定理赔或家庭事件时，可按条款豁免保费。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 1,
+      "compare_key": "premium_waiver",
+      "source_pages": [
+        2,
+        3,
+        4
+      ],
+      "evidence_quote": null,
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "not_found",
+        "evidence_method": "pdfplumber_page_window_keyword_match_v2.7",
+        "keywords": [
+          "保費豁免",
+          "保费豁免",
+          "豁免保費",
+          "豁免保费",
+          "premium waiver"
+        ]
+      }
+    }
+  ],
+  "feature_tags": [
+    "premium_waiver"
+  ],
+  "comparison_flags": {
+    "has_guaranteed_cash_value": true,
+    "has_non_guaranteed_bonus": null,
+    "has_partial_withdrawal": true,
+    "has_regular_withdrawal": false,
+    "has_policy_loan": false,
+    "supports_currency_switch": false,
+    "supports_policy_split": false,
+    "supports_change_insured": false,
+    "supports_second_insured": false,
+    "supports_second_policyholder": false,
+    "has_multiple_claims": true,
+    "has_cancer_multiple_claims": false,
+    "has_heart_stroke_multiple_claims": false,
+    "has_icu_benefit": false
+  },
+  "source_trace": {
+    "source_type": "catalog_verified_pdf",
+    "source_pdf": "taikang-lexiangjiankang-kids.pdf",
+    "source_pdf_path": "pdfs/taikang-lexiangjiankang-kids.pdf",
+    "source_pdf_sha256": "5f8a5d6c8b182c4d49ac34a31079e337fd0ad6d4653896f8369d8a2b4201d729",
+    "page_count": 6,
+    "text_length": 8713,
+    "extraction_confidence": "medium",
+    "missing_fields": [],
+    "field_evidence": {
+      "compare_profile.early_stage_payout_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "疾病、重大疾病或者发生高残、身故的， 我们不承担保险责任，具体做法见下表： 等待期内发生的保险事故 我们的做法 轻度疾病 不承担保险责任，本合同继续有效 中度疾病 不承担保险责任，本合同继续有效 不承担保险责任，无息退还您累计已交纳的本 重大疾病 合同的保险费，本合同终止 不承担保险责任，无息退还您累计已交纳的本 高残/身故 合同的保险费，本合同终止 若发生本合同约定的减保，计算累计已交纳的本合同的保险费时，减保前的部分将按减保比例相应 减少。 3.保险责任 在本合同保险期间内，我们承担下列保险责任： 泰康乐享健康",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.early_stage_payout_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "疾病、重大疾病或者发生高残、身故的， 我们不承担保险责任，具体做法见下表： 等待期内发生的保险事故 我们的做法 轻度疾病 不承担保险责任，本合同继续有效 中度疾病 不承担保险责任，本合同继续有效 不承担保险责任，无息退还您累计已交纳的本 重大疾病 合同的保险费，本合同终止 不承担保险责任，无息退还您累计已交纳的本 高残/身故 合同的保险费，本合同终止 若发生本合同约定的减保，计算累计已交纳的本合同的保险费时，减保前的部分将按减保比例相应 减少。 3.保险责任 在本合同保险期间内，我们承担下列保险责任： 泰康乐享健康",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.moderate_illness_payout_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "25%向疾病保险金受益人给付轻度疾病保险金。 每种轻度疾病限给付一次，给付后该种轻度疾病保险金保险责任终止。本合同不同种类的轻度疾病 保险金累计给付以六次为限，给付后本合同继续有效。 如果被保险人因同一原因导致其罹患两种或者两种以上的轻度疾病，我们仅按一种轻度疾病给付轻 度疾病保险金。 轻度疾病豁免保险费： 被保险人在等待期后经医院及专科医生初次确诊罹患本合同所定义的轻度疾病，我们将豁免本合同 自轻度疾病确诊之日以后的各期保险费。我们视豁免的保险费为您已交纳的保险费，本合同继续有 效。 保险费豁免开始后，我们将不接",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.moderate_illness_payout_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "25%向疾病保险金受益人给付轻度疾病保险金。 每种轻度疾病限给付一次，给付后该种轻度疾病保险金保险责任终止。本合同不同种类的轻度疾病 保险金累计给付以六次为限，给付后本合同继续有效。 如果被保险人因同一原因导致其罹患两种或者两种以上的轻度疾病，我们仅按一种轻度疾病给付轻 度疾病保险金。 轻度疾病豁免保险费： 被保险人在等待期后经医院及专科医生初次确诊罹患本合同所定义的轻度疾病，我们将豁免本合同 自轻度疾病确诊之日以后的各期保险费。我们视豁免的保险费为您已交纳的保险费，本合同继续有 效。 保险费豁免开始后，我们将不接",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.major_illness_payout_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "已交纳的保险费，本合同继续有 效。 保险费豁免开始后，我们将不接受关于本合同保险费交费方式的变更申请。 重大疾病保险金： 本合同所定义的重大疾病分为 5 组，每组包含的疾病种类详见“我们所保障的疾病列表”中重大疾 病列表。 对于每组重大疾病，重大疾病保险金的给付次数以一次为限，给付后该组重大疾病的保险责任终止， 我们继续承担其余组别重大疾病的保险责任。本合同不同组别的重大疾病保险金累计给付以五次为 限，当重大疾病保险金累计给付达到五次时，本合同终止。 如果被保险人因同一原因导致其罹患两种或者两种以上的重大疾病，我们",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.major_illness_payout_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "已交纳的保险费，本合同继续有 效。 保险费豁免开始后，我们将不接受关于本合同保险费交费方式的变更申请。 重大疾病保险金： 本合同所定义的重大疾病分为 5 组，每组包含的疾病种类详见“我们所保障的疾病列表”中重大疾 病列表。 对于每组重大疾病，重大疾病保险金的给付次数以一次为限，给付后该组重大疾病的保险责任终止， 我们继续承担其余组别重大疾病的保险责任。本合同不同组别的重大疾病保险金累计给付以五次为 限，当重大疾病保险金累计给付达到五次时，本合同终止。 如果被保险人因同一原因导致其罹患两种或者两种以上的重大疾病，我们",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.multiple_claim_per_claim_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "组，每组包含的疾病种类详见“我们所保障的疾病列表”中重大疾 病列表。 对于每组重大疾病，重大疾病保险金的给付次数以一次为限，给付后该组重大疾病的保险责任终止， 我们继续承担其余组别重大疾病的保险责任。本合同不同组别的重大疾病保险金累计给付以五次为 限，当重大疾病保险金累计给付达到五次时，本合同终止。 如果被保险人因同一原因导致其罹患两种或者两种以上的重大疾病，我们仅按一种重大疾病给付重 大疾病保险金。 第一次重大疾病保险金 被保险人在等待期后经医院及专科医生初次确诊罹患本合同所定义的重大疾病的一种或者多种（以 下简",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.multiple_claim_per_claim_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "组，每组包含的疾病种类详见“我们所保障的疾病列表”中重大疾 病列表。 对于每组重大疾病，重大疾病保险金的给付次数以一次为限，给付后该组重大疾病的保险责任终止， 我们继续承担其余组别重大疾病的保险责任。本合同不同组别的重大疾病保险金累计给付以五次为 限，当重大疾病保险金累计给付达到五次时，本合同终止。 如果被保险人因同一原因导致其罹患两种或者两种以上的重大疾病，我们仅按一种重大疾病给付重 大疾病保险金。 第一次重大疾病保险金 被保险人在等待期后经医院及专科医生初次确诊罹患本合同所定义的重大疾病的一种或者多种（以 下简",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.max_total_claim_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "重大疾病分5组累计给付以五次为限，按基本保额口径最高约500%。",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.max_claim_count_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "重大疾病分5组累计给付以五次为限，按基本保额口径最高约500%。",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.critical_child_extra_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "我们将按本合同基本保险金额与您累计已交纳 的本合同保险费的较大者向疾病保险金受益人给付第四次重大疾病保险金。第四次重大疾病保险金 给付后，该重大疾病所属组别的保险责任终止，本合同继续有效。 第五次重大疾病保险金 我们给付第四次重大疾病保险金后，若被保险人于第四次重大疾病确诊之日起 365 日后，经医院及 专科医生初次确诊罹患本合同所定义的重大疾病的一种或者多种，且该重大疾病与前述四次重大疾 病所属组别不同，我们将按本合同基本保险金额与您累计已交纳的本合同保险费的较大者向疾病保 险金受益人给付第五次重大疾病保险金。第",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.critical_child_extra_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "我们将按本合同基本保险金额与您累计已交纳 的本合同保险费的较大者向疾病保险金受益人给付第四次重大疾病保险金。第四次重大疾病保险金 给付后，该重大疾病所属组别的保险责任终止，本合同继续有效。 第五次重大疾病保险金 我们给付第四次重大疾病保险金后，若被保险人于第四次重大疾病确诊之日起 365 日后，经医院及 专科医生初次确诊罹患本合同所定义的重大疾病的一种或者多种，且该重大疾病与前述四次重大疾 病所属组别不同，我们将按本合同基本保险金额与您累计已交纳的本合同保险费的较大者向疾病保 险金受益人给付第五次重大疾病保险金。第",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      }
+    }
+  },
+  "extraction_meta": {
+    "extracted_at": "2026-06-20T12:40:25.017542Z",
+    "method": "PRODUCT-CATALOG + selected hot TS guided heuristic extraction; no fuzzy cross-product substitution",
+    "schema_policy": "core comparable fields in compare_profile; special/non-standard features in product_features[] and feature_tags[]",
+    "v2_5_extraction": {
+      "extracted_at": "2026-06-21T08:52:05.560820Z",
+      "method": "local_pdf_regex_structured_reextract_v2.5",
+      "pdf_filename": "taikang-lexiangjiankang-kids.pdf"
+    },
+    "v2_7_reextract": {
+      "generated_at": "2026-06-21T09:32:33.855371Z",
+      "method": "pdfplumber_page_window_keyword_match_v2.7",
+      "feature_count": 1,
+      "feature_evidence_matched": 0
+    },
+    "v2_8_reextract": {
+      "generated_at": "2026-06-21T10:07:35.176561Z",
+      "method": "full_truncation_sweep_and_pdf_evidence_window_repair_v2.8",
+      "ellipsis_fields_before": 0,
+      "ellipsis_fields_after": 0,
+      "nested_feature_notes_removed": 1
+    },
+    "v2_9_reextract": {
+      "generated_at": "2026-06-21T10:21:29.901082Z",
+      "method": "pdf_fulltext_reextract_no_hard_char_truncation_v2.9",
+      "note": "v2.9 移除旧抽取逻辑中的硬字符截断：对 base/compare_profile/source_trace.field_evidence/product_features.evidence_quote 做硬截断候选扫描；对 entry_age 等基础字段重新从 PDF 全文抽取完整结构化摘要；证据窗口按 PDF 页面语义窗口重取，不再按 60/80/120 字符硬截断。",
+      "hard_truncation_candidates_before": 0,
+      "hard_truncation_candidates_after": 0,
+      "fields_repaired": 2,
+      "age_refine_note": "v2.9 age fields refined from the best PDF full-text window near 投保年齡/投保范围, avoiding unrelated owner/beneficiary age clauses and hard character truncation."
+    },
+    "payout_ratio_extraction": {
+      "version": "v2.10",
+      "method": "pdf_text_percentage_patterns",
+      "note": "只在 PDF 文本出现可量化保额百分比时写入；未抽到不从 display_features/product_features 反推。",
+      "updated_fields": []
+    },
+    "payout_ratio_extraction_v2_11": {
+      "version": "v2.11",
+      "method": "full_ci_pdf_percentage_scan_with_product_rules",
+      "note": "全量重疾产品均重新扫描；只在 PDF 文本存在明确基本保额/名义金额/原有投保额等比例时写入。",
+      "updated_fields": [
+        "critical_child_extra_percent",
+        "early_stage_payout_percent",
+        "major_illness_payout_percent",
+        "max_total_claim_percent",
+        "moderate_illness_payout_percent",
+        "multiple_claim_per_claim_percent"
+      ],
+      "ratio_field_count": 6,
+      "applied_at": "2026-06-21T11:04:47.724804Z"
+    }
+  },
+  "display_features": [
+    {
+      "title": "疾病覆盖广",
+      "summary": "覆盖120种疾病，含120种重疾。",
+      "category": "protection",
+      "priority": 1,
+      "source_tags": [],
+      "source_paths": [
+        "compare_profile.covered_illness_total"
+      ]
+    },
+    {
+      "title": "多次赔付",
+      "summary": "指定疾病可在首次赔付后继续获得保障。",
+      "category": "protection",
+      "priority": 2,
+      "source_tags": [],
+      "source_paths": [
+        "compare_profile.has_multiple_claims"
+      ]
+    },
+    {
+      "title": "保费豁免",
+      "summary": "达到约定条件后，可豁免后续部分或全部保费。",
+      "category": "premium",
+      "priority": 8,
+      "source_tags": [
+        "premium_waiver"
+      ],
+      "source_paths": []
+    },
+    {
+      "title": "现金价值",
+      "summary": "兼具现金价值或分红元素，适合长期配置。",
+      "category": "savings",
+      "priority": 10,
+      "source_tags": [],
+      "source_paths": [
+        "compare_profile.has_guaranteed_cash_value"
+      ]
+    }
+  ],
+  "product_name": "泰康乐享健康（少儿 B 款）重大疾病保险"
+}

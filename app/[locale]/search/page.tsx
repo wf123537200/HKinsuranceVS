@@ -4,16 +4,32 @@ import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { translateProduct, translateCompany } from "@/lib/translations";
 import type { Locale } from "@/i18n/config";
+import { getSiteProductSlugs } from "@/lib/selected-products";
+import { buildMetadata } from "@/lib/seo";
 
 interface Props {
   params: Promise<{ locale: string }>;
   searchParams: Promise<{ q?: string }>;
 }
 
-export const metadata: Metadata = {
-  title: "Search",
-  description: "Search insurance products, companies, and tags.",
-};
+export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const sp = await searchParams;
+  const localeTyped = locale as Locale;
+  const t = await getTranslations({ locale, namespace: "search" });
+  const q = (sp?.q || "").trim();
+  const title = q ? `Search: ${q}` : t("title");
+  const description = q
+    ? `Search results for "${q}" across insurance products and companies on Policy Vector.`
+    : t("description");
+  return buildMetadata({
+    path: "/search",
+    locale: localeTyped,
+    title,
+    description,
+    robots: { index: false, follow: true },
+  });
+}
 
 export default async function SearchPage({ params, searchParams }: Props) {
   const { locale } = await params;
@@ -28,9 +44,16 @@ export default async function SearchPage({ params, searchParams }: Props) {
 
   if (query) {
     const q = query.toLowerCase();
+    const siteSlugs = await getSiteProductSlugs();
+    const productsWithCompany = await prisma.product.findMany({
+      where: { slug: { in: siteSlugs } },
+      select: { company: { select: { slug: true } } },
+    });
+    const companySlugs = Array.from(new Set(productsWithCompany.map((p) => p.company.slug)));
     const [rawCompanies, rawProducts] = await Promise.all([
       prisma.company.findMany({
         where: {
+          slug: { in: companySlugs },
           OR: [
             { name: { contains: q } },
             { displayName: { contains: q } },
@@ -41,6 +64,7 @@ export default async function SearchPage({ params, searchParams }: Props) {
       }),
       prisma.product.findMany({
         where: {
+          slug: { in: siteSlugs },
           OR: [
             { name: { contains: q } },
             { displayName: { contains: q } },

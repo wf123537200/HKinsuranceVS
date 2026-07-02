@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import InlineSearch from "./InlineSearch";
+import QuickCompareSelector, { type QuickCompareProduct } from "./QuickCompareSelector";
 
 interface Comparison {
   id: string;
@@ -15,9 +16,17 @@ interface Comparison {
 
 interface Props {
   comparisons: Comparison[];
+  /** Optional product dataset for the cascading selector under the search bar. */
+  selectorProducts?: QuickCompareProduct[];
+  /** Base path for the cascading selector's compare URL. Defaults to /compare. */
+  selectorBasePath?: string;
 }
 
-export default function CompareListWithSearch({ comparisons }: Props) {
+export default function CompareListWithSearch({
+  comparisons,
+  selectorProducts,
+  selectorBasePath,
+}: Props) {
   const tc = useTranslations("common");
   const [filtered, setFiltered] = useState(comparisons);
 
@@ -38,6 +47,13 @@ export default function CompareListWithSearch({ comparisons }: Props) {
   return (
     <>
       <InlineSearch items={searchableItems} onFilter={handleFilter} />
+      {selectorProducts && selectorProducts.length > 0 && (
+        <QuickCompareSelector
+          leftProducts={selectorProducts}
+          rightProducts={selectorProducts}
+          basePath={selectorBasePath}
+        />
+      )}
       {filtered.length === 0 ? (
         <p className="text-gray-500 text-center py-8">No comparisons found.</p>
       ) : (

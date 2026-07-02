@@ -1,0 +1,580 @@
+{
+  "product_vector_version": "v2.9",
+  "base": {
+    "product_id": "fwd-wealthicon-horizon",
+    "slug": "fwd-wealthicon-horizon",
+    "product_name": "富卫财富皇图储蓄保险计划（地平线）",
+    "product_name_en": "FWD WealthICON Horizon",
+    "company_slug": "fwd-hk",
+    "company_name": "富卫香港",
+    "region": "Hong Kong",
+    "category": "savings",
+    "category_zh": "储蓄险",
+    "subcategory": "savings",
+    "policy_currency": [
+      "USD",
+      "HKD"
+    ],
+    "policy_term": "终身",
+    "premium_term": [
+      "一次性"
+    ],
+    "entry_age": "投保年龄范围为1至80岁。",
+    "payment_mode": null,
+    "local_pdf_path": "/pdfs/fwd-wealthicon-horizon.pdf",
+    "source_pdf_filename": "fwd-wealthicon-horizon.pdf",
+    "is_hot_discussed": false,
+    "market_attention": "unknown",
+    "product_name_zh_cn": "富卫财富皇图储蓄保险计划（地平线）",
+    "product_name_zh_hk": "富衛盈聚未來保險計劃",
+    "display_name": "富卫盈聚未来保险计划",
+    "product_name_zh_tw": "富衛財富皇圖儲蓄保險計劃（地平線）"
+  },
+  "core": {
+    "critical_illness_core": null,
+    "savings_core": {
+      "has_guaranteed_cash_value": true,
+      "has_non_guaranteed_bonus": true,
+      "bonus_types": [
+        "归原红利",
+        "特别红利"
+      ],
+      "highest_illustrated_irr": null,
+      "guaranteed_irr": null,
+      "highest_illustrated_return_multiple": 3.2,
+      "has_partial_withdrawal": true,
+      "has_policy_loan": true
+    }
+  },
+  "modules": {
+    "participating_savings_module": {
+      "available": true,
+      "bonus_types": [
+        "归原红利",
+        "特别红利"
+      ]
+    },
+    "life_protection_module": {
+      "has_death_benefit": true
+    },
+    "policy_liquidity_module": {
+      "has_policy_loan": true,
+      "has_partial_withdrawal": true,
+      "has_regular_withdrawal": true
+    },
+    "policy_flexibility_module": {
+      "supports_currency_switch": false,
+      "supports_policy_split": true,
+      "supports_change_insured": false,
+      "supports_second_insured": false,
+      "supports_second_policyholder": false
+    },
+    "risk_module": {
+      "risk_summary": [
+        "非保证利益风险",
+        "退保/流动性风险",
+        "货币风险",
+        "汇率风险",
+        "理赔限制",
+        "保单贷款风险"
+      ]
+    }
+  },
+  "compare_profile": {
+    "product_category": "savings",
+    "product_type": "savings",
+    "company_slug": "fwd-hk",
+    "product_slug": "fwd-wealthicon-horizon",
+    "market_attention": "unknown",
+    "priority": null,
+    "policy_term": "终身",
+    "premium_terms": [
+      "一次性"
+    ],
+    "entry_age_summary": "投保年龄范围为1至80岁。",
+    "currencies": [
+      "USD",
+      "HKD"
+    ],
+    "has_guaranteed_cash_value": true,
+    "has_non_guaranteed_bonus": true,
+    "bonus_types": [
+      "归原红利",
+      "特别红利"
+    ],
+    "has_partial_withdrawal": true,
+    "has_regular_withdrawal": true,
+    "has_policy_loan": true,
+    "supports_currency_switch": false,
+    "supports_policy_split": true,
+    "supports_change_insured": false,
+    "supports_second_insured": false,
+    "supports_second_policyholder": false,
+    "covered_illness_total": null,
+    "major_illness_count": null,
+    "early_stage_illness_count": null,
+    "moderate_illness_count": null,
+    "child_illness_count": null,
+    "has_multiple_claims": null,
+    "has_cancer_multiple_claims": null,
+    "has_heart_stroke_multiple_claims": null,
+    "has_icu_benefit": false,
+    "cancer_claim_cap_summary": null,
+    "heart_stroke_claim_summary": null,
+    "icu_benefit_summary": null,
+    "post_claim_status_summary": null,
+    "highest_illustrated_irr": null,
+    "guaranteed_irr": 100,
+    "highest_illustrated_return_multiple": 3.2,
+    "illustrated_break_even_year": null,
+    "guaranteed_break_even_year": null,
+    "risk_summary": [
+      "非保证利益风险",
+      "退保/流动性风险",
+      "货币风险",
+      "汇率风险",
+      "保单贷款风险",
+      "通胀风险",
+      "理赔限制"
+    ],
+    "bonus_type_summary": "归原红利 / 特别红利",
+    "bonus_declaration_summary": "提供归原红利 / 特别红利，金额并不保证，实际派发及公布以保险公司政策为准。",
+    "has_bonus_lock_in": true,
+    "bonus_lock_in_summary": "可按条款锁定部分红利或分红，便于资金安排。",
+    "has_bonus_unlock": false,
+    "bonus_unlock_summary": null,
+    "has_value_protection_account": false,
+    "value_protection_account_summary": null,
+    "policy_loan_summary": "可按条款申请保单贷款，贷款会影响保单价值。",
+    "partial_withdrawal_summary": "可按条款部分提取或减保，提取会影响保单价值。",
+    "regular_withdrawal_summary": "可按条款安排定期提取或入息支付。",
+    "change_insured_summary": null,
+    "second_insured_summary": null,
+    "second_policyholder_summary": null,
+    "policy_split_summary": "支持按条款分拆保单，便于家庭资产分配。",
+    "has_death_benefit_payment_option": false,
+    "death_benefit_payment_summary": null,
+    "has_beneficiary_flexible_option": false,
+    "beneficiary_option_summary": null,
+    "has_terminal_illness_benefit": true,
+    "terminal_illness_summary": "达到末期疾病定义时，可按条款申请相关利益。",
+    "minimum_premium_summary": null,
+    "minimum_sum_assured_summary": "最低保额/名义金额按货币、缴费期及投保安排而定，具体以条款为准。"
+  },
+  "product_features": [
+    {
+      "feature_id": "policy_loan",
+      "feature_name": "保单贷款",
+      "category": "liquidity",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "可按条款申请保单贷款，提升保单资金流动性。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 1,
+      "compare_key": "policy_loan",
+      "source_pages": [
+        13
+      ],
+      "evidence_quote": "權益百分比；及(2)扣除任何總欠款（如保單貸款及其利息）。失去行為能力權益將先從紅利鎖定戶口結餘 （如有）支取，然後從歸原紅利的現金價值（如有）中支取。由於提取歸原紅利的現金價值（如有），歸原紅利的 面值（如有）亦將相應扣減，因而導致保單未來的保單價值減少。若歸原紅利的現金價值（如有）的金額不足以 支付失去行為能力權益，部份退保將自動行使，而失去行為能力權益的餘下部分將以部分退保從保證現金 價值及特別紅利的現金價值（如有）中支取",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "保單貸款借入",
+          "保单贷款借入",
+          "借入高達",
+          "借入高达",
+          "通過保單貸款",
+          "通过保单贷款",
+          "policy loan"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "terminal_illness_benefit",
+      "feature_name": "末期疾病利益",
+      "category": "special_option",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "达到末期疾病条件时，可按条款预支或获得相关利益。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 2,
+      "compare_key": "terminal_illness_benefit",
+      "source_pages": [
+        10
+      ],
+      "evidence_quote": "無行為能力、末期疾病、昏迷、不能獨立生活、植物人、嚴重頭部創傷及 癱瘓。有關受保疾病的定義，請參閱保單條款",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "末期疾病",
+          "terminal illness"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "bonus_lock_in",
+      "feature_name": "红利/分红锁定选项",
+      "category": "bonus_management",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "可按条款锁定部分红利或分红，便于资金安排。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 3,
+      "compare_key": "bonus_lock_in",
+      "source_pages": [
+        3
+      ],
+      "evidence_quote": "靈活提取現金 配合個人財務策劃 您可按需要於保單提取現金，增加靈活資金調動： （1） 您可以一筆過或行使定期提取服務（註1）從紅利鎖定戶口結餘（如有）， 然後從歸原紅利的現金價值（如有）中提取保單價值",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "終期紅利鎖定選項",
+          "终期红利锁定选项",
+          "鎖定至",
+          "锁定至",
+          "紅利鎖定戶口",
+          "红利锁定户口",
+          "lock-in",
+          "lock in"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "policy_split",
+      "feature_name": "保单分拆选项",
+      "category": "legacy_planning",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "可按条款分拆保单，便于家庭传承和资产分配。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 4,
+      "compare_key": "policy_split",
+      "source_pages": [
+        13
+      ],
+      "evidence_quote": "9. 自動鎖定選項 於行使自動鎖定選項前，歸原紅利的現金價值及特別紅利的現金價值金額低於已繳躉繳保費的百分之十，我們 將立即停止自動鎖定選項。此百分比可能以我們絕對的酌情權不時作出更改。若您在行使自動鎖定選項後就保單 要求部分退保或保單分拆選項申請或根據富傳家選項條款，保單的被保人有任何更改，富衛將自動暫停該自動 鎖定選項。您須遞交新的書面通知要求恢復自動鎖定選項。有關詳情，請參閱保單條款",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "保單分拆",
+          "保单分拆",
+          "開枝散葉",
+          "开枝散叶",
+          "policy split"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "health_impairment_option",
+      "feature_name": "健康障碍/无行为能力选项",
+      "category": "special_option",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "出现指定无行为能力或健康障碍时，可按条款启动备用安排。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 5,
+      "compare_key": "health_impairment_option",
+      "source_pages": [
+        10
+      ],
+      "evidence_quote": "無行為能力、末期疾病、昏迷、不能獨立生活、植物人、嚴重頭部創傷及 癱瘓。有關受保疾病的定義，請參閱保單條款",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "無行為能力",
+          "无行为能力",
+          "健康障礙",
+          "健康障碍",
+          "health impairment"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "accidental_death_benefit",
+      "feature_name": "意外身故保障",
+      "category": "life_protection",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "受保人身故时，可按条款向受益人支付身故赔偿。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 6,
+      "compare_key": "accidental_death_benefit",
+      "source_pages": [
+        12,
+        3,
+        6,
+        8,
+        9,
+        10
+      ],
+      "evidence_quote": "我們將向第一順位的後續被保人支付相等於指定百分比的身故賠償減去任何總欠款的金額。有關富傳家選項 的詳情，請參閱保單條款",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_page_window",
+        "evidence_method": "pdfplumber_page_window_keyword_match_v2.7",
+        "keywords": [
+          "身故保障",
+          "身故賠償",
+          "身故赔偿",
+          "death benefit"
+        ]
+      }
+    }
+  ],
+  "feature_tags": [
+    "policy_loan",
+    "terminal_illness_benefit",
+    "bonus_lock_in",
+    "policy_split",
+    "health_impairment_option",
+    "accidental_death_benefit"
+  ],
+  "comparison_flags": {
+    "has_guaranteed_cash_value": true,
+    "has_non_guaranteed_bonus": true,
+    "has_partial_withdrawal": true,
+    "has_regular_withdrawal": true,
+    "has_policy_loan": true,
+    "supports_currency_switch": false,
+    "supports_policy_split": true,
+    "supports_change_insured": false,
+    "supports_second_insured": false,
+    "supports_second_policyholder": false,
+    "has_multiple_claims": null,
+    "has_cancer_multiple_claims": null,
+    "has_heart_stroke_multiple_claims": null,
+    "has_icu_benefit": false
+  },
+  "source_trace": {
+    "source_type": "catalog_verified_pdf",
+    "source_pdf": "fwd-wealthicon-horizon.pdf",
+    "source_pdf_path": "pdfs/fwd-wealthicon-horizon.pdf",
+    "source_pdf_sha256": "3caf1482fe084192880c9d0761516e0de3b78adbae90edeeeafb2c6a118ab7bf",
+    "page_count": 17,
+    "text_length": 21480,
+    "extraction_confidence": "medium",
+    "missing_fields": [],
+    "field_evidence": {
+      "compare_profile.has_guaranteed_cash_value": {
+        "source": "local_pdf",
+        "pages": [
+          13
+        ],
+        "quote": "11. 失去行為能力權益 ・ 若失去行為能力權益百分比為100%，退保將自動行使，而我們將支付相等於扣除任何總欠款的總現金價值 作為失去行為能力權益的金額。保單將在失去行為能力權益申請獲批當日終止。 ・ 若失去行為能力權益百分比少於100%，失去行為能力權益的金額相等於(1)總現金價值（包括保證現金價值、 歸原紅利的現金價值（如有）、特別紅利的現金價值（如有）及紅利鎖定戶口結餘（如有）)乘以失去行為能力 權益百分比；及(2)扣除任何總欠款（如保單貸款及其利息）。失去行為能力權益將先從紅利鎖定戶口結餘 （如有）支取，然後從歸原紅利的現金價值（如有）中支取。由於提取歸原紅利的現金價值（如有），歸原紅利的 面值（如有）亦將相應扣減，因而導致保單未來的保單價值減少。若歸原紅利的現金價值（如有）的金額不足以 支付失去行為能力權益，部份退保將自動行使，而失去行為能力權益的餘下部分將以部分退保從保證現金 價值及特別紅利的現金價值（如有）中支取",
+        "confidence": "medium",
+        "method": "pdf_page_semantic_window_keyword_match_v2.9_no_hard_char_truncation",
+        "no_hard_char_truncation": true
+      },
+      "compare_profile.has_non_guaranteed_bonus": {
+        "source": "local_pdf",
+        "pages": [
+          3
+        ],
+        "quote": "把握潛在財富增長 安心無憂 本計劃是一份分紅保險計劃，本產品的保單價值由保證現金價值、歸原紅利 （非保證）及特別紅利（非保證）所組成，其目標為爭取較高中長線潛在回報， 有關詳情，請參閱紅利資料及投資策略部份",
+        "confidence": "medium",
+        "method": "pdf_page_semantic_window_keyword_match_v2.9_no_hard_char_truncation",
+        "no_hard_char_truncation": true
+      },
+      "compare_profile.has_policy_loan": {
+        "source": "local_pdf",
+        "pages": [
+          13
+        ],
+        "quote": "權益百分比；及(2)扣除任何總欠款（如保單貸款及其利息）。失去行為能力權益將先從紅利鎖定戶口結餘 （如有）支取，然後從歸原紅利的現金價值（如有）中支取。由於提取歸原紅利的現金價值（如有），歸原紅利的 面值（如有）亦將相應扣減，因而導致保單未來的保單價值減少。若歸原紅利的現金價值（如有）的金額不足以 支付失去行為能力權益，部份退保將自動行使，而失去行為能力權益的餘下部分將以部分退保從保證現金 價值及特別紅利的現金價值（如有）中支取",
+        "confidence": "medium",
+        "method": "pdf_page_semantic_window_keyword_match_v2.9_no_hard_char_truncation",
+        "no_hard_char_truncation": true
+      },
+      "compare_profile.supports_policy_split": {
+        "source": "local_pdf",
+        "pages": [
+          13
+        ],
+        "quote": "9. 自動鎖定選項 於行使自動鎖定選項前，歸原紅利的現金價值及特別紅利的現金價值金額低於已繳躉繳保費的百分之十，我們 將立即停止自動鎖定選項。此百分比可能以我們絕對的酌情權不時作出更改。若您在行使自動鎖定選項後就保單 要求部分退保或保單分拆選項申請或根據富傳家選項條款，保單的被保人有任何更改，富衛將自動暫停該自動 鎖定選項。您須遞交新的書面通知要求恢復自動鎖定選項。有關詳情，請參閱保單條款",
+        "confidence": "medium",
+        "method": "pdf_page_semantic_window_keyword_match_v2.9_no_hard_char_truncation",
+        "no_hard_char_truncation": true
+      }
+    }
+  },
+  "extraction_meta": {
+    "extracted_at": "2026-06-20T12:40:17.700594Z",
+    "method": "PRODUCT-CATALOG + selected hot TS guided heuristic extraction; no fuzzy cross-product substitution",
+    "schema_policy": "core comparable fields in compare_profile; special/non-standard features in product_features[] and feature_tags[]",
+    "v2_5_extraction": {
+      "extracted_at": "2026-06-21T08:51:57.276430Z",
+      "method": "local_pdf_regex_structured_reextract_v2.5",
+      "pdf_filename": "fwd-wealthicon-horizon.pdf"
+    },
+    "v2_7_reextract": {
+      "generated_at": "2026-06-21T09:32:19.114912Z",
+      "method": "pdfplumber_page_window_keyword_match_v2.7",
+      "feature_count": 6,
+      "feature_evidence_matched": 5
+    },
+    "v2_8_reextract": {
+      "generated_at": "2026-06-21T10:07:30.343666Z",
+      "method": "full_truncation_sweep_and_pdf_evidence_window_repair_v2.8",
+      "ellipsis_fields_before": 2,
+      "ellipsis_fields_after": 0,
+      "nested_feature_notes_removed": 6
+    },
+    "v2_9_reextract": {
+      "generated_at": "2026-06-21T10:21:17.578110Z",
+      "method": "pdf_fulltext_reextract_no_hard_char_truncation_v2.9",
+      "note": "v2.9 移除旧抽取逻辑中的硬字符截断：对 base/compare_profile/source_trace.field_evidence/product_features.evidence_quote 做硬截断候选扫描；对 entry_age 等基础字段重新从 PDF 全文抽取完整结构化摘要；证据窗口按 PDF 页面语义窗口重取，不再按 60/80/120 字符硬截断。",
+      "hard_truncation_candidates_before": 2,
+      "hard_truncation_candidates_after": 4,
+      "fields_repaired": 7,
+      "age_refine_note": "v2.9 age fields refined from the best PDF full-text window near 投保年齡/投保范围, avoiding unrelated owner/beneficiary age clauses and hard character truncation."
+    }
+  },
+  "display_features": [
+    {
+      "title": "现金价值与分红",
+      "summary": "提供保证现金价值，并有机会获得非保证红利。",
+      "category": "savings",
+      "priority": 2,
+      "source_tags": [],
+      "source_paths": [
+        "compare_profile.has_guaranteed_cash_value",
+        "compare_profile.has_non_guaranteed_bonus"
+      ]
+    },
+    {
+      "title": "演示倍数",
+      "summary": "演示价值最高约3.2倍，非保证收益。",
+      "category": "savings",
+      "priority": 3,
+      "source_tags": [],
+      "source_paths": [
+        "compare_profile.highest_illustrated_return_multiple"
+      ]
+    },
+    {
+      "title": "灵活资金安排",
+      "summary": "支持贷款或提取，便于中途资金周转。",
+      "category": "liquidity",
+      "priority": 4,
+      "source_tags": [
+        "policy_loan"
+      ],
+      "source_paths": [
+        "compare_profile.has_policy_loan",
+        "compare_profile.has_partial_withdrawal"
+      ]
+    },
+    {
+      "title": "红利锁定",
+      "summary": "可按规则锁定部分红利，提升安排灵活度。",
+      "category": "bonus",
+      "priority": 5,
+      "source_tags": [
+        "bonus_lock_in"
+      ],
+      "source_paths": []
+    },
+    {
+      "title": "传承安排",
+      "summary": "支持分拆或受保人安排，方便家庭传承。",
+      "category": "legacy",
+      "priority": 6,
+      "source_tags": [
+        "policy_split"
+      ],
+      "source_paths": [
+        "compare_profile.supports_policy_split",
+        "compare_profile.supports_change_insured",
+        "compare_profile.supports_second_insured"
+      ]
+    }
+  ],
+  "product_name": "富卫财富皇图储蓄保险计划（地平线）"
+}

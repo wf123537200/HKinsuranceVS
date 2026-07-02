@@ -1,0 +1,312 @@
+{
+  "product_vector_version": "v2.9",
+  "base": {
+    "product_id": "new-china-life-rongyao-xinxiang",
+    "slug": "new-china-life-rongyao-xinxiang",
+    "product_name": "新华荣耀鑫享庆典版",
+    "product_name_en": "New China Life Rongyao Xinxiang",
+    "company_slug": "new-china-life",
+    "company_name": "新华保险",
+    "region": "Mainland China",
+    "category": "savings",
+    "category_zh": "储蓄险",
+    "subcategory": "whole_life_savings",
+    "policy_currency": [
+      "CNY"
+    ],
+    "policy_term": "终身",
+    "premium_term": [
+      "3年",
+      "5年",
+      "10年"
+    ],
+    "entry_age": "投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满30日。",
+    "payment_mode": null,
+    "local_pdf_path": "/pdfs/new-china-life-rongyao-xinxiang.pdf",
+    "source_pdf_filename": "new-china-life-rongyao-xinxiang.pdf",
+    "is_hot_discussed": true,
+    "market_attention": "hot_discussed",
+    "product_name_zh_cn": "新华荣耀鑫享庆典版",
+    "product_name_zh_hk": "新華榮耀鑫享慶典版終身壽險",
+    "display_name": "新华荣耀鑫享庆典版终身寿险",
+    "product_name_zh_tw": "新華榮耀鑫享慶典版"
+  },
+  "core": {
+    "critical_illness_core": null,
+    "savings_core": {
+      "has_guaranteed_cash_value": true,
+      "has_non_guaranteed_bonus": null,
+      "bonus_types": null,
+      "highest_illustrated_irr": null,
+      "guaranteed_irr": null,
+      "highest_illustrated_return_multiple": null,
+      "has_partial_withdrawal": true,
+      "has_policy_loan": true
+    }
+  },
+  "modules": {
+    "participating_savings_module": {
+      "available": true,
+      "bonus_types": null
+    },
+    "life_protection_module": {
+      "has_death_benefit": true
+    },
+    "policy_liquidity_module": {
+      "has_policy_loan": true,
+      "has_partial_withdrawal": true,
+      "has_regular_withdrawal": false
+    },
+    "policy_flexibility_module": {
+      "supports_currency_switch": false,
+      "supports_policy_split": false,
+      "supports_change_insured": false,
+      "supports_second_insured": false,
+      "supports_second_policyholder": false
+    },
+    "risk_module": {
+      "risk_summary": [
+        "退保/流动性风险",
+        "保单贷款风险"
+      ]
+    }
+  },
+  "compare_profile": {
+    "product_category": "savings",
+    "product_type": "whole_life_savings",
+    "company_slug": "new-china-life",
+    "product_slug": "new-china-life-rongyao-xinxiang",
+    "market_attention": "hot_discussed",
+    "priority": 1,
+    "policy_term": "终身",
+    "premium_terms": [
+      "3年",
+      "5年",
+      "10年"
+    ],
+    "entry_age_summary": "投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满30日。",
+    "currencies": [
+      "CNY"
+    ],
+    "has_guaranteed_cash_value": true,
+    "has_non_guaranteed_bonus": null,
+    "bonus_types": null,
+    "has_partial_withdrawal": true,
+    "has_regular_withdrawal": false,
+    "has_policy_loan": true,
+    "supports_currency_switch": false,
+    "supports_policy_split": false,
+    "supports_change_insured": false,
+    "supports_second_insured": false,
+    "supports_second_policyholder": false,
+    "covered_illness_total": null,
+    "major_illness_count": null,
+    "early_stage_illness_count": null,
+    "moderate_illness_count": null,
+    "child_illness_count": null,
+    "has_multiple_claims": null,
+    "has_cancer_multiple_claims": null,
+    "has_heart_stroke_multiple_claims": null,
+    "has_icu_benefit": false,
+    "cancer_claim_cap_summary": null,
+    "heart_stroke_claim_summary": null,
+    "icu_benefit_summary": null,
+    "post_claim_status_summary": null,
+    "highest_illustrated_irr": null,
+    "guaranteed_irr": null,
+    "highest_illustrated_return_multiple": null,
+    "illustrated_break_even_year": null,
+    "guaranteed_break_even_year": null,
+    "risk_summary": [
+      "退保/流动性风险",
+      "保单贷款风险"
+    ],
+    "bonus_type_summary": null,
+    "bonus_declaration_summary": null,
+    "has_bonus_lock_in": false,
+    "bonus_lock_in_summary": null,
+    "has_bonus_unlock": false,
+    "bonus_unlock_summary": null,
+    "has_value_protection_account": false,
+    "value_protection_account_summary": null,
+    "policy_loan_summary": "可按条款申请保单贷款，贷款会影响保单价值。",
+    "partial_withdrawal_summary": "可按条款部分提取或减保，提取会影响保单价值。",
+    "regular_withdrawal_summary": null,
+    "change_insured_summary": null,
+    "second_insured_summary": null,
+    "second_policyholder_summary": null,
+    "policy_split_summary": null,
+    "has_death_benefit_payment_option": false,
+    "death_benefit_payment_summary": null,
+    "has_beneficiary_flexible_option": false,
+    "beneficiary_option_summary": null,
+    "has_terminal_illness_benefit": false,
+    "terminal_illness_summary": null,
+    "minimum_premium_summary": null,
+    "minimum_sum_assured_summary": null
+  },
+  "product_features": [
+    {
+      "feature_id": "policy_loan",
+      "feature_name": "保单贷款",
+      "category": "liquidity",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "可按条款申请保单贷款，提升保单资金流动性。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 1,
+      "compare_key": "policy_loan",
+      "source_pages": [
+        2
+      ],
+      "evidence_quote": "规定的最低标准。 我们按减保后的基本保险金额和减保后的保险费承担保险责任。 2.保单贷款 经被保险人书面同意，您可申请使用保单贷款功能",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "保單貸款借入",
+          "保单贷款借入",
+          "借入高達",
+          "借入高达",
+          "通過保單貸款",
+          "通过保单贷款",
+          "policy loan"
+        ],
+        "no_hard_char_truncation": true
+      }
+    }
+  ],
+  "feature_tags": [
+    "policy_loan"
+  ],
+  "comparison_flags": {
+    "has_guaranteed_cash_value": true,
+    "has_non_guaranteed_bonus": null,
+    "has_partial_withdrawal": true,
+    "has_regular_withdrawal": false,
+    "has_policy_loan": true,
+    "supports_currency_switch": false,
+    "supports_policy_split": false,
+    "supports_change_insured": false,
+    "supports_second_insured": false,
+    "supports_second_policyholder": false,
+    "has_multiple_claims": null,
+    "has_cancer_multiple_claims": null,
+    "has_heart_stroke_multiple_claims": null,
+    "has_icu_benefit": false
+  },
+  "source_trace": {
+    "source_type": "catalog_verified_pdf",
+    "source_pdf": "new-china-life-rongyao-xinxiang.pdf",
+    "source_pdf_path": "pdfs/new-china-life-rongyao-xinxiang.pdf",
+    "source_pdf_sha256": "0233a6c5d40d07f49d1fa23d6d4251164d2e8f18fcb6376d90afe97c26eb63d1",
+    "page_count": 3,
+    "text_length": 4135,
+    "extraction_confidence": "medium",
+    "missing_fields": [],
+    "field_evidence": {
+      "compare_profile.has_policy_loan": {
+        "source": "local_pdf",
+        "pages": [
+          2
+        ],
+        "quote": "规定的最低标准。 我们按减保后的基本保险金额和减保后的保险费承担保险责任。 2.保单贷款 经被保险人书面同意，您可申请使用保单贷款功能",
+        "confidence": "medium",
+        "method": "pdf_page_semantic_window_keyword_match_v2.9_no_hard_char_truncation",
+        "no_hard_char_truncation": true
+      }
+    }
+  },
+  "extraction_meta": {
+    "extracted_at": "2026-06-20T12:40:21.268428Z",
+    "method": "PRODUCT-CATALOG + selected hot TS guided heuristic extraction; no fuzzy cross-product substitution",
+    "schema_policy": "core comparable fields in compare_profile; special/non-standard features in product_features[] and feature_tags[]",
+    "v2_5_extraction": {
+      "extracted_at": "2026-06-21T08:51:59.729474Z",
+      "method": "local_pdf_regex_structured_reextract_v2.5",
+      "pdf_filename": "new-china-life-rongyao-xinxiang.pdf"
+    },
+    "v2_7_reextract": {
+      "generated_at": "2026-06-21T09:32:25.509711Z",
+      "method": "pdfplumber_page_window_keyword_match_v2.7",
+      "feature_count": 1,
+      "feature_evidence_matched": 1
+    },
+    "v2_8_reextract": {
+      "generated_at": "2026-06-21T10:07:32.838859Z",
+      "method": "full_truncation_sweep_and_pdf_evidence_window_repair_v2.8",
+      "ellipsis_fields_before": 0,
+      "ellipsis_fields_after": 0,
+      "nested_feature_notes_removed": 1
+    },
+    "v2_9_reextract": {
+      "generated_at": "2026-06-21T10:21:22.657221Z",
+      "method": "pdf_fulltext_reextract_no_hard_char_truncation_v2.9",
+      "note": "v2.9 移除旧抽取逻辑中的硬字符截断：对 base/compare_profile/source_trace.field_evidence/product_features.evidence_quote 做硬截断候选扫描；对 entry_age 等基础字段重新从 PDF 全文抽取完整结构化摘要；证据窗口按 PDF 页面语义窗口重取，不再按 60/80/120 字符硬截断。",
+      "hard_truncation_candidates_before": 2,
+      "hard_truncation_candidates_after": 0,
+      "fields_repaired": 5,
+      "age_refine_note": "v2.9 age fields refined from the best PDF full-text window near 投保年齡/投保范围, avoiding unrelated owner/beneficiary age clauses and hard character truncation."
+    }
+  },
+  "display_features": [
+    {
+      "title": "现金价值与分红",
+      "summary": "提供保证现金价值，适合长期保障配置。",
+      "category": "savings",
+      "priority": 2,
+      "source_tags": [],
+      "source_paths": [
+        "compare_profile.has_guaranteed_cash_value",
+        "compare_profile.has_non_guaranteed_bonus"
+      ]
+    },
+    {
+      "title": "灵活资金安排",
+      "summary": "支持贷款或提取，便于中途资金周转。",
+      "category": "liquidity",
+      "priority": 4,
+      "source_tags": [
+        "policy_loan"
+      ],
+      "source_paths": [
+        "compare_profile.has_policy_loan",
+        "compare_profile.has_partial_withdrawal"
+      ]
+    },
+    {
+      "title": "终身寿险保障",
+      "summary": "以终身寿险为基础，兼顾保障和传承。",
+      "category": "legacy",
+      "priority": 11,
+      "source_tags": [],
+      "source_paths": [
+        "compare_profile.policy_term"
+      ]
+    },
+    {
+      "title": "缴费期选择",
+      "summary": "支持3年 / 5年 / 10年等缴费方式，便于预算安排。",
+      "category": "premium",
+      "priority": 12,
+      "source_tags": [],
+      "source_paths": [
+        "compare_profile.premium_terms"
+      ]
+    }
+  ],
+  "product_name": "新华荣耀鑫享庆典版"
+}

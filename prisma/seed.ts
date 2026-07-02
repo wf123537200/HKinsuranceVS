@@ -1,6 +1,7 @@
 import { PrismaClient } from "../app/generated/prisma/client";
 import { PrismaBetterSqlite3 } from "@prisma/adapter-better-sqlite3";
 import path from "path";
+import fs from "fs";
 
 const dbPath = path.join(process.cwd(), "dev.db");
 const adapter = new PrismaBetterSqlite3({ url: `file:${dbPath}` });
@@ -27,7 +28,8 @@ async function main() {
         regulator: "Insurance Authority (IA)",
         amBestRating: "A+",
         moodysRating: "A2",
-        spRating: "A+",
+        spRating: "AA",
+        fitchRating: "AA-",
       },
     }),
     prisma.company.create({
@@ -43,9 +45,9 @@ async function main() {
         headquarters: "Hong Kong",
         description: "AIA is the largest independent publicly listed pan-Asian life insurance group, serving over 700,000 customers in Hong Kong and Macau. With a history spanning over a century since 1919, AIA is ranked No.1 in Hong Kong's insurance market and leads globally in MDRT membership.",
         regulator: "Insurance Authority (IA)",
-        amBestRating: "A+",
-        moodysRating: "A2",
-        spRating: "AA-",
+        moodysRating: "Aa2",
+        spRating: "AA",
+        fitchRating: "AA",
       },
     }),
     prisma.company.create({
@@ -57,9 +59,9 @@ async function main() {
         country: "Hong Kong",
         website: "https://www.manulife.com.hk",
         logoUrl: "/logos/manulife.png",
-        foundedYear: 1897,
+        foundedYear: 1887,
         headquarters: "Hong Kong",
-        description: "Manulife Hong Kong, part of the global Manulife Financial Corporation founded in 1897, provides financial protection and wealth management solutions to individuals and businesses in Hong Kong, with a strong focus on retirement and investment products.",
+        description: "Manulife Hong Kong, part of the global Manulife Financial Corporation founded in 1887, provides financial protection and wealth management solutions to individuals and businesses in Hong Kong, with a strong focus on retirement and investment products.",
         regulator: "Insurance Authority (IA)",
         amBestRating: "A+",
         moodysRating: "A1",
@@ -79,9 +81,8 @@ async function main() {
         headquarters: "Hong Kong",
         description: "AXA Hong Kong offers a comprehensive range of life, health, savings, and general insurance products. With the Emma by AXA digital platform, AXA provides innovative self-servicing solutions and a holistic wellness programme called BetterMe.",
         regulator: "Insurance Authority (IA)",
-        amBestRating: "A+",
-        moodysRating: "A1",
-        spRating: "A+",
+        spRating: "AA",
+        fitchRating: "AA-",
       },
     }),
     prisma.company.create({
@@ -97,7 +98,7 @@ async function main() {
         headquarters: "Hong Kong",
         description: "FWD is a pan-Asian life insurance business headquartered in Hong Kong, offering life insurance, medical and critical illness protection, savings plans, retirement solutions, and investment-linked insurance with a focus on digital-first customer experience.",
         regulator: "Insurance Authority (IA)",
-        moodysRating: "A3",
+        moodysRating: "A2",
       },
     }),
     // Mainland China Companies
@@ -114,7 +115,9 @@ async function main() {
         headquarters: "Shenzhen, China",
         description: "Ping An Insurance (Group) Company of China is one of the world's largest financial services companies, offering insurance, banking, securities, and investment services. Ping An's healthcare ecosystem covers 100% of China's top 100 hospitals and tertiary hospitals.",
         regulator: "National Financial Regulatory Administration (NFRA)",
-        spRating: "A",
+        amBestRating: "A",
+        moodysRating: "A2",
+        spRating: "A-",
         fitchRating: "A",
       },
     }),
@@ -131,6 +134,7 @@ async function main() {
         headquarters: "Beijing, China",
         description: "China Life Insurance (Group) Company is the largest life insurance company in China and a Fortune Global 500 company, offering life insurance, overseas business, asset management, health investment, and property insurance across its extensive nationwide network.",
         regulator: "National Financial Regulatory Administration (NFRA)",
+        moodysRating: "A1",
         spRating: "A",
         fitchRating: "A+",
       },
@@ -163,6 +167,7 @@ async function main() {
         headquarters: "Shanghai, China",
         description: "China Pacific Insurance (Group) Co., Ltd. is one of China's largest insurance groups, offering property insurance, life insurance, asset management, health insurance, and pension services through its subsidiaries. CPIC serves customers nationwide with its 24/7 hotline 95500.",
         regulator: "National Financial Regulatory Administration (NFRA)",
+        moodysRating: "A2",
         spRating: "A",
       },
     }),
@@ -204,6 +209,8 @@ async function main() {
       tags: ["critical-illness", "multiple-claims", "cancer-coverage"],
       summary: "A comprehensive critical illness plan offering coverage for multiple conditions with flexible premium terms.",
       brochureUrl: "/pdfs/prulife-protector-ii-en.pdf",
+      isPublished: false,
+      dataStatus: "needs_verification",
     },
     {
       companyId: companies[0].id,
@@ -218,6 +225,10 @@ async function main() {
       tags: ["savings", "education", "guaranteed", "endowment"],
       summary: "A savings insurance series with guaranteed financial support for children's education and lifelong protection.",
       brochureUrl: "/pdfs/enlit-product-brochure-en.pdf",
+      dataStatus: "manual_verified",
+      isPublished: true,
+      manualDownloadVerified: true,
+      manualDownloadNote: "PDF was manually downloaded from the official insurer website.",
     },
     {
       companyId: companies[0].id,
@@ -232,6 +243,10 @@ async function main() {
       tags: ["savings", "retirement", "long-term", "wealth-transfer"],
       summary: "Long-term savings for retirement, education or passing down wealth through the generations.",
       brochureUrl: "/pdfs/evergreen-growth-saver-plus-ii-en.pdf",
+      dataStatus: "manual_verified",
+      isPublished: true,
+      manualDownloadVerified: true,
+      manualDownloadNote: "PDF was manually downloaded from the official insurer website. Original PDF URL may be unavailable due to anti-scraping, dynamic download behavior, or temporary signed links.",
     },
     {
       companyId: companies[0].id,
@@ -246,6 +261,10 @@ async function main() {
       tags: ["savings", "legacy", "wealth-transfer", "premium"],
       summary: "The accelerated path to get ahead, build your wealth, and craft a legacy with just 3 years of premiums.",
       brochureUrl: "/pdfs/pace-product-brochure-en.pdf",
+      dataStatus: "manual_verified",
+      isPublished: true,
+      manualDownloadVerified: true,
+      manualDownloadNote: "PDF was manually downloaded from the official insurer website.",
     },
     {
       companyId: companies[0].id,
@@ -260,13 +279,17 @@ async function main() {
       tags: ["savings", "single-premium", "legacy", "wealth-transfer"],
       summary: "Crafting Prime Eternity wealth begins with a single premium: seamlessly grow, access and pass on your wealth for generations.",
       brochureUrl: "/pdfs/prime-eternity-en.pdf",
+      dataStatus: "manual_verified",
+      isPublished: true,
+      manualDownloadVerified: true,
+      manualDownloadNote: "PDF was manually downloaded from the official insurer website.",
     },
     // Prudential Guardian CI Series
     {
       companyId: companies[0].id,
-      name: "Prudential Guardian Critical Illness Plan Series",
+      name: "保诚诚保一生危疾保",
       slug: "pru-guardian-ci-series",
-      displayName: "Prudential Guardian CI Plan Series",
+      displayName: "保诚诚保一生危疾保",
       region: "Hong Kong",
       country: "Hong Kong",
       category: "CRITICAL_ILLNESS" as const,
@@ -274,6 +297,10 @@ async function main() {
       tags: ["critical-illness", "guardian", "comprehensive", "participating"],
       summary: "Participating critical illness plan series offering comprehensive protection for the whole family.",
       brochureUrl: "/pdfs/pru-guardian-ci-series.pdf",
+      dataStatus: "manual_verified",
+      isPublished: true,
+      manualDownloadVerified: true,
+      manualDownloadNote: "PDF was manually downloaded from the official insurer website.",
     },
     // Prudential CI Extended Care III
     {
@@ -288,6 +315,10 @@ async function main() {
       tags: ["critical-illness", "extended-care", "comprehensive", "multiple-claims"],
       summary: "Extended critical illness care with multiple claims and comprehensive condition coverage.",
       brochureUrl: "/pdfs/pru-ci-extended-care-iii.pdf",
+      dataStatus: "manual_verified",
+      isPublished: true,
+      manualDownloadVerified: true,
+      manualDownloadNote: "PDF was manually downloaded from the official insurer website.",
     },
     // Prudential Entrust Multi-Currency Plan
     {
@@ -303,6 +334,10 @@ async function main() {
       tags: ["savings", "multi-currency", "wealth-transfer", "legacy"],
       summary: "Multi-currency savings plan for diversified wealth management and intergenerational transfer.",
       brochureUrl: "/pdfs/pru-entrust-multi-currency.pdf",
+      dataStatus: "manual_verified",
+      isPublished: true,
+      manualDownloadVerified: true,
+      manualDownloadNote: "PDF was manually downloaded from the official insurer website. Original PDF URL may be unavailable due to anti-scraping, dynamic download behavior, or temporary signed links.",
     },
     // AIA - 2 products
     {
@@ -317,6 +352,8 @@ async function main() {
       tags: ["critical-illness", "elite", "cancer-multiple-claims"],
       summary: "Premium critical illness coverage with extensive condition definitions and multiple claim benefits.",
       brochureUrl: "/pdfs/aia-assemble-ci.pdf",
+      isPublished: false,
+      dataStatus: "needs_verification",
     },
     {
       companyId: companies[1].id,
@@ -331,6 +368,8 @@ async function main() {
       tags: ["savings", "participating", "education", "retirement"],
       summary: "A leading savings product with guaranteed and non-guaranteed benefits for education and retirement planning.",
       brochureUrl: "/pdfs/aia-savings-leader.pdf",
+      isPublished: false,
+      dataStatus: "needs_verification",
     },
     // AIA additional CI products
     {
@@ -345,6 +384,8 @@ async function main() {
       tags: ["critical-illness", "cancer", "affordable"],
       summary: "Affordable cancer and life protection plan providing targeted support during critical moments.",
       brochureUrl: "/pdfs/aia-cancer-care.pdf",
+      isPublished: false,
+      dataStatus: "out_of_scope",
     },
     {
       companyId: companies[1].id,
@@ -358,6 +399,8 @@ async function main() {
       tags: ["critical-illness", "premium", "comprehensive"],
       summary: "Premium critical illness plan with comprehensive coverage and enhanced benefits.",
       brochureUrl: "/pdfs/aia-executive-care-pro-2.pdf",
+      isPublished: false,
+      dataStatus: "needs_verification",
     },
     {
       companyId: companies[1].id,
@@ -371,6 +414,8 @@ async function main() {
       tags: ["critical-illness", "participating", "58-conditions"],
       summary: "Participating CI plan covering 58 critical illnesses with cancer, heart disease and stroke extras.",
       brochureUrl: "/pdfs/aia-essence-on-your-side.pdf",
+      dataStatus: "candidate",
+      isPublished: true,
     },
     // AIA On Your Side 2
     {
@@ -385,6 +430,8 @@ async function main() {
       tags: ["critical-illness", "participating", "comprehensive"],
       summary: "Participating critical illness plan providing comprehensive protection with loyalty benefits.",
       brochureUrl: "/pdfs/aia-on-your-side-2.pdf",
+      dataStatus: "candidate",
+      isPublished: true,
     },
     // AIA Cancer Guardian 3
     {
@@ -399,6 +446,8 @@ async function main() {
       tags: ["critical-illness", "cancer", "guardian", "comprehensive"],
       summary: "Comprehensive cancer protection plan with multiple claim benefits and recovery support.",
       brochureUrl: "/pdfs/aia-cancer-guardian-3.pdf",
+      isPublished: false,
+      dataStatus: "out_of_scope",
     },
     // AIA GlobalFlexi Savings
     {
@@ -414,6 +463,10 @@ async function main() {
       tags: ["savings", "global", "flexible", "multi-currency"],
       summary: "Global flexible savings plan with multi-currency options for international wealth management.",
       brochureUrl: "/pdfs/aia-globalflexi-savings.pdf",
+      dataStatus: "manual_verified",
+      isPublished: true,
+      manualDownloadVerified: true,
+      manualDownloadNote: "PDF was manually downloaded from the official insurer website. Original PDF URL may be unavailable due to anti-scraping, dynamic download behavior, or temporary signed links.",
     },
     // AIA Wealth Flexi Savings
     {
@@ -429,13 +482,15 @@ async function main() {
       tags: ["savings", "wealth", "flexible", "premium"],
       summary: "Premium wealth savings plan with flexible withdrawal options and competitive returns.",
       brochureUrl: "/pdfs/aia-wealth-flexi-savings.pdf",
+      isPublished: false,
+      dataStatus: "needs_verification",
     },
     // Manulife Genesis Centurion (世纪传承保障计划)
     {
       companyId: companies[2].id,
-      name: "Manulife Genesis Centurion",
-      slug: "manulife-genesis-centurion",
-      displayName: "Manulife Genesis Centurion",
+      name: "ManuCentury",
+      slug: "manulife-manucentury",
+      displayName: "ManuCentury (世紀傳承保障計劃)",
       region: "Hong Kong",
       country: "Hong Kong",
       category: "SAVINGS" as const,
@@ -444,6 +499,27 @@ async function main() {
       tags: ["savings", "legacy", "wealth-transfer", "premium"],
       summary: "Premium savings plan for wealth accumulation and intergenerational legacy planning.",
       brochureUrl: "/pdfs/genesis-centurion.pdf",
+      dataStatus: "manual_verified",
+      isPublished: true,
+      manualDownloadVerified: true,
+      manualDownloadNote: "PDF was manually downloaded from the official insurer website. Original PDF URL may be unavailable due to anti-scraping, dynamic download behavior, or temporary signed links.",
+    },
+    // Manulife Genesis Centurion (separate from ManuCentury)
+    {
+      companyId: companies[2].id,
+      name: "Genesis Centurion Insurance Plan",
+      slug: "manulife-genesis-centurion",
+      displayName: "Genesis Centurion Insurance Plan",
+      region: "Hong Kong",
+      country: "Hong Kong",
+      category: "SAVINGS" as const,
+      currency: "HKD",
+      supportedCurrencies: ["HKD", "USD"],
+      tags: ["savings", "legacy", "wealth-transfer", "premium"],
+      summary: "A new-generation savings plan from Manulife for wealth accumulation and legacy planning.",
+      brochureUrl: null,
+      dataStatus: "candidate",
+      isPublished: true,
     },
     // Manulife IncomeGuard CI (宏健守护危疾入息保障)
     {
@@ -458,6 +534,8 @@ async function main() {
       tags: ["critical-illness", "income", "comprehensive", "multiple-claims"],
       summary: "Critical illness protection with regular income benefit during recovery period.",
       brochureUrl: "/pdfs/incomeguard-critical-illness-protector.pdf",
+      isPublished: false,
+      dataStatus: "needs_verification",
     },
     // Manulife IncomeShield CI
     {
@@ -472,6 +550,10 @@ async function main() {
       tags: ["critical-illness", "income", "shield", "comprehensive"],
       summary: "Comprehensive critical illness shield with income protection benefits.",
       brochureUrl: "/pdfs/incomeshield-critical-illness-protector.pdf",
+      dataStatus: "manual_verified",
+      isPublished: true,
+      manualDownloadVerified: true,
+      manualDownloadNote: "PDF was manually downloaded from the official insurer website. Original PDF URL may be unavailable due to anti-scraping, dynamic download behavior, or temporary signed links.",
     },
     // Manulife Bright Care Pro (活耀人生危疾保)
     {
@@ -486,6 +568,10 @@ async function main() {
       tags: ["critical-illness", "bright-care", "comprehensive", "pro"],
       summary: "Professional-grade critical illness protection with comprehensive coverage and wellness benefits.",
       brochureUrl: "/pdfs/manulife-bright-care-pro.pdf",
+      dataStatus: "manual_verified",
+      isPublished: true,
+      manualDownloadVerified: true,
+      manualDownloadNote: "PDF was manually downloaded from the official insurer website. Original PDF URL may be unavailable due to anti-scraping, dynamic download behavior, or temporary signed links.",
     },
     // Manulife Prestige Achiever
     {
@@ -501,6 +587,10 @@ async function main() {
       tags: ["savings", "prestige", "achiever", "wealth"],
       summary: "Prestigious savings plan for wealth achievement and long-term financial goals.",
       brochureUrl: "/pdfs/prestige-achiever.pdf",
+      dataStatus: "manual_verified",
+      isPublished: true,
+      manualDownloadVerified: true,
+      manualDownloadNote: "PDF was manually downloaded from the official insurer website.",
     },
     {
       companyId: companies[4].id,
@@ -515,6 +605,10 @@ async function main() {
       tags: ["savings", "universal-life", "wealth-transfer"],
       summary: "A universal life product with savings element for wealth accumulation and legacy planning.",
       brochureUrl: "/pdfs/fwd-noble-fortune.pdf",
+      dataStatus: "manual_verified",
+      isPublished: true,
+      manualDownloadVerified: true,
+      manualDownloadNote: "PDF was manually downloaded from the official insurer website.",
     },
     // FWD Crisis One Master (危疾緻尚保)
     {
@@ -529,6 +623,10 @@ async function main() {
       tags: ["critical-illness", "multiple-claims", "cancer", "comprehensive"],
       summary: "Comprehensive critical illness protection covering 68 major conditions and 80 severe diseases with up to 2080% of sum insured.",
       brochureUrl: "/pdfs/fwd-crisis-one-master.pdf",
+      dataStatus: "manual_verified",
+      isPublished: true,
+      manualDownloadVerified: true,
+      manualDownloadNote: "PDF was manually downloaded from the official insurer website. Original PDF URL may be unavailable due to anti-scraping, dynamic download behavior, or temporary signed links.",
     },
     // FWD Crisis U Supporter (危疾應援保)
     {
@@ -543,6 +641,10 @@ async function main() {
       tags: ["critical-illness", "innovative", "cancer", "mental-health"],
       summary: "Innovative critical illness plan with 10Life 5-star rating, covering cancer, heart disease, stroke and mental health support.",
       brochureUrl: "/pdfs/fwd-crisis-u-supporter.pdf",
+      dataStatus: "manual_verified",
+      isPublished: true,
+      manualDownloadVerified: true,
+      manualDownloadNote: "PDF was manually downloaded from the official insurer website. Original PDF URL may be unavailable due to anti-scraping, dynamic download behavior, or temporary signed links.",
     },
     // FWD EasyCover (好易揀危疾保障)
     {
@@ -557,6 +659,10 @@ async function main() {
       tags: ["critical-illness", "affordable", "basic", "cancer"],
       summary: "Affordable critical illness coverage including cancer, acute myocardial infarction and stroke, extended to unknown diseases.",
       brochureUrl: "/pdfs/fwd-easycover-ci.pdf",
+      dataStatus: "manual_verified",
+      isPublished: true,
+      manualDownloadVerified: true,
+      manualDownloadNote: "PDF was manually downloaded from the official insurer website. Original PDF URL may be unavailable due to anti-scraping, dynamic download behavior, or temporary signed links.",
     },
     // FWD MaxFocus Legacy II (盈聚天下II)
     {
@@ -572,6 +678,10 @@ async function main() {
       tags: ["savings", "legacy", "participating", "wealth-transfer"],
       summary: "Participating savings plan for wealth accumulation and legacy planning with flexible premium options.",
       brochureUrl: "/pdfs/fwd-maxfocus-legacy-ii.pdf",
+      dataStatus: "manual_verified",
+      isPublished: true,
+      manualDownloadVerified: true,
+      manualDownloadNote: "PDF was manually downloaded from the official insurer website. Original PDF URL may be unavailable due to anti-scraping, dynamic download behavior, or temporary signed links.",
     },
     // FWD WealthICON Supreme III (智盈汇聚优越版III)
     {
@@ -587,6 +697,10 @@ async function main() {
       tags: ["savings", "participating", "wealth", "premium"],
       summary: "Premium participating savings plan with comprehensive wealth management features and competitive returns.",
       brochureUrl: "/pdfs/fwd-wealthicon-supreme-iii.pdf",
+      dataStatus: "manual_verified",
+      isPublished: true,
+      manualDownloadVerified: true,
+      manualDownloadNote: "PDF was manually downloaded from the official insurer website. Original PDF URL may be unavailable due to anti-scraping, dynamic download behavior, or temporary signed links.",
     },
     // FWD WealthICON Horizon (智盈超凡)
     {
@@ -602,6 +716,44 @@ async function main() {
       tags: ["savings", "horizon", "wealth", "long-term"],
       summary: "Long-term wealth accumulation plan with horizon benefits and flexible premium options.",
       brochureUrl: "/pdfs/fwd-wealthicon-horizon.pdf",
+      dataStatus: "manual_verified",
+      isPublished: true,
+      manualDownloadVerified: true,
+      manualDownloadNote: "PDF was manually downloaded from the official insurer website. Original PDF URL may be unavailable due to anti-scraping, dynamic download behavior, or temporary signed links.",
+    },
+    // AXA Hong Kong - candidates
+    {
+      companyId: companies[3].id,
+      name: "AXA Loving Care Critical Illness Protection (Enhanced)",
+      slug: "axa-loving-care-ci-enhanced",
+      displayName: "AXA Loving Care CI (Enhanced)",
+      region: "Hong Kong",
+      country: "Hong Kong",
+      category: "CRITICAL_ILLNESS" as const,
+      currency: "HKD",
+      tags: ["critical-illness", "comprehensive"],
+      summary: "Comprehensive critical illness protection plan from AXA Hong Kong.",
+      brochureUrl: null,
+      officialUrl: "https://www.axa.com.hk",
+      dataStatus: "candidate",
+      isPublished: true,
+    },
+    {
+      companyId: companies[3].id,
+      name: "AXA Wealth Advance Savings Series II – Ultimate",
+      slug: "axa-wealth-advance-savings-ii-ultimate",
+      displayName: "AXA Wealth Advance Savings II – Ultimate (安進儲蓄系列 II - 躍進)",
+      region: "Hong Kong",
+      country: "Hong Kong",
+      category: "SAVINGS" as const,
+      currency: "HKD",
+      supportedCurrencies: ["HKD", "USD"],
+      tags: ["savings", "wealth", "premium"],
+      summary: "Premium savings plan from AXA Hong Kong for wealth accumulation.",
+      brochureUrl: null,
+      officialUrl: "https://www.axa.com.hk",
+      dataStatus: "candidate",
+      isPublished: true,
     },
   ];
 
@@ -610,9 +762,9 @@ async function main() {
     // Ping An
     {
       companyId: companies[5].id,
-      name: "Ping An Shengshi Jinyue Premium",
+      name: "平安盛世金越（尊享版）终身寿险",
       slug: "ping-an-shengshi-jinyue-premium",
-      displayName: "Ping An Shengshi Jinyue (Premium Edition)",
+      displayName: "平安盛世金越（尊享版）终身寿险",
       region: "Mainland China",
       country: "China",
       category: "SAVINGS" as const,
@@ -620,12 +772,16 @@ async function main() {
       tags: ["savings", "increasing-sum", "whole-life", "premium", "guaranteed"],
       summary: "Premium edition increasing sum insured whole life product with guaranteed cash value growth.",
       brochureUrl: "/pdfs/pingan-shengshi-jinyue-zunxiang.pdf",
+      dataStatus: "manual_verified",
+      isPublished: true,
+      manualDownloadVerified: true,
+      manualDownloadNote: "PDF was manually downloaded from the official insurer website. Original PDF URL may be unavailable due to anti-scraping, dynamic download behavior, or temporary signed links.",
     },
     {
       companyId: companies[5].id,
-      name: "Ping An Ruyi Quanneng Critical Illness 2025",
+      name: "平安附加如意全能（2025）提前给付重大疾病保险",
       slug: "pingan-ruyi-quanneng-ci",
-      displayName: "Ping An Ruyi Quanneng CI 2025",
+      displayName: "平安附加如意全能（2025）提前给付重大疾病保险",
       region: "Mainland China",
       country: "China",
       category: "CRITICAL_ILLNESS" as const,
@@ -633,12 +789,16 @@ async function main() {
       tags: ["critical-illness", "mainland", "rider", "comprehensive"],
       summary: "Critical illness rider providing advance payment for major diseases, part of Ruyi Quanneng series.",
       brochureUrl: "/pdfs/pingan-ruyi-quanneng-2025-ci.pdf",
+      dataStatus: "manual_verified",
+      isPublished: true,
+      manualDownloadVerified: true,
+      manualDownloadNote: "PDF was manually downloaded from the official insurer website. Original PDF URL may be unavailable due to anti-scraping, dynamic download behavior, or temporary signed links.",
     },
     {
       companyId: companies[5].id,
-      name: "Ping An Ruyi Quanneng Endowment 2025",
+      name: "平安如意全能（2025）两全保险",
       slug: "pingan-ruyi-quanneng-main",
-      displayName: "Ping An Ruyi Quanneng 2025",
+      displayName: "平安如意全能（2025）两全保险",
       region: "Mainland China",
       country: "China",
       category: "SAVINGS" as const,
@@ -646,13 +806,16 @@ async function main() {
       tags: ["savings", "mainland", "endowment", "maturity-benefit"],
       summary: "Endowment insurance plan providing maturity survival benefit and death benefit, paired with CI rider for comprehensive protection.",
       brochureUrl: "/pdfs/pingan-ruyi-quanneng-2025-main.pdf",
+      isPublished: false,
+      dataStatus: "out_of_scope",
+      notes: "Endowment product, not a standalone savings product",
     },
     // Taikang
     {
       companyId: companies[7].id,
-      name: "Taikang Zengduoduo",
+      name: "泰康增多多",
       slug: "taikang-zengduoduo",
-      displayName: "Taikang Zengduoduo (增多多)",
+      displayName: "泰康增多多",
       region: "Mainland China",
       country: "China",
       category: "SAVINGS" as const,
@@ -660,12 +823,15 @@ async function main() {
       tags: ["savings", "increasing-sum", "popular", "guaranteed"],
       summary: "A popular increasing sum insured product known for competitive guaranteed returns.",
       brochureUrl: "/pdfs/taikang-fangxin-caifu.pdf",
+      isPublished: false,
+      dataStatus: "mismatch",
+      notes: "Previously flagged as product/PDF mismatch or insufficient official source.",
     },
     {
       companyId: companies[7].id,
-      name: "Taikang Zunxiang Shijia (Increasing Edition)",
+      name: "泰康尊享世家（增额版）2024终身寿险",
       slug: "taikang-zunxiang-shijia-zeng-e",
-      displayName: "Taikang Zunxiang Shijia (Increasing Edition)",
+      displayName: "泰康尊享世家（增额版）2024终身寿险",
       region: "Mainland China",
       country: "China",
       category: "SAVINGS" as const,
@@ -673,12 +839,16 @@ async function main() {
       tags: ["savings", "increasing-sum", "whole-life", "premium"],
       summary: "Premium increasing sum insured whole life product from Taikang for long-term wealth accumulation.",
       brochureUrl: "/pdfs/taikang-zunxiang-shijia-zeng-e.pdf",
+      dataStatus: "manual_verified",
+      isPublished: true,
+      manualDownloadVerified: true,
+      manualDownloadNote: "PDF was manually downloaded from the official insurer website. Original PDF URL may be unavailable due to anti-scraping, dynamic download behavior, or temporary signed links.",
     },
     {
       companyId: companies[7].id,
-      name: "Taikang Zunxiang Shijia (Flagship Edition)",
+      name: "泰康尊享世家（旗舰版）终身寿险",
       slug: "taikang-zunxiang-shijia-flagship",
-      displayName: "Taikang Zunxiang Shijia (Flagship Edition)",
+      displayName: "泰康尊享世家（旗舰版）终身寿险",
       region: "Mainland China",
       country: "China",
       category: "SAVINGS" as const,
@@ -686,12 +856,16 @@ async function main() {
       tags: ["savings", "whole-life", "flagship", "premium"],
       summary: "Flagship whole life product from Taikang with comprehensive wealth management features.",
       brochureUrl: "/pdfs/taikang-zunxiang-shijia-flagship.pdf",
+      dataStatus: "manual_verified",
+      isPublished: true,
+      manualDownloadVerified: true,
+      manualDownloadNote: "PDF was manually downloaded from the official insurer website. Original PDF URL may be unavailable due to anti-scraping, dynamic download behavior, or temporary signed links.",
     },
     {
       companyId: companies[7].id,
-      name: "Taikang Lexiang Jiankang 2026",
+      name: "泰康乐享健康2026重大疾病保险",
       slug: "taikang-lexiangjiankang-2026",
-      displayName: "Taikang Lexiang Jiankang 2026",
+      displayName: "泰康乐享健康2026重大疾病保险",
       region: "Mainland China",
       country: "China",
       category: "CRITICAL_ILLNESS" as const,
@@ -699,13 +873,17 @@ async function main() {
       tags: ["critical-illness", "mainland", "comprehensive", "2026"],
       summary: "Comprehensive critical illness insurance covering major and minor conditions with 2026 updates.",
       brochureUrl: "/pdfs/taikang-lexiangjiankang-2026.pdf",
+      dataStatus: "manual_verified",
+      isPublished: true,
+      manualDownloadVerified: true,
+      manualDownloadNote: "PDF was manually downloaded from the official insurer website. Original PDF URL may be unavailable due to anti-scraping, dynamic download behavior, or temporary signed links.",
     },
     // CPIC
     {
       companyId: companies[8].id,
-      name: "CPIC Evergreen Whole Life",
+      name: "太保鑫相伴（至尊版）终身寿险",
       slug: "cpic-evergreen-whole-life",
-      displayName: "CPIC Evergreen Whole Life (增额终身寿)",
+      displayName: "太保鑫相伴（至尊版）终身寿险",
       region: "Mainland China",
       country: "China",
       category: "SAVINGS" as const,
@@ -713,12 +891,15 @@ async function main() {
       tags: ["savings", "increasing-sum", "whole-life", "evergreen"],
       summary: "A whole life savings product with steady cash value growth and flexible withdrawal options.",
       brochureUrl: "/pdfs/cpic-xin-xiang-ban.pdf",
+      isPublished: false,
+      dataStatus: "mismatch",
+      notes: "Product name and PDF source were previously flagged as mismatched.",
     },
     {
       companyId: companies[8].id,
-      name: "CPIC Xiangban Zhizun 2024S",
+      name: "太保长相伴（至尊2024S）终身寿险（分红型）",
       slug: "cpic-xiangbanzhizun-2024s",
-      displayName: "CPIC Xiangban Zhizun 2024S",
+      displayName: "太保长相伴（至尊2024S）终身寿险（分红型）",
       region: "Mainland China",
       country: "China",
       category: "SAVINGS" as const,
@@ -726,12 +907,16 @@ async function main() {
       tags: ["savings", "participating", "whole-life", "premium"],
       summary: "Participating whole life savings plan with premium benefits and dividend distribution.",
       brochureUrl: "/pdfs/cpic-xiangbanzhizun-2024s.pdf",
+      dataStatus: "manual_verified",
+      isPublished: true,
+      manualDownloadVerified: true,
+      manualDownloadNote: "PDF was manually downloaded from the official insurer website. Original PDF URL may be unavailable due to anti-scraping, dynamic download behavior, or temporary signed links.",
     },
     {
       companyId: companies[8].id,
-      name: "CPIC Jinsheng Wuyou Kids",
+      name: "太保金生无忧2024（少儿版）重大疾病保险",
       slug: "cpic-jinshengwuyou-kids",
-      displayName: "CPIC Jinsheng Wuyou (Kids Edition)",
+      displayName: "太保金生无忧2024（少儿版）重大疾病保险",
       region: "Mainland China",
       country: "China",
       category: "CRITICAL_ILLNESS" as const,
@@ -739,12 +924,16 @@ async function main() {
       tags: ["critical-illness", "mainland", "kids", "comprehensive"],
       summary: "Children's critical illness insurance covering major and minor conditions with juvenile-specific protections.",
       brochureUrl: "/pdfs/cpic-jinshengwuyou-kids.pdf",
+      dataStatus: "manual_verified",
+      isPublished: true,
+      manualDownloadVerified: true,
+      manualDownloadNote: "PDF was manually downloaded from the official insurer website. Original PDF URL may be unavailable due to anti-scraping, dynamic download behavior, or temporary signed links.",
     },
     {
       companyId: companies[8].id,
-      name: "CPIC Wenying Jinsheng Critical Illness",
+      name: "太保附加稳赢金生重大疾病保险",
       slug: "cpic-wenyingjinsheng-ci",
-      displayName: "CPIC Wenying Jinsheng CI",
+      displayName: "太保附加稳赢金生重大疾病保险",
       region: "Mainland China",
       country: "China",
       category: "CRITICAL_ILLNESS" as const,
@@ -752,20 +941,103 @@ async function main() {
       tags: ["critical-illness", "mainland", "rider", "stable"],
       summary: "Stable critical illness rider providing comprehensive coverage for major diseases.",
       brochureUrl: "/pdfs/cpic-wenyingjinsheng-ci.pdf",
+      dataStatus: "manual_verified",
+      isPublished: true,
+      manualDownloadVerified: true,
+      manualDownloadNote: "PDF was manually downloaded from the official insurer website. Original PDF URL may be unavailable due to anti-scraping, dynamic download behavior, or temporary signed links.",
+    },
+    // Taikang Lexiang Jiankang Kids (NEW)
+    {
+      companyId: companies[7].id,
+      name: "泰康乐享健康（少儿B款）重大疾病保险",
+      slug: "taikang-lexiangjiankang-kids",
+      displayName: "泰康乐享健康（少儿B款）重大疾病保险",
+      region: "Mainland China",
+      country: "China",
+      category: "CRITICAL_ILLNESS" as const,
+      currency: "CNY",
+      tags: ["critical-illness", "mainland", "kids", "comprehensive"],
+      summary: "Children's critical illness insurance from Taikang covering major and minor conditions.",
+      brochureUrl: "/pdfs/taikang-lexiangjiankang-kids.pdf",
+      dataStatus: "manual_verified",
+      isPublished: true,
+      manualDownloadVerified: true,
+      manualDownloadNote: "PDF was manually downloaded from the official insurer website. Original PDF URL may be unavailable due to anti-scraping, dynamic download behavior, or temporary signed links.",
+    },
+    // New China Life products (needs_verification - no official PDF confirmed)
+    {
+      companyId: companies[9].id,
+      name: "New China Life Rongyao Xinxiang",
+      slug: "new-china-life-rongyao-xinxiang",
+      displayName: "New China Life Rongyao Xinxiang (荣耀鑫享庆典版)",
+      region: "Mainland China",
+      country: "China",
+      category: "SAVINGS" as const,
+      currency: "CNY",
+      tags: ["savings", "whole-life", "premium"],
+      summary: "Whole life savings product from New China Life for long-term wealth accumulation.",
+      brochureUrl: null,
+      officialUrl: null,
+      dataStatus: "candidate",
+      isPublished: true,
+      notes: "Official brochure PDF not confirmed.",
+    },
+    {
+      companyId: companies[9].id,
+      name: "New China Life Rongyao Shijia",
+      slug: "new-china-life-rongyao-shijia",
+      displayName: "New China Life Rongyao Shijia (荣耀世家终身寿险分红型)",
+      region: "Mainland China",
+      country: "China",
+      category: "SAVINGS" as const,
+      currency: "CNY",
+      tags: ["savings", "participating", "whole-life"],
+      summary: "Participating whole life savings plan from New China Life.",
+      brochureUrl: null,
+      officialUrl: null,
+      dataStatus: "candidate",
+      isPublished: true,
+      notes: "Official brochure PDF not confirmed.",
+    },
+    {
+      companyId: companies[9].id,
+      name: "New China Life Jiankang Wuyou",
+      slug: "new-china-life-jiankang-wuyou",
+      displayName: "New China Life Jiankang Wuyou (健康无忧卓越版)",
+      region: "Mainland China",
+      country: "China",
+      category: "CRITICAL_ILLNESS" as const,
+      currency: "CNY",
+      tags: ["critical-illness", "mainland", "comprehensive"],
+      summary: "Comprehensive critical illness insurance from New China Life.",
+      brochureUrl: null,
+      officialUrl: null,
+      dataStatus: "candidate",
+      isPublished: true,
+      notes: "Official brochure PDF not confirmed.",
     },
   ];
 
   const allProducts = [...hkProducts, ...mainlandProducts];
 
   for (const productData of allProducts) {
+    const pd = productData as Record<string, unknown>;
     const product = await prisma.product.create({
       data: {
         ...productData,
         tags: JSON.stringify(productData.tags),
-        supportedCurrencies: (productData as Record<string, unknown>).supportedCurrencies
-          ? JSON.stringify((productData as Record<string, unknown>).supportedCurrencies)
+        supportedCurrencies: pd.supportedCurrencies
+          ? JSON.stringify(pd.supportedCurrencies)
           : "[]",
-        productStatus: "active",
+        productStatus: (pd.productStatus as string) ?? "active",
+        dataStatus: (pd.dataStatus as string) ?? "needs_verification",
+        isPublished: (pd.isPublished as boolean) ?? false,
+        sourceStatus: (pd.sourceStatus as string) ?? null,
+        localPdfPath: (pd.localPdfPath as string) ?? (pd.brochureUrl as string) ?? null,
+        manualDownloadVerified: (pd.manualDownloadVerified as boolean) ?? false,
+        manualDownloadNote: (pd.manualDownloadNote as string) ?? null,
+        officialUrl: (pd.officialUrl as string) ?? null,
+        notes: (pd.notes as string) ?? null,
       },
     });
     products.push(product);
@@ -1698,7 +1970,7 @@ async function main() {
         legacyPlanning: true,
         notes: "太保鑫相伴（至尊版）终身寿险: Entry age 0-75. Source: cpic-xin-xiang-ban.pdf",
       },
-      "manulife-genesis-centurion": {
+      "manulife-manucentury": {
         premiumTerm: "Single/3/5 years",
         coverageTerm: "Lifetime",
         entryAgeMin: 0,
@@ -1838,6 +2110,48 @@ async function main() {
 
   console.log(`Created ${glossaryTerms.length} glossary terms`);
 
+  // ==================== COMPANY RATINGS ====================
+  const ratingData = [
+    // Prudential Hong Kong
+    { companyId: companies[0].id, ratingAgency: "S&P", ratingValue: "AA", ratingType: "Financial Strength", ratingEntity: "Prudential Hong Kong Limited", ratingOutlook: "Stable", ratingDate: "2026-03", sourceUrl: "https://www.spglobal.com", ratingStatus: "needs_entity_verification", notes: "Upgraded from AA- in March 2026. Rating entity: Prudential Hong Kong Limited (subsidiary), not Prudential plc (group)." },
+    { companyId: companies[0].id, ratingAgency: "Moody's", ratingValue: "A2", ratingType: "Issuer Rating", ratingEntity: "Prudential plc", ratingOutlook: "Stable", ratingDate: "2023-12", sourceUrl: "https://www.moodys.com", ratingStatus: "needs_entity_verification", notes: "Group-level issuer rating. Not subsidiary/life entity rating." },
+    { companyId: companies[0].id, ratingAgency: "AM Best", ratingValue: "A+", ratingType: "Financial Strength", ratingEntity: "Prudential Hong Kong Limited", ratingOutlook: null, ratingDate: "2025-12", sourceUrl: "https://www.ambest.com", ratingStatus: "needs_entity_verification", notes: "FSR for life/health subsidiaries." },
+    { companyId: companies[0].id, ratingAgency: "Fitch", ratingValue: "AA-", ratingType: "Insurer Financial Strength", ratingEntity: "Prudential Hong Kong Limited", ratingOutlook: "Positive", ratingDate: "2025-10", sourceUrl: "https://www.fitchratings.com", ratingStatus: "confirmed", notes: "First-time IFS rating assigned Oct 2025. Positive outlook." },
+    // AIA Hong Kong
+    { companyId: companies[1].id, ratingAgency: "S&P", ratingValue: "AA", ratingType: "Financial Strength", ratingEntity: "AIA Company Limited", ratingOutlook: "Stable", ratingDate: "2025-12", sourceUrl: "https://www.aia.com/en/investor-relations/overview/credit-investors", ratingStatus: "confirmed", notes: "AIA Co. (subsidiary) FSR. Not group-level." },
+    { companyId: companies[1].id, ratingAgency: "Moody's", ratingValue: "Aa2", ratingType: "Insurance Financial Strength", ratingEntity: "AIA Company Limited", ratingOutlook: "Stable", ratingDate: "2025-12", sourceUrl: "https://www.aia.com/en/investor-relations/overview/credit-investors", ratingStatus: "confirmed", notes: "AIA Co. (subsidiary) IFSR. Not group-level." },
+    { companyId: companies[1].id, ratingAgency: "Fitch", ratingValue: "AA", ratingType: "Insurer Financial Strength", ratingEntity: "AIA Company Limited", ratingOutlook: "Stable", ratingDate: "2025-12", sourceUrl: "https://www.aia.com/en/investor-relations/overview/credit-investors", ratingStatus: "confirmed", notes: "AIA Co. (subsidiary) IFS. Not group-level." },
+    // Manulife Hong Kong
+    { companyId: companies[2].id, ratingAgency: "S&P", ratingValue: "AA-", ratingType: "Financial Strength", ratingEntity: "The Manufacturers Life Insurance Company", ratingOutlook: null, ratingDate: "2025-12", sourceUrl: "https://www.manulife.com/ca/en/about-us/investors/ratings", ratingStatus: "needs_entity_verification", notes: "Parent company entity rating. Hong Kong subsidiary rating may differ." },
+    { companyId: companies[2].id, ratingAgency: "Moody's", ratingValue: "A1", ratingType: "Issuer Rating", ratingEntity: "Manulife Financial Corporation", ratingOutlook: null, ratingDate: "2025-12", sourceUrl: "https://www.manulife.com/ca/en/about-us/investors/ratings", ratingStatus: "needs_entity_verification", notes: "Group holding company issuer rating." },
+    { companyId: companies[2].id, ratingAgency: "AM Best", ratingValue: "A+", ratingType: "Financial Strength", ratingEntity: "The Manufacturers Life Insurance Company", ratingOutlook: null, ratingDate: "2025-12", sourceUrl: "https://www.manulife.com/ca/en/about-us/investors/ratings", ratingStatus: "needs_entity_verification", notes: "FSR for life/health subsidiaries." },
+    // AXA Hong Kong
+    { companyId: companies[3].id, ratingAgency: "S&P", ratingValue: "AA", ratingType: "Financial Strength", ratingEntity: "AXA General Insurance Hong Kong Limited", ratingOutlook: "Stable", ratingDate: "2026-03", sourceUrl: "https://www.spglobal.com", ratingStatus: "needs_entity_verification", notes: "Upgraded from AA- in March 2026. General insurance entity, not life." },
+    { companyId: companies[3].id, ratingAgency: "Fitch", ratingValue: "AA-", ratingType: "Insurer Financial Strength", ratingEntity: "AXA General Insurance Hong Kong Limited", ratingOutlook: null, ratingDate: "2025-12", sourceUrl: "https://www.fitchratings.com", ratingStatus: "needs_entity_verification", notes: "General insurance entity." },
+    // FWD Hong Kong
+    { companyId: companies[4].id, ratingAgency: "Moody's", ratingValue: "A2", ratingType: "Insurance Financial Strength", ratingEntity: "FWD Life Insurance Company (Bermuda) Limited", ratingOutlook: "Stable", ratingDate: "2025-07", sourceUrl: "https://www.moodys.com", ratingStatus: "needs_entity_verification", notes: "Upgraded from A3 in July 2025. Bermuda subsidiary entity." },
+    // Ping An
+    { companyId: companies[5].id, ratingAgency: "S&P", ratingValue: "A-", ratingType: "Financial Strength", ratingEntity: "Ping An Life Insurance Company of China, Ltd.", ratingOutlook: null, ratingDate: "2025-12", sourceUrl: "https://www.spglobal.com", ratingStatus: "needs_entity_verification", notes: "Life insurance subsidiary. Group/P&C ratings differ." },
+    { companyId: companies[5].id, ratingAgency: "Moody's", ratingValue: "A2", ratingType: "Insurance Financial Strength", ratingEntity: "Ping An Life Insurance Company of China, Ltd.", ratingOutlook: "Stable", ratingDate: "2025-06", sourceUrl: "https://www.moodys.com", ratingStatus: "confirmed", notes: "Life insurance subsidiary IFSR." },
+    { companyId: companies[5].id, ratingAgency: "AM Best", ratingValue: "A", ratingType: "Financial Strength", ratingEntity: "Ping An Property & Casualty Insurance Company of China", ratingOutlook: null, ratingDate: "2025-05", sourceUrl: "https://www.ambest.com", ratingStatus: "needs_entity_verification", notes: "P&C entity FSR. Life entity rating may differ." },
+    { companyId: companies[5].id, ratingAgency: "Fitch", ratingValue: "A", ratingType: "Insurer Financial Strength", ratingEntity: "Ping An Life Insurance Company of China, Ltd.", ratingOutlook: null, ratingDate: "2025-12", sourceUrl: "https://www.fitchratings.com", ratingStatus: "needs_entity_verification", notes: "Life insurance subsidiary IFS." },
+    // China Life
+    { companyId: companies[6].id, ratingAgency: "S&P", ratingValue: "A", ratingType: "Financial Strength", ratingEntity: "China Life Insurance Company Limited", ratingOutlook: null, ratingDate: "2025-12", sourceUrl: "https://www.spglobal.com", ratingStatus: "confirmed", notes: "Listed entity (China Life Insurance Company Limited)." },
+    { companyId: companies[6].id, ratingAgency: "Moody's", ratingValue: "A1", ratingType: "Insurance Financial Strength", ratingEntity: "China Life Insurance Company Limited", ratingOutlook: null, ratingDate: "2025-12", sourceUrl: "https://www.moodys.com", ratingStatus: "confirmed", notes: "Listed entity IFSR." },
+    { companyId: companies[6].id, ratingAgency: "Fitch", ratingValue: "A+", ratingType: "Insurer Financial Strength", ratingEntity: "China Life Insurance Company Limited", ratingOutlook: "Stable", ratingDate: "2025-09", sourceUrl: "https://www.fitchratings.com", ratingStatus: "confirmed", notes: "Listed entity IFS. Affirmed Sep 2025." },
+    // CPIC
+    { companyId: companies[8].id, ratingAgency: "S&P", ratingValue: "A", ratingType: "Financial Strength", ratingEntity: "China Pacific Insurance (Group) Co., Ltd.", ratingOutlook: null, ratingDate: "2025-12", sourceUrl: "https://www.spglobal.com", ratingStatus: "needs_entity_verification", notes: "Group-level. Life/P&C subsidiary ratings may differ." },
+    { companyId: companies[8].id, ratingAgency: "Moody's", ratingValue: "A2", ratingType: "Insurance Financial Strength", ratingEntity: "China Pacific Insurance (Group) Co., Ltd.", ratingOutlook: null, ratingDate: "2025-12", sourceUrl: "https://www.moodys.com", ratingStatus: "needs_entity_verification", notes: "Group-level IFSR." },
+    // New China Life
+    { companyId: companies[9].id, ratingAgency: "Fitch", ratingValue: "A", ratingType: "Insurer Financial Strength", ratingEntity: "New China Life Insurance Company Ltd.", ratingOutlook: "Stable", ratingDate: "2026-02", sourceUrl: "https://www.fitchratings.com", ratingStatus: "confirmed", notes: "Listed entity IFS. Affirmed Feb 2026." },
+  ];
+
+  for (const rating of ratingData) {
+    await prisma.companyRating.create({ data: rating });
+  }
+
+  console.log(`Created ${ratingData.length} company ratings`);
+
   // ==================== COMPARISONS ====================
   // Generate comparisons for same-category products
   const comparisons = [];
@@ -1884,6 +2198,52 @@ async function main() {
   }
 
   console.log(`Created ${comparisons.length} comparisons`);
+
+  // ==================== MERGE REGISTRY PRODUCTS ====================
+  const registryPath = path.join(process.cwd(), "data", "product-registry.json");
+  if (fs.existsSync(registryPath)) {
+    const registry = JSON.parse(fs.readFileSync(registryPath, "utf-8"));
+    let addedCount = 0;
+    for (const entry of registry.products || []) {
+      const exists = await prisma.product.findUnique({ where: { slug: entry.productSlug } });
+      if (exists) continue;
+
+      const company = await prisma.company.findUnique({ where: { slug: entry.companySlug } });
+      if (!company) continue;
+
+      const product = await prisma.product.create({
+        data: {
+          companyId: company.id,
+          name: entry.productNameZh || entry.productSlug,
+          slug: entry.productSlug,
+          displayName: entry.productNameZh || entry.productSlug,
+          region: company.region,
+          country: company.country,
+          category: (entry.category || "savings").toUpperCase() as any,
+          currency: "HKD",
+          tags: JSON.stringify(entry.tags || []),
+          summary: entry.summaryEn || "",
+          brochureUrl: entry.pdfPath,
+          productStatus: "active",
+          dataStatus: "manual_verified",
+          isPublished: true,
+          manualDownloadVerified: true,
+          manualDownloadNote: "Added via product:add script",
+        },
+      });
+
+      if (entry.category === "critical_illness") {
+        await prisma.criticalIllnessDetail.create({ data: { productId: product.id } });
+      } else {
+        await prisma.savingsDetail.create({ data: { productId: product.id } });
+      }
+      addedCount++;
+    }
+    if (addedCount > 0) console.log(`Merged ${addedCount} products from registry`);
+  }
+
+  // ==================== IMPORT FS FOR REGISTRY ====================
+  // (fs is already available via Node.js built-in)
 
   console.log("Seed completed successfully!");
 }

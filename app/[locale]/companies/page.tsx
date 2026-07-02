@@ -5,13 +5,24 @@ import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { translateCompany, sortByTranslatedName } from "@/lib/translations";
 import type { Locale } from "@/i18n/config";
+import { getSiteProductSlugs } from "@/lib/selected-products";
+import { buildMetadata } from "@/lib/seo";
+import { buildItemListJsonLd } from "@/lib/jsonld";
+import JsonLd from "@/components/JsonLd";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = {
-  title: "Insurance Companies",
-  description: "Browse insurance companies from Hong Kong and Mainland China.",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const localeTyped = locale as Locale;
+  const t = await getTranslations({ locale, namespace: "companies" });
+  return buildMetadata({
+    path: "/companies",
+    locale: localeTyped,
+    title: t("title"),
+    description: `${t("description")} Browse insurance companies from Hong Kong and Mainland China on Policy Vector, including company profile, region, and product categories.`,
+  });
+}
 
 export default async function CompaniesPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -19,10 +30,19 @@ export default async function CompaniesPage({ params }: { params: Promise<{ loca
   const tc = await getTranslations("categories");
   const tCommon = await getTranslations("common");
 
+  const siteSlugs = await getSiteProductSlugs();
+  const productsWithCompany = await prisma.product.findMany({
+    where: { slug: { in: siteSlugs } },
+    select: { company: { select: { slug: true } } },
+  });
+  const companySlugs = Array.from(new Set(productsWithCompany.map((p) => p.company.slug)));
+
   const rawCompanies = await prisma.company.findMany({
+    where: { slug: { in: companySlugs } },
     orderBy: { displayName: "asc" },
     include: {
       products: {
+        where: { slug: { in: siteSlugs } },
         select: { id: true, category: true },
       },
     },
@@ -33,7 +53,23 @@ export default async function CompaniesPage({ params }: { params: Promise<{ loca
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 className="text-3xl font-bold text-gray-900 mb-2">{t("title")}</h1>
+      <JsonLd
+        data={buildItemListJsonLd({
+          locale: locale as Locale,
+          name: t("title"),
+          description: t("description"),
+          items: companies.map((c) => ({
+            name: c.displayName,
+            path: `/company/${c.slug}`,
+            image: c.logoUrl || null,
+            description: c.description || null,
+          })),
+        })}
+      />
+      <div className="flex items-end gap-3 mb-2">
+        <h1 className="text-3xl font-bold text-gray-900">{t("title")}</h1>
+        <p className="text-xs text-gray-400 pb-1">{tCommon("sortNote")}</p>
+      </div>
       <p className="text-gray-600 mb-8">
         {t("description")}
       </p>

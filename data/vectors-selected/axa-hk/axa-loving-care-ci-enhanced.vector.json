@@ -1,0 +1,907 @@
+{
+  "product_vector_version": "v2.9",
+  "base": {
+    "product_id": "axa-loving-care-ci-enhanced",
+    "slug": "axa-loving-care-ci-enhanced",
+    "product_name": "安盛爱唯守危疾保障（升级版）",
+    "product_name_en": "TotalAssure Plus Critical Illness Plan",
+    "company_slug": "axa-hk",
+    "company_name": "安盛香港",
+    "region": "Hong Kong",
+    "category": "critical_illness",
+    "category_zh": "健康险",
+    "subcategory": "critical_illness",
+    "policy_currency": [
+      "USD",
+      "HKD",
+      "MOP"
+    ],
+    "policy_term": "终身",
+    "premium_term": [
+      "2年",
+      "25年",
+      "10年",
+      "15年",
+      "5年",
+      "1年",
+      "２年",
+      "20年"
+    ],
+    "entry_age": "投保年龄按计划版本、缴费期及条款规定而定。",
+    "payment_mode": null,
+    "local_pdf_path": "/pdfs/axa-loving-care-ci-enhanced.pdf",
+    "source_pdf_filename": "axa-loving-care-ci-enhanced.pdf",
+    "is_hot_discussed": true,
+    "market_attention": "hot_discussed",
+    "product_name_zh_cn": "安盛爱唯守危疾保障（升级版）",
+    "product_name_zh_hk": "安盛愛唯守危疾保障升級版",
+    "display_name": "安盛爱唯守危疾保障升级版",
+    "product_name_zh_tw": "AXA安盛愛唯守危疾保障（升級版）"
+  },
+  "core": {
+    "critical_illness_core": {
+      "covered_illness_total": 150,
+      "major_illness_count": 63,
+      "early_stage_illness_count": 72,
+      "moderate_illness_count": null,
+      "child_illness_count": 15,
+      "has_multiple_claims": true,
+      "has_cancer_multiple_claims": true,
+      "has_heart_stroke_multiple_claims": true,
+      "has_icu_benefit": true
+    },
+    "savings_core": null
+  },
+  "modules": {
+    "participating_savings_module": {
+      "available": true,
+      "bonus_types": null
+    },
+    "life_protection_module": {
+      "has_death_benefit": true
+    },
+    "policy_liquidity_module": {
+      "has_policy_loan": false,
+      "has_partial_withdrawal": true,
+      "has_regular_withdrawal": false
+    },
+    "policy_flexibility_module": {
+      "supports_currency_switch": false,
+      "supports_policy_split": false,
+      "supports_change_insured": false,
+      "supports_second_insured": false,
+      "supports_second_policyholder": false
+    },
+    "risk_module": {
+      "risk_summary": [
+        "非保证利益风险",
+        "退保/流动性风险",
+        "货币风险",
+        "汇率风险",
+        "理赔限制"
+      ]
+    }
+  },
+  "compare_profile": {
+    "product_category": "critical_illness",
+    "product_type": "critical_illness",
+    "company_slug": "axa-hk",
+    "product_slug": "axa-loving-care-ci-enhanced",
+    "market_attention": "hot_discussed",
+    "priority": 1,
+    "policy_term": "终身",
+    "premium_terms": [
+      "2年",
+      "25年",
+      "10年",
+      "15年",
+      "5年",
+      "1年",
+      "２年",
+      "20年"
+    ],
+    "entry_age_summary": "投保年龄按计划版本、缴费期及条款规定而定。",
+    "currencies": [
+      "USD",
+      "HKD",
+      "MOP"
+    ],
+    "has_guaranteed_cash_value": true,
+    "has_non_guaranteed_bonus": true,
+    "bonus_types": null,
+    "has_partial_withdrawal": true,
+    "has_regular_withdrawal": false,
+    "has_policy_loan": false,
+    "supports_currency_switch": false,
+    "supports_policy_split": false,
+    "supports_change_insured": false,
+    "supports_second_insured": false,
+    "supports_second_policyholder": false,
+    "covered_illness_total": 150,
+    "major_illness_count": 63,
+    "early_stage_illness_count": 72,
+    "moderate_illness_count": null,
+    "child_illness_count": 15,
+    "has_multiple_claims": true,
+    "has_cancer_multiple_claims": true,
+    "has_heart_stroke_multiple_claims": true,
+    "has_icu_benefit": true,
+    "cancer_claim_cap_summary": "癌症相关额外或多次保障受赔付次数、等候期、保额上限及条款条件限制。",
+    "heart_stroke_claim_summary": "心脏病或中风达到指定条件时，可按条款提供额外赔付。",
+    "icu_benefit_summary": "深切治疗等非严重疾病赔偿通常最高为保额20%；境外深切治疗可为10%。",
+    "post_claim_status_summary": "首次赔付后部分保障可能继续或终止，具体以产品条款为准。",
+    "highest_illustrated_irr": null,
+    "guaranteed_irr": null,
+    "highest_illustrated_return_multiple": null,
+    "illustrated_break_even_year": null,
+    "guaranteed_break_even_year": null,
+    "risk_summary": [
+      "非保证利益风险",
+      "退保/流动性风险",
+      "货币风险",
+      "汇率风险",
+      "通胀风险",
+      "理赔限制"
+    ],
+    "has_death_benefit": true,
+    "major_illness_payout_summary": "严重疾病保险赔偿最高为保额100%。",
+    "early_stage_payout_summary": "非严重疾病赔偿每次最高为保额20%。",
+    "max_claim_count_summary": "最高合资格总保障可达保额1300%。",
+    "cancer_claim_summary": "癌症相关合资格索偿总额最高可达保额600%。",
+    "multiple_claim_waiting_period_summary": "多次赔付通常设有等候期，具体间隔以产品条款为准。",
+    "survival_period_summary": "多次赔付可能设有生存期要求，具体以产品条款为准。",
+    "early_stage_premium_waiver": "早期疾病赔付后可能提供保费豁免，具体以条款为准。",
+    "major_claim_premium_waiver": "当相关赔偿总额达到保额100%后，可豁免基本计划未来保费。",
+    "family_premium_waiver_summary": null,
+    "bonus_type_summary": "提供非保证红利或分红，实际金额并不保证。",
+    "death_benefit_summary": "身故保险赔偿通常为保额100%加终期红利并扣除已付赔偿。",
+    "healthcare_service_summary": null,
+    "major_illness_payout_percent": 100,
+    "early_risk_payout_percent": 5,
+    "early_risk_payout_summary": "早期风险状况赔偿为保额5%。",
+    "early_stage_payout_percent": 20,
+    "icu_benefit_percent": 20,
+    "icu_benefit_overseas_percent": 10,
+    "icu_benefit_overseas_summary": "香港及澳门以外深切治疗赔偿可为保额10%。",
+    "multiple_claim_per_claim_percent": 100,
+    "multiple_claim_per_claim_summary": "严重疾病多重保险赔偿每次相等于保额100%。",
+    "max_total_claim_percent": 1300,
+    "cancer_claim_max_percent": 600,
+    "persistent_cancer_cash_monthly_percent": 5,
+    "persistent_cancer_cash_summary": "持续癌症保险赔偿可每月支付保额5%，最长100个月。",
+    "immediate_cancer_cash_monthly_percent": 5,
+    "immediate_cancer_cash_total_percent": 55,
+    "stroke_rehab_cash_monthly_percent": 5,
+    "dementia_annuity_annual_percent": 12,
+    "neurodegenerative_annuity_summary": "严重认知障碍症照顾者年金每年为保额12%。",
+    "death_benefit_percent": 100,
+    "upgrade_benefit_percent": 50,
+    "upgrade_benefit_summary": "首10年或指定额外保障可额外支付保额50%。",
+    "premium_waiver_claim_threshold_percent": 100
+  },
+  "product_features": [
+    {
+      "feature_id": "death_benefit_payment_option",
+      "feature_name": "身故赔偿支付办法",
+      "category": "legacy_planning",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "可按条款安排身故赔偿支付方式，配合传承规划。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 1,
+      "compare_key": "death_benefit_payment_option",
+      "source_pages": [
+        37
+      ],
+      "evidence_quote": "自殺除外 若被保人於（i）保單日期或（ii）保單的任何復效日期（以日期較後者為準）起計修年內自殺身故，無論自殺當時被保人的 神志是否正常，身故賠償將只限於退還已繳付的保費（但不包括其利息）。將予退還的保費數額將由（i）保單日期或 （ii）保單的任何復效日期（以日期較後者為準）起開始計算",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "身故賠償支付",
+          "身故赔偿支付",
+          "身故賠償",
+          "身故赔偿",
+          "death benefit payment"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "terminal_illness_benefit",
+      "feature_name": "末期疾病利益",
+      "category": "special_option",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "达到末期疾病条件时，可按条款预支或获得相关利益。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 2,
+      "compare_key": "terminal_illness_benefit",
+      "source_pages": [
+        27
+      ],
+      "evidence_quote": "兩天）已接受由專科醫生建議的癌症治療。 （c） 已接受根除性全乳切除術及放射治療的乳房原位癌、不能獨立生活、末期疾病及深切治療連複雜手術並不在嚴重疾病多重保險賠償的保障範圍 之內",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "末期疾病",
+          "terminal illness"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "icu_benefit",
+      "feature_name": "深切治疗保障",
+      "category": "health_service",
+      "feature_type": "value_added_service",
+      "availability": true,
+      "short_description": "达到指定深切治疗条件时，可获得额外赔偿。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 3,
+      "compare_key": "icu_benefit",
+      "source_pages": [
+        12
+      ],
+      "evidence_quote": "並需要入院及於 深切治療部留醫 持續俴俯小時以上俯俯 可獲支付 非嚴重疾病 保險賠償俯,俲 Thomas最近結婚，他意識到保障財務穩健的重要性。為了讓家人在遇上人生挑戰時得到保障，Thomas在俱俳歲時決定 投保「愛唯守（升級版）」，保額為修俭俭萬港元",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "深切治療",
+          "深切治疗",
+          "ICU",
+          "intensive care"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "neurodegenerative_annuity",
+      "feature_name": "脑退化/柏金森年金",
+      "category": "special_option",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "指定脑退化疾病或柏金森病可按条款提供年金赔偿。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 4,
+      "compare_key": "neurodegenerative_annuity",
+      "source_pages": [
+        22,
+        23
+      ],
+      "evidence_quote": null,
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "not_found",
+        "evidence_method": "pdfplumber_page_window_keyword_match_v2.7",
+        "keywords": [
+          "腦退化",
+          "脑退化",
+          "柏金森",
+          "阿爾茨海默",
+          "阿尔茨海默",
+          "annuity"
+        ]
+      }
+    },
+    {
+      "feature_id": "maternity_version",
+      "feature_name": "孕期/新生儿版本",
+      "category": "maternity",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "孕期版本可按条款覆盖孕妈妈、新生儿或儿童保障。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 5,
+      "compare_key": "maternity_version",
+      "source_pages": [
+        15
+      ],
+      "evidence_quote": "並為寶寶的未來提供保障 懷孕階段 出生後 分娩身故保費豁免 為父母提供產後抑鬱保險賠償俯俱 為孩子提供受保疾病的賠償 身故保險賠償俯,俶",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "孕媽媽",
+          "孕妈妈",
+          "懷孕",
+          "怀孕",
+          "新生兒",
+          "新生儿",
+          "First Gift"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "extra_premium_option",
+      "feature_name": "额外保费方式",
+      "category": "premium_payment",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "该特色按产品条款提供，具体内容以官方PDF为准。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 6,
+      "compare_key": "extra_premium_option",
+      "source_pages": [
+        21,
+        37
+      ],
+      "evidence_quote": null,
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "not_found",
+        "evidence_method": "pdfplumber_page_window_keyword_match_v2.7",
+        "keywords": [
+          "额外保费方式"
+        ]
+      }
+    },
+    {
+      "feature_id": "premium_waiver",
+      "feature_name": "保费豁免",
+      "category": "premium_payment",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "达到指定理赔或家庭事件时，可按条款豁免保费。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 7,
+      "compare_key": "premium_waiver",
+      "source_pages": [
+        32
+      ],
+      "evidence_quote": "多重保險賠償 保費豁免 保費豁免及延長寬限期保障 保單價值 當早期風險守護保險賠償修,俯、非嚴重疾病保險賠償俯,俲及嚴重疾病保險賠償俯,俵 下所有已付及應付保險賠償之總金額達到基本保額的修俭俭%，而基本計劃 當時依然生效，我們將於下一保費到期日起豁免基本計劃之所有未來保費",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "保費豁免",
+          "保费豁免",
+          "豁免保費",
+          "豁免保费",
+          "premium waiver"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "long_term_care",
+      "feature_name": "长期护理/护理金",
+      "category": "health_service",
+      "feature_type": "value_added_service",
+      "availability": true,
+      "short_description": "该特色按产品条款提供，具体内容以官方PDF为准。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 8,
+      "compare_key": "long_term_care",
+      "source_pages": [
+        2,
+        11
+      ],
+      "evidence_quote": null,
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "not_found",
+        "evidence_method": "pdfplumber_page_window_keyword_match_v2.7",
+        "keywords": [
+          "长期护理/护理金"
+        ]
+      }
+    }
+  ],
+  "feature_tags": [
+    "death_benefit_payment_option",
+    "terminal_illness_benefit",
+    "icu_benefit",
+    "neurodegenerative_annuity",
+    "maternity_version",
+    "extra_premium_option",
+    "premium_waiver",
+    "long_term_care"
+  ],
+  "comparison_flags": {
+    "has_guaranteed_cash_value": true,
+    "has_non_guaranteed_bonus": true,
+    "has_partial_withdrawal": true,
+    "has_regular_withdrawal": false,
+    "has_policy_loan": false,
+    "supports_currency_switch": false,
+    "supports_policy_split": false,
+    "supports_change_insured": false,
+    "supports_second_insured": false,
+    "supports_second_policyholder": false,
+    "has_multiple_claims": true,
+    "has_cancer_multiple_claims": true,
+    "has_heart_stroke_multiple_claims": true,
+    "has_icu_benefit": true
+  },
+  "source_trace": {
+    "source_type": "catalog_verified_pdf",
+    "source_pdf": "axa-loving-care-ci-enhanced.pdf",
+    "source_pdf_path": "pdfs/axa-loving-care-ci-enhanced.pdf",
+    "source_pdf_sha256": "f533c487ca46fdb072ab1f2174658eb032da30af81aa9f838498ac2134246ff7",
+    "page_count": 46,
+    "text_length": 38342,
+    "extraction_confidence": "medium",
+    "missing_fields": [],
+    "field_evidence": {
+      "compare_profile.has_cancer_multiple_claims": {
+        "source": "local_pdf",
+        "page": null,
+        "quote": "癌症的復發 或擴散或持續 癌症 全新癌症、任何上一次癌症的 復發或擴散或持續癌症 癌症適用 多重賠償及持續支援 總保障高達保額俱,修修的修俰俭俭%（續） 「持續癌症保險賠償」選項俯,修俯,修俱 享短至修年等候期 此外，在嚴重疾病保險賠償俯,俵已支付後，若被保人其後診斷患上癌症，除了嚴重疾病多重保險賠償俯,修俯外，您亦可選擇 收取為癌症而設的持續賠償選項，確保您在對抗癌的道路上獲得長期的經濟支持",
+        "confidence": "medium",
+        "pages": [
+          6
+        ],
+        "method": "pdf_page_semantic_window_keyword_match_v2.9_no_hard_char_truncation",
+        "no_hard_char_truncation": true
+      },
+      "compare_profile.has_icu_benefit": {
+        "source": "local_pdf",
+        "pages": [
+          12
+        ],
+        "quote": "並需要入院及於 深切治療部留醫 持續俴俯小時以上俯俯 可獲支付 非嚴重疾病 保險賠償俯,俲 Thomas最近結婚，他意識到保障財務穩健的重要性。為了讓家人在遇上人生挑戰時得到保障，Thomas在俱俳歲時決定 投保「愛唯守（升級版）」，保額為修俭俭萬港元",
+        "confidence": "medium",
+        "method": "pdf_page_semantic_window_keyword_match_v2.9_no_hard_char_truncation",
+        "no_hard_char_truncation": true
+      },
+      "compare_profile.has_guaranteed_cash_value": {
+        "source": "local_pdf",
+        "pages": [
+          43
+        ],
+        "quote": "總金額達到保額的修俭俭%，保證現金價值將為零。 俰俭. 額外保障保險賠償下應付的保險賠償（「額外保障保險賠償金額」）相等於應付嚴重疾病保險賠償或身故保險賠償 （視情況而定）當日保額（不包括因增值權益附加條款而增加的任何保額部分）的俲俭%。就「愛唯守（升級版）- 愛寶保」而言，如應予支付嚴重疾病保險賠償之日期是在孩子出生後俳俭天的期間內，或應予支付身故保險賠償之日 期是在孩子出生後修俵俭天的期間內（視乎情況而定），應予支付額外保障保險賠償下的保險賠償將被減少至「額外 保障保險賠償金額」的俯俭%。若於第修俭個保單週年日前並無須支付嚴重疾病保險賠償或身故保險賠償，此保險賠 償將自動停止及終止。任何欠款及欠繳保費均將從應付保險賠償中扣除",
+        "confidence": "medium",
+        "method": "pdf_page_semantic_window_keyword_match_v2.9_no_hard_char_truncation",
+        "no_hard_char_truncation": true
+      },
+      "compare_profile.has_non_guaranteed_bonus": {
+        "source": "local_pdf",
+        "pages": [
+          18
+        ],
+        "quote": "終身財富累積 支援您的財務規劃 「愛唯守（升級版）」／「愛唯守（升級版） - 愛寶保」為分紅壽險計劃，除了提供全面的危疾保障及身故保險賠償俯,俶， 亦透過保證現金價值俯俶及非保證終期紅利俯俭，讓您獲享潛在回報，兼享儲蓄及保障的兩大優勢",
+        "confidence": "medium",
+        "method": "pdf_page_semantic_window_keyword_match_v2.9_no_hard_char_truncation",
+        "no_hard_char_truncation": true
+      },
+      "compare_profile.major_illness_payout_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "全期保障 涵蓋３大早期風險狀況 及���種從非嚴重至嚴重疾病 盡早接受治療可降低病情惡化的機會，亦可避免承受更高昂的費用和長期治療的負擔。因此，於被保人首次被診斷出 受保早期風險狀況�， 「愛唯守（升級版）」／「愛唯守（升級版）- 愛寶保」便會提供賠償，支援被保人把握早期黃金治療。 我們只會就每種早期風險狀況支付�次賠償，於早期風險守護保險賠償�,�下合共只會支付�次賠償。 另外， 「愛唯守（升級版）」／「愛唯守（升級版）- 愛寶保」為���種非嚴重及嚴重疾病提供周全保障，當中包括 ��種重大 手術，為守護您的健康",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.major_illness_payout_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "全期保障 涵蓋３大早期風險狀況 及���種從非嚴重至嚴重疾病 盡早接受治療可降低病情惡化的機會，亦可避免承受更高昂的費用和長期治療的負擔。因此，於被保人首次被診斷出 受保早期風險狀況�， 「愛唯守（升級版）」／「愛唯守（升級版）- 愛寶保」便會提供賠償，支援被保人把握早期黃金治療。 我們只會就每種早期風險狀況支付�次賠償，於早期風險守護保險賠償�,�下合共只會支付�次賠償。 另外， 「愛唯守（升級版）」／「愛唯守（升級版）- 愛寶保」為���種非嚴重及嚴重疾病提供周全保障，當中包括 ��種重大 手術，為守護您的健康",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.early_risk_payout_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "守危疾保障（升級版）」 （「愛唯守（升級版）」）提供全面保障，跨越人生不同週期，而「愛唯守危疾保障（升級版）- （「愛 唯 守（升 級 版）- 愛 寶 保」）更 為 準 媽 媽 及 寶 寶 加 入 貼 心 保 障，保 護 成 長 過 程，守 護 至 盛 年 到 晚 年 愛 寶 保」 白髮。 「愛唯守（升級版）」及「愛唯守（升級版）- 愛寶保」將在您人生每一個階段全程關顧、與您共同守護健康。 「愛唯守（升級版）- 愛寶保」 「愛唯守（升級版）」 全程守護 總保障高達保額的����% �大超前保障： 首��個保單年度內",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.early_risk_payout_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "守危疾保障（升級版）」 （「愛唯守（升級版）」）提供全面保障，跨越人生不同週期，而「愛唯守危疾保障（升級版）- （「愛 唯 守（升 級 版）- 愛 寶 保」）更 為 準 媽 媽 及 寶 寶 加 入 貼 心 保 障，保 護 成 長 過 程，守 護 至 盛 年 到 晚 年 愛 寶 保」 白髮。 「愛唯守（升級版）」及「愛唯守（升級版）- 愛寶保」將在您人生每一個階段全程關顧、與您共同守護健康。 「愛唯守（升級版）- 愛寶保」 「愛唯守（升級版）」 全程守護 總保障高達保額的����% �大超前保障： 首��個保單年度內",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.early_stage_payout_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "�大持續守護 於早期風險狀況把關 獲額外保障 提供多重保險賠償，連同嚴重疾病保險賠償 提供額外經濟支援 合共高達��次賠償 心肌病（早期擴張型） 除持續癌症保險賠償外， 提供保證現金價值及 大腸息肉（鋸齒狀腺瘤／息肉） 嚴重疾病保險賠償 及嚴重疾病多重保險賠償 就晚期癌症每月支付 乳房癌前病變 終期紅利(如有) 癌症 相等於保額的�%作賠償， 癌症 最多索償 � 次 享潛在財富增值機會 長達��個月 心臟病發作 最多索償 � 次 提供即時支援，每月支付 涵蓋���種疾病： 尊享一系列預防、 中風 最多索償 � 次",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.early_stage_payout_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "�大持續守護 於早期風險狀況把關 獲額外保障 提供多重保險賠償，連同嚴重疾病保險賠償 提供額外經濟支援 合共高達��次賠償 心肌病（早期擴張型） 除持續癌症保險賠償外， 提供保證現金價值及 大腸息肉（鋸齒狀腺瘤／息肉） 嚴重疾病保險賠償 及嚴重疾病多重保險賠償 就晚期癌症每月支付 乳房癌前病變 終期紅利(如有) 癌症 相等於保額的�%作賠償， 癌症 最多索償 � 次 享潛在財富增值機會 長達��個月 心臟病發作 最多索償 � 次 提供即時支援，每月支付 涵蓋���種疾病： 尊享一系列預防、 中風 最多索償 � 次",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.icu_benefit_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "�，直至被保人��歲 �。每次賠償均相等於保額 �的���%。 於嚴重疾病保險賠償�,�及嚴重疾病多重保險賠償�,��下， 「愛唯守（升級版）」／「愛唯守（升級版）- 愛寶保」就嚴重疾病 提供合共高達��次賠償。 受保嚴重疾病及最多索償次數 ��： 嚴重疾病保險賠償 �,�及 嚴重疾病多重保險賠償 �,�� 癌症 心臟病發作 中風 嚴重認知障礙症 其他嚴重疾病^ 最多索償 最多索償 最多索償 最多索償 最多索償 �次 �次 �次 �次 �次 ^ 癌症、心臟病發作、中風、嚴重認知障礙症、不能獨立生活、已接受根除性全乳",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.icu_benefit_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "�，直至被保人��歲 �。每次賠償均相等於保額 �的���%。 於嚴重疾病保險賠償�,�及嚴重疾病多重保險賠償�,��下， 「愛唯守（升級版）」／「愛唯守（升級版）- 愛寶保」就嚴重疾病 提供合共高達��次賠償。 受保嚴重疾病及最多索償次數 ��： 嚴重疾病保險賠償 �,�及 嚴重疾病多重保險賠償 �,�� 癌症 心臟病發作 中風 嚴重認知障礙症 其他嚴重疾病^ 最多索償 最多索償 最多索償 最多索償 最多索償 �次 �次 �次 �次 �次 ^ 癌症、心臟病發作、中風、嚴重認知障礙症、不能獨立生活、已接受根除性全乳",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.icu_benefit_overseas_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "��% 保證現金價值��的���% 於保單期滿日之終期紅利�� 於保單期滿日之終期紅利�� 早期風險守護保險賠償�,�下已付 早期風險守護保險賠償�,�下已付 期滿價值 �,�� 及應付保險賠償之總金額 (如有) 及應付保險賠償之總金額 (如有) 非嚴重疾病保險賠償�,�下已付及 已支付及應付之所有非嚴重疾病 應付保險賠償之總金額 (如有) 保險賠償 � , � 索償的非嚴重疾病 保險賠償金額（如有） # 詳情請參閱「重要資料」部份下之保費調整。 + 澳門保單可以澳門幣或其他可供選擇的貨幣作為貨幣單位。 * 就深切",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.icu_benefit_overseas_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "��% 保證現金價值��的���% 於保單期滿日之終期紅利�� 於保單期滿日之終期紅利�� 早期風險守護保險賠償�,�下已付 早期風險守護保險賠償�,�下已付 期滿價值 �,�� 及應付保險賠償之總金額 (如有) 及應付保險賠償之總金額 (如有) 非嚴重疾病保險賠償�,�下已付及 已支付及應付之所有非嚴重疾病 應付保險賠償之總金額 (如有) 保險賠償 � , � 索償的非嚴重疾病 保險賠償金額（如有） # 詳情請參閱「重要資料」部份下之保費調整。 + 澳門保單可以澳門幣或其他可供選擇的貨幣作為貨幣單位。 * 就深切",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.multiple_claim_per_claim_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "严重疾病多重保险赔偿每次相等于保额100%。",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.multiple_claim_per_claim_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "严重疾病多重保险赔偿每次相等于保额100%。",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.max_total_claim_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "老 年 病 和 認 知 障 礙 等 疾 病 的 威 脅。 每個人生階段的健康保障都不容忽視。 「愛唯守危疾保障（升級版）」 （「愛唯守（升級版）」）提供全面保障，跨越人生不同週期，而「愛唯守危疾保障（升級版）- （「愛 唯 守（升 級 版）- 愛 寶 保」）更 為 準 媽 媽 及 寶 寶 加 入 貼 心 保 障，保 護 成 長 過 程，守 護 至 盛 年 到 晚 年 愛 寶 保」 白髮。 「愛唯守（升級版）」及「愛唯守（升級版）- 愛寶保」將在您人生每一個階段全程關顧、與您共同守護健康。 「愛唯守（升級版）- 愛寶",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.max_claim_count_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "老 年 病 和 認 知 障 礙 等 疾 病 的 威 脅。 每個人生階段的健康保障都不容忽視。 「愛唯守危疾保障（升級版）」 （「愛唯守（升級版）」）提供全面保障，跨越人生不同週期，而「愛唯守危疾保障（升級版）- （「愛 唯 守（升 級 版）- 愛 寶 保」）更 為 準 媽 媽 及 寶 寶 加 入 貼 心 保 障，保 護 成 長 過 程，守 護 至 盛 年 到 晚 年 愛 寶 保」 白髮。 「愛唯守（升級版）」及「愛唯守（升級版）- 愛寶保」將在您人生每一個階段全程關顧、與您共同守護健康。 「愛唯守（升級版）- 愛寶",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.cancer_claim_max_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "版）- 愛 寶 保」）更 為 準 媽 媽 及 寶 寶 加 入 貼 心 保 障，保 護 成 長 過 程，守 護 至 盛 年 到 晚 年 愛 寶 保」 白髮。 「愛唯守（升級版）」及「愛唯守（升級版）- 愛寶保」將在您人生每一個階段全程關顧、與您共同守護健康。 「愛唯守（升級版）- 愛寶保」 「愛唯守（升級版）」 全程守護 總保障高達保額的����% �大超前保障： 首��個保單年度內 就大部分受保嚴重疾病 �大持續守護 於早期風險狀況把關 獲額外保障 提供多重保險賠償，連同嚴重疾病保險賠償 提供額外經濟支援 合共高達",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.cancer_claim_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "版）- 愛 寶 保」）更 為 準 媽 媽 及 寶 寶 加 入 貼 心 保 障，保 護 成 長 過 程，守 護 至 盛 年 到 晚 年 愛 寶 保」 白髮。 「愛唯守（升級版）」及「愛唯守（升級版）- 愛寶保」將在您人生每一個階段全程關顧、與您共同守護健康。 「愛唯守（升級版）- 愛寶保」 「愛唯守（升級版）」 全程守護 總保障高達保額的����% �大超前保障： 首��個保單年度內 就大部分受保嚴重疾病 �大持續守護 於早期風險狀況把關 獲額外保障 提供多重保險賠償，連同嚴重疾病保險賠償 提供額外經濟支援 合共高達",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.persistent_cancer_cash_monthly_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "持续癌症保险赔偿可每月支付保额5%，最长100个月。",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.persistent_cancer_cash_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "持续癌症保险赔偿可每月支付保额5%，最长100个月。",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.immediate_cancer_cash_monthly_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "」 「愛唯守（升級版）」 全程守護 總保障高達保額的����% �大超前保障： 首��個保單年度內 就大部分受保嚴重疾病 �大持續守護 於早期風險狀況把關 獲額外保障 提供多重保險賠償，連同嚴重疾病保險賠償 提供額外經濟支援 合共高達��次賠償 心肌病（早期擴張型） 除持續癌症保險賠償外， 提供保證現金價值及 大腸息肉（鋸齒狀腺瘤／息肉） 嚴重疾病保險賠償 及嚴重疾病多重保險賠償 就晚期癌症每月支付 乳房癌前病變 終期紅利(如有) 癌症 相等於保額的�%作賠償， 癌症 最多索償 � 次 享潛在財富增值機會 長達��",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.immediate_cancer_cash_total_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "」 「愛唯守（升級版）」 全程守護 總保障高達保額的����% �大超前保障： 首��個保單年度內 就大部分受保嚴重疾病 �大持續守護 於早期風險狀況把關 獲額外保障 提供多重保險賠償，連同嚴重疾病保險賠償 提供額外經濟支援 合共高達��次賠償 心肌病（早期擴張型） 除持續癌症保險賠償外， 提供保證現金價值及 大腸息肉（鋸齒狀腺瘤／息肉） 嚴重疾病保險賠償 及嚴重疾病多重保險賠償 就晚期癌症每月支付 乳房癌前病變 終期紅利(如有) 癌症 相等於保額的�%作賠償， 癌症 最多索償 � 次 享潛在財富增值機會 長達��",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.stroke_rehab_cash_monthly_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "（升級版）」的不保事項之列，並符合保單合約所列之有關規定及條件； （b）未曾就保單已付及／或應付其他 賠償；（c）於保單合約期內，Edwin沒有更改「愛唯守（升級版）」的保額；及（d）所有保費均全數如期繳付。此說明例子所示的所有數字均以 四捨五入方式調整至整數。此說明例子僅供參考。 愛唯守（升級版）/ 愛唯守（升級版）- 愛寶保 | 10 計劃特點 受保疾病 產品概覽 重要資料 備註 支援中風的康復之路 若被保人在��歲 � 前首次被診斷患上中風，當嚴重疾病保險賠償 � , � 或嚴重疾病多重保險賠償 � , �（",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.dementia_annuity_annual_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "援 嚴重認知障礙症 最多索償 � 次 長達��個月 從體魄至心靈全方位管理健康 其他嚴重疾病 最多索償 � 次 其中一項非嚴重疾病的保障可 每年支付相等於 或 涵蓋��種重大手術 持續癌症保險賠償 嚴重認知 保額的��%， 每月支付相等於保額的�%作賠償， 障礙症 直至被保人���歲， 長達���個月 應付長期護理開支 為孕婦及寶寶而設 為兒童及其照顧者而設 為年長人士及其照顧者而設 超前由孕期��週開始提供懷孕保障，如妊娠併發症等、以及 多達��種兒童非嚴重疾病保障， 保障涵蓋中度嚴重至嚴重認知障礙症 為父母提供",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.neurodegenerative_annuity_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "援 嚴重認知障礙症 最多索償 � 次 長達��個月 從體魄至心靈全方位管理健康 其他嚴重疾病 最多索償 � 次 其中一項非嚴重疾病的保障可 每年支付相等於 或 涵蓋��種重大手術 持續癌症保險賠償 嚴重認知 保額的��%， 每月支付相等於保額的�%作賠償， 障礙症 直至被保人���歲， 長達���個月 應付長期護理開支 為孕婦及寶寶而設 為兒童及其照顧者而設 為年長人士及其照顧者而設 超前由孕期��週開始提供懷孕保障，如妊娠併發症等、以及 多達��種兒童非嚴重疾病保障， 保障涵蓋中度嚴重至嚴重認知障礙症 為父母提供",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.death_benefit_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "被保人���歲３ 重大手術�，保障直至 ��� 歲３ 兒童非嚴重疾病� (被保人須在��歲以下) 每次索償高達保額�的 每次索償高達保額�的 高達保額�的 �% ��% ���% 由下一個保費到期日起，往後基本計劃下的 於早期風險守護保險賠償�,�、非嚴重疾病保險賠償�,�及嚴重疾病保險賠償�,�下， 所有的保費均獲豁免， 當所有已付及應付保險賠償之總金額達到保額�的���%， 讓您的康復之路更輕鬆。 只要尚未耗盡保額 � 的���%及受限於上述條件，非嚴重疾病保險賠償 �,� 的索償次數不設限制。我們將從基本計劃",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.death_benefit_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "被保人���歲３ 重大手術�，保障直至 ��� 歲３ 兒童非嚴重疾病� (被保人須在��歲以下) 每次索償高達保額�的 每次索償高達保額�的 高達保額�的 �% ��% ���% 由下一個保費到期日起，往後基本計劃下的 於早期風險守護保險賠償�,�、非嚴重疾病保險賠償�,�及嚴重疾病保險賠償�,�下， 所有的保費均獲豁免， 當所有已付及應付保險賠償之總金額達到保額�的���%， 讓您的康復之路更輕鬆。 只要尚未耗盡保額 � 的���%及受限於上述條件，非嚴重疾病保險賠償 �,� 的索償次數不設限制。我們將從基本計劃",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.upgrade_benefit_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "」 （「愛唯守（升級版）」）提供全面保障，跨越人生不同週期，而「愛唯守危疾保障（升級版）- （「愛 唯 守（升 級 版）- 愛 寶 保」）更 為 準 媽 媽 及 寶 寶 加 入 貼 心 保 障，保 護 成 長 過 程，守 護 至 盛 年 到 晚 年 愛 寶 保」 白髮。 「愛唯守（升級版）」及「愛唯守（升級版）- 愛寶保」將在您人生每一個階段全程關顧、與您共同守護健康。 「愛唯守（升級版）- 愛寶保」 「愛唯守（升級版）」 全程守護 總保障高達保額的����% �大超前保障： 首��個保單年度內 就大部分受保嚴重疾",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.upgrade_benefit_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "」 （「愛唯守（升級版）」）提供全面保障，跨越人生不同週期，而「愛唯守危疾保障（升級版）- （「愛 唯 守（升 級 版）- 愛 寶 保」）更 為 準 媽 媽 及 寶 寶 加 入 貼 心 保 障，保 護 成 長 過 程，守 護 至 盛 年 到 晚 年 愛 寶 保」 白髮。 「愛唯守（升級版）」及「愛唯守（升級版）- 愛寶保」將在您人生每一個階段全程關顧、與您共同守護健康。 「愛唯守（升級版）- 愛寶保」 「愛唯守（升級版）」 全程守護 總保障高達保額的����% �大超前保障： 首��個保單年度內 就大部分受保嚴重疾",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.premium_waiver_claim_threshold_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "保單週年日前（以日期較 早者為準） 受有關條款及細則約束，詳情請參閱相關的宣傳單張。 愛唯守（升級版）/ 愛唯守（升級版）- 愛寶保 | 32 計劃特點 受保疾病 產品概覽 重要資料 備註 「愛唯守（升級版）」／「愛唯守（升級版）- 愛寶保」 資料一覽表（續） 「愛唯守（升級版）」 「愛唯守（升級版）- 愛寶保」 保費豁免及延長寬限期保障 當早期風險守護保險賠償 �,�、非嚴重疾病保險賠償 �,� 及嚴重疾病保險賠償 �,� 多重保險賠償 下所有已付及應付保險賠償之總金額達到基本保額的���%，而基本計劃 保費豁免",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.major_claim_premium_waiver": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "保單週年日前（以日期較 早者為準） 受有關條款及細則約束，詳情請參閱相關的宣傳單張。 愛唯守（升級版）/ 愛唯守（升級版）- 愛寶保 | 32 計劃特點 受保疾病 產品概覽 重要資料 備註 「愛唯守（升級版）」／「愛唯守（升級版）- 愛寶保」 資料一覽表（續） 「愛唯守（升級版）」 「愛唯守（升級版）- 愛寶保」 保費豁免及延長寬限期保障 當早期風險守護保險賠償 �,�、非嚴重疾病保險賠償 �,� 及嚴重疾病保險賠償 �,� 多重保險賠償 下所有已付及應付保險賠償之總金額達到基本保額的���%，而基本計劃 保費豁免",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      }
+    }
+  },
+  "extraction_meta": {
+    "extracted_at": "2026-06-20T12:40:14.994697Z",
+    "method": "PRODUCT-CATALOG + selected hot TS guided heuristic extraction; no fuzzy cross-product substitution",
+    "schema_policy": "core comparable fields in compare_profile; special/non-standard features in product_features[] and feature_tags[]",
+    "v2_5_extraction": {
+      "extracted_at": "2026-06-21T08:51:53.973048Z",
+      "method": "local_pdf_regex_structured_reextract_v2.5",
+      "pdf_filename": "axa-loving-care-ci-enhanced.pdf"
+    },
+    "v2_7_reextract": {
+      "generated_at": "2026-06-21T09:32:13.828033Z",
+      "method": "pdfplumber_page_window_keyword_match_v2.7",
+      "feature_count": 8,
+      "feature_evidence_matched": 5
+    },
+    "v2_8_reextract": {
+      "generated_at": "2026-06-21T10:07:28.669362Z",
+      "method": "full_truncation_sweep_and_pdf_evidence_window_repair_v2.8",
+      "ellipsis_fields_before": 2,
+      "ellipsis_fields_after": 0,
+      "nested_feature_notes_removed": 8
+    },
+    "v2_9_reextract": {
+      "generated_at": "2026-06-21T10:21:13.444353Z",
+      "method": "pdf_fulltext_reextract_no_hard_char_truncation_v2.9",
+      "note": "v2.9 移除旧抽取逻辑中的硬字符截断：对 base/compare_profile/source_trace.field_evidence/product_features.evidence_quote 做硬截断候选扫描；对 entry_age 等基础字段重新从 PDF 全文抽取完整结构化摘要；证据窗口按 PDF 页面语义窗口重取，不再按 60/80/120 字符硬截断。",
+      "hard_truncation_candidates_before": 4,
+      "hard_truncation_candidates_after": 4,
+      "fields_repaired": 7,
+      "age_refine_note": "v2.9 age fields refined from the best PDF full-text window near 投保年齡/投保范围, avoiding unrelated owner/beneficiary age clauses and hard character truncation."
+    },
+    "payout_ratio_extraction": {
+      "version": "v2.10",
+      "method": "pdf_text_percentage_patterns",
+      "note": "只在 PDF 文本出现可量化保额百分比时写入；未抽到不从 display_features/product_features 反推。",
+      "updated_fields": []
+    },
+    "payout_ratio_extraction_v2_11": {
+      "version": "v2.11",
+      "method": "full_ci_pdf_percentage_scan_with_product_rules",
+      "note": "全量重疾产品均重新扫描；只在 PDF 文本存在明确基本保额/名义金额/原有投保额等比例时写入。",
+      "updated_fields": [
+        "cancer_claim_max_percent",
+        "death_benefit_percent",
+        "dementia_annuity_annual_percent",
+        "early_risk_payout_percent",
+        "early_stage_payout_percent",
+        "icu_benefit_overseas_percent",
+        "icu_benefit_percent",
+        "immediate_cancer_cash_monthly_percent",
+        "immediate_cancer_cash_total_percent",
+        "major_illness_payout_percent",
+        "max_total_claim_percent",
+        "multiple_claim_per_claim_percent",
+        "persistent_cancer_cash_monthly_percent",
+        "premium_waiver_claim_threshold_percent",
+        "stroke_rehab_cash_monthly_percent",
+        "upgrade_benefit_percent"
+      ],
+      "ratio_field_count": 16,
+      "applied_at": "2026-06-21T11:04:48.026511Z"
+    }
+  },
+  "display_features": [
+    {
+      "title": "疾病覆盖广",
+      "summary": "覆盖150种疾病，含63种重疾、72种早期疾病、15种儿童疾病。",
+      "category": "protection",
+      "priority": 1,
+      "source_tags": [],
+      "source_paths": [
+        "compare_profile.covered_illness_total"
+      ]
+    },
+    {
+      "title": "多次赔付",
+      "summary": "指定疾病可在首次赔付后继续获得保障。",
+      "category": "protection",
+      "priority": 2,
+      "source_tags": [],
+      "source_paths": [
+        "compare_profile.has_multiple_claims"
+      ]
+    },
+    {
+      "title": "癌症持续保障",
+      "summary": "癌症达到约定条件后，可申请额外或多次赔付。",
+      "category": "protection",
+      "priority": 3,
+      "source_tags": [],
+      "source_paths": [
+        "compare_profile.has_cancer_multiple_claims"
+      ]
+    },
+    {
+      "title": "心脑血管保障",
+      "summary": "心脏病或中风达到条件后，可获额外支持。",
+      "category": "protection",
+      "priority": 4,
+      "source_tags": [
+        "heart_stroke_multiple_claims"
+      ],
+      "source_paths": [
+        "compare_profile.has_heart_stroke_multiple_claims"
+      ]
+    },
+    {
+      "title": "ICU保障",
+      "summary": "达到指定深切治疗条件时，可获得额外赔偿。",
+      "category": "medical_service",
+      "priority": 5,
+      "source_tags": [
+        "icu_benefit"
+      ],
+      "source_paths": [
+        "compare_profile.has_icu_benefit"
+      ]
+    },
+    {
+      "title": "脑退化支持",
+      "summary": "脑退化或柏金森等指定疾病可获长期支持。",
+      "category": "protection",
+      "priority": 6,
+      "source_tags": [
+        "neurodegenerative_annuity"
+      ],
+      "source_paths": []
+    }
+  ],
+  "product_name": "安盛爱唯守危疾保障（升级版）"
+}

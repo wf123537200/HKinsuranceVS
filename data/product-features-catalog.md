@@ -1,0 +1,25 @@
+# Product Features Catalog
+- policy_loan: 32
+- terminal_illness_benefit: 19
+- premium_waiver: 18
+- death_benefit_payment_option: 17
+- accidental_death_benefit: 16
+- bonus_lock_in: 13
+- icu_benefit: 13
+- neurodegenerative_annuity: 11
+- policy_split: 11
+- health_impairment_option: 11
+- healthcare_service: 9
+- maternity_version: 8
+- child_growth_benefit: 7
+- extra_premium_option: 7
+- change_insured: 6
+- currency_switch: 6
+- second_insured: 5
+- academic_reward: 4
+- bonus_unlock: 3
+- long_term_care: 3
+- second_policyholder: 2
+- persistent_cancer_cash: 2
+- beneficiary_flexible_option: 1
+- value_protection_account: 1

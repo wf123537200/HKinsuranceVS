@@ -1,0 +1,24 @@
+{
+  "registryPath": "data/compare-field-registry-v2.11.json",
+  "foundPercentFields": 16,
+  "updatedPercentFields": 16,
+  "percentPaths": [
+    "compare_profile.major_illness_payout_percent",
+    "compare_profile.early_stage_payout_percent",
+    "compare_profile.moderate_illness_payout_percent",
+    "compare_profile.child_illness_payout_percent",
+    "compare_profile.icu_benefit_percent",
+    "compare_profile.icu_benefit_level1_percent",
+    "compare_profile.icu_benefit_level2_percent",
+    "compare_profile.multiple_claim_per_claim_percent",
+    "compare_profile.cancer_claim_max_percent",
+    "compare_profile.heart_stroke_claim_max_percent",
+    "compare_profile.max_total_claim_percent",
+    "compare_profile.persistent_cancer_cash_monthly_percent",
+    "compare_profile.neurodegenerative_annuity_annual_percent",
+    "compare_profile.death_benefit_percent",
+    "compare_profile.life_extension_benefit_percent",
+    "compare_profile.upgrade_benefit_percent",
+    "compare_profile.first_10_year_death_benefit_percent"
+  ]
+}

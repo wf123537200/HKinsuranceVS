@@ -1,13 +1,20 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import type { Metadata } from "next";
+import type { Locale } from "@/i18n/config";
+import { buildMetadata } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = {
-  title: "Discussions",
-  description: "Community discussions about insurance products.",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return buildMetadata({
+    path: "/discussions",
+    locale: locale as Locale,
+    title: "Community Discussions",
+    description: "Community discussions about insurance products on Policy Vector.",
+  });
+}
 
 export default async function DiscussionsPage() {
   const discussions = await prisma.discussion.findMany({

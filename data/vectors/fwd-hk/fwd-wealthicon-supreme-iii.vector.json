@@ -1,0 +1,460 @@
+{
+  "product_vector_version": "v2.9",
+  "base": {
+    "product_id": "fwd-wealthicon-supreme-iii",
+    "slug": "fwd-wealthicon-supreme-iii",
+    "product_name": "富卫财富皇图储蓄保险计划（至尊 III）",
+    "product_name_en": "FWD WealthICON Supreme III",
+    "company_slug": "fwd-hk",
+    "company_name": "富卫香港",
+    "region": "Hong Kong",
+    "category": "savings",
+    "category_zh": "储蓄险",
+    "subcategory": "savings",
+    "policy_currency": [
+      "USD",
+      "HKD",
+      "CNY"
+    ],
+    "policy_term": null,
+    "premium_term": [
+      "一次性"
+    ],
+    "entry_age": "投保年龄范围为1至80岁。",
+    "payment_mode": null,
+    "local_pdf_path": "/pdfs/fwd-wealthicon-supreme-iii.pdf",
+    "source_pdf_filename": "fwd-wealthicon-supreme-iii.pdf",
+    "is_hot_discussed": false,
+    "market_attention": "unknown",
+    "product_name_zh_cn": "富卫财富皇图储蓄保险计划（至尊 III）",
+    "product_name_zh_hk": "富衛盈聚傳承壽險計劃 III",
+    "display_name": "富卫盈聚传承寿险计划 III",
+    "product_name_zh_tw": "富衛財富皇圖儲蓄保險計劃（至尊 III）"
+  },
+  "core": {
+    "critical_illness_core": null,
+    "savings_core": {
+      "has_guaranteed_cash_value": true,
+      "has_non_guaranteed_bonus": true,
+      "bonus_types": [
+        "归原红利",
+        "特别红利"
+      ],
+      "highest_illustrated_irr": null,
+      "guaranteed_irr": null,
+      "highest_illustrated_return_multiple": null,
+      "has_partial_withdrawal": true,
+      "has_policy_loan": true
+    }
+  },
+  "modules": {
+    "participating_savings_module": {
+      "available": true,
+      "bonus_types": [
+        "归原红利",
+        "特别红利"
+      ]
+    },
+    "life_protection_module": {
+      "has_death_benefit": true
+    },
+    "policy_liquidity_module": {
+      "has_policy_loan": true,
+      "has_partial_withdrawal": true,
+      "has_regular_withdrawal": true
+    },
+    "policy_flexibility_module": {
+      "supports_currency_switch": false,
+      "supports_policy_split": true,
+      "supports_change_insured": false,
+      "supports_second_insured": false,
+      "supports_second_policyholder": false
+    },
+    "risk_module": {
+      "risk_summary": [
+        "非保证利益风险",
+        "退保/流动性风险",
+        "货币风险",
+        "汇率风险",
+        "理赔限制",
+        "保单贷款风险"
+      ]
+    }
+  },
+  "compare_profile": {
+    "product_category": "savings",
+    "product_type": "savings",
+    "company_slug": "fwd-hk",
+    "product_slug": "fwd-wealthicon-supreme-iii",
+    "market_attention": "unknown",
+    "priority": null,
+    "policy_term": "终身",
+    "premium_terms": [
+      "一次性"
+    ],
+    "entry_age_summary": "投保年龄范围为1至80岁。",
+    "currencies": [
+      "USD",
+      "HKD",
+      "CNY"
+    ],
+    "has_guaranteed_cash_value": true,
+    "has_non_guaranteed_bonus": true,
+    "bonus_types": [
+      "归原红利",
+      "特别红利"
+    ],
+    "has_partial_withdrawal": true,
+    "has_regular_withdrawal": true,
+    "has_policy_loan": true,
+    "supports_currency_switch": false,
+    "supports_policy_split": true,
+    "supports_change_insured": false,
+    "supports_second_insured": false,
+    "supports_second_policyholder": false,
+    "covered_illness_total": null,
+    "major_illness_count": null,
+    "early_stage_illness_count": null,
+    "moderate_illness_count": null,
+    "child_illness_count": null,
+    "has_multiple_claims": null,
+    "has_cancer_multiple_claims": null,
+    "has_heart_stroke_multiple_claims": null,
+    "has_icu_benefit": false,
+    "cancer_claim_cap_summary": null,
+    "heart_stroke_claim_summary": null,
+    "icu_benefit_summary": null,
+    "post_claim_status_summary": null,
+    "highest_illustrated_irr": null,
+    "guaranteed_irr": 105,
+    "highest_illustrated_return_multiple": null,
+    "illustrated_break_even_year": null,
+    "guaranteed_break_even_year": null,
+    "risk_summary": [
+      "非保证利益风险",
+      "退保/流动性风险",
+      "货币风险",
+      "汇率风险",
+      "保单贷款风险",
+      "通胀风险",
+      "理赔限制"
+    ],
+    "bonus_type_summary": "归原红利 / 特别红利",
+    "bonus_declaration_summary": "提供归原红利 / 特别红利，金额并不保证，实际派发及公布以保险公司政策为准。",
+    "has_bonus_lock_in": true,
+    "bonus_lock_in_summary": "可按条款锁定部分红利或分红，便于资金安排。",
+    "has_bonus_unlock": false,
+    "bonus_unlock_summary": null,
+    "has_value_protection_account": false,
+    "value_protection_account_summary": null,
+    "policy_loan_summary": "可按条款申请保单贷款，贷款会影响保单价值。",
+    "partial_withdrawal_summary": "可按条款部分提取或减保，提取会影响保单价值。",
+    "regular_withdrawal_summary": "可按条款安排定期提取或入息支付。",
+    "change_insured_summary": null,
+    "second_insured_summary": null,
+    "second_policyholder_summary": null,
+    "policy_split_summary": "支持按条款分拆保单，便于家庭资产分配。",
+    "has_death_benefit_payment_option": false,
+    "death_benefit_payment_summary": null,
+    "has_beneficiary_flexible_option": false,
+    "beneficiary_option_summary": null,
+    "has_terminal_illness_benefit": false,
+    "terminal_illness_summary": null,
+    "minimum_premium_summary": null,
+    "minimum_sum_assured_summary": "最低保额/名义金额按货币、缴费期及投保安排而定，具体以条款为准。"
+  },
+  "product_features": [
+    {
+      "feature_id": "policy_loan",
+      "feature_name": "保单贷款",
+      "category": "liquidity",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "可按条款申请保单贷款，提升保单资金流动性。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 1,
+      "compare_key": "policy_loan",
+      "source_pages": [
+        17
+      ],
+      "evidence_quote": "3) 保單的期滿日。 4) 當任何未償還保單貸款金額（包括利息）等於或高於保單的總現金價值不包括特別紅利（如有）",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "保單貸款借入",
+          "保单贷款借入",
+          "借入高達",
+          "借入高达",
+          "通過保單貸款",
+          "通过保单贷款",
+          "policy loan"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "bonus_lock_in",
+      "feature_name": "红利/分红锁定选项",
+      "category": "bonus_management",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "可按条款锁定部分红利或分红，便于资金安排。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 2,
+      "compare_key": "bonus_lock_in",
+      "source_pages": [
+        4
+      ],
+      "evidence_quote": "保障您的財富 由第15個保單年度起，您可行使特別紅利鎖定選項，將部分特別紅利 轉換為週年紅利，助您穩定財富",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "終期紅利鎖定選項",
+          "终期红利锁定选项",
+          "鎖定至",
+          "锁定至",
+          "紅利鎖定戶口",
+          "红利锁定户口",
+          "lock-in",
+          "lock in"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "policy_split",
+      "feature_name": "保单分拆选项",
+      "category": "legacy_planning",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "可按条款分拆保单，便于家庭传承和资产分配。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 3,
+      "compare_key": "policy_split",
+      "source_pages": [
+        4
+      ],
+      "evidence_quote": "分拆保單 隨您意願 透過保單分拆選項，您可於第5個保單週年日起，將保單分拆為兩份或更多 保單，作為遺產規劃的解決方案",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "保單分拆",
+          "保单分拆",
+          "開枝散葉",
+          "开枝散叶",
+          "policy split"
+        ],
+        "no_hard_char_truncation": true
+      }
+    }
+  ],
+  "feature_tags": [
+    "policy_loan",
+    "bonus_lock_in",
+    "policy_split"
+  ],
+  "comparison_flags": {
+    "has_guaranteed_cash_value": true,
+    "has_non_guaranteed_bonus": true,
+    "has_partial_withdrawal": true,
+    "has_regular_withdrawal": true,
+    "has_policy_loan": true,
+    "supports_currency_switch": false,
+    "supports_policy_split": true,
+    "supports_change_insured": false,
+    "supports_second_insured": false,
+    "supports_second_policyholder": false,
+    "has_multiple_claims": null,
+    "has_cancer_multiple_claims": null,
+    "has_heart_stroke_multiple_claims": null,
+    "has_icu_benefit": false
+  },
+  "source_trace": {
+    "source_type": "catalog_verified_pdf",
+    "source_pdf": "fwd-wealthicon-supreme-iii.pdf",
+    "source_pdf_path": "pdfs/fwd-wealthicon-supreme-iii.pdf",
+    "source_pdf_sha256": "44eef842fc4cfcce21c57989224a2899c6e82909f00ba6ca682b8ed7195f9b24",
+    "page_count": 20,
+    "text_length": 13779,
+    "extraction_confidence": "medium",
+    "missing_fields": [],
+    "field_evidence": {
+      "compare_profile.has_guaranteed_cash_value": {
+        "source": "local_pdf",
+        "pages": [
+          11
+        ],
+        "quote": "(a) 部分保證現金價值 (b) 加部分特別紅利（如有）；及 (c) 扣除任何保單負債(如保單貸款及其利息）",
+        "confidence": "medium",
+        "method": "pdf_page_semantic_window_keyword_match_v2.9_no_hard_char_truncation",
+        "no_hard_char_truncation": true
+      },
+      "compare_profile.has_non_guaranteed_bonus": {
+        "source": "local_pdf",
+        "pages": [
+          12
+        ],
+        "quote": "派發紅利的理念 由富衛發出的分紅保單設有非保證紅利予保單持有人（「您」）。紅利包括週年紅利（包含累積紅利的利息）、 期滿紅利、歸原紅利及特別紅利",
+        "confidence": "medium",
+        "method": "pdf_page_semantic_window_keyword_match_v2.9_no_hard_char_truncation",
+        "no_hard_char_truncation": true
+      },
+      "compare_profile.has_policy_loan": {
+        "source": "local_pdf",
+        "pages": [
+          17
+        ],
+        "quote": "3) 保單的期滿日。 4) 當任何未償還保單貸款金額（包括利息）等於或高於保單的總現金價值不包括特別紅利（如有）",
+        "confidence": "medium",
+        "method": "pdf_page_semantic_window_keyword_match_v2.9_no_hard_char_truncation",
+        "no_hard_char_truncation": true
+      },
+      "compare_profile.supports_policy_split": {
+        "source": "local_pdf",
+        "pages": [
+          4
+        ],
+        "quote": "分拆保單 隨您意願 透過保單分拆選項，您可於第5個保單週年日起，將保單分拆為兩份或更多 保單，作為遺產規劃的解決方案",
+        "confidence": "medium",
+        "method": "pdf_page_semantic_window_keyword_match_v2.9_no_hard_char_truncation",
+        "no_hard_char_truncation": true
+      }
+    }
+  },
+  "extraction_meta": {
+    "extracted_at": "2026-06-20T12:40:17.789116Z",
+    "method": "PRODUCT-CATALOG + selected hot TS guided heuristic extraction; no fuzzy cross-product substitution",
+    "schema_policy": "core comparable fields in compare_profile; special/non-standard features in product_features[] and feature_tags[]",
+    "v2_5_extraction": {
+      "extracted_at": "2026-06-21T08:51:57.477643Z",
+      "method": "local_pdf_regex_structured_reextract_v2.5",
+      "pdf_filename": "fwd-wealthicon-supreme-iii.pdf"
+    },
+    "v2_7_reextract": {
+      "generated_at": "2026-06-21T09:32:19.325172Z",
+      "method": "pdfplumber_page_window_keyword_match_v2.7",
+      "feature_count": 3,
+      "feature_evidence_matched": 1
+    },
+    "v2_8_reextract": {
+      "generated_at": "2026-06-21T10:07:30.401663Z",
+      "method": "full_truncation_sweep_and_pdf_evidence_window_repair_v2.8",
+      "ellipsis_fields_before": 3,
+      "ellipsis_fields_after": 0,
+      "nested_feature_notes_removed": 3
+    },
+    "v2_9_reextract": {
+      "generated_at": "2026-06-21T10:21:17.746012Z",
+      "method": "pdf_fulltext_reextract_no_hard_char_truncation_v2.9",
+      "note": "v2.9 移除旧抽取逻辑中的硬字符截断：对 base/compare_profile/source_trace.field_evidence/product_features.evidence_quote 做硬截断候选扫描；对 entry_age 等基础字段重新从 PDF 全文抽取完整结构化摘要；证据窗口按 PDF 页面语义窗口重取，不再按 60/80/120 字符硬截断。",
+      "hard_truncation_candidates_before": 1,
+      "hard_truncation_candidates_after": 0,
+      "fields_repaired": 8,
+      "age_refine_note": "v2.9 age fields refined from the best PDF full-text window near 投保年齡/投保范围, avoiding unrelated owner/beneficiary age clauses and hard character truncation."
+    }
+  },
+  "display_features": [
+    {
+      "title": "多货币配置",
+      "summary": "支持多种保单货币，便于跨币种安排。",
+      "category": "currency",
+      "priority": 1,
+      "source_tags": [],
+      "source_paths": [
+        "compare_profile.currencies",
+        "compare_profile.supports_currency_switch"
+      ]
+    },
+    {
+      "title": "现金价值与分红",
+      "summary": "提供保证现金价值，并有机会获得非保证红利。",
+      "category": "savings",
+      "priority": 2,
+      "source_tags": [],
+      "source_paths": [
+        "compare_profile.has_guaranteed_cash_value",
+        "compare_profile.has_non_guaranteed_bonus"
+      ]
+    },
+    {
+      "title": "灵活资金安排",
+      "summary": "支持贷款或提取，便于中途资金周转。",
+      "category": "liquidity",
+      "priority": 4,
+      "source_tags": [
+        "policy_loan"
+      ],
+      "source_paths": [
+        "compare_profile.has_policy_loan",
+        "compare_profile.has_partial_withdrawal"
+      ]
+    },
+    {
+      "title": "红利锁定",
+      "summary": "可按规则锁定部分红利，提升安排灵活度。",
+      "category": "bonus",
+      "priority": 5,
+      "source_tags": [
+        "bonus_lock_in"
+      ],
+      "source_paths": []
+    },
+    {
+      "title": "传承安排",
+      "summary": "支持分拆或受保人安排，方便家庭传承。",
+      "category": "legacy",
+      "priority": 6,
+      "source_tags": [
+        "policy_split"
+      ],
+      "source_paths": [
+        "compare_profile.supports_policy_split",
+        "compare_profile.supports_change_insured",
+        "compare_profile.supports_second_insured"
+      ]
+    }
+  ],
+  "product_name": "富卫财富皇图储蓄保险计划（至尊 III）"
+}

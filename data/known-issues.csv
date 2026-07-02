@@ -1,0 +1,20 @@
+severity,db_slug,issue,detail
+P2,axa-wealth-advance-savings-ii-ultimate,Missing field,entry_age
+P2,fwd-noble-fortune,Missing field,premium_terms
+P2,fwd-noble-fortune,Missing field,entry_age
+P2,manulife-genesis-centurion,Missing field,entry_age
+P2,manulife-manucentury,Missing field,entry_age
+P2,pingan-yuxiang-jinyue-2025,Missing field,premium_terms
+P2,pingan-shengshi-jinyue-zunxiang-26II,Missing field,premium_terms
+P2,ping-an-shengshi-jinyue-premium,Missing field,premium_terms
+P2,pingan-ruyi-quanneng-ci,Missing field,premium_terms
+P2,pingan-ruyi-quanneng-2025-ci,Missing field,premium_terms
+P2,prudential-evergreen-growth,Missing field,premium_terms
+P2,prudential-evergreen-growth,Missing field,entry_age
+P2,prudential-prime-ace,Missing field,entry_age
+P2,prudential-prime-eternity,Missing field,premium_terms
+P2,prudential-prime-eternity,Missing field,entry_age
+P2,prudential-enlit-savings,Missing field,premium_terms
+P2,prudential-enlit-savings,Missing field,entry_age
+P2,taikang-zengduoduo,Missing field,premium_terms
+P2,taikang-zengduoduo,Missing field,entry_age

@@ -1,6 +1,6 @@
 {
   "common": {
-    "siteName": "保險圖鑑",
+    "siteName": "Policy Vector",
     "siteTagline": "保險產品資料庫",
     "signIn": "登入",
     "signOut": "登出",
@@ -26,9 +26,12 @@
     "no": "否",
     "from": "來自",
     "by": "由",
-    "sortNote": "按筆畫順序排列"
+    "sortNote": "按筆畫順序排列",
+    "allCategories": "全部險種",
+    "allRegions": "全部地區"
   },
   "nav": {
+    "home": "首頁",
     "companies": "保險公司",
     "products": "保險產品",
     "compare": "產品對比",
@@ -39,14 +42,18 @@
     "language": "語言"
   },
   "home": {
-    "heroTitle": "保險圖鑑",
+    "heroTitle": "Policy Vector",
     "heroSubtitle": "保險產品資料庫",
     "heroDescription": "對比香港與中國內地的重疾險和儲蓄險產品，助您做出明智的保險選擇。",
     "criticalIllnessBtn": "重疾險",
     "savingsBtn": "儲蓄險",
     "hotProducts": "熱門產品",
     "mostCompared": "最多對比",
-    "companies": "保險公司"
+    "companies": "保險公司",
+    "companiesCount": "家保險公司",
+    "productsCount": "款保險產品",
+    "comparisonsCount": "組產品對比",
+    "statsDescription": "覆蓋{companies}家主要保險公司，{products}款主流產品，全部配有官方產品手冊PDF。"
   },
   "categories": {
     "criticalIllness": "重疾險",
@@ -68,6 +75,7 @@
     "visitWebsite": "訪問官方網站",
     "criticalIllnessProducts": "重疾險產品",
     "savingsProducts": "儲蓄險產品",
+    "allProducts": "全部產品",
     "noProducts": "該公司目前暫無在售產品。",
     "learnAbout": "瞭解{name}的保險產品。"
   },
@@ -91,6 +99,18 @@
     "downloadBrochure": "下載 PDF 產品手冊",
     "tags": "標籤",
     "relatedComparisons": "相關對比",
+    "whySelected": "入選理由",
+    "marketAttention": "市場關注度",
+    "marketAttentionHot": "熱門討論",
+    "marketAttentionDiscussed": "持續討論",
+    "marketAttentionHistorical": "歷史熱門",
+    "englishName": "英文名稱",
+    "companyProductsTitle": "同公司其他熱門產品",
+    "relatedProductsTitle": "您可能也感興趣",
+    "noRelatedProducts": "暫無相關產品",
+    "notInSelectedTitle": "該產品暫未收錄",
+    "notInSelectedDescription": "Policy Vector 目前只展示精選 的 24 款熱門產品。請返回全部產品列表查看已收錄的產品。",
+    "backToAllProducts": "返回產品列表",
     "majorIllnesses": "重大疾病",
     "cancerMultipleClaims": "癌症多次賠付",
     "illustratedIrr": "演示內部收益率",
@@ -100,7 +120,10 @@
     "aiaEasyguardCI": "友邦守康易危疾保",
     "aiaExecutiveCarePro2": "友邦泰然安心保2",
     "aiaLadyCarePro": "友邦摯愛妳保障計劃",
-    "aiaEssenceOnYourSide": "友邦簡緻·愛伴航"
+    "aiaEssenceOnYourSide": "友邦簡緻·愛伴航",
+    "relatedByCategoryTitle": "其他{category}產品",
+    "noRelatedByCategory": "暫無其他同類產品。",
+    "viewAllCategory": "查看全部{category}產品"
   },
   "ciDetails": {
     "title": "重疾險詳情",
@@ -171,7 +194,12 @@
     "generateAI": "生成 AI 對比",
     "generatedSuccess": "對比生成成功！",
     "generateError": "生成對比失敗",
-    "tryAgain": "發生錯誤，請重試。"
+    "tryAgain": "發生錯誤，請重試。",
+    "relatedComparisonsTitle": "同類對比",
+    "relatedAnchor": "查看 {other} 與更多產品的對比",
+    "exploreEachProduct": "深入了解兩款產品",
+    "viewProductProfile": "查看完整檔案",
+    "viewCompanyProfile": "查看公司主頁"
   },
   "rankings": {
     "title": "產品排名",
@@ -212,15 +240,31 @@
   },
   "login": {
     "title": "登入",
-    "description": "登入您的保險圖鑑帳戶。",
+    "description": "登入您的 Policy Vector 帳戶。",
     "email": "電郵",
     "password": "密碼",
     "signInBtn": "登入",
-    "orContinueWith": "或使用以下方式登入",
-    "google": "Google",
-    "github": "GitHub",
+    "invalidCredentials": "電郵或密碼錯誤，請重試。",
     "noAccount": "還沒有帳戶？",
-    "register": "註冊"
+    "register": "立即建立",
+    "notConfigured": "伺服器尚未設定登入服務。"
+  },
+  "register": {
+    "title": "建立帳戶",
+    "description": "免費註冊 Policy Vector 帳戶。",
+    "email": "電郵",
+    "username": "使用者名稱（選填）",
+    "password": "密碼",
+    "confirmPassword": "確認密碼",
+    "signUpBtn": "建立帳戶",
+    "haveAccount": "已經有帳戶？",
+    "signInLink": "直接登入",
+    "passwordMismatch": "兩次輸入的密碼不一致。",
+    "passwordTooShort": "密碼至少需要 8 個字元。",
+    "notConfigured": "伺服器尚未設定登入服務。",
+    "checkEmailTitle": "請檢查您的信箱",
+    "checkEmailBody": "我們已寄送確認連結到您的信箱，點擊連結即可完成註冊。",
+    "backToLogin": "返回登入"
   },
   "admin": {
     "title": "管理後台",
@@ -245,9 +289,9 @@
     "search": "搜尋",
     "account": "帳戶",
     "signIn": "登入",
-    "disclaimer": "保險圖鑑不銷售保險產品，也不提供個性化保險、財務或投資建議。所有內容僅用於資料研究和教育目的。具體產品保障、利益、費用和限制，請以保險公司官方產品手冊、正式合同條款及合資格專業人士意見為準。",
+    "disclaimer": "Policy Vector 不銷售保險產品，也不提供個性化保險、財務或投資建議。所有內容僅用於資料研究和教育目的。具體產品保障、利益、費用和限制，請以保險公司官方產品手冊、正式合同條款及合資格專業人士意見為準。",
     "disclaimerZH": "",
-    "copyright": "© {year} 保險圖鑑。保留所有權利。",
+    "copyright": "© {year} Policy Vector。保留所有權利。",
     "disclaimerLabel": "免責聲明："
   },
   "calculator": {
@@ -275,13 +319,13 @@
   },
   "sitemap": {
     "title": "網站地圖",
-    "description": "保險圖鑑所有頁面一覽。",
+    "description": "Policy Vector 所有頁面一覽。",
     "pages": "頁面",
     "companies": "保險公司",
     "products": "保險產品"
   },
   "seo": {
-    "homeTitle": "保險圖鑑 - 對比香港與中國內地保險產品",
+    "homeTitle": "對比香港與中國內地保險產品",
     "homeDescription": "對比香港和中國內地的重疾險和儲蓄險產品。通過詳細分析找到最佳保險方案。"
   },
   "IRRCalculator": {
@@ -330,5 +374,58 @@
     "faqA2": "分別輸入兩個產品的保費繳納和預期現金價值，IRR 較高的產品在同等風險水準下提供更好的回報。",
     "faqQ3": "IRR 計算器準確嗎？",
     "faqA3": "計算器使用 Newton-Raphson 法配合二分法回退，數學上精確。結果取決於您輸入的現金價值——請務必使用官方產品演示資料。"
+  },
+  "geo": {
+    "common": {
+      "methodologyTitle": "資料來源與方法",
+      "sourcesTitle": "參考資料",
+      "dataExtractedFrom": "資料抽取自官方產品手冊，日期 {date}。",
+      "vectorVersion": "結構化資料：ProductVector v2.11（registry id compare-field-registry-v2.11.json）。",
+      "policyVectorSource": "Policy Vector 保險產品資料庫"
+    },
+    "home": {
+      "quickAnswerTitle": "Policy Vector 是什麼？",
+      "quickAnswerText": "Policy Vector 是香港與中國內地的保險產品資料庫與對比平台。我們從官方 PDF 手冊抽取結構化資料，發布重疾險與儲蓄險的同台對比。",
+      "sources": [
+        { "label": "Policy Vector — 保險公司", "url": "https://policy-vector.com/zh-TW/companies" },
+        { "label": "Policy Vector — 保險產品", "url": "https://policy-vector.com/zh-TW/products" }
+      ]
+    },
+    "company": {
+      "quickAnswerTitle": "{name} 提供哪些產品？",
+      "quickAnswerText": "{name} 是一家位於 {region} 的保險公司。在 Policy Vector 上我們收錄了該公司的 {count} 款精選產品，涵蓋重疾險與儲蓄險類別。",
+      "sources": [
+        { "label": "Policy Vector 上的 {name}", "url": "https://policy-vector.com/zh-TW/company/{slug}" },
+        { "label": "全部保險公司", "url": "https://policy-vector.com/zh-TW/companies" }
+      ]
+    },
+    "product": {
+      "quickAnswerTitle": "{name} 是什麼產品？",
+      "quickAnswerText": "{name} 是 {company} 在 {region} 發行的一款{category}產品，支援的幣種包括：{currencies}。完整產品分析請見 Policy Vector。",
+      "faqQ1": "{name} 是什麼類型的保險？",
+      "faqA1": "{name} 是 {company} 發行的一款{category}產品。",
+      "faqQ2": "{name} 支援哪些幣種？",
+      "faqA2": "{name} 支援的幣種包括：{currencies}。",
+      "faqQ3": "在哪裡可以閱讀 {name} 的官方手冊？",
+      "faqA3": "本頁已附官方 PDF 手冊連結。購買前請以官方手冊為準核對條款、保費與保障。",
+      "sources": [
+
+        { "label": "Policy Vector 上的 {company}", "url": "https://policy-vector.com/zh-TW/company/{companySlug}" },
+        { "label": "全部{category}產品", "url": "https://policy-vector.com/zh-TW/products/{categorySlug}" }
+      ]
+    },
+    "compare": {
+      "quickAnswerTitle": "{a} 與 {b} 有什麼差別？",
+      "quickAnswerText": "{a} 與 {b} 同屬 {category} 類別。請參考本頁對比表，從公司、地區、幣種、繳費期、保障範圍、演示 IRR、保單特色等方面逐項比較。",
+      "faqQ1": "{a} 和 {b} 哪個比較好？",
+      "faqA1": "沒有絕對的好壞。請結合地區、幣種、繳費期、保障範圍、演示 IRR 等維度，挑選最符合您需求的產品。",
+      "faqQ2": "對比資料是否保證準確？",
+      "faqA2": "對比資料均抽取自官方手冊，並在底層產品向量更新時同步刷新。非保證部分（如分紅險的演示 IRR）取決於保險公司的經營表現。",
+      "faqQ3": "在哪裡可以閱讀兩份官方手冊？",
+      "faqA3": "本頁已附兩份官方 PDF 手冊連結。決策前請務必以官方文件為準。"
+    },
+    "pdfGate": {
+      "lockedLabel": "登入後查看官方產品 PDF"
+    }
   }
 }

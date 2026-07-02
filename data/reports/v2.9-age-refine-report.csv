@@ -1,0 +1,71 @@
+product_id,path,old,new
+aia-on-your-side-2,base.entry_age,投保年龄按计划版本、缴费期及条款规定而定。,投保年龄范围为18至45岁。
+aia-on-your-side-2,compare_profile.entry_age_summary,投保年龄按计划版本、缴费期及条款规定而定。,投保年龄范围为18至45岁。
+cpic-evergreen-whole-life,base.entry_age,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满15日。,投保年龄按计划版本、缴费期及条款规定而定。
+cpic-evergreen-whole-life,compare_profile.entry_age_summary,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满15日。,投保年龄按计划版本、缴费期及条款规定而定。
+cpic-jinshengwuyou-2024-kids,base.entry_age,投保年龄范围为0至17岁；最低年龄要求包括出生满28日。,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满28日。
+cpic-jinshengwuyou-2024-kids,compare_profile.entry_age_summary,投保年龄范围为0至17岁；最低年龄要求包括出生满28日。,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满28日。
+cpic-jinshengwuyou-kids,base.entry_age,投保年龄范围为0至17岁；最低年龄要求包括出生满28日。,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满28日。
+cpic-jinshengwuyou-kids,compare_profile.entry_age_summary,投保年龄范围为0至17岁；最低年龄要求包括出生满28日。,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满28日。
+cpic-wenyingjinsheng-ci,base.entry_age,投保年龄范围为0至53岁 / 40至79岁；最低年龄要求包括出生满28日。,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满28日。
+cpic-wenyingjinsheng-ci,compare_profile.entry_age_summary,投保年龄范围为0至53岁 / 40至79岁；最低年龄要求包括出生满28日。,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满28日。
+cpic-xiangbanzhizun-2024s,base.entry_age,投保年龄范围为0至70岁 / 0至68岁；最低年龄要求包括出生满5天。,投保年龄范围为女性0至70岁 / 男性0至68岁；最低年龄要求包括出生满5天。
+cpic-xiangbanzhizun-2024s,compare_profile.entry_age_summary,投保年龄范围为0至70岁 / 0至68岁；最低年龄要求包括出生满5天。,投保年龄范围为女性0至70岁 / 男性0至68岁；最低年龄要求包括出生满5天。
+fwd-crisis-one-master,base.entry_age,投保年龄范围为1至65岁；最低年龄要求包括出生满15日。,投保年龄范围为1至65岁。
+fwd-crisis-one-master,compare_profile.entry_age_summary,投保年龄范围为1至65岁；最低年龄要求包括出生满15日。,投保年龄范围为1至65岁。
+fwd-crisis-u-supporter,base.entry_age,投保年龄范围为19至46岁；最低年龄要求包括出生满15日。,投保年龄范围为19至46岁。
+fwd-crisis-u-supporter,compare_profile.entry_age_summary,投保年龄范围为19至46岁；最低年龄要求包括出生满15日。,投保年龄范围为19至46岁。
+fwd-easycover-ci,base.entry_age,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满15日、出生满30日。,投保年龄按计划版本、缴费期及条款规定而定。
+fwd-easycover-ci,compare_profile.entry_age_summary,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满15日、出生满30日。,投保年龄按计划版本、缴费期及条款规定而定。
+fwd-maxfocus-legacy-ii,base.entry_age,投保年龄范围为1至80岁 / 1至75岁 / 1至70岁 / 19至22岁；最低年龄要求包括出生满15日。,投保年龄范围为1至80岁 / 1至75岁 / 1至70岁。
+fwd-maxfocus-legacy-ii,compare_profile.entry_age_summary,投保年龄范围为1至80岁 / 1至75岁 / 1至70岁 / 19至22岁；最低年龄要求包括出生满15日。,投保年龄范围为1至80岁 / 1至75岁 / 1至70岁。
+fwd-wealthicon-horizon,base.entry_age,投保年龄范围为1至80岁；最低年龄要求包括出生满15日。,投保年龄范围为1至80岁。
+fwd-wealthicon-horizon,compare_profile.entry_age_summary,投保年龄范围为1至80岁；最低年龄要求包括出生满15日。,投保年龄范围为1至80岁。
+fwd-wealthicon-supreme-iii,base.entry_age,投保年龄范围为1至80岁；最低年龄要求包括出生满15日。,投保年龄范围为1至80岁。
+fwd-wealthicon-supreme-iii,compare_profile.entry_age_summary,投保年龄范围为1至80岁；最低年龄要求包括出生满15日。,投保年龄范围为1至80岁。
+manulife-bright-care-pro,base.entry_age,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满15日。,投保年龄按计划版本、缴费期及条款规定而定。
+manulife-bright-care-pro,compare_profile.entry_age_summary,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满15日。,投保年龄按计划版本、缴费期及条款规定而定。
+manulife-genesis-centurion,base.entry_age,投保年龄范围为0至80岁 / 0至75岁。,投保年龄范围为0至80岁。
+manulife-genesis-centurion,compare_profile.entry_age_summary,投保年龄范围为0至80岁 / 0至75岁。,投保年龄范围为0至80岁。
+manulife-incomeguard-ci,base.entry_age,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满15日。,投保年龄按计划版本、缴费期及条款规定而定。
+manulife-incomeguard-ci,compare_profile.entry_age_summary,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满15日。,投保年龄按计划版本、缴费期及条款规定而定。
+manulife-incomeshield-ci,base.entry_age,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满15日。,投保年龄按计划版本、缴费期及条款规定而定。
+manulife-incomeshield-ci,compare_profile.entry_age_summary,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满15日。,投保年龄按计划版本、缴费期及条款规定而定。
+manulife-manucentury,base.entry_age,投保年龄范围为0至80岁 / 0至75岁。,投保年龄范围为0至80岁。
+manulife-manucentury,compare_profile.entry_age_summary,投保年龄范围为0至80岁 / 0至75岁。,投保年龄范围为0至80岁。
+manulife-prestige-achiever,base.entry_age,投保年龄按计划版本、缴费期及条款规定而定。,投保年龄范围为0至80岁。
+manulife-prestige-achiever,compare_profile.entry_age_summary,投保年龄按计划版本、缴费期及条款规定而定。,投保年龄范围为0至80岁。
+new-china-life-rongyao-shijia,base.entry_age,投保年龄范围为0至68岁；最低年龄要求包括出生满30日。,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满30日。
+new-china-life-rongyao-shijia,compare_profile.entry_age_summary,投保年龄范围为0至68岁；最低年龄要求包括出生满30日。,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满30日。
+new-china-life-rongyao-xinxiang,base.entry_age,投保年龄范围为0至74岁；最低年龄要求包括出生满15日、出生满30日。,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满30日。
+new-china-life-rongyao-xinxiang,compare_profile.entry_age_summary,投保年龄范围为0至74岁；最低年龄要求包括出生满15日、出生满30日。,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满30日。
+ping-an-shengshi-jinyue-premium,base.entry_age,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满30日。,投保年龄按计划版本、缴费期及条款规定而定。
+ping-an-shengshi-jinyue-premium,compare_profile.entry_age_summary,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满30日。,投保年龄按计划版本、缴费期及条款规定而定。
+pingan-fuli-20-ci,base.entry_age,投保年龄范围为18至55岁；最低年龄要求包括出生满5天、出生满30日。,投保年龄按计划版本、缴费期及条款规定而定。
+pingan-fuli-20-ci,compare_profile.entry_age_summary,投保年龄范围为18至55岁；最低年龄要求包括出生满5天、出生满30日。,投保年龄按计划版本、缴费期及条款规定而定。
+pingan-ruyi-quanneng-2025-ci,base.entry_age,投保年龄范围为18至54岁 / 30至70岁；最低年龄要求包括出生满30日。,投保年龄按计划版本、缴费期及条款规定而定。
+pingan-ruyi-quanneng-2025-ci,compare_profile.entry_age_summary,投保年龄范围为18至54岁 / 30至70岁；最低年龄要求包括出生满30日。,投保年龄按计划版本、缴费期及条款规定而定。
+pingan-ruyi-quanneng-ci,base.entry_age,投保年龄范围为18至54岁 / 30至70岁；最低年龄要求包括出生满30日。,投保年龄按计划版本、缴费期及条款规定而定。
+pingan-ruyi-quanneng-ci,compare_profile.entry_age_summary,投保年龄范围为18至54岁 / 30至70岁；最低年龄要求包括出生满30日。,投保年龄按计划版本、缴费期及条款规定而定。
+pingan-shengshi-jinyue-zunxiang-26II,base.entry_age,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满28日、出生满30日。,投保年龄按计划版本、缴费期及条款规定而定。
+pingan-shengshi-jinyue-zunxiang-26II,compare_profile.entry_age_summary,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满28日、出生满30日。,投保年龄按计划版本、缴费期及条款规定而定。
+pingan-yuxiang-jinyue-2025,base.entry_age,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满28日、出生满30日。,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满28日。
+pingan-yuxiang-jinyue-2025,compare_profile.entry_age_summary,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满28日、出生满30日。,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满28日。
+pru-ci-extended-care-iii,base.entry_age,投保年龄范围为1至65岁 / 1至60岁 / 1至55岁 / 1至50岁；最低年龄要求包括出生满15日、出生满30日。,投保年龄范围为1至65岁 / 1至60岁 / 1至55岁 / 1至50岁；最低年龄要求包括出生满15日。
+pru-ci-extended-care-iii,compare_profile.entry_age_summary,投保年龄范围为1至65岁 / 1至60岁 / 1至55岁 / 1至50岁；最低年龄要求包括出生满15日、出生满30日。,投保年龄范围为1至65岁 / 1至60岁 / 1至55岁 / 1至50岁；最低年龄要求包括出生满15日。
+pru-entrust-multi-currency,base.entry_age,投保年龄范围为1至80岁；最低年龄要求包括出生满15日、出生满30日；高龄受保人或需按条款委任后备受保人。,投保年龄范围为1至80岁；最低年龄要求包括出生满15日；高龄受保人或需按条款委任后备受保人。
+pru-entrust-multi-currency,compare_profile.entry_age_summary,投保年龄范围为1至80岁；最低年龄要求包括出生满15日、出生满30日；高龄受保人或需按条款委任后备受保人。,投保年龄范围为1至80岁；最低年龄要求包括出生满15日；高龄受保人或需按条款委任后备受保人。
+pru-guardian-ci-series,base.entry_age,投保年龄范围为1至65岁 / 19至46岁 / 1至60岁 / 1至55岁；最低年龄要求包括出生满15日、出生满30日。,投保年龄范围为1至65岁 / 19至46岁 / 1至60岁 / 1至55岁；最低年龄要求包括出生满15日。
+pru-guardian-ci-series,compare_profile.entry_age_summary,投保年龄范围为1至65岁 / 19至46岁 / 1至60岁 / 1至55岁；最低年龄要求包括出生满15日、出生满30日。,投保年龄范围为1至65岁 / 19至46岁 / 1至60岁 / 1至55岁；最低年龄要求包括出生满15日。
+taikang-lexiangjiankang-2026,base.entry_age,投保年龄范围为0至70岁。,投保年龄按计划版本、缴费期及条款规定而定。
+taikang-lexiangjiankang-2026,compare_profile.entry_age_summary,投保年龄范围为0至70岁。,投保年龄按计划版本、缴费期及条款规定而定。
+taikang-lexiangjiankang-kids,base.entry_age,投保年龄范围为0至17岁。,投保年龄按计划版本、缴费期及条款规定而定。
+taikang-lexiangjiankang-kids,compare_profile.entry_age_summary,投保年龄范围为0至17岁。,投保年龄按计划版本、缴费期及条款规定而定。
+taikang-xinxingshijia-2026-qingdianban,base.entry_age,投保年龄范围为0至73岁；最低年龄要求包括出生满30日。,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满30日。
+taikang-xinxingshijia-2026-qingdianban,compare_profile.entry_age_summary,投保年龄范围为0至73岁；最低年龄要求包括出生满30日。,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满30日。
+taikang-xinxingshijia-2026-zunxiangban-b,base.entry_age,投保年龄范围为0至73岁；最低年龄要求包括出生满30日。,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满30日。
+taikang-xinxingshijia-2026-zunxiangban-b,compare_profile.entry_age_summary,投保年龄范围为0至73岁；最低年龄要求包括出生满30日。,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满30日。
+taikang-zunxiang-shijia-flagship,base.entry_age,投保年龄范围为0至70岁；最低年龄要求包括出生满30日。,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满30日。
+taikang-zunxiang-shijia-flagship,compare_profile.entry_age_summary,投保年龄范围为0至70岁；最低年龄要求包括出生满30日。,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满30日。
+taikang-zunxiang-shijia-zeng-e,base.entry_age,投保年龄范围为0至73岁；最低年龄要求包括出生满30日。,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满30日。
+taikang-zunxiang-shijia-zeng-e,compare_profile.entry_age_summary,投保年龄范围为0至73岁；最低年龄要求包括出生满30日。,投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满30日。

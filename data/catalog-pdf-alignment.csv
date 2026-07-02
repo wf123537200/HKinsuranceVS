@@ -1,0 +1,46 @@
+index,product_display_name,company_slug,category_zh,category,db_slug,pdf_filename,is_hot_selected,pdf_exists,status,resolved_pdf_path
+1,AIA Essence On Your Side,aia-hk,健康险,critical_illness,aia-essence-on-your-side,aia-essence-on-your-side.pdf,False,True,matched_exact_catalog_filename,pdfs/aia-essence-on-your-side.pdf
+2,AIA GlobalFlexi Savings Insurance Plan,aia-hk,储蓄险,savings,aia-globalflexi-savings,aia-globalflexi-savings.pdf,True,True,matched_exact_catalog_filename,pdfs/aia-globalflexi-savings.pdf
+3,AIA On Your Side Insurance Plan 2,aia-hk,健康险,critical_illness,aia-on-your-side-2,aia-on-your-side-2.pdf,True,True,matched_exact_catalog_filename,pdfs/aia-on-your-side-2.pdf
+4,AXA Loving Care CI (Enhanced),axa-hk,健康险,critical_illness,axa-loving-care-ci-enhanced,axa-loving-care-ci-enhanced.pdf,True,True,matched_exact_catalog_filename,pdfs/axa-loving-care-ci-enhanced.pdf
+5,AXA Wealth Advance Savings II – Ultimate (安進儲蓄系列 II - 躍進),axa-hk,储蓄险,savings,axa-wealth-advance-savings-ii-ultimate,axa-wealth-advance-savings-ii-ultimate.pdf,True,True,matched_exact_catalog_filename,pdfs/axa-wealth-advance-savings-ii-ultimate.pdf
+6,太保金生无忧2024（少儿版）重大疾病保险,cpic-life,健康险,critical_illness,cpic-jinshengwuyou-kids,cpic-jinshengwuyou-kids.pdf,False,True,matched_exact_catalog_filename,pdfs/cpic-jinshengwuyou-kids.pdf
+7,太保金生无忧2024（少儿版）重大疾病保险,cpic-life,健康险,critical_illness,cpic-jinshengwuyou-2024-kids,cpic-jinshengwuyou-2024-kids.pdf,True,True,matched_exact_catalog_filename,pdfs/cpic-jinshengwuyou-2024-kids.pdf
+8,太保鑫相伴（至尊版）终身寿险,cpic-life,储蓄险,savings,cpic-evergreen-whole-life,cpic-evergreen-whole-life.pdf,False,True,matched_exact_catalog_filename,pdfs/cpic-evergreen-whole-life.pdf
+9,太保长相伴（至尊2024S）终身寿险（分红型）,cpic-life,储蓄险,savings,cpic-xiangbanzhizun-2024s,cpic-xiangbanzhizun-2024s.pdf,True,True,matched_exact_catalog_filename,pdfs/cpic-xiangbanzhizun-2024s.pdf
+10,太保附加稳赢金生重大疾病保险,cpic-life,健康险,critical_illness,cpic-wenyingjinsheng-ci,cpic-wenyingjinsheng-ci.pdf,False,True,matched_exact_catalog_filename,pdfs/cpic-wenyingjinsheng-ci.pdf
+11,FWD Crisis One Master,fwd-hk,健康险,critical_illness,fwd-crisis-one-master,fwd-crisis-one-master.pdf,False,True,matched_exact_catalog_filename,pdfs/fwd-crisis-one-master.pdf
+12,FWD Crisis U Supporter,fwd-hk,健康险,critical_illness,fwd-crisis-u-supporter,fwd-crisis-u-supporter.pdf,True,True,matched_exact_catalog_filename,pdfs/fwd-crisis-u-supporter.pdf
+13,FWD EasyCover Critical Illness Plan,fwd-hk,健康险,critical_illness,fwd-easycover-ci,fwd-easycover-ci.pdf,False,True,matched_exact_catalog_filename,pdfs/fwd-easycover-ci.pdf
+14,FWD MaxFocus Legacy II,fwd-hk,储蓄险,savings,fwd-maxfocus-legacy-ii,fwd-maxfocus-legacy-ii.pdf,True,True,matched_exact_catalog_filename,pdfs/fwd-maxfocus-legacy-ii.pdf
+15,FWD Noble Fortune,fwd-hk,储蓄险,savings,fwd-noble-fortune,fwd-noble-fortune.pdf,False,True,matched_exact_catalog_filename,pdfs/fwd-noble-fortune.pdf
+16,FWD WealthICON Horizon,fwd-hk,储蓄险,savings,fwd-wealthicon-horizon,fwd-wealthicon-horizon.pdf,False,True,matched_exact_catalog_filename,pdfs/fwd-wealthicon-horizon.pdf
+17,FWD WealthICON Supreme III,fwd-hk,储蓄险,savings,fwd-wealthicon-supreme-iii,fwd-wealthicon-supreme-iii.pdf,False,True,matched_exact_catalog_filename,pdfs/fwd-wealthicon-supreme-iii.pdf
+18,Genesis Centurion Insurance Plan,manulife-hk,储蓄险,savings,manulife-genesis-centurion,manulife-genesis-centurion.pdf,True,True,matched_exact_catalog_filename,pdfs/manulife-genesis-centurion.pdf
+19,ManuCentury (世紀傳承保障計劃),manulife-hk,储蓄险,savings,manulife-manucentury,manulife-manucentury.pdf,False,True,matched_exact_catalog_filename,pdfs/manulife-manucentury.pdf
+20,Manulife Bright Care Pro,manulife-hk,健康险,critical_illness,manulife-bright-care-pro,manulife-bright-care-pro.pdf,True,True,matched_exact_catalog_filename,pdfs/manulife-bright-care-pro.pdf
+21,Manulife IncomeGuard CI,manulife-hk,健康险,critical_illness,manulife-incomeguard-ci,manulife-incomeguard-ci.pdf,True,True,matched_exact_catalog_filename,pdfs/manulife-incomeguard-ci.pdf
+22,Manulife IncomeShield CI,manulife-hk,健康险,critical_illness,manulife-incomeshield-ci,manulife-incomeshield-ci.pdf,False,True,matched_exact_catalog_filename,pdfs/manulife-incomeshield-ci.pdf
+23,Manulife Prestige Achiever,manulife-hk,储蓄险,savings,manulife-prestige-achiever,manulife-prestige-achiever.pdf,False,True,matched_exact_catalog_filename,pdfs/manulife-prestige-achiever.pdf
+24,New China Life Rongyao Shijia (荣耀世家终身寿险分红型),new-china-life,储蓄险,savings,new-china-life-rongyao-shijia,new-china-life-rongyao-shijia.pdf,True,True,matched_exact_catalog_filename,pdfs/new-china-life-rongyao-shijia.pdf
+25,New China Life Rongyao Xinxiang (荣耀鑫享庆典版),new-china-life,储蓄险,savings,new-china-life-rongyao-xinxiang,new-china-life-rongyao-xinxiang.pdf,True,True,matched_exact_catalog_filename,pdfs/new-china-life-rongyao-xinxiang.pdf
+26,平安御享金越（2025）终身寿险（分红型）,ping-an,储蓄险,savings,pingan-yuxiang-jinyue-2025,pingan-yuxiang-jinyue-2025.pdf,True,True,matched_exact_catalog_filename,pdfs/pingan-yuxiang-jinyue-2025.pdf
+27,平安盛世金越（尊享版26Ⅱ）终身寿险（分红型）,ping-an,储蓄险,savings,pingan-shengshi-jinyue-zunxiang-26II,pingan-shengshi-jinyue-zunxiang-26II.pdf,True,True,matched_exact_catalog_filename,pdfs/pingan-shengshi-jinyue-zunxiang-26II.pdf
+28,平安盛世金越（尊享版）终身寿险,ping-an,储蓄险,savings,ping-an-shengshi-jinyue-premium,ping-an-shengshi-jinyue-premium.pdf,False,True,matched_exact_catalog_filename,pdfs/ping-an-shengshi-jinyue-premium.pdf
+29,平安福20重大疾病保险,ping-an,健康险,critical_illness,pingan-fuli-20-ci,pingan-fuli-20-ci.pdf,True,True,matched_exact_catalog_filename,pdfs/pingan-fuli-20-ci.pdf
+30,平安附加如意全能（2025）提前给付重大疾病保险,ping-an,健康险,critical_illness,pingan-ruyi-quanneng-ci,pingan-ruyi-quanneng-ci.pdf,False,True,matched_exact_catalog_filename,pdfs/pingan-ruyi-quanneng-ci.pdf
+31,平安附加如意全能（2025）提前给付重大疾病保险,ping-an,健康险,critical_illness,pingan-ruyi-quanneng-2025-ci,pingan-ruyi-quanneng-2025-ci.pdf,True,True,matched_exact_catalog_filename,pdfs/pingan-ruyi-quanneng-2025-ci.pdf
+32,Evergreen Growth Saver Plus II,prudential-hk,储蓄险,savings,prudential-evergreen-growth,prudential-evergreen-growth.pdf,False,True,matched_exact_catalog_filename,pdfs/prudential-evergreen-growth.pdf
+33,Prime Ace Insurance Plan,prudential-hk,储蓄险,savings,prudential-prime-ace,prudential-prime-ace.pdf,False,True,matched_exact_catalog_filename,pdfs/prudential-prime-ace.pdf
+34,Prime Eternity,prudential-hk,储蓄险,savings,prudential-prime-eternity,prudential-prime-eternity.pdf,True,True,matched_exact_catalog_filename,pdfs/prudential-prime-eternity.pdf
+35,Prudential CI Extended Care III,prudential-hk,健康险,critical_illness,pru-ci-extended-care-iii,pru-ci-extended-care-iii.pdf,False,True,matched_exact_catalog_filename,pdfs/pru-ci-extended-care-iii.pdf
+36,Prudential Enlight Savings,prudential-hk,储蓄险,savings,prudential-enlit-savings,prudential-enlit-savings.pdf,False,True,matched_exact_catalog_filename,pdfs/prudential-enlit-savings.pdf
+37,Prudential Entrust Multi-Currency Plan,prudential-hk,储蓄险,savings,pru-entrust-multi-currency,pru-entrust-multi-currency.pdf,True,True,matched_exact_catalog_filename,pdfs/pru-entrust-multi-currency.pdf
+38,保诚诚保一生危疾保,prudential-hk,健康险,critical_illness,pru-guardian-ci-series,pru-guardian-ci-series.pdf,True,True,matched_exact_catalog_filename,pdfs/pru-guardian-ci-series.pdf
+39,泰康乐享健康2026重大疾病保险,taikang-life,健康险,critical_illness,taikang-lexiangjiankang-2026,taikang-lexiangjiankang-2026.pdf,True,True,matched_exact_catalog_filename,pdfs/taikang-lexiangjiankang-2026.pdf
+40,泰康乐享健康（少儿B款）重大疾病保险,taikang-life,健康险,critical_illness,taikang-lexiangjiankang-kids,taikang-lexiangjiankang-kids.pdf,False,True,matched_exact_catalog_filename,pdfs/taikang-lexiangjiankang-kids.pdf
+41,泰康增多多,taikang-life,储蓄险,savings,taikang-zengduoduo,taikang-zengduoduo.pdf,False,True,matched_exact_catalog_filename,pdfs/taikang-zengduoduo.pdf
+42,泰康尊享世家（增额版）2024终身寿险,taikang-life,储蓄险,savings,taikang-zunxiang-shijia-zeng-e,taikang-zunxiang-shijia-zeng-e.pdf,False,True,matched_exact_catalog_filename,pdfs/taikang-zunxiang-shijia-zeng-e.pdf
+43,泰康尊享世家（旗舰版）终身寿险,taikang-life,储蓄险,savings,taikang-zunxiang-shijia-flagship,taikang-zunxiang-shijia-flagship.pdf,False,True,matched_exact_catalog_filename,pdfs/taikang-zunxiang-shijia-flagship.pdf
+44,鑫享世家2026（尊享版 B 款）终身寿险（分红型）,taikang-life,储蓄险,savings,taikang-xinxingshijia-2026-zunxiangban-b,taikang-xinxingshijia-2026-zunxiangban-b.pdf,True,True,matched_exact_catalog_filename,pdfs/taikang-xinxingshijia-2026-zunxiangban-b.pdf
+45,鑫享世家2026（庆典版）终身寿险（分红型）,taikang-life,储蓄险,savings,taikang-xinxingshijia-2026-qingdianban,taikang-xinxingshijia-2026-qingdianban.pdf,True,True,matched_exact_catalog_filename,pdfs/taikang-xinxingshijia-2026-qingdianban.pdf

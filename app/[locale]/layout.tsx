@@ -1,7 +1,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
-import { locales } from "@/i18n/config";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import { locales, type Locale } from "@/i18n/config";
+import { localizedUrl, ogLocale, siteUrl } from "@/lib/seo";
 import Providers from "@/components/Providers";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -19,12 +21,38 @@ const geistMono = Geist_Mono({
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
+  const localeTyped = locale as Locale;
   const t = await getTranslations({ locale, namespace: "seo" });
+  const homeTitle = t("homeTitle");
+  const homeDescription = t("homeDescription");
+  const url = localizedUrl(localeTyped, "/");
   return {
-    title: { default: t("homeTitle"), template: "%s | InsuranceAtlas" },
-    description: t("homeDescription"),
-    alternates: { languages: { en: "/en", "zh-CN": "/zh-CN", "zh-TW": "/zh-TW" } },
-    openGraph: { locale, type: "website" },
+    title: { default: homeTitle, template: "%s" },
+    description: homeDescription,
+    alternates: {
+      canonical: url,
+      languages: {
+        en: localizedUrl("en", "/"),
+        "zh-CN": localizedUrl("zh-CN", "/"),
+        "zh-TW": localizedUrl("zh-TW", "/"),
+      },
+    },
+    openGraph: {
+      type: "website",
+      locale: ogLocale(localeTyped),
+      url,
+      siteName: "Policy Vector",
+      title: homeTitle,
+      description: homeDescription,
+    },
+    twitter: {
+      card: "summary",
+      title: homeTitle,
+      description: homeDescription,
+    },
+    other: {
+      "google-adsense-account": "ca-pub-5757270339896246",
+    },
   };
 }
 
@@ -54,6 +82,7 @@ export default async function LocaleLayout({
           </Providers>
         </NextIntlClientProvider>
       </body>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
     </html>
   );
 }

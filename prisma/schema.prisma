@@ -1,4 +1,4 @@
-// InsuranceAtlas Prisma Schema
+// PolicyVector Prisma Schema
 
 generator client {
   provider = "prisma-client"
@@ -109,8 +109,31 @@ model Company {
   updatedAt     DateTime @updatedAt
 
   products      Product[]
+  ratings       CompanyRating[]
 
   @@map("companies")
+}
+
+// ==================== COMPANY RATING ====================
+
+model CompanyRating {
+  id            String   @id @default(cuid())
+  companyId     String
+  ratingAgency  String
+  ratingValue   String
+  ratingType    String?
+  ratingEntity  String?
+  ratingOutlook String?
+  ratingDate    String?
+  sourceUrl     String?
+  ratingStatus  String   @default("confirmed")
+  notes         String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@map("company_ratings")
 }
 
 // ==================== PRODUCT ====================
@@ -140,6 +163,15 @@ model Product {
   tags                 String          @default("[]")
   viewCount            Int             @default(0)
   compareCount         Int             @default(0)
+  // Data cleanup fields
+  dataStatus             String          @default("needs_verification")
+  isPublished            Boolean         @default(false)
+  sourceStatus           String?
+  sourceAccessedDate     String?
+  localPdfPath           String?
+  manualDownloadVerified Boolean         @default(false)
+  manualDownloadNote     String?
+  notes                  String?
   createdAt            DateTime        @default(now())
   updatedAt            DateTime        @updatedAt
 

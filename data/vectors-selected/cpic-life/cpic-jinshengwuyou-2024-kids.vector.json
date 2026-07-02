@@ -1,0 +1,398 @@
+{
+  "product_vector_version": "v2.9",
+  "base": {
+    "product_id": "cpic-jinshengwuyou-2024-kids",
+    "slug": "cpic-jinshengwuyou-2024-kids",
+    "product_name": "太保金生无忧 2024（少儿版）重大疾病保险",
+    "product_name_en": null,
+    "company_slug": "cpic-life",
+    "company_name": "中国太保",
+    "region": "Mainland China",
+    "category": "critical_illness",
+    "category_zh": "健康险",
+    "subcategory": "critical_illness",
+    "policy_currency": [
+      "CNY"
+    ],
+    "policy_term": "终身",
+    "premium_term": [
+      "1年",
+      "5年",
+      "10年",
+      "15年",
+      "20年",
+      "30年"
+    ],
+    "entry_age": "投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满28日。",
+    "payment_mode": null,
+    "local_pdf_path": "/pdfs/cpic-jinshengwuyou-2024-kids.pdf",
+    "source_pdf_filename": "cpic-jinshengwuyou-2024-kids.pdf",
+    "is_hot_discussed": true,
+    "market_attention": "hot_discussed",
+    "product_name_zh_cn": "太保金生无忧 2024（少儿版）重大疾病保险",
+    "product_name_zh_hk": "太保金生無憂2024少兒版重大疾病保險",
+    "display_name": "太保金生无忧2024少儿版重大疾病保险",
+    "product_name_zh_tw": "太保金生無憂 2024（少兒版）重大疾病保險"
+  },
+  "core": {
+    "critical_illness_core": {
+      "covered_illness_total": 180,
+      "major_illness_count": 120,
+      "early_stage_illness_count": null,
+      "moderate_illness_count": null,
+      "child_illness_count": 60,
+      "has_multiple_claims": false,
+      "has_cancer_multiple_claims": false,
+      "has_heart_stroke_multiple_claims": false,
+      "has_icu_benefit": false
+    },
+    "savings_core": null
+  },
+  "modules": {
+    "participating_savings_module": {
+      "available": true,
+      "bonus_types": null
+    },
+    "life_protection_module": {
+      "has_death_benefit": true
+    },
+    "policy_liquidity_module": {
+      "has_policy_loan": false,
+      "has_partial_withdrawal": false,
+      "has_regular_withdrawal": false
+    },
+    "policy_flexibility_module": {
+      "supports_currency_switch": false,
+      "supports_policy_split": false,
+      "supports_change_insured": false,
+      "supports_second_insured": false,
+      "supports_second_policyholder": false
+    },
+    "risk_module": {
+      "risk_summary": [
+        "退保/流动性风险",
+        "货币风险"
+      ]
+    }
+  },
+  "compare_profile": {
+    "product_category": "critical_illness",
+    "product_type": "critical_illness",
+    "company_slug": "cpic-life",
+    "product_slug": "cpic-jinshengwuyou-2024-kids",
+    "market_attention": "hot_discussed",
+    "priority": 1,
+    "policy_term": "终身",
+    "premium_terms": [
+      "1年",
+      "5年",
+      "10年",
+      "15年",
+      "20年",
+      "30年"
+    ],
+    "entry_age_summary": "投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满28日。",
+    "currencies": [
+      "CNY"
+    ],
+    "has_guaranteed_cash_value": true,
+    "has_non_guaranteed_bonus": null,
+    "bonus_types": null,
+    "has_partial_withdrawal": false,
+    "has_regular_withdrawal": false,
+    "has_policy_loan": false,
+    "supports_currency_switch": false,
+    "supports_policy_split": false,
+    "supports_change_insured": false,
+    "supports_second_insured": false,
+    "supports_second_policyholder": false,
+    "covered_illness_total": 180,
+    "major_illness_count": 120,
+    "early_stage_illness_count": null,
+    "moderate_illness_count": null,
+    "child_illness_count": 60,
+    "has_multiple_claims": false,
+    "has_cancer_multiple_claims": false,
+    "has_heart_stroke_multiple_claims": false,
+    "has_icu_benefit": false,
+    "cancer_claim_cap_summary": null,
+    "heart_stroke_claim_summary": null,
+    "icu_benefit_summary": null,
+    "post_claim_status_summary": "部分保险金不可兼得，给付后保单责任可能终止或调整。",
+    "highest_illustrated_irr": null,
+    "guaranteed_irr": null,
+    "highest_illustrated_return_multiple": null,
+    "illustrated_break_even_year": null,
+    "guaranteed_break_even_year": null,
+    "risk_summary": [
+      "退保/流动性风险",
+      "货币风险"
+    ],
+    "has_death_benefit": null,
+    "major_illness_payout_summary": "保障120种重疾，至少给付100%基本保额。",
+    "early_stage_payout_summary": "60种特定疾病额外给付30%基本保险金额，以3次为限。",
+    "max_claim_count_summary": null,
+    "cancer_claim_summary": null,
+    "multiple_claim_waiting_period_summary": null,
+    "survival_period_summary": null,
+    "early_stage_premium_waiver": null,
+    "major_claim_premium_waiver": null,
+    "family_premium_waiver_summary": null,
+    "bonus_type_summary": null,
+    "death_benefit_summary": "身故赔付比例约为100%。",
+    "healthcare_service_summary": null,
+    "major_illness_payout_percent": 100,
+    "early_stage_payout_percent": 30,
+    "death_benefit_percent": 100
+  },
+  "product_features": [
+    {
+      "feature_id": "child_growth_benefit",
+      "feature_name": "儿童成长保障",
+      "category": "child_protection",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "该特色按产品条款提供，具体内容以官方PDF为准。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 1,
+      "compare_key": "child_growth_benefit",
+      "source_pages": [
+        1,
+        2,
+        3,
+        5,
+        6
+      ],
+      "evidence_quote": null,
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "not_found",
+        "evidence_method": "pdfplumber_page_window_keyword_match_v2.7",
+        "keywords": [
+          "儿童成长保障"
+        ]
+      }
+    },
+    {
+      "feature_id": "premium_waiver",
+      "feature_name": "保费豁免",
+      "category": "premium_payment",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "达到指定理赔或家庭事件时，可按条款豁免保费。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 2,
+      "compare_key": "premium_waiver",
+      "source_pages": [
+        2
+      ],
+      "evidence_quote": null,
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "not_found",
+        "evidence_method": "pdfplumber_page_window_keyword_match_v2.7",
+        "keywords": [
+          "保費豁免",
+          "保费豁免",
+          "豁免保費",
+          "豁免保费",
+          "premium waiver"
+        ]
+      }
+    }
+  ],
+  "feature_tags": [
+    "child_growth_benefit",
+    "premium_waiver"
+  ],
+  "comparison_flags": {
+    "has_guaranteed_cash_value": true,
+    "has_non_guaranteed_bonus": null,
+    "has_partial_withdrawal": false,
+    "has_regular_withdrawal": false,
+    "has_policy_loan": false,
+    "supports_currency_switch": false,
+    "supports_policy_split": false,
+    "supports_change_insured": false,
+    "supports_second_insured": false,
+    "supports_second_policyholder": false,
+    "has_multiple_claims": false,
+    "has_cancer_multiple_claims": false,
+    "has_heart_stroke_multiple_claims": false,
+    "has_icu_benefit": false
+  },
+  "source_trace": {
+    "source_type": "catalog_verified_pdf",
+    "source_pdf": "cpic-jinshengwuyou-2024-kids.pdf",
+    "source_pdf_path": "pdfs/cpic-jinshengwuyou-2024-kids.pdf",
+    "source_pdf_sha256": "a6f318b39de41aecf9f8d67781725d59f1b532717b957207e0322bed22fcd8e8",
+    "page_count": 6,
+    "text_length": 6423,
+    "extraction_confidence": "medium",
+    "missing_fields": [],
+    "field_evidence": {
+      "compare_profile.major_illness_payout_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "中国太平洋人寿保险股份有限公司 太保金生无忧 2024（少儿版）重大疾病保险产品说明书 一、重要提示 本说明书所载资料，包括投保示例部分，仅供投保人理解保险条款时参考， 各项内容均以保险条款约定为准。 二、产品特色 1、生命全周期，针对性防御 未满 18 周岁，发生 20 种少儿特定重疾额外给付 100%基本保险金额；年满 18 周岁，发 生 20 种成人特定重疾额外给付 100%基本保险金额，增强保障深度。 2、病程覆盖广，病种涵盖全 保障 120 种重疾，至少给付 100%基本保额；保障 60 种特定疾病，额外",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.major_illness_payout_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "中国太平洋人寿保险股份有限公司 太保金生无忧 2024（少儿版）重大疾病保险产品说明书 一、重要提示 本说明书所载资料，包括投保示例部分，仅供投保人理解保险条款时参考， 各项内容均以保险条款约定为准。 二、产品特色 1、生命全周期，针对性防御 未满 18 周岁，发生 20 种少儿特定重疾额外给付 100%基本保险金额；年满 18 周岁，发 生 20 种成人特定重疾额外给付 100%基本保险金额，增强保障深度。 2、病程覆盖广，病种涵盖全 保障 120 种重疾，至少给付 100%基本保额；保障 60 种特定疾病，额外",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.early_stage_payout_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "中国太平洋人寿保险股份有限公司 太保金生无忧 2024（少儿版）重大疾病保险产品说明书 一、重要提示 本说明书所载资料，包括投保示例部分，仅供投保人理解保险条款时参考， 各项内容均以保险条款约定为准。 二、产品特色 1、生命全周期，针对性防御 未满 18 周岁，发生 20 种少儿特定重疾额外给付 100%基本保险金额；年满 18 周岁，发 生 20 种成人特定重疾额外给付 100%基本保险金额，增强保障深度。 2、病程覆盖广，病种涵盖全 保障 120 种重疾，至少给付 100%基本保额；保障 60 种特定疾病，额外",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.early_stage_payout_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "中国太平洋人寿保险股份有限公司 太保金生无忧 2024（少儿版）重大疾病保险产品说明书 一、重要提示 本说明书所载资料，包括投保示例部分，仅供投保人理解保险条款时参考， 各项内容均以保险条款约定为准。 二、产品特色 1、生命全周期，针对性防御 未满 18 周岁，发生 20 种少儿特定重疾额外给付 100%基本保险金额；年满 18 周岁，发 生 20 种成人特定重疾额外给付 100%基本保险金额，增强保障深度。 2、病程覆盖广，病种涵盖全 保障 120 种重疾，至少给付 100%基本保额；保障 60 种特定疾病，额外",
+        "confidence": "high",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.death_benefit_percent": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "以较迟者为准）之日起 180 日后因意外伤害以外的原因被确诊初次发生合同约定的重大疾病（无论一种或多种，下同）， 本公司按以下两项中金额较大者给付重大疾病保险金： a)合同的基本保险金额； b)被保险人确诊重大疾病时合同的现金价值。 本公司给付重大疾病保险金后，合同保险责任终止： a)若合同未附加其他附加险合同，则合同终止； b)若合同附加了其他附加险合同，则合同在除豁免保险费合同以外的其他附加险合同均 终止后终止。 若被保险人在合同生效或最后一次复效（以较迟者为准）之日起 180 日内因意外伤害以 外的原因被确诊",
+        "confidence": "medium",
+        "extraction_version": "v2.11"
+      },
+      "compare_profile.death_benefit_summary": {
+        "source": "local_pdf_text",
+        "page": null,
+        "quote": "以较迟者为准）之日起 180 日后因意外伤害以外的原因被确诊初次发生合同约定的重大疾病（无论一种或多种，下同）， 本公司按以下两项中金额较大者给付重大疾病保险金： a)合同的基本保险金额； b)被保险人确诊重大疾病时合同的现金价值。 本公司给付重大疾病保险金后，合同保险责任终止： a)若合同未附加其他附加险合同，则合同终止； b)若合同附加了其他附加险合同，则合同在除豁免保险费合同以外的其他附加险合同均 终止后终止。 若被保险人在合同生效或最后一次复效（以较迟者为准）之日起 180 日内因意外伤害以 外的原因被确诊",
+        "confidence": "medium",
+        "extraction_version": "v2.11"
+      }
+    }
+  },
+  "extraction_meta": {
+    "extracted_at": "2026-06-20T12:40:16.020399Z",
+    "method": "PRODUCT-CATALOG + selected hot TS guided heuristic extraction; no fuzzy cross-product substitution",
+    "schema_policy": "core comparable fields in compare_profile; special/non-standard features in product_features[] and feature_tags[]",
+    "v2_5_extraction": {
+      "extracted_at": "2026-06-21T08:51:54.547676Z",
+      "method": "local_pdf_regex_structured_reextract_v2.5",
+      "pdf_filename": "cpic-jinshengwuyou-2024-kids.pdf"
+    },
+    "v2_7_reextract": {
+      "generated_at": "2026-06-21T09:32:15.012750Z",
+      "method": "pdfplumber_page_window_keyword_match_v2.7",
+      "feature_count": 2,
+      "feature_evidence_matched": 0
+    },
+    "v2_8_reextract": {
+      "generated_at": "2026-06-21T10:07:29.332567Z",
+      "method": "full_truncation_sweep_and_pdf_evidence_window_repair_v2.8",
+      "ellipsis_fields_before": 1,
+      "ellipsis_fields_after": 0,
+      "nested_feature_notes_removed": 2
+    },
+    "v2_9_reextract": {
+      "generated_at": "2026-06-21T10:21:14.430457Z",
+      "method": "pdf_fulltext_reextract_no_hard_char_truncation_v2.9",
+      "note": "v2.9 移除旧抽取逻辑中的硬字符截断：对 base/compare_profile/source_trace.field_evidence/product_features.evidence_quote 做硬截断候选扫描；对 entry_age 等基础字段重新从 PDF 全文抽取完整结构化摘要；证据窗口按 PDF 页面语义窗口重取，不再按 60/80/120 字符硬截断。",
+      "hard_truncation_candidates_before": 2,
+      "hard_truncation_candidates_after": 0,
+      "fields_repaired": 3,
+      "age_refine_note": "v2.9 age fields refined from the best PDF full-text window near 投保年齡/投保范围, avoiding unrelated owner/beneficiary age clauses and hard character truncation."
+    },
+    "payout_ratio_extraction": {
+      "version": "v2.10",
+      "method": "pdf_text_percentage_patterns",
+      "note": "只在 PDF 文本出现可量化保额百分比时写入；未抽到不从 display_features/product_features 反推。",
+      "updated_fields": [
+        "major_illness_payout_percent",
+        "early_stage_payout_percent"
+      ]
+    },
+    "payout_ratio_extraction_v2_11": {
+      "version": "v2.11",
+      "method": "full_ci_pdf_percentage_scan_with_product_rules",
+      "note": "全量重疾产品均重新扫描；只在 PDF 文本存在明确基本保额/名义金额/原有投保额等比例时写入。",
+      "updated_fields": [
+        "death_benefit_percent",
+        "early_stage_payout_percent",
+        "major_illness_payout_percent"
+      ],
+      "ratio_field_count": 3,
+      "applied_at": "2026-06-21T11:04:48.040017Z"
+    }
+  },
+  "display_features": [
+    {
+      "title": "疾病覆盖广",
+      "summary": "覆盖180种疾病，含120种重疾、60种儿童疾病。",
+      "category": "protection",
+      "priority": 1,
+      "source_tags": [],
+      "source_paths": [
+        "compare_profile.covered_illness_total"
+      ]
+    },
+    {
+      "title": "儿童保障",
+      "summary": "包含儿童相关疾病或成长保障责任。",
+      "category": "protection",
+      "priority": 7,
+      "source_tags": [
+        "child_growth_benefit"
+      ],
+      "source_paths": []
+    },
+    {
+      "title": "保费豁免",
+      "summary": "达到约定条件后，可豁免后续部分或全部保费。",
+      "category": "premium",
+      "priority": 8,
+      "source_tags": [
+        "premium_waiver"
+      ],
+      "source_paths": []
+    },
+    {
+      "title": "现金价值",
+      "summary": "兼具现金价值或分红元素，适合长期配置。",
+      "category": "savings",
+      "priority": 10,
+      "source_tags": [],
+      "source_paths": [
+        "compare_profile.has_guaranteed_cash_value"
+      ]
+    }
+  ],
+  "product_name": "太保金生无忧 2024（少儿版）重大疾病保险"
+}

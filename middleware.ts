@@ -8,5 +8,12 @@ export default createMiddleware({
 });
 
 export const config = {
-  matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"],
+  // Locale routing applies to every page except:
+  //   api         — Next.js / route handlers
+  //   _next/*     — Next.js internals
+  //   _vercel/*   — Vercel internals
+  //   auth/*      — Supabase email-link / OAuth callback (must be
+  //                 reachable without a locale prefix)
+  //   anything with a file extension (assets, .well-known, etc.)
+  matcher: ["/((?!api|_next|_vercel|auth|.*\\..*).*)"],
 };

@@ -1,0 +1,24 @@
+db_slug,product_display_name,company_slug,category,pdf_filename,pdf_exists,vector_generated,has_product_name_en,missing_fields,status
+aia-globalflexi-savings,AIA GlobalFlexi Savings Insurance Plan,aia-hk,savings,aia-globalflexi-savings.pdf,True,True,True,,ok
+aia-on-your-side-2,AIA On Your Side Insurance Plan 2,aia-hk,critical_illness,aia-on-your-side-2.pdf,True,True,True,,ok
+axa-loving-care-ci-enhanced,AXA Loving Care CI (Enhanced),axa-hk,critical_illness,axa-loving-care-ci-enhanced.pdf,True,True,True,,ok
+axa-wealth-advance-savings-ii-ultimate,AXA Wealth Advance Savings II – Ultimate (安進儲蓄系列 II - 躍進),axa-hk,savings,axa-wealth-advance-savings-ii-ultimate.pdf,True,True,True,entry_age,ok
+cpic-jinshengwuyou-2024-kids,太保金生无忧2024（少儿版）重大疾病保险,cpic-life,critical_illness,cpic-jinshengwuyou-2024-kids.pdf,True,True,False,,ok
+cpic-xiangbanzhizun-2024s,太保长相伴（至尊2024S）终身寿险（分红型）,cpic-life,savings,cpic-xiangbanzhizun-2024s.pdf,True,True,False,,ok
+fwd-crisis-u-supporter,FWD Crisis U Supporter,fwd-hk,critical_illness,fwd-crisis-u-supporter.pdf,True,True,True,,ok
+fwd-maxfocus-legacy-ii,FWD MaxFocus Legacy II,fwd-hk,savings,fwd-maxfocus-legacy-ii.pdf,True,True,True,,ok
+manulife-genesis-centurion,Genesis Centurion Insurance Plan,manulife-hk,savings,manulife-genesis-centurion.pdf,True,True,True,entry_age,ok
+manulife-bright-care-pro,Manulife Bright Care Pro,manulife-hk,critical_illness,manulife-bright-care-pro.pdf,True,True,True,,ok
+manulife-incomeguard-ci,Manulife IncomeGuard CI,manulife-hk,critical_illness,manulife-incomeguard-ci.pdf,True,True,True,,ok
+new-china-life-rongyao-shijia,New China Life Rongyao Shijia (荣耀世家终身寿险分红型),new-china-life,savings,new-china-life-rongyao-shijia.pdf,True,True,True,,ok
+new-china-life-rongyao-xinxiang,New China Life Rongyao Xinxiang (荣耀鑫享庆典版),new-china-life,savings,new-china-life-rongyao-xinxiang.pdf,True,True,True,,ok
+pingan-yuxiang-jinyue-2025,平安御享金越（2025）终身寿险（分红型）,ping-an,savings,pingan-yuxiang-jinyue-2025.pdf,True,True,False,premium_terms,ok
+pingan-shengshi-jinyue-zunxiang-26II,平安盛世金越（尊享版26Ⅱ）终身寿险（分红型）,ping-an,savings,pingan-shengshi-jinyue-zunxiang-26II.pdf,True,True,False,premium_terms,ok
+pingan-fuli-20-ci,平安福20重大疾病保险,ping-an,critical_illness,pingan-fuli-20-ci.pdf,True,True,False,,ok
+pingan-ruyi-quanneng-2025-ci,平安附加如意全能（2025）提前给付重大疾病保险,ping-an,critical_illness,pingan-ruyi-quanneng-2025-ci.pdf,True,True,False,premium_terms,ok
+prudential-prime-eternity,Prime Eternity,prudential-hk,savings,prudential-prime-eternity.pdf,True,True,True,premium_terms;entry_age,ok
+pru-entrust-multi-currency,Prudential Entrust Multi-Currency Plan,prudential-hk,savings,pru-entrust-multi-currency.pdf,True,True,True,,ok
+pru-guardian-ci-series,保诚诚保一生危疾保,prudential-hk,critical_illness,pru-guardian-ci-series.pdf,True,True,True,,ok
+taikang-lexiangjiankang-2026,泰康乐享健康2026重大疾病保险,taikang-life,critical_illness,taikang-lexiangjiankang-2026.pdf,True,True,False,,ok
+taikang-xinxingshijia-2026-zunxiangban-b,鑫享世家2026（尊享版 B 款）终身寿险（分红型）,taikang-life,savings,taikang-xinxingshijia-2026-zunxiangban-b.pdf,True,True,True,,ok
+taikang-xinxingshijia-2026-qingdianban,鑫享世家2026（庆典版）终身寿险（分红型）,taikang-life,savings,taikang-xinxingshijia-2026-qingdianban.pdf,True,True,False,,ok

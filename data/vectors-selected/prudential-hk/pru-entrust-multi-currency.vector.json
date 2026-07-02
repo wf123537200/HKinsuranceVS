@@ -1,0 +1,850 @@
+{
+  "product_vector_version": "v2.9",
+  "base": {
+    "product_id": "pru-entrust-multi-currency",
+    "slug": "pru-entrust-multi-currency",
+    "product_name": "保诚信腾多元货币计划",
+    "product_name_en": "Prudential Entrust Multi-Currency Plan",
+    "company_slug": "prudential-hk",
+    "company_name": "保诚香港",
+    "region": "Hong Kong",
+    "category": "savings",
+    "category_zh": "储蓄险",
+    "subcategory": "savings",
+    "policy_currency": [
+      "USD",
+      "HKD",
+      "CNY",
+      "GBP",
+      "CAD",
+      "AUD"
+    ],
+    "policy_term": "终身",
+    "premium_term": [
+      "3年",
+      "5年",
+      "一次性"
+    ],
+    "entry_age": "投保年龄范围为1至80岁；最低年龄要求包括出生满15日；高龄受保人或需按条款委任后备受保人。",
+    "payment_mode": null,
+    "local_pdf_path": "/pdfs/pru-entrust-multi-currency.pdf",
+    "source_pdf_filename": "pru-entrust-multi-currency.pdf",
+    "is_hot_discussed": true,
+    "market_attention": "hot_discussed",
+    "product_name_zh_cn": "保诚信腾多元货币计划",
+    "product_name_zh_hk": "保誠信守明天多元貨幣計劃",
+    "display_name": "保诚信守明天多元货币计划",
+    "product_name_zh_tw": "保誠信騰多元貨幣計劃"
+  },
+  "core": {
+    "critical_illness_core": null,
+    "savings_core": {
+      "has_guaranteed_cash_value": true,
+      "has_non_guaranteed_bonus": true,
+      "bonus_types": [
+        "归原红利",
+        "年度红利"
+      ],
+      "highest_illustrated_irr": null,
+      "guaranteed_irr": null,
+      "highest_illustrated_return_multiple": 7,
+      "has_partial_withdrawal": true,
+      "has_policy_loan": true
+    }
+  },
+  "modules": {
+    "participating_savings_module": {
+      "available": true,
+      "bonus_types": [
+        "归原红利",
+        "年度红利"
+      ]
+    },
+    "life_protection_module": {
+      "has_death_benefit": true
+    },
+    "policy_liquidity_module": {
+      "has_policy_loan": true,
+      "has_partial_withdrawal": true,
+      "has_regular_withdrawal": true
+    },
+    "policy_flexibility_module": {
+      "supports_currency_switch": true,
+      "supports_policy_split": true,
+      "supports_change_insured": true,
+      "supports_second_insured": true,
+      "supports_second_policyholder": true
+    },
+    "risk_module": {
+      "risk_summary": [
+        "非保证利益风险",
+        "退保/流动性风险",
+        "货币风险",
+        "汇率风险",
+        "保单贷款风险"
+      ]
+    }
+  },
+  "compare_profile": {
+    "product_category": "savings",
+    "product_type": "savings",
+    "company_slug": "prudential-hk",
+    "product_slug": "pru-entrust-multi-currency",
+    "market_attention": "hot_discussed",
+    "priority": 1,
+    "policy_term": "终身",
+    "premium_terms": [
+      "3年",
+      "5年",
+      "一次性"
+    ],
+    "entry_age_summary": "投保年龄范围为1至80岁；最低年龄要求包括出生满15日；高龄受保人或需按条款委任后备受保人。",
+    "currencies": [
+      "USD",
+      "HKD",
+      "CNY",
+      "AUD",
+      "CAD",
+      "GBP"
+    ],
+    "has_guaranteed_cash_value": true,
+    "has_non_guaranteed_bonus": true,
+    "bonus_types": [
+      "归原红利",
+      "年度红利"
+    ],
+    "has_partial_withdrawal": true,
+    "has_regular_withdrawal": true,
+    "has_policy_loan": true,
+    "supports_currency_switch": true,
+    "supports_policy_split": true,
+    "supports_change_insured": true,
+    "supports_second_insured": true,
+    "supports_second_policyholder": true,
+    "covered_illness_total": null,
+    "major_illness_count": null,
+    "early_stage_illness_count": null,
+    "moderate_illness_count": null,
+    "child_illness_count": null,
+    "has_multiple_claims": null,
+    "has_cancer_multiple_claims": null,
+    "has_heart_stroke_multiple_claims": null,
+    "has_icu_benefit": false,
+    "cancer_claim_cap_summary": null,
+    "heart_stroke_claim_summary": null,
+    "icu_benefit_summary": null,
+    "post_claim_status_summary": null,
+    "highest_illustrated_irr": null,
+    "guaranteed_irr": 105,
+    "highest_illustrated_return_multiple": 7,
+    "illustrated_break_even_year": null,
+    "guaranteed_break_even_year": null,
+    "risk_summary": [
+      "非保证利益风险",
+      "退保/流动性风险",
+      "货币风险",
+      "汇率风险",
+      "保单贷款风险",
+      "通胀风险",
+      "理赔限制"
+    ],
+    "bonus_type_summary": "归原红利 / 终期红利",
+    "bonus_declaration_summary": "提供归原红利 / 终期红利，金额并不保证，实际派发及公布以保险公司政策为准。",
+    "has_bonus_lock_in": true,
+    "bonus_lock_in_summary": "可按条款锁定部分红利或分红，便于资金安排。",
+    "has_bonus_unlock": true,
+    "bonus_unlock_summary": "已锁定红利或分红可按条款申请解锁。",
+    "has_value_protection_account": false,
+    "value_protection_account_summary": null,
+    "policy_loan_summary": "可按条款申请保单贷款，贷款会影响保单价值。",
+    "partial_withdrawal_summary": "可按条款部分提取或减保，提取会影响保单价值。",
+    "regular_withdrawal_summary": "可按条款安排定期提取或入息支付。",
+    "change_insured_summary": "支持按条款更改受保人，便于长期传承安排。",
+    "second_insured_summary": "支持第二或后备受保人安排，延续保单传承功能。",
+    "second_policyholder_summary": "支持第二或后续持有人安排，便于保单管理传承。",
+    "policy_split_summary": "支持按条款分拆保单，便于家庭资产分配。",
+    "has_death_benefit_payment_option": true,
+    "death_benefit_payment_summary": "身故赔偿可按条款选择不同支付安排。",
+    "has_beneficiary_flexible_option": false,
+    "beneficiary_option_summary": null,
+    "has_terminal_illness_benefit": false,
+    "terminal_illness_summary": null,
+    "minimum_premium_summary": null,
+    "minimum_sum_assured_summary": null
+  },
+  "product_features": [
+    {
+      "feature_id": "policy_loan",
+      "feature_name": "保单贷款",
+      "category": "liquidity",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "可按条款申请保单贷款，提升保单资金流动性。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 1,
+      "compare_key": "policy_loan",
+      "source_pages": [
+        29
+      ],
+      "evidence_quote": "保單貸款 • 在有需要時，為使您的財務更加靈活，您可借入高達 本保單之保證現金價值及歸原紅利之現金價值總和的 80%款項作為保單貸款，而保單仍可維持生效",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "保單貸款借入",
+          "保单贷款借入",
+          "借入高達",
+          "借入高达",
+          "通過保單貸款",
+          "通过保单贷款",
+          "policy loan"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "death_benefit_payment_option",
+      "feature_name": "身故赔偿支付办法",
+      "category": "legacy_planning",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "可按条款安排身故赔偿支付方式，配合传承规划。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 2,
+      "compare_key": "death_benefit_payment_option",
+      "source_pages": [
+        12
+      ],
+      "evidence_quote": "終身身故保障加上靈活的身故賠償支付選擇 倘若受保人於保單生效期間不幸身故，而保單沒有後備受保人接替成為下一位受保人，我們將向您的指定受益人 提供身故賠償。此身故賠償至少相等於到期及已繳總保費的105%，惟需扣除於保單年期內所提取的歸原紅利 現金價值，以及任何未償還之貸款及利息",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "身故賠償支付",
+          "身故赔偿支付",
+          "身故賠償",
+          "身故赔偿",
+          "death benefit payment"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "bonus_lock_in",
+      "feature_name": "红利/分红锁定选项",
+      "category": "bonus_management",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "可按条款锁定部分红利或分红，便于资金安排。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 3,
+      "compare_key": "bonus_lock_in",
+      "source_pages": [
+        19
+      ],
+      "evidence_quote": "• 您可將您的終期紅利的現金價值之若干百分比鎖定至 終期紅利鎖定戶口。鎖定金額相等於鎖定百分比乘以 鎖定生效時（即您申請後之保單周年日）適用之 終期紅利的現金價值。每次鎖定的百分比不可少於10% （受限於我們釐定的最低金額）或多於75%。於每份 保單下，所有行使終期紅利鎖定選項之鎖定百分比總和 不可多於75%。我們可能不時修訂每次申請的百分比 上下限、最低金額以及每份保單之鎖定百分比總和限額",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "終期紅利鎖定選項",
+          "终期红利锁定选项",
+          "鎖定至",
+          "锁定至",
+          "紅利鎖定戶口",
+          "红利锁定户口",
+          "lock-in",
+          "lock in"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "bonus_unlock",
+      "feature_name": "红利/分红解锁选项",
+      "category": "bonus_management",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "可按条款解锁已锁定红利，把握后续增长机会。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 4,
+      "compare_key": "bonus_unlock",
+      "source_pages": [
+        19
+      ],
+      "evidence_quote": "我們可能不時修訂此選項的行政規定。 終期紅利解鎖選項 • 由行使終期紅利鎖定選項1年後起，您可於每個保單 周年日前30日內申請行使終期紅利解鎖選項，而每個 保單年度可申請行使此選項1次",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "紅利解鎖",
+          "红利解锁",
+          "解鎖",
+          "解锁",
+          "unlock"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "policy_split",
+      "feature_name": "保单分拆选项",
+      "category": "legacy_planning",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "可按条款分拆保单，便于家庭传承和资产分配。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 5,
+      "compare_key": "policy_split",
+      "source_pages": [
+        21
+      ],
+      "evidence_quote": "開枝散葉選項 • 由第3個保單周年日或保費供款年期完結起（以較後者 為準），您可於每個保單年度申請將保單分拆成數份 保單1次，並可於每個保單周年日前30日內行使此選項， 而不影響您保單年度之計算",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "保單分拆",
+          "保单分拆",
+          "開枝散葉",
+          "开枝散叶",
+          "policy split"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "change_insured",
+      "feature_name": "更改受保人",
+      "category": "legacy_planning",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "可按条款更改受保人，延续保单规划。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 6,
+      "compare_key": "change_insured",
+      "source_pages": [
+        11
+      ],
+      "evidence_quote": "獲得身故賠償。 可按需要無限次更換受保人 讓財富繼續增長並傳承下去 您可透過保誠信守明天多元貨幣計劃將財富傳承後代，助您守護摯愛，為他們提供所需。當您更換受保人，我們 便為新受保人提供終身保障。您可以由第1個保單周年日起，並在現有受保人在世時，無限次更換受保人",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "更改受保人",
+          "更換受保人",
+          "更换受保人",
+          "change of insured",
+          "change insured"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "second_insured",
+      "feature_name": "第二/后备受保人",
+      "category": "legacy_planning",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "可按条款设置第二或后备受保人，增强传承弹性。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 7,
+      "compare_key": "second_insured",
+      "source_pages": [
+        12
+      ],
+      "evidence_quote": "終身身故保障加上靈活的身故賠償支付選擇 倘若受保人於保單生效期間不幸身故，而保單沒有後備受保人接替成為下一位受保人，我們將向您的指定受益人 提供身故賠償。此身故賠償至少相等於到期及已繳總保費的105%，惟需扣除於保單年期內所提取的歸原紅利 現金價值，以及任何未償還之貸款及利息",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "委任後備受保人",
+          "委任后备受保人",
+          "後備受保人可成為",
+          "后备受保人可成为",
+          "第二受保人",
+          "second insured",
+          "contingent insured"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "second_policyholder",
+      "feature_name": "第二/后续持有人",
+      "category": "legacy_planning",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "可按条款设置第二或后续持有人，便利保单管理传承。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 8,
+      "compare_key": "second_policyholder",
+      "source_pages": [
+        18
+      ],
+      "evidence_quote": "– 更換受保人；或 – 轉讓保單權益（就有關將保單權益轉讓至後續 持有人、指定持有人或保單暫託人的情況，詳情 請參閱下列「後續持有人」、「無行為能力選項」及 「保單暫託人選項」部分）；或 – 轉讓保單；或 – 撤銷或取消委任所有受益人；或 – 行使開枝散葉選項；或 – 更換、取消或撤銷唯一受益人，或新增受益人 （於自主傳承下）；或 – 選擇以每月分期或自主傳承選項支付身故賠償， 但該選項下的應付總額低於50,000美元 （或由我們不時釐定的其他金額）",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "第二持有人",
+          "後續持有人",
+          "后续持有人",
+          "second policyholder",
+          "contingent policyholder"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "health_impairment_option",
+      "feature_name": "健康障碍/无行为能力选项",
+      "category": "special_option",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "出现指定无行为能力或健康障碍时，可按条款启动备用安排。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 9,
+      "compare_key": "health_impairment_option",
+      "source_pages": [
+        29
+      ],
+      "evidence_quote": "– 當您作出保單退保；或 – 當無行為能力選項 — 保障支付下的指定百分比為 100%，而有關賠償獲批；或 – 當未償還總金額（包括但不限於任何未償還貸款及 利息）等於或超出保單之保證現金價值及歸原紅利 之現金價值總和的100%",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "無行為能力",
+          "无行为能力",
+          "健康障礙",
+          "健康障碍",
+          "health impairment"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "academic_reward",
+      "feature_name": "学业奖励",
+      "category": "special_option",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "达成指定学业成就时，可按条款获得奖励或相关权益。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 10,
+      "compare_key": "academic_reward",
+      "source_pages": [
+        28
+      ],
+      "evidence_quote": "發生的事件。 學術優異獎 • 若受保人於保單已生效最少1年並於受保人(i)25歲 （即下次生日年齡為26歲）或(ii)30歲（即下次生日年齡為 31歲）（僅適用於獲全球排名首20位大學取錄之全日制 研究生課程）當日的或緊隨其後的保單周年日之前考獲 任何1項指定學業成就的相關資格，您可獲發此獎金",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "學術優異",
+          "学术优异",
+          "卓越成績",
+          "卓越成绩",
+          "academic",
+          "成績獎",
+          "成绩奖"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "currency_switch",
+      "feature_name": "货币转换选项",
+      "category": "currency",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "可按条款转换保单货币，配合跨币种资产安排。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 11,
+      "compare_key": "currency_switch",
+      "source_pages": [
+        4
+      ],
+      "evidence_quote": "加元 您可透過貨幣轉換選項轉換保單貨幣。當您行使貨幣轉換選項時，您的總現金價值（即保證現金價值加上 歸原紅利及終期紅利的非保證現金價值之總和）將會保持不變（惟以四捨五入方式調整），並會按照由我們 釐定的當時市場匯率進行兌換。此舉將對您的保證現金價值和歸原紅利及終期紅利的非保證現金價值之組合 產生影響，歸原紅利及終期紅利的面值亦有可能增加或減少。如您曾提取任何歸原紅利現金價值、行使終期 紅利鎖定選項或終期紅利解鎖選項，該組合亦會受到影響。在轉換保單貨幣後，未來的保證現金價值、非保證 紅利和任何未來的保費都將和其他採用新保單貨幣的保誠信守明天多元貨幣計劃保單以相同方式釐定",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "貨幣轉換",
+          "货币转换",
+          "轉換保單貨幣",
+          "转换保单货币",
+          "currency conversion"
+        ],
+        "no_hard_char_truncation": true
+      }
+    },
+    {
+      "feature_id": "accidental_death_benefit",
+      "feature_name": "意外身故保障",
+      "category": "life_protection",
+      "feature_type": "policy_option",
+      "availability": true,
+      "short_description": "受保人身故时，可按条款向受益人支付身故赔偿。",
+      "detail_description": null,
+      "trigger_condition": null,
+      "benefit_amount": null,
+      "benefit_limit": null,
+      "waiting_period": null,
+      "age_limit": null,
+      "applicable_to": null,
+      "affects_cash_value": null,
+      "affects_death_benefit": null,
+      "affects_premium": null,
+      "affects_policy_status": null,
+      "is_guaranteed": null,
+      "is_contractual": null,
+      "display_priority": 12,
+      "compare_key": "accidental_death_benefit",
+      "source_pages": [
+        13
+      ],
+      "evidence_quote": "為意外身故提供保障 延伸意外身故保障 假如您不曾更換受保人，而受保人在第5個保單周年日前不幸遇上意外而身故，我們將同時支付此額外 意外身故賠償和身故賠償",
+      "extraction_quality": {
+        "short_description_status": "normalized_complete_sentence",
+        "evidence_quote_status": "matched_complete_semantic_window_no_hard_char_truncation",
+        "evidence_method": "pdf_page_semantic_window_keyword_match_v2.9",
+        "keywords": [
+          "身故保障",
+          "身故賠償",
+          "身故赔偿",
+          "death benefit"
+        ],
+        "no_hard_char_truncation": true
+      }
+    }
+  ],
+  "feature_tags": [
+    "policy_loan",
+    "death_benefit_payment_option",
+    "bonus_lock_in",
+    "bonus_unlock",
+    "policy_split",
+    "change_insured",
+    "second_insured",
+    "second_policyholder",
+    "health_impairment_option",
+    "academic_reward",
+    "currency_switch",
+    "accidental_death_benefit"
+  ],
+  "comparison_flags": {
+    "has_guaranteed_cash_value": true,
+    "has_non_guaranteed_bonus": true,
+    "has_partial_withdrawal": true,
+    "has_regular_withdrawal": true,
+    "has_policy_loan": true,
+    "supports_currency_switch": true,
+    "supports_policy_split": true,
+    "supports_change_insured": true,
+    "supports_second_insured": true,
+    "supports_second_policyholder": true,
+    "has_multiple_claims": null,
+    "has_cancer_multiple_claims": null,
+    "has_heart_stroke_multiple_claims": null,
+    "has_icu_benefit": false
+  },
+  "source_trace": {
+    "source_type": "catalog_verified_pdf",
+    "source_pdf": "pru-entrust-multi-currency.pdf",
+    "source_pdf_path": "pdfs/pru-entrust-multi-currency.pdf",
+    "source_pdf_sha256": "b0baab365b90d7c7145ad58dfa88e1ee8909c7eb048e8ffc5e3f9bc36516a758",
+    "page_count": 36,
+    "text_length": 37406,
+    "extraction_confidence": "medium",
+    "missing_fields": [],
+    "field_evidence": {
+      "compare_profile.has_guaranteed_cash_value": {
+        "source": "local_pdf",
+        "pages": [
+          29
+        ],
+        "quote": "• 若在任何時候，保單所欠的未償還總金額（包括 但不限於任何未償還貸款及利息）等於或超出保單的 保證現金價值及歸原紅利之現金價值總和的100%， 我們將即時終止保單並向您支付減去任何未繳付之保費 和未償還之貸款及利息後的退保價值，而您可獲取的 金額可能會遠低於您已繳付的保費，同時您亦會喪失 保單所提供的保障",
+        "confidence": "medium",
+        "method": "pdf_page_semantic_window_keyword_match_v2.9_no_hard_char_truncation",
+        "no_hard_char_truncation": true
+      },
+      "compare_profile.has_non_guaranteed_bonus": {
+        "source": "local_pdf",
+        "pages": [
+          3
+        ],
+        "quote": "提提您 — 關於您的保單回報 股東全資分紅計劃 隨人生階段 主導財富增長 保證現金價值 非保證歸原紅利",
+        "confidence": "medium",
+        "method": "pdf_page_semantic_window_keyword_match_v2.9_no_hard_char_truncation",
+        "no_hard_char_truncation": true
+      },
+      "compare_profile.has_policy_loan": {
+        "source": "local_pdf",
+        "pages": [
+          29
+        ],
+        "quote": "保單貸款 • 在有需要時，為使您的財務更加靈活，您可借入高達 本保單之保證現金價值及歸原紅利之現金價值總和的 80%款項作為保單貸款，而保單仍可維持生效",
+        "confidence": "medium",
+        "method": "pdf_page_semantic_window_keyword_match_v2.9_no_hard_char_truncation",
+        "no_hard_char_truncation": true
+      },
+      "compare_profile.supports_policy_split": {
+        "source": "local_pdf",
+        "pages": [
+          21
+        ],
+        "quote": "開枝散葉選項 • 由第3個保單周年日或保費供款年期完結起（以較後者 為準），您可於每個保單年度申請將保單分拆成數份 保單1次，並可於每個保單周年日前30日內行使此選項， 而不影響您保單年度之計算",
+        "confidence": "medium",
+        "method": "pdf_page_semantic_window_keyword_match_v2.9_no_hard_char_truncation",
+        "no_hard_char_truncation": true
+      },
+      "compare_profile.supports_change_insured": {
+        "source": "local_pdf",
+        "pages": [
+          11
+        ],
+        "quote": "獲得身故賠償。 可按需要無限次更換受保人 讓財富繼續增長並傳承下去 您可透過保誠信守明天多元貨幣計劃將財富傳承後代，助您守護摯愛，為他們提供所需。當您更換受保人，我們 便為新受保人提供終身保障。您可以由第1個保單周年日起，並在現有受保人在世時，無限次更換受保人",
+        "confidence": "medium",
+        "method": "pdf_page_semantic_window_keyword_match_v2.9_no_hard_char_truncation",
+        "no_hard_char_truncation": true
+      }
+    }
+  },
+  "extraction_meta": {
+    "extracted_at": "2026-06-20T12:40:24.481071Z",
+    "method": "PRODUCT-CATALOG + selected hot TS guided heuristic extraction; no fuzzy cross-product substitution",
+    "schema_policy": "core comparable fields in compare_profile; special/non-standard features in product_features[] and feature_tags[]",
+    "v2_5_extraction": {
+      "extracted_at": "2026-06-21T08:52:01.684519Z",
+      "method": "local_pdf_regex_structured_reextract_v2.5",
+      "pdf_filename": "pru-entrust-multi-currency.pdf"
+    },
+    "v2_7_reextract": {
+      "generated_at": "2026-06-21T09:32:28.587729Z",
+      "method": "pdfplumber_page_window_keyword_match_v2.7",
+      "feature_count": 12,
+      "feature_evidence_matched": 12
+    },
+    "v2_8_reextract": {
+      "generated_at": "2026-06-21T10:07:33.770253Z",
+      "method": "full_truncation_sweep_and_pdf_evidence_window_repair_v2.8",
+      "ellipsis_fields_before": 1,
+      "ellipsis_fields_after": 0,
+      "nested_feature_notes_removed": 12
+    },
+    "v2_9_reextract": {
+      "generated_at": "2026-06-21T10:21:25.286502Z",
+      "method": "pdf_fulltext_reextract_no_hard_char_truncation_v2.9",
+      "note": "v2.9 移除旧抽取逻辑中的硬字符截断：对 base/compare_profile/source_trace.field_evidence/product_features.evidence_quote 做硬截断候选扫描；对 entry_age 等基础字段重新从 PDF 全文抽取完整结构化摘要；证据窗口按 PDF 页面语义窗口重取，不再按 60/80/120 字符硬截断。",
+      "hard_truncation_candidates_before": 3,
+      "hard_truncation_candidates_after": 2,
+      "fields_repaired": 12,
+      "age_refine_note": "v2.9 age fields refined from the best PDF full-text window near 投保年齡/投保范围, avoiding unrelated owner/beneficiary age clauses and hard character truncation."
+    }
+  },
+  "display_features": [
+    {
+      "title": "多货币配置",
+      "summary": "支持6种保单货币，适合跨币种配置。",
+      "category": "currency",
+      "priority": 1,
+      "source_tags": [
+        "currency_switch"
+      ],
+      "source_paths": [
+        "compare_profile.currencies",
+        "compare_profile.supports_currency_switch"
+      ]
+    },
+    {
+      "title": "现金价值与分红",
+      "summary": "提供保证现金价值，并有机会获得非保证红利。",
+      "category": "savings",
+      "priority": 2,
+      "source_tags": [],
+      "source_paths": [
+        "compare_profile.has_guaranteed_cash_value",
+        "compare_profile.has_non_guaranteed_bonus"
+      ]
+    },
+    {
+      "title": "演示倍数",
+      "summary": "演示价值最高约7.0倍，非保证收益。",
+      "category": "savings",
+      "priority": 3,
+      "source_tags": [],
+      "source_paths": [
+        "compare_profile.highest_illustrated_return_multiple"
+      ]
+    },
+    {
+      "title": "灵活资金安排",
+      "summary": "支持贷款或提取，便于中途资金周转。",
+      "category": "liquidity",
+      "priority": 4,
+      "source_tags": [
+        "policy_loan"
+      ],
+      "source_paths": [
+        "compare_profile.has_policy_loan",
+        "compare_profile.has_partial_withdrawal"
+      ]
+    },
+    {
+      "title": "红利锁定",
+      "summary": "可按规则锁定或解锁部分红利，安排更灵活。",
+      "category": "bonus",
+      "priority": 5,
+      "source_tags": [
+        "bonus_lock_in",
+        "bonus_unlock"
+      ],
+      "source_paths": []
+    }
+  ],
+  "product_name": "保诚信腾多元货币计划"
+}

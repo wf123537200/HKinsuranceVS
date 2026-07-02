@@ -1,19 +1,22 @@
 "use client";
 
 import Link from "next/link";
-import { useSession, signOut } from "next-auth/react";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { useParams, usePathname } from "next/navigation";
 import SearchBar from "./SearchBar";
 import { locales, localeNames, type Locale } from "@/i18n/config";
+import { useSupabaseSession } from "./SupabaseSessionProvider";
+import { getSupabaseBrowser } from "@/lib/supabase/client";
 
 export default function Header() {
-  const { data: session } = useSession();
+  const { email: sessionEmail } = useSupabaseSession();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const t = useTranslations("nav");
   const tc = useTranslations("common");
+  const tCommon = useTranslations("common");
+  const brandName = tCommon("siteName");
   const params = useParams();
   const pathname = usePathname();
   const currentLocale = (params?.locale as Locale) || "en";
@@ -22,7 +25,6 @@ export default function Header() {
     { href: "/companies", label: t("companies") },
     { href: "/products", label: t("products") },
     { href: "/compare", label: t("compare") },
-    { href: "/rankings", label: t("rankings") },
     { href: "/calculator", label: t("calculator") },
     { href: "/glossary", label: t("glossary") },
   ];
@@ -35,9 +37,19 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center gap-2 shrink-0">
-            <span className="text-xl font-bold text-blue-700">Insurance</span>
-            <span className="text-xl font-bold text-gray-900">Atlas</span>
+          <Link href="/" className="flex items-center gap-2 shrink-0" aria-label={brandName}>
+            <picture>
+              {/* Prefer the SVG mark at small sizes for crispness on HiDPI. */}
+              <img
+                src="/logos/policy-vector-logo.svg"
+                alt={brandName}
+                width={36}
+                height={36}
+                className="h-9 w-9 rounded-lg"
+                loading="eager"
+              />
+            </picture>
+            <span className="text-xl font-bold text-gray-900 hidden sm:inline">{brandName}</span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-6">
@@ -71,10 +83,19 @@ export default function Header() {
               )}
             </div>
 
-            {session ? (
+            {sessionEmail ? (
               <div className="flex items-center gap-3">
-                <span className="text-sm text-gray-600">{session.user?.email}</span>
-                <button onClick={() => signOut()} className="text-sm text-gray-500 hover:text-red-600">{tc("signOut")}</button>
+                <span className="text-sm text-gray-600">{sessionEmail}</span>
+                <button
+                  type="button"
+                  onClick={async () => {
+                    const supabase = getSupabaseBrowser();
+                    await supabase?.auth.signOut();
+                  }}
+                  className="text-sm text-gray-500 hover:text-red-600"
+                >
+                  {tc("signOut")}
+                </button>
               </div>
             ) : (
               <Link href="/login" className="text-sm font-medium text-blue-700 hover:text-blue-800">{tc("signIn")}</Link>
@@ -107,8 +128,17 @@ export default function Header() {
                 ))}
               </div>
               <div className="border-t border-gray-100 mt-2 pt-2">
-                {session ? (
-                  <button onClick={() => signOut()} className="w-full text-left px-3 py-2 text-sm text-gray-500 hover:text-red-600">{tc("signOut")}</button>
+                {sessionEmail ? (
+                  <button
+                    type="button"
+                    onClick={async () => {
+                      const supabase = getSupabaseBrowser();
+                      await supabase?.auth.signOut();
+                    }}
+                    className="w-full text-left px-3 py-2 text-sm text-gray-500 hover:text-red-600"
+                  >
+                    {tc("signOut")}
+                  </button>
                 ) : (
                   <Link href="/login" className="block px-3 py-2 text-sm font-medium text-blue-700" onClick={() => setMobileOpen(false)}>{tc("signIn")}</Link>
                 )}
