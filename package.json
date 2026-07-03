@@ -9,12 +9,14 @@
     "lint": "eslint",
     "db:generate": "npx prisma generate",
     "db:migrate": "npx prisma migrate dev",
-    "db:seed": "npx prisma db seed",
+    "db:push": "npx prisma db push",
+    "db:seed": "npx tsx prisma/seed.ts",
     "db:studio": "npx prisma studio",
     "vectors:extract": "tsx scripts/extract-product-vectors.ts",
     "vectors:extract:all": "tsx scripts/extract-product-vectors.ts --all",
     "vectors:validate": "tsx scripts/validate-product-vectors.ts",
-    "product:add": "tsx scripts/add-product.ts"
+    "product:add": "tsx scripts/add-product.ts",
+    "deploy:check": "node -e \"console.log('ci deploys automatically via .github/workflows/deploy.yml')\""
   },
   "prisma": {
     "seed": "npx tsx prisma/seed.ts"

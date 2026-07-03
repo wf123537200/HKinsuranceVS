@@ -1,0 +1,181 @@
+name: Build and Deploy (policy-vector)
+
+# Mirrors the aiTools4me deploy.yml with project-specific guard rails:
+#   - Only restarts pm2 process `policy-vector`. Never touches `aitools4me`.
+#   - Only frees port 3002. Never touches port 3000 (aitools4me).
+#   - Runs `prisma generate` so the client matches schema, but does NOT
+#     `db push` -- schema migrations to prod are a deliberate manual step.
+#   - OOM guard: 1.9GiB server → ensures 2GB swap first, caps Node heap at
+#     1024MB (same as aiTools4me playbook).
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          # insurance stack (next-intl 4, prisma 7, next 16) expects Node 22+.
+          # If locked at 20 it'll just print deprecation warnings on Supabase.
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Prepare deploy package
+        run: |
+          rm -rf .next/cache
+
+          # Single compressed tarball — rsync streams it in chunks, so we
+          # don't blow the runner's memory on the upload step.
+          tar czf deploy.tar.gz \
+            --exclude='dev.db' \
+            --exclude='prisma/dev.db' \
+            --exclude='prisma/dev.db-journal' \
+            --exclude='.env.local' \
+            --exclude='.env*' \
+            --exclude='node_modules' \
+            .next public package.json package-lock.json prisma/generated
+
+          echo "Package size: $(du -h deploy.tar.gz | cut -f1)"
+
+      - name: Transfer package (rsync over SSH, low memory)
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H -p "${{ secrets.SERVER_PORT }}" \
+            "${{ secrets.SERVER_HOST }}" >> ~/.ssh/known_hosts 2>/dev/null
+
+          KEY_FILE=$(mktemp)
+          echo "${{ secrets.SERVER_SSH_KEY }}" > "$KEY_FILE"
+          chmod 600 "$KEY_FILE"
+
+          rsync -avz \
+            -e "ssh -i $KEY_FILE -p ${{ secrets.SERVER_PORT }} -o StrictHostKeyChecking=no" \
+            --progress \
+            deploy.tar.gz \
+            "${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/tmp/policy-vector-deploy.tar.gz"
+
+          rm -f "$KEY_FILE"
+          echo "==> File transferred"
+
+      - name: Deploy on server (extract + restart)
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          port: ${{ secrets.SERVER_PORT }}
+          command_timeout: 30m
+          script: |
+            set -e
+            cd /opt/apps/HKinsuranceVS
+
+            echo "==> Syncing source from origin..."
+            git fetch origin main
+            git reset --hard origin/main
+
+            # Server owns its own .env.local. Keep it intact.
+            if [ ! -f .env.local ]; then
+              echo "WARNING: .env.local missing on server. Prisma/env keys must be set before traffic resumes."
+            fi
+
+            # Ensure 2GB swap exists. The server has only ~1.9GiB RAM which
+            # is too little for next start + prisma generate + pm2 + a
+            # sleeping aitools4me. Without swap a multi-tenant deploy can OOM.
+            SWAP_FILE=/swapfile
+            if [ ! -f "$SWAP_FILE" ]; then
+              echo "==> Creating 2GB swap file (first-time setup)..."
+              fallocate -l 2G "$SWAP_FILE" 2>/dev/null || dd if=/dev/zero of="$SWAP_FILE" bs=1M count=2048
+              chmod 600 "$SWAP_FILE"
+              mkswap "$SWAP_FILE"
+              swapon "$SWAP_FILE"
+              echo "Swap enabled: $(free -h | grep Swap)"
+            else
+              if ! swapon --show | grep -q "$SWAP_FILE"; then
+                swapon "$SWAP_FILE"
+                echo "==> Re-enabled swap"
+              fi
+            fi
+
+            # Extract the uploaded payload
+            echo "==> Removing old .next..."
+            rm -rf .next
+            echo "==> Extracting payload..."
+            tar xzf /tmp/policy-vector-deploy.tar.gz
+            rm -f /tmp/policy-vector-deploy.tar.gz
+
+            echo "==> BUILD_ID:"
+            cat .next/BUILD_ID 2>/dev/null || echo "WARNING: BUILD_ID not found"
+
+            # Install deps only if package-lock has drifted against node_modules
+            if [ ! -f node_modules/.package-lock.json ] || \
+               ! diff -q package-lock.json node_modules/.package-lock.json >/dev/null 2>&1; then
+              echo "==> npm ci (lockfile changed)"
+              npm ci --production=false
+              cp package-lock.json node_modules/.package-lock.json
+            else
+              echo "==> Dependencies up to date"
+            fi
+
+            # Regenerate Prisma client (does NOT touch prisma/dev.db).
+            # If you have a schema change to ship, run `npx prisma db push`
+            # manually on the server first. This is intentional.
+            echo "==> prisma generate (no schema migration in CI)"
+            npx prisma generate
+
+            # Free port 3002 only. NEVER fuser/3000 -- that's aitools4me.
+            echo "==> Restarting policy-vector only..."
+            pm2 delete policy-vector 2>/dev/null || true
+            sleep 1
+            fuser -k 3002/tcp 2>/dev/null || true
+            # Targeted kill of any stale next-server belonging to THIS app's cwd
+            pkill -9 -f "/opt/apps/HKinsuranceVS/node_modules/.bin/next" 2>/dev/null || true
+            sleep 2
+
+            NODE_OPTIONS="--max-old-space-size=1024" \
+              pm2 start node_modules/.bin/next \
+              --name policy-vector \
+              --max-memory-restart 1800M \
+              -- start
+
+            pm2 save --force
+
+            # Wait + verify on the actual public URL
+            sleep 8
+            echo "==> Smoke test..."
+            for i in 1 2 3 4 5; do
+              HTTP=$(curl -s -o /dev/null -w "%{http_code}" \
+                http://localhost:3002/zh-CN 2>/dev/null || echo "000")
+              if [ "$HTTP" = "200" ]; then
+                echo "Local HTTP 3002: 200 OK"
+                break
+              fi
+              echo "Attempt $i: HTTP $HTTP, retrying..."
+              sleep 3
+            done
+
+            HTTPS=$(curl -s -o /dev/null -w "%{http_code}" \
+              https://policy-vector.com/zh-CN 2>/dev/null || echo "000")
+            echo "Public HTTPS: $HTTPS"
+
+            echo "--- pm2 (insurance only) ---"
+            pm2 show policy-vector | head -15
+            echo "--- pm2 list (verify aitools4me untouched) ---"
+            pm2 list
+            echo "--- last 30 log lines ---"
+            pm2 logs policy-vector --lines 30 --nostream 2>&1 | tail -35
+            echo "--- OOM check ---"
+            dmesg 2>/dev/null | grep -iE "oom|killed" | tail -5 || echo "(no dmesg or no OOM events)"
+            echo "--- memory ---"
+            free -h
+            echo "==> Deploy complete"
