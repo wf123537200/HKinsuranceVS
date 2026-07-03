@@ -1,9 +1,27 @@
+import path from "node:path";
+import fs from "node:fs";
+import { config } from "dotenv";
 import { PrismaClient } from "../app/generated/prisma/client";
 import { PrismaBetterSqlite3 } from "@prisma/adapter-better-sqlite3";
-import path from "path";
-import fs from "fs";
 
-const dbPath = path.join(process.cwd(), "dev.db");
+// Load .env.local explicitly so DATABASE_URL is honored. This keeps
+// `prisma db push` and `npx tsx prisma/seed.ts` writing to the same file
+// (defaults to ./prisma/dev.db, but resolves the absolute path from
+// DATABASE_URL when present).
+config({
+  path: path.resolve(process.cwd(), ".env.local"),
+  override: false,
+});
+
+function resolveDbPath(): string {
+  const url = process.env.DATABASE_URL ?? "";
+  if (url.startsWith("file:")) {
+    return url.slice("file:".length);
+  }
+  return path.join(process.cwd(), "prisma", "dev.db");
+}
+
+const dbPath = resolveDbPath();
 const adapter = new PrismaBetterSqlite3({ url: `file:${dbPath}` });
 const prisma = new PrismaClient({ adapter });
 
