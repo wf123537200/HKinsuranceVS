@@ -38,6 +38,21 @@ jobs:
 
           # Single compressed tarball — rsync streams it in chunks, so we
           # don't blow the runner's memory on the upload step.
+          #
+          # Why each top-level arg is included:
+          #   .next               — built SSR + client manifests
+          #   public              — static assets, PDFs, logos (R2 is private; legacy
+          #                         copies /public/pdfs/ excluded at the server side
+          #                         via .gitignore but this dir also has favicon, etc.)
+          #   package.json        — needed by next runtime to resolve deps metadata
+          #   package-lock.json   — used by deploy script's "is lockfile stale?" check
+          #   prisma/generated    — Prisma client (sometimes re-derived via
+          #                         `prisma generate` post-extract, but shipping it
+          #                         in the tar saves 30s of CI time)
+          #   data                — product feature vectors (.vector.json),
+          #                         product-feature registries, reports. These
+          #                         are checked into git so a push that updates
+          #                         them (e.g. after a re-extraction) auto-deploys.
           tar czf deploy.tar.gz \
             --exclude='dev.db' \
             --exclude='prisma/dev.db' \
@@ -45,7 +60,9 @@ jobs:
             --exclude='.env.local' \
             --exclude='.env*' \
             --exclude='node_modules' \
-            .next public package.json package-lock.json prisma/generated
+            --exclude='data/*.zip' \
+            --exclude='data/.tmp-*' \
+            .next public package.json package-lock.json prisma/generated data
 
           echo "Package size: $(du -h deploy.tar.gz | cut -f1)"
 
