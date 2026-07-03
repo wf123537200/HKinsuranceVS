@@ -32,6 +32,27 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Generate Prisma client
+        # schema.prisma's `output = "../app/generated/prisma"` puts the
+        # generated client INSIDE `app/` and OUTSIDE `prisma/`. The dir is
+        # also gitignored, so a fresh checkout has nothing here. We MUST
+        # generate before `next build` (which imports from
+        # `@/app/generated/prisma/client`) and before the tar step.
+        run: npx prisma generate
+        env:
+          # CI doesn't have a real database. The prisma adapter URL is
+          # only consulted lazily on `db push` / runtime queries, never
+          # on `generate`, but we set a placeholder so any future
+          # post-generate script doesn't crash.
+          DATABASE_URL: 'file:./prisma/dev.db'
+
+      - name: Build
+        # cap heap: GitHub runner has 7GB but Next + Prisma can spike when
+        # parallelizing page generation across many locales.
+        run: NODE_OPTIONS="--max-old-space-size=4096" npm run build
+        env:
+          DATABASE_URL: 'file:./prisma/dev.db'
+
       - name: Prepare deploy package
         run: |
           rm -rf .next/cache
@@ -46,9 +67,11 @@ jobs:
           #                         via .gitignore but this dir also has favicon, etc.)
           #   package.json        — needed by next runtime to resolve deps metadata
           #   package-lock.json   — used by deploy script's "is lockfile stale?" check
-          #   prisma/generated    — Prisma client (sometimes re-derived via
-          #                         `prisma generate` post-extract, but shipping it
-          #                         in the tar saves 30s of CI time)
+          #   app/generated/prisma — Prisma client (output = "../app/generated/prisma"
+          #                         from prisma/schema.prisma). NOT .gitignored as
+          #                         `prisma/generated`; the real path is the one in
+          #                         app/, which is also excluded from git, so we
+          #                         MUST generate on CI before tar.
           #   data                — product feature vectors (.vector.json),
           #                         product-feature registries, reports. These
           #                         are checked into git so a push that updates
@@ -62,7 +85,7 @@ jobs:
             --exclude='node_modules' \
             --exclude='data/*.zip' \
             --exclude='data/.tmp-*' \
-            .next public package.json package-lock.json prisma/generated data
+            .next public package.json package-lock.json app/generated/prisma data
 
           echo "Package size: $(du -h deploy.tar.gz | cut -f1)"
 
