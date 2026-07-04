@@ -3,11 +3,13 @@ import { prisma } from "@/lib/prisma";
 import { getTranslations } from "next-intl/server";
 import { translateCompany, sortByTranslatedName } from "@/lib/translations";
 import type { Locale } from "@/i18n/config";
+import { defaultLocale, locales } from "@/i18n/config";
 import ProductCard from "@/components/ProductCard";
 import CompanyLogo from "@/components/CompanyLogo";
 import { getSiteProductSlugs, getSelectedDbSlugs } from "@/lib/selected-products";
 import { getHotProductVectors, getAllProductVectors } from "@/lib/product-vector-registry";
 import { getProductName, getCompanyName, getRegionLabel, getCompareDescription, pickBaseName } from "@/lib/vector-i18n";
+import { getPdfCatalog, pdfCatalogStats } from "@/lib/pdf-catalog";
 import { buildMetadata } from "@/lib/seo";
 import { buildWebSiteJsonLd, buildPublisherOrganizationJsonLd } from "@/lib/jsonld";
 import JsonLd from "@/components/JsonLd";
@@ -22,7 +24,11 @@ function pairCountSameCategory(ciCount: number, svCount: number): number {
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
+  const { locale: rawLocale } = await params;
+  const locale =
+    rawLocale && (locales as readonly string[]).includes(rawLocale)
+      ? rawLocale
+      : defaultLocale;
   const t = await getTranslations({ locale, namespace: "seo" });
   return buildMetadata({
     path: "/",
@@ -33,7 +39,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
+  const { locale: rawLocale } = await params;
+  const locale =
+    rawLocale && (locales as readonly string[]).includes(rawLocale)
+      ? rawLocale
+      : defaultLocale;
   const t = await getTranslations("home");
   const tc = await getTranslations("categories");
   const tCommon = await getTranslations("common");
@@ -98,7 +108,14 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const companiesWithProducts = rawCompanies.filter((c) => c.products.length > 0);
   const translatedProducts = dbHotProducts;
   const translatedCompanies = companiesWithProducts.map((c) => translateCompany(c, locale as Locale)).sort(sortByTranslatedName(locale as Locale));
-  const totalProducts = productStats._count.id;
+
+  // Stat block: PDFs are the truth source. We override the prisma-derived
+  // counts with what we actually have on disk under public/pdfs/, so the
+  // hero band never reports a stale number. Hot-products list still uses
+  // prisma + vectors for now (cosmetic, not the stat).
+  const pdfCatalog = await getPdfCatalog();
+  const pdfStats = pdfCatalogStats(pdfCatalog);
+  const totalProducts = pdfStats.products;
 
   // Build slug -> vector base map so comparison/product cards can resolve the
   // locale-correct Chinese name (zh-CN / zh-TW / en) from the ProductVector,
@@ -111,7 +128,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   }
   const ciCount = categoryCounts.find((c) => c.category === "CRITICAL_ILLNESS")?._count._all ?? 0;
   const svCount = categoryCounts.find((c) => c.category === "SAVINGS")?._count._all ?? 0;
-  const totalComparisons = pairCountSameCategory(ciCount, svCount);
+  const totalComparisons = pdfStats.comparisons;
   // Build a set of slugs that are in the V1 selected list, for the flame badge.
   const selectedSlugSet = new Set(getSelectedDbSlugs());
 
@@ -150,7 +167,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </div>
           <div className="flex flex-wrap justify-center gap-8 text-blue-100">
             <div className="text-center">
-              <div className="text-3xl font-bold text-white">{translatedCompanies.length}</div>
+              <div className="text-3xl font-bold text-white">{pdfStats.companies}</div>
               <div className="text-sm">{t("companiesCount")}</div>
             </div>
             <div className="text-center">
@@ -245,19 +262,29 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         )}
 
         <section>
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex items-end gap-3 mb-6">
             <h2 className="text-2xl font-bold text-gray-900">{t("companies")}</h2>
-            <Link href="/companies" className="text-sm text-blue-600 hover:text-blue-700">{tCommon("viewAll")} &rarr;</Link>
+            <p className="text-xs text-gray-400 pb-1">{tCommon("sortNote")}</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {translatedCompanies.map((company) => {
-              const ciCount = company.products.filter((p: { category: string }) => p.category === "CRITICAL_ILLNESS").length;
-              const savingsCount = company.products.filter((p: { category: string }) => p.category === "SAVINGS").length;
+            {pdfCatalog.companies.filter((c) => c.productCount > 0).map((c) => {
+              const counts = pdfCatalog.products.reduce(
+                (acc, p) => {
+                  if (p.companySlug !== c.slug) return acc;
+                  if (p.category === "critical_illness") acc.ci += 1;
+                  else if (p.category === "savings") acc.sv += 1;
+                  return acc;
+                },
+                { ci: 0, sv: 0 }
+              );
+              const ciCount = counts.ci;
+              const savingsCount = counts.sv;
+              const logoUrl = logoByCompany.get(c.slug) || null;
               return (
-                <Link key={company.id} href={`/company/${company.slug}`} className="block p-4 bg-white border border-gray-200 rounded-lg hover:border-blue-300 hover:shadow-md transition-all">
+                <Link key={c.slug} href={`/company/${c.slug}`} className="block p-4 bg-white border border-gray-200 rounded-lg hover:border-blue-300 hover:shadow-md transition-all">
                   <div className="flex items-center gap-2 mb-2">
-                    <CompanyLogo name={company.slug} displayName={company.displayName} logoUrl={company.logoUrl} size="sm" />
-                    <h3 className="font-semibold text-gray-900 text-sm">{company.displayName}</h3>
+                    <CompanyLogo name={c.slug} displayName={getCompanyName(c.slug, locale as Locale, c.slug)} logoUrl={logoUrl} size="sm" />
+                    <h3 className="font-semibold text-gray-900 text-sm">{getCompanyName(c.slug, locale as Locale, c.slug)}</h3>
                   </div>
                   <div className="flex gap-4 text-xs text-gray-400">
                     <span>{ciCount} {tc("criticalIllness")}</span>

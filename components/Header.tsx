@@ -1,18 +1,31 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useTransition } from "react";
+import { useRouter, useParams, usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { useParams, usePathname } from "next/navigation";
 import SearchBar from "./SearchBar";
-import { locales, localeNames, type Locale } from "@/i18n/config";
+import { locales, localeNames, type Locale, defaultLocale } from "@/i18n/config";
 import { useSupabaseSession } from "./SupabaseSessionProvider";
 import { getSupabaseBrowser } from "@/lib/supabase/client";
+
+// next-intl writes its detected locale to this cookie. To make a manual
+// language switch persist, we must update this cookie on click — otherwise
+// the middleware will detect Accept-Language on the next request and
+// redirect back to the previous locale.
+const LOCALE_COOKIE = "NEXT_LOCALE";
+
+function setLocaleCookie(value: string) {
+  // 1 year, lax, root path. Same as next-intl's own middleware writes.
+  document.cookie = `${LOCALE_COOKIE}=${value}; path=/; max-age=31536000; samesite=lax`;
+}
 
 export default function Header() {
   const { email: sessionEmail } = useSupabaseSession();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
+  const router = useRouter();
+  const [, startTransition] = useTransition();
   const t = useTranslations("nav");
   const tc = useTranslations("common");
   const tCommon = useTranslations("common");
@@ -20,6 +33,29 @@ export default function Header() {
   const params = useParams();
   const pathname = usePathname();
   const currentLocale = (params?.locale as Locale) || "en";
+
+  // Switching language must do two things in order:
+  //   1. Set the locale cookie. If we just navigated, next-intl would
+  //      re-detect Accept-Language on the next request and overwrite.
+  //   2. Navigate to a URL with an explicit locale prefix so the page
+  //      always sees `params.locale`. With `localePrefix: "as-needed"`
+  //      and `defaultLocale="en"`, next-intl canonicalizes prefixed
+  //      URLs to the unprefixed form (e.g. /en/products → /products).
+  //      For the locale root we explicitly keep `/en` (since `/` 404s
+  //      under our setup) and rely on the in-app page rather than the
+  //      middleware redirect.
+  function switchLocale(target: Locale) {
+    setLocaleCookie(target);
+    const url =
+      target === defaultLocale
+        ? `/${defaultLocale}${pathWithoutLocale === "/" ? "" : pathWithoutLocale}`
+        : `/${target}${pathWithoutLocale}`;
+    setLangOpen(false);
+    setMobileOpen(false);
+    startTransition(() => {
+      router.push(url);
+    });
+  }
 
   const NAV_ITEMS = [
     { href: "/companies", label: t("companies") },
@@ -72,13 +108,35 @@ export default function Header() {
               </button>
               {langOpen && (
                 <div className="absolute right-0 mt-1 w-36 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
-                  {locales.map((locale) => (
-                    <Link key={locale} href={`/${locale}${pathWithoutLocale}`}
-                      className={`block px-4 py-2 text-sm hover:bg-gray-50 first:rounded-t-lg last:rounded-b-lg ${locale === currentLocale ? "text-blue-700 font-medium bg-blue-50" : "text-gray-700"}`}
-                      onClick={() => setLangOpen(false)}>
-                      {localeNames[locale]}
-                    </Link>
-                  ))}
+                  {locales.map((locale) => {
+                    // With next-intl's localePrefix: "as-needed" and
+                    // defaultLocale="en", the canonical URL for English
+                    // is the unprefixed pathname (e.g. /products). Other
+                    // locales keep their prefix.
+                    const target =
+                      locale === defaultLocale
+                        ? pathWithoutLocale
+                        : `/${locale}${pathWithoutLocale}`;
+                    return (
+                      <Link
+                        key={locale}
+                        href={target}
+                        prefetch={false}
+                        className={`block px-4 py-2 text-sm hover:bg-gray-50 first:rounded-t-lg last:rounded-b-lg ${locale === currentLocale ? "text-blue-700 font-medium bg-blue-50" : "text-gray-700"}`}
+                        onClick={(e) => {
+                          // We navigate manually so the locale cookie is
+                          // set *before* the next request hits the
+                          // middleware. If <Link> navigated first, the
+                          // middleware could still see the old cookie
+                          // and bounce the user back to the previous
+                          // locale (ERR_TOO_MANY_REDIRECTS).
+                          e.preventDefault();
+                          switchLocale(locale);
+                        }}>
+                        {localeNames[locale]}
+                      </Link>
+                    );
+                  })}
                 </div>
               )}
             </div>
@@ -119,13 +177,29 @@ export default function Header() {
               ))}
               <div className="border-t border-gray-100 mt-2 pt-2">
                 <p className="px-3 py-1 text-xs text-gray-400">{langLabel}</p>
-                {locales.map((locale) => (
-                  <Link key={locale} href={`/${locale}${pathWithoutLocale}`}
-                    className={`block px-3 py-2 text-sm rounded ${locale === currentLocale ? "text-blue-700 font-medium bg-blue-50" : "text-gray-600 hover:bg-gray-50"}`}
-                    onClick={() => setMobileOpen(false)}>
-                    {localeNames[locale]}
-                  </Link>
-                ))}
+                {locales.map((locale) => {
+                  // See comment in the desktop selector above — never
+                  // stamp "/" + the default locale; use the bare pathname.
+                  const target =
+                    locale === defaultLocale
+                      ? pathWithoutLocale
+                      : `/${locale}${pathWithoutLocale}`;
+                  return (
+                    <Link
+                      key={locale}
+                      href={target}
+                      prefetch={false}
+                      className={`block px-3 py-2 text-sm rounded ${locale === currentLocale ? "text-blue-700 font-medium bg-blue-50" : "text-gray-600 hover:bg-gray-50"}`}
+                      onClick={(e) => {
+                        // See switchLocale() — we navigate manually so
+                        // the cookie is updated before middleware reads it.
+                        e.preventDefault();
+                        switchLocale(locale);
+                      }}>
+                      {localeNames[locale]}
+                    </Link>
+                  );
+                })}
               </div>
               <div className="border-t border-gray-100 mt-2 pt-2">
                 {sessionEmail ? (

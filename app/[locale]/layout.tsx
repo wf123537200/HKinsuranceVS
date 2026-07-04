@@ -2,7 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { locales, type Locale } from "@/i18n/config";
+import { locales, defaultLocale, type Locale } from "@/i18n/config";
 import { localizedUrl, ogLocale, siteUrl } from "@/lib/seo";
 import Providers from "@/components/Providers";
 import Header from "@/components/Header";
@@ -20,7 +20,11 @@ const geistMono = Geist_Mono({
 });
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
+  const { locale: rawLocale } = await params;
+  const locale =
+    rawLocale && (locales as readonly string[]).includes(rawLocale)
+      ? rawLocale
+      : defaultLocale;
   const localeTyped = locale as Locale;
   const t = await getTranslations({ locale, namespace: "seo" });
   const homeTitle = t("homeTitle");
@@ -67,7 +71,16 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }>) {
-  const { locale } = await params;
+  const { locale: rawLocale } = await params;
+  // With next-intl `localePrefix: "as-needed"`, the user can hit an
+  // unprefixed URL like /companies while their cookie is set to the
+  // default locale (en). Next.js will route that to /[locale]/companies
+  // but `params.locale` is undefined. Fall back to defaultLocale so
+  // every downstream `locale as Locale` cast gets a real value.
+  const locale =
+    rawLocale && (locales as readonly string[]).includes(rawLocale)
+      ? rawLocale
+      : defaultLocale;
   setRequestLocale(locale);
   const messages = await getMessages();
 

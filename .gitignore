@@ -75,7 +75,10 @@ plan-changes.txt
 seed-displaynames.txt
 selected-with-pdf-report.txt
 dev.log
+dev-server.log
+dev-server.err
 *.log
+*.err
 # .ts/.cjs/.mjs variants of the same one-shot debug scripts (above
 # patterns only match the .txt/.log names; the actual scripts live
 # in scripts/ as different extensions).
@@ -88,13 +91,26 @@ scripts/plan-changes.*
 # One-shot pre-deploy / pre-refactor backups. These are local-only.
 .tmp-*/
 .tmp-*
+tmp-*/
 docs/
 backup-before-*/
 data.backup-*/
 *.zip
 
+# Data-pipeline reports. Single-use artifacts. Keep on disk, never push.
+reports/
+
 # Editor / IDE state (per-user, not project)
 .vscode/
+
+# One-shot diagnostic Node scripts dropped at the project root for ad-hoc
+# DB / vector inspection. Each starts with ".check" / ".diag" / ".ins"
+# / ".pdf" / ".test". Easy to recreate from history if ever needed.
+.check*.cjs
+.diag*.cjs
+.ins*.cjs
+.pdf*.cjs
+.test*.cjs
 
 # Backup / one-off edits that should never be committed
 *.bak
