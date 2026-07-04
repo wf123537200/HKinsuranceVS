@@ -299,16 +299,40 @@ jobs:
             # buffers + 4GB swap). Previously 1500M was still too high
             # because pm2 keeps the process running until it crosses the
             # threshold; the kernel kills it first.
+            # Verify the standalone layout is what server.js expects
+            # BEFORE we ask pm2 to start it. server.js reads
+            # .next/static/, public/, data/ relative to process.cwd(),
+            # so the cwd at start time MUST be /opt/apps/HKinsuranceVS.
+            echo "==> Pre-flight checks..."
+            echo "cwd: $(pwd)"
+            echo ".next/standalone/server.js exists: $(test -f .next/standalone/server.js && echo yes || echo NO)"
+            echo ".next/static exists: $(test -d .next/static && echo yes || echo NO)"
+            echo "public exists: $(test -d public && echo yes || echo NO)"
+            echo "data exists: $(test -d data && echo yes || echo NO)"
+            echo "prisma/dev.db exists: $(test -f prisma/dev.db && echo yes || echo NO)"
+
             echo "==> pm2 start standalone server.js..."
             NODE_OPTIONS="--max-old-space-size=1024" \
               PORT=3002 HOSTNAME=127.0.0.1 \
               pm2 start .next/standalone/server.js \
               --name policy-vector \
+              --cwd /opt/apps/HKinsuranceVS \
               --max-memory-restart 1300M \
               --interpreter node \
               || echo "WARNING: pm2 start returned non-zero (will diagnose below)"
 
             pm2 save --force 2>/dev/null || true
+
+            # Immediately after start, capture whether the process is
+            # actually alive. server.js can fail to import (e.g. cwd
+            # missing .next/static) and die in <1s, in which case
+            # pm2 will respawn it but we want to see that error in
+            # the deploy log.
+            sleep 2
+            echo "==> pm2 status after start (within 2s)..."
+            pm2 show policy-vector 2>&1 | head -15 || echo "(no policy-vector in pm2 yet)"
+            echo "==> pm2 logs (last 20 lines, may show import error)..."
+            pm2 logs policy-vector --lines 20 --nostream 2>&1 | tail -25 || true
 
             # Wait + verify. First hit can take 10-20s while next start
             # cold-compiles RSC payloads.
