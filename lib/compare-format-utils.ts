@@ -42,6 +42,25 @@ export type CompareFieldLike = {
   [key: string]: unknown;
 };
 
+/**
+ * Maximum characters of a text value before the compare table shows the
+ * "展开" toggle. Matches `LONG_TEXT_MAX_CHARS` in
+ * `lib/product-vector-formatters.ts`.
+ */
+const LONG_TEXT_MAX_CHARS = 60;
+
+/**
+ * Word-boundary aware truncate: cuts to `maxLen` characters, then
+ * removes trailing punctuation/whitespace, and appends "…".
+ * Returns the input unchanged when it already fits.
+ */
+function truncateAtBoundary(text: string, maxLen: number): string {
+  if (!text) return text;
+  const cleaned = text.replace(/\s+/g, " ").trim();
+  if (cleaned.length <= maxLen) return cleaned;
+  return cleaned.slice(0, maxLen).replace(/[,，。.;；:：\s]+$/, "") + "…";
+}
+
 /** True when the raw value is "empty" in a user-visible sense. */
 export function isEmptyCompareValue(value: unknown): boolean {
   if (value === null || value === undefined || value === "") return true;
@@ -109,19 +128,25 @@ export function formatCompareValue(value: unknown, field?: CompareFieldLike): st
   }
 
   if (Array.isArray(value)) {
-    return value.length ? value.join(" / ") : "暂无数据";
+    if (!value.length) return "暂无数据";
+    const joined = value.join(" / ");
+    return truncateAtBoundary(joined, LONG_TEXT_MAX_CHARS);
   }
 
   if (typeof value === "object" && value !== null) {
     try {
-      return JSON.stringify(value);
+      const json = JSON.stringify(value);
+      return truncateAtBoundary(json, LONG_TEXT_MAX_CHARS);
     } catch {
       return "暂无数据";
     }
   }
 
   if (typeof value === "boolean") return value ? "是" : "否";
-  return String(value);
+  // Plain string (text valueType or no valueType). Long strings get
+  // truncated so the table cell stays scannable; the original full text
+  // is sent through `aFull` / `bFull` and revealed by the 展开 button.
+  return truncateAtBoundary(String(value), LONG_TEXT_MAX_CHARS);
 }
 
 /**
