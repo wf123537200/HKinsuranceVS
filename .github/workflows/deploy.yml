@@ -210,35 +210,83 @@ jobs:
             #                          VPS coexist with aitools4me.
             #   .next/static/       -- client-side static assets (loaded by
             #                          server.js via process.cwd())
-            #   public/             -- static PDFs, logos
-            #   data/               -- product feature vectors + registry
-            #   package.json        -- metadata for `next start`-style tooling
-            echo "==> Removing old .next..."
-            rm -rf .next
-            echo "==> Removing old standalone..."
-            rm -rf .next-new
-            mkdir -p .next-new
+            # Extract the payload into a sibling directory, then move
+            # each top-level entry (.next/, public/, data/) into place
+            # separately. Earlier revisions `mv deploy-new .next` -- but
+            # the payload ALREADY contains a .next/ directory inside it,
+            # so that rename produced a nested `.next/.next/standalone/`
+            # path and pm2 couldn't find server.js at the expected
+            # location. Moving the inner .next/ to the outer .next/
+            # gives the right layout without nesting.
+            echo "==> Removing old deploy-new..."
+            rm -rf deploy-new
+            mkdir -p deploy-new
             echo "==> Extracting payload..."
-            # Extract the WHOLE tar into a sibling directory, then
-            # atomically rename it into place. This avoids having both
-            # the old .next/ and the new one on disk simultaneously
-            # (which would briefly need ~700MB of disk AND make the
-            # kernel page-cache grow by the same amount -- on a 1.9GiB
-            # VPS that page cache growth has been seen to OOM-kill
-            # other processes mid-extract).
-            tar xzf /tmp/policy-vector-deploy.tar.gz -C .next-new
+            tar -xzf /tmp/policy-vector-deploy.tar.gz -C deploy-new
             rm -f /tmp/policy-vector-deploy.tar.gz
 
-            # Standalone layout (from `output: "standalone"` in
-            # next.config.ts): `.next-new/` contains `.next/standalone/`,
-            # `.next/static/`, `public/`, `data/`, `package.json` -- all
-            # extracted directly under .next-new/. Rename .next-new ->
-            # .next in one atomic step.
-            echo "==> Atomic rename .next-new -> .next..."
-            mv .next-new .next
+            echo "==> Verifying extracted layout (before swapping)..."
+            if [ ! -f deploy-new/.next/standalone/server.js ]; then
+              echo "ERROR: deploy-new/.next/standalone/server.js not found."
+              echo "Top-level entries under deploy-new/:"
+              ls -la deploy-new/ | head -20
+              echo "deploy-new/.next/ contents (if any):"
+              ls -la deploy-new/.next/ 2>&1 | head -20 || echo "(no .next/ inside)"
+              exit 1
+            fi
+            if [ ! -d deploy-new/.next/static ]; then
+              echo "ERROR: deploy-new/.next/static missing."
+              ls -la deploy-new/.next/ | head -20
+              exit 1
+            fi
+
+            # Stash the current .next/ out of the way so we can mv the
+            # new one in place without a nested intermediate.
+            echo "==> Rotating old .next to .next-old..."
+            rm -rf .next-old
+            if [ -d .next ]; then mv .next .next-old; fi
+
+            # Move the inner .next/ to the outer .next/. This is the
+            # step that fixes the bug -- previously we did
+            # `mv deploy-new .next` which produced `.next/.next/`.
+            echo "==> Promoting deploy-new/.next -> .next..."
+            mv deploy-new/.next .next
+
+            # Replace public/ and data/ wholesale. They are
+            # top-level payload entries, not nested under .next/, so
+            # there is no nesting risk here.
+            if [ -d deploy-new/public ]; then
+              echo "==> Replacing public/..."
+              rm -rf public
+              mv deploy-new/public public
+            fi
+            if [ -d deploy-new/data ]; then
+              echo "==> Replacing data/..."
+              rm -rf data
+              mv deploy-new/data data
+            fi
+
+            rm -rf deploy-new
+
+            # Defensive nested-check: if the new .next/ somehow
+            # contains another .next/standalone/, the previous
+            # extraction is wrong -- bail loudly so we don't try to
+            # pm2 start a broken layout.
+            if [ -f .next/.next/standalone/server.js ]; then
+              echo "ERROR: nested .next/.next/standalone/server.js detected."
+              echo "Layout under .next/:"
+              ls -la .next/ | head -30
+              echo "Layout under .next/.next/ (if any):"
+              ls -la .next/.next/ 2>&1 | head -30
+              exit 1
+            fi
+
+            echo "==> Final verification of layout..."
+            test -f .next/standalone/server.js && echo "OK: .next/standalone/server.js" || { echo "MISSING"; exit 1; }
+            test -d .next/static && echo "OK: .next/static" || { echo "MISSING"; exit 1; }
 
             echo "==> BUILD_ID:"
-            cat .next/BUILD_ID 2>/dev/null || cat .next/server/BUILD_ID 2>/dev/null || echo "(note: BUILD_ID lookup path varies by Next.js version; non-fatal)"
+            cat .next/BUILD_ID 2>/dev/null || cat .next/server/BUILD_ID 2>/dev/null || echo "(BUILD_ID lookup path varies by Next.js version; non-fatal)"
 
             # Standalone ships prisma's generated client and engine binary
             # inside its own node_modules; no `npx prisma generate` needed
@@ -278,10 +326,8 @@ jobs:
             # buffers + 4GB swap). Previously 1500M was still too high
             # because pm2 keeps the process running until it crosses the
             # threshold; the kernel kills it first.
-            # Verify the standalone layout is what server.js expects
-            # BEFORE we ask pm2 to start it. server.js reads
-            # .next/static/, public/, data/ relative to process.cwd(),
-            # so the cwd at start time MUST be /opt/apps/HKinsuranceVS.
+            # Pre-flight just before pm2 start: verify the layout we're about
+            # to start matches the path server.js will resolve against.
             echo "==> Pre-flight checks..."
             echo "cwd: $(pwd)"
             echo ".next/standalone/server.js exists: $(test -f .next/standalone/server.js && echo yes || echo NO)"
@@ -289,34 +335,38 @@ jobs:
             echo "public exists: $(test -d public && echo yes || echo NO)"
             echo "data exists: $(test -d data && echo yes || echo NO)"
             echo "prisma/dev.db exists: $(test -f prisma/dev.db && echo yes || echo NO)"
+            # Bail loudly if the layout is wrong. Better to fail the
+            # deploy here than to start a broken process that exits
+            # silently.
+            test -f .next/standalone/server.js || { echo "FATAL: .next/standalone/server.js missing; aborting."; exit 1; }
+            test -d .next/static || { echo "FATAL: .next/static missing; aborting."; exit 1; }
 
             echo "==> pm2 start standalone server.js..."
-            # Use absolute path for the script. pm2 has historically had
-            # issues resolving a relative path even when --cwd is set
-            # (the daemon runs the script from its own cwd context, not
-            # the cwd we tell the start command). Absolute paths sidestep
-            # this entirely.
+            # Use a path RELATIVE to cwd (pm2 has historically had
+            # problems resolving relative paths even with --cwd, but
+            # .next/standalone/server.js at the working directory is
+            # what server.js itself expects and what we've now verified
+            # exists). --update-env forces pm2 to refresh env vars
+            # (PORT, HOSTNAME, NODE_OPTIONS) on every restart, not just
+            # the first one. No `|| echo WARNING` -- pm2 start MUST
+            # succeed or the deploy must fail visibly.
             NODE_OPTIONS="--max-old-space-size=1024" \
-              PORT=3002 HOSTNAME=127.0.0.1 \
-              pm2 start /opt/apps/HKinsuranceVS/.next/standalone/server.js \
+              PORT=3002 HOSTNAME=0.0.0.0 \
+              pm2 start .next/standalone/server.js \
               --name policy-vector \
-              --cwd /opt/apps/HKinsuranceVS \
-              --max-memory-restart 1300M \
-              --interpreter node \
-              || echo "WARNING: pm2 start returned non-zero (will diagnose below)"
+              --update-env
 
-            pm2 save --force 2>/dev/null || true
+            pm2 save --force
 
             # Immediately after start, capture whether the process is
-            # actually alive. server.js can fail to import (e.g. cwd
-            # missing .next/static) and die in <1s, in which case
-            # pm2 will respawn it but we want to see that error in
-            # the deploy log.
+            # actually alive. server.js can fail to import and die in
+            # <1s; pm2 will respawn it but we want to see that error
+            # in the deploy log rather than guessing.
             sleep 2
             echo "==> pm2 status after start (within 2s)..."
-            pm2 show policy-vector 2>&1 | head -15 || echo "(no policy-vector in pm2 yet)"
+            pm2 show policy-vector 2>&1 | head -15
             echo "==> pm2 logs (last 20 lines, may show import error)..."
-            pm2 logs policy-vector --lines 20 --nostream 2>&1 | tail -25 || true
+            pm2 logs policy-vector --lines 20 --nostream 2>&1 | tail -25
 
             # Wait + verify. First hit can take 10-20s while next start
             # cold-compiles RSC payloads.
