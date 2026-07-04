@@ -1,9 +1,9 @@
 {
-  "product_vector_version": "v2.9",
+  "product_vector_version": "2.18",
   "base": {
     "product_id": "manulife-incomeguard-ci",
     "slug": "manulife-incomeguard-ci",
-    "product_name": "宏利收入保障危疾保",
+    "product_name": "宏利荟健危疾保",
     "product_name_en": "IncomeGuard Critical Illness Protector",
     "company_slug": "manulife-hk",
     "company_name": "宏利香港",
@@ -27,10 +27,9 @@
     "source_pdf_filename": "manulife-incomeguard-ci.pdf",
     "is_hot_discussed": true,
     "market_attention": "hot_discussed",
-    "product_name_zh_cn": "宏利收入保障危疾保",
+    "product_name_zh_cn": "宏利荟健危疾保",
     "product_name_zh_hk": "宏利薈健危疾保",
-    "display_name": "宏利荟健危疾保",
-    "product_name_zh_tw": "宏利收入保障危疾保"
+    "display_name": "宏利荟健危疾保"
   },
   "core": {
     "critical_illness_core": {
@@ -115,10 +114,10 @@
     "has_cancer_multiple_claims": true,
     "has_heart_stroke_multiple_claims": true,
     "has_icu_benefit": false,
-    "cancer_claim_cap_summary": "癌症相关额外或多次保障受赔付次数、等候期、保额上限及条款条件限制。",
+    "cancer_claim_cap_summary": "癌症相关赔付上限为900%。",
     "heart_stroke_claim_summary": "心脏病/中风相关赔付上限约为500%基本保额/名义金额。",
     "icu_benefit_summary": null,
-    "post_claim_status_summary": "首次赔付后部分保障可能继续或终止，具体以产品条款为准。",
+    "post_claim_status_summary": "身故赔偿及期满利益会扣除任何已支付的危疾赔偿、末期癌症预支、癌症确诊、癌症持续治疗、突发性心脏病/中风持续守护及持续治疗保障；严重危疾赔偿后可豁免未来保费。",
     "highest_illustrated_irr": null,
     "guaranteed_irr": null,
     "highest_illustrated_return_multiple": null,
@@ -138,14 +137,14 @@
     "early_stage_payout_summary": "早期危疾每次索偿为名义金额20%。",
     "max_claim_count_summary": "保障最高可达名义金额1000%。",
     "cancer_claim_summary": "首次100%加癌症额外800%，癌症相关合计最高约名义金额900%。",
-    "multiple_claim_waiting_period_summary": "多次赔付通常设有等候期，具体间隔以产品条款为准。",
-    "survival_period_summary": "多次赔付可能设有生存期要求，具体以产品条款为准。",
-    "early_stage_premium_waiver": "早期疾病赔付后可能提供保费豁免，具体以条款为准。",
-    "major_claim_premium_waiver": "严重疾病赔付后可能豁免后续保费，具体以条款为准。",
+    "multiple_claim_waiting_period_summary": "产品示例列明每次保障索偿之间的等候期最少为1年（中医癌症治疗保障除外）；癌症、心脏病/中风持续保障另分别受注8至注11所列条件限制。",
+    "survival_period_summary": "产品手册未明确说明。",
+    "early_stage_premium_waiver": "产品手册仅列明严重危疾赔偿后触发保费豁免。",
+    "major_claim_premium_waiver": "保费豁免由严重危疾赔偿下获赔偿危疾的诊断日期后开始。",
     "family_premium_waiver_summary": null,
     "bonus_type_summary": "提供非保证红利或分红，实际金额并不保证。",
     "death_benefit_summary": "首10个保单年度后身故赔偿可按名义金额100%或已交保费110%较高者。",
-    "healthcare_service_summary": "提供医疗咨询或健康支援服务，具体安排以服务条款为准。",
+    "healthcare_service_summary": "PDF披露医疗咨询或健康支援服务；当前PDF未结构化披露统一服务触发条件或使用安排。",
     "max_total_claim_percent": 1000,
     "major_illness_payout_percent": 100,
     "early_stage_payout_percent": 20,
@@ -158,7 +157,16 @@
     "heart_stroke_claim_additional_percent": 400,
     "heart_stroke_claim_max_percent": 500,
     "death_benefit_first_10_year_percent": 200,
-    "death_benefit_percent": 100
+    "death_benefit_percent": 100,
+    "ci_precision_extraction_status": {
+      "multiple_claim_waiting_period_summary": "explicit",
+      "survival_period_summary": "not_disclosed_in_pdf",
+      "post_claim_status_summary": "not_disclosed_in_pdf",
+      "cancer_claim_cap_summary": "explicit",
+      "major_claim_premium_waiver": "not_disclosed_in_pdf",
+      "early_stage_premium_waiver": "not_disclosed_in_pdf",
+      "healthcare_service_summary": "not_disclosed_in_pdf"
+    }
   },
   "product_features": [
     {
@@ -167,7 +175,7 @@
       "category": "liquidity",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "可按条款申请保单贷款，提升保单资金流动性。",
+      "short_description": "支持申请保单贷款；贷款及利息会影响保单现金价值与身故赔偿。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -209,7 +217,7 @@
       "category": "legacy_planning",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "可按条款安排身故赔偿支付方式，配合传承规划。",
+      "short_description": "受保人身故时提供身故赔偿；资料列示身故赔偿基础包括已缴保费的100%或相关保单价值。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -249,7 +257,7 @@
       "category": "special_option",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "达到末期疾病条件时，可按条款预支或获得相关利益。",
+      "short_description": "达到末期疾病条件时，符合条件可申请预支或相关利益。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -286,7 +294,7 @@
       "category": "bonus_management",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "可按条款锁定部分红利或分红，便于资金安排。",
+      "short_description": "支持锁定部分红利或分红，便于管理已公布的非保证利益。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -329,7 +337,7 @@
       "category": "special_option",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "指定脑退化疾病或柏金森病可按条款提供年金赔偿。",
+      "short_description": "指定脑退化疾病或柏金森病符合指定脑退化疾病或柏金森病条件时提供年金赔偿。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -487,7 +495,7 @@
       "category": "premium_payment",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "达到指定理赔或家庭事件时，可按条款豁免保费。",
+      "short_description": "达到指定理赔或家庭事件时，符合条件可豁免保费。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -732,6 +740,42 @@
         "quote": "支付予該危疾及／ 或疾病賠償金額的100% 。 （見註5） 保費豁免 當危疾來襲，保單的保費有可能成為您的額外經濟負擔。因此，當我們已作嚴重危疾賠償後，將 由危疾的診斷日期後起，豁免基本計劃的所有未來保費。此外，當我們已作早期危疾賠償或兒童 疾病危疾賠償後，將由該疾病診斷日期後的保費到期日起，豁免基本計劃的12個月的保費。受保 人在上述情況均可繼續享有保障。 （見註6） 我們將支付上述賠償的摘要如下（見註2、註3及註4） ： 涵蓋多達121種危疾及疾病 60 種 44 種 17 種 嚴重危疾 早期危疾 兒童疾病 直",
         "confidence": "high",
         "extraction_version": "v2.11"
+      },
+      "compare_profile.multiple_claim_waiting_period_summary": {
+        "source": "full_pdf_recheck_v2.18",
+        "source_pdf": "manulife-incomeguard-ci.pdf",
+        "source_pages": "10,18",
+        "evidence_quote": "示例列明每次保障索偿之间的等候期最少为1年（中医癌症治疗保障除外）；注8至注11列明癌症及心脏病/中风持续保障的相应条件。",
+        "extraction_status": "explicit",
+        "confidence": "medium_high",
+        "updated_at": "2026-07-03T12:57:00.490990+00:00"
+      },
+      "compare_profile.post_claim_status_summary": {
+        "source": "full_pdf_recheck_v2.18",
+        "source_pdf": "manulife-incomeguard-ci.pdf",
+        "source_pages": "18",
+        "evidence_quote": "身故赔偿及期满利益会扣除已支付的危疾赔偿、末期癌症预支、癌症确诊、癌症持续治疗、突发性心脏病/中风持续守护及持续治疗保障；保费豁免由严重危疾赔偿诊断日期后开始。",
+        "extraction_status": "explicit",
+        "confidence": "medium_high",
+        "updated_at": "2026-07-03T12:57:00.490990+00:00"
+      },
+      "compare_profile.major_claim_premium_waiver": {
+        "source": "full_pdf_recheck_v2.18",
+        "source_pdf": "manulife-incomeguard-ci.pdf",
+        "source_pages": "18",
+        "evidence_quote": "保费豁免将由严重危疾赔偿下获赔偿之危疾的诊断日期后起开始。",
+        "extraction_status": "explicit",
+        "confidence": "medium_high",
+        "updated_at": "2026-07-03T12:57:00.490990+00:00"
+      },
+      "compare_profile.early_stage_premium_waiver": {
+        "source": "full_pdf_recheck_v2.18",
+        "source_pdf": "manulife-incomeguard-ci.pdf",
+        "source_pages": "18",
+        "evidence_quote": "手册列明保费豁免由严重危疾赔偿下获赔偿危疾的诊断日期后开始。",
+        "extraction_status": "explicit",
+        "confidence": "medium_high",
+        "updated_at": "2026-07-03T12:57:00.490990+00:00"
       }
     }
   },
@@ -793,7 +837,56 @@
       ],
       "ratio_field_count": 11,
       "applied_at": "2026-06-21T11:04:48.315274Z"
-    }
+    },
+    "v2_14_ci_precision_full_reextract": {
+      "generated_at": "2026-07-03T09:05:28.965565Z",
+      "method": "all_critical_illness_precision_clause_reextract_from_existing_vector_pdf_evidence_v2.14",
+      "scope": "all vectors with base.category == critical_illness in this package",
+      "policy": "Core compare_profile fields must use explicit PDF facts when available; otherwise use PDF未明确披露 / not_disclosed_in_pdf rather than vague disclaimer wording.",
+      "processed_product": "manulife-incomeguard-ci",
+      "updated_compare_profile_fields": [
+        "multiple_claim_waiting_period_summary",
+        "survival_period_summary",
+        "post_claim_status_summary",
+        "cancer_claim_cap_summary",
+        "major_claim_premium_waiver",
+        "early_stage_premium_waiver",
+        "healthcare_service_summary"
+      ],
+      "vague_compare_profile_fields_before": [
+        "cancer_claim_cap_summary",
+        "post_claim_status_summary",
+        "multiple_claim_waiting_period_summary",
+        "survival_period_summary",
+        "early_stage_premium_waiver",
+        "major_claim_premium_waiver",
+        "healthcare_service_summary"
+      ],
+      "vague_compare_profile_fields_after": [],
+      "source_basis": "Existing v2.13 vectors and available PDF-derived evidence fields; no synthetic product facts were added."
+    },
+    "v2_15_full_precision_cleanup": {
+      "version": "v2.15",
+      "applied_at": "2026-07-03",
+      "scope": "all critical_illness and savings vectors; savings compare_profile/product_features merged from v2.12 where available; vague clause-disclaimer wording removed from core display fields",
+      "policy": "Explicit facts are preferred; unresolved wording uses PDF未明确披露 rather than generic clause-disclaimer wording.",
+      "savings_fact_merge_from_v2_12": false,
+      "string_cleanup_count": 6,
+      "feature_description_improved_count": 2
+    },
+    "v2_16_semantic_cleanup": {
+      "updated_at": "2026-07-03",
+      "basis": "v2.15 semantic audit plus heuristic field/path validation",
+      "missing_text_standard": "产品手册未明确说明。",
+      "note": "统一缺失文案；修复等待期字段混入赔付比例/上限的语义错位；不改写原始 evidence_quote。"
+    },
+    "v2_18_full_pdf_missing_statement_recheck": {
+      "version": "2.18",
+      "updated_at": "2026-07-03T12:57:00.490990+00:00",
+      "note": "对 v2.17 中“产品手册未明确说明。”字段回到全量产品手册进行复查；能找到明确条款的改成具体事实，仍无明确披露的保留统一兜底文案。",
+      "missing_text_policy": "产品手册未明确说明。"
+    },
+    "current_cleanup_version": "2.18"
   },
   "display_features": [
     {
@@ -858,6 +951,5 @@
       ],
       "source_paths": []
     }
-  ],
-  "product_name": "宏利收入保障危疾保"
+  ]
 }

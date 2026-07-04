@@ -1,9 +1,9 @@
 {
-  "product_vector_version": "v2.9",
+  "product_vector_version": "2.18",
   "base": {
     "product_id": "pingan-ruyi-quanneng-2025-ci",
     "slug": "pingan-ruyi-quanneng-2025-ci",
-    "product_name": "平安附加如意全能（2025）提前给付重大疾病保险",
+    "product_name": "平安附加如意全能2025提前给付重大疾病保险",
     "product_name_en": null,
     "company_slug": "ping-an",
     "company_name": "中国平安",
@@ -25,10 +25,9 @@
     "source_pdf_filename": "pingan-ruyi-quanneng-2025-ci.pdf",
     "is_hot_discussed": true,
     "market_attention": "discussed",
-    "product_name_zh_cn": "平安附加如意全能（2025）提前给付重大疾病保险",
+    "product_name_zh_cn": "平安附加如意全能2025提前给付重大疾病保险",
     "product_name_zh_hk": "平安附加如意全能2025提前給付重大疾病保險",
-    "display_name": "平安附加如意全能2025提前给付重大疾病保险",
-    "product_name_zh_tw": "平安附加如意全能（2025）提前給付重大疾病保險"
+    "display_name": "平安附加如意全能2025提前给付重大疾病保险"
   },
   "core": {
     "critical_illness_core": {
@@ -125,7 +124,7 @@
     "early_stage_payout_summary": "轻度疾病保险金按基本保险金额20%给付，累计以五次为限。",
     "max_claim_count_summary": null,
     "cancer_claim_summary": null,
-    "multiple_claim_waiting_period_summary": "多次赔付或相关保障设等待期，具体以产品条款为准。",
+    "multiple_claim_waiting_period_summary": null,
     "survival_period_summary": null,
     "early_stage_premium_waiver": null,
     "major_claim_premium_waiver": null,
@@ -136,7 +135,10 @@
     "major_illness_payout_percent": 100,
     "moderate_illness_payout_percent": 50,
     "moderate_illness_payout_summary": "中症疾病保险金按基本保险金额50%给付，累计以五次为限。",
-    "early_stage_payout_percent": 20
+    "early_stage_payout_percent": 20,
+    "ci_precision_extraction_status": {
+      "multiple_claim_waiting_period_summary": "not_applicable"
+    }
   },
   "product_features": [
     {
@@ -145,7 +147,7 @@
       "category": "liquidity",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "可按条款申请保单贷款，提升保单资金流动性。",
+      "short_description": "支持申请保单贷款；贷款及利息会影响保单现金价值与身故赔偿。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -315,7 +317,38 @@
       ],
       "ratio_field_count": 3,
       "applied_at": "2026-06-21T11:04:47.500945Z"
-    }
+    },
+    "v2_14_ci_precision_full_reextract": {
+      "generated_at": "2026-07-03T09:05:28.940572Z",
+      "method": "all_critical_illness_precision_clause_reextract_from_existing_vector_pdf_evidence_v2.14",
+      "scope": "all vectors with base.category == critical_illness in this package",
+      "policy": "Core compare_profile fields must use explicit PDF facts when available; otherwise use PDF未明确披露 / not_disclosed_in_pdf rather than vague disclaimer wording.",
+      "processed_product": "pingan-ruyi-quanneng-2025-ci",
+      "updated_compare_profile_fields": [
+        "multiple_claim_waiting_period_summary"
+      ],
+      "vague_compare_profile_fields_before": [
+        "multiple_claim_waiting_period_summary"
+      ],
+      "vague_compare_profile_fields_after": [],
+      "source_basis": "Existing v2.13 vectors and available PDF-derived evidence fields; no synthetic product facts were added."
+    },
+    "v2_15_full_precision_cleanup": {
+      "version": "v2.15",
+      "applied_at": "2026-07-03",
+      "scope": "all critical_illness and savings vectors; savings compare_profile/product_features merged from v2.12 where available; vague clause-disclaimer wording removed from core display fields",
+      "policy": "Explicit facts are preferred; unresolved wording uses PDF未明确披露 rather than generic clause-disclaimer wording.",
+      "savings_fact_merge_from_v2_12": false,
+      "string_cleanup_count": 1,
+      "feature_description_improved_count": 1
+    },
+    "v2_16_semantic_cleanup": {
+      "updated_at": "2026-07-03",
+      "basis": "v2.15 semantic audit plus heuristic field/path validation",
+      "missing_text_standard": "产品手册未明确说明。",
+      "note": "统一缺失文案；修复等待期字段混入赔付比例/上限的语义错位；不改写原始 evidence_quote。"
+    },
+    "current_cleanup_version": "2.18"
   },
   "display_features": [
     {
@@ -338,6 +371,5 @@
         "compare_profile.has_guaranteed_cash_value"
       ]
     }
-  ],
-  "product_name": "平安附加如意全能（2025）提前给付重大疾病保险"
+  ]
 }

@@ -1,9 +1,9 @@
 {
-  "product_vector_version": "v2.9",
+  "product_vector_version": "2.18",
   "base": {
     "product_id": "pru-entrust-multi-currency",
     "slug": "pru-entrust-multi-currency",
-    "product_name": "保诚信腾多元货币计划",
+    "product_name": "保诚信守明天多元货币计划",
     "product_name_en": "Prudential Entrust Multi-Currency Plan",
     "company_slug": "prudential-hk",
     "company_name": "保诚香港",
@@ -25,16 +25,15 @@
       "5年",
       "一次性"
     ],
-    "entry_age": "投保年龄范围为1至80岁；最低年龄要求包括出生满15日；高龄受保人或需按条款委任后备受保人。",
+    "entry_age": "投保年龄范围为1至80岁；最低年龄要求包括出生满15日；高龄受保人或需委任后备受保人。",
     "payment_mode": null,
     "local_pdf_path": "/pdfs/pru-entrust-multi-currency.pdf",
     "source_pdf_filename": "pru-entrust-multi-currency.pdf",
     "is_hot_discussed": true,
     "market_attention": "hot_discussed",
-    "product_name_zh_cn": "保诚信腾多元货币计划",
+    "product_name_zh_cn": "保诚信守明天多元货币计划",
     "product_name_zh_hk": "保誠信守明天多元貨幣計劃",
-    "display_name": "保诚信守明天多元货币计划",
-    "product_name_zh_tw": "保誠信騰多元貨幣計劃"
+    "display_name": "保诚信守明天多元货币计划"
   },
   "core": {
     "critical_illness_core": null,
@@ -47,7 +46,7 @@
       ],
       "highest_illustrated_irr": null,
       "guaranteed_irr": null,
-      "highest_illustrated_return_multiple": 7,
+      "highest_illustrated_return_multiple": 7.0,
       "has_partial_withdrawal": true,
       "has_policy_loan": true
     }
@@ -98,7 +97,7 @@
       "5年",
       "一次性"
     ],
-    "entry_age_summary": "投保年龄范围为1至80岁；最低年龄要求包括出生满15日；高龄受保人或需按条款委任后备受保人。",
+    "entry_age_summary": "投保年龄。；资料列明最低可至出生满15日。",
     "currencies": [
       "USD",
       "HKD",
@@ -111,7 +110,7 @@
     "has_non_guaranteed_bonus": true,
     "bonus_types": [
       "归原红利",
-      "年度红利"
+      "终期红利"
     ],
     "has_partial_withdrawal": true,
     "has_regular_withdrawal": true,
@@ -135,42 +134,51 @@
     "icu_benefit_summary": null,
     "post_claim_status_summary": null,
     "highest_illustrated_irr": null,
-    "guaranteed_irr": 105,
-    "highest_illustrated_return_multiple": 7,
+    "guaranteed_irr": null,
+    "highest_illustrated_return_multiple": 7.0,
     "illustrated_break_even_year": null,
     "guaranteed_break_even_year": null,
     "risk_summary": [
-      "非保证利益风险",
-      "退保/流动性风险",
-      "货币风险",
-      "汇率风险",
-      "保单贷款风险",
-      "通胀风险",
-      "理赔限制"
+      "非保证红利/分红及演示回报可能高于或低于示例，甚至为零。",
+      "多货币或货币转换安排涉及汇率波动风险。"
     ],
     "bonus_type_summary": "归原红利 / 终期红利",
-    "bonus_declaration_summary": "提供归原红利 / 终期红利，金额并不保证，实际派发及公布以保险公司政策为准。",
+    "bonus_declaration_summary": "通常由第3个保单周年日起公布红利；红利/分红金额并不保证，实际以公司公布为准。",
     "has_bonus_lock_in": true,
-    "bonus_lock_in_summary": "可按条款锁定部分红利或分红，便于资金安排。",
+    "bonus_lock_in_summary": "支持锁定红利，锁定比例范围约为10%至75%。",
     "has_bonus_unlock": true,
-    "bonus_unlock_summary": "已锁定红利或分红可按条款申请解锁。",
+    "bonus_unlock_summary": "通常可在锁定后约1年起申请解锁红利/分红。",
     "has_value_protection_account": false,
     "value_protection_account_summary": null,
-    "policy_loan_summary": "可按条款申请保单贷款，贷款会影响保单价值。",
-    "partial_withdrawal_summary": "可按条款部分提取或减保，提取会影响保单价值。",
-    "regular_withdrawal_summary": "可按条款安排定期提取或入息支付。",
-    "change_insured_summary": "支持按条款更改受保人，便于长期传承安排。",
-    "second_insured_summary": "支持第二或后备受保人安排，延续保单传承功能。",
-    "second_policyholder_summary": "支持第二或后续持有人安排，便于保单管理传承。",
-    "policy_split_summary": "支持按条款分拆保单，便于家庭资产分配。",
+    "policy_loan_summary": "支持申请保单贷款，最高可达相关保单价值的80%。",
+    "partial_withdrawal_summary": "支持现金提取/部分退保，提取会影响保单价值。",
+    "regular_withdrawal_summary": "支持安排定期提取或入息支付。",
+    "change_insured_summary": "支持更改受保人。",
+    "second_insured_summary": "支持设置后备/第二受保人。",
+    "second_policyholder_summary": "支持设置后续/后备保单持有人。",
+    "policy_split_summary": "通常可由第3个保单周年日起申请保单分拆。",
     "has_death_benefit_payment_option": true,
-    "death_benefit_payment_summary": "身故赔偿可按条款选择不同支付安排。",
-    "has_beneficiary_flexible_option": false,
-    "beneficiary_option_summary": null,
+    "death_benefit_payment_summary": "身故赔偿支持选择一笔过、分期或指定安排支付。",
+    "has_beneficiary_flexible_option": true,
+    "beneficiary_option_summary": "支持设置受益人或传承支付安排。",
     "has_terminal_illness_benefit": false,
     "terminal_illness_summary": null,
     "minimum_premium_summary": null,
-    "minimum_sum_assured_summary": null
+    "minimum_sum_assured_summary": null,
+    "_v2_12_removed_fields": {
+      "guaranteed_irr_previous": 105.0
+    },
+    "policy_loan_max_percent": 80.0,
+    "accidental_death_benefit_percent": null,
+    "equity_allocation_max_percent": 70.0,
+    "investment_allocation_summary": "资料列明股票类资产配置上限约为70%，非保证回报或有波动。",
+    "bonus_lock_in_percent_range": "10%至75%",
+    "currency_switch_start_year": 3,
+    "currency_switch_summary": "通常可由第3个保单周年日起申请转换保单货币。",
+    "policy_split_start_year": 3,
+    "bonus_lock_in_start_year": 10,
+    "bonus_unlock_start_year": 1,
+    "premium_discount_summary": "达到指定名义金额可享保费折扣；门槛包括1,000,000美元、8,000,000港元、6,000,000人民幣、1,200,000澳元、600,000英鎊、1,200,000加元等。"
   },
   "product_features": [
     {
@@ -179,7 +187,7 @@
       "category": "liquidity",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "可按条款申请保单贷款，提升保单资金流动性。",
+      "short_description": "支持申请保单贷款；资料列示最高可达相关保单价值的80%，贷款及利息会影响保单现金价值与身故赔偿。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -221,7 +229,7 @@
       "category": "legacy_planning",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "可按条款安排身故赔偿支付方式，配合传承规划。",
+      "short_description": "身故赔偿支持不同支付安排，便于传承规划。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -261,7 +269,7 @@
       "category": "bonus_management",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "可按条款锁定部分红利或分红，便于资金安排。",
+      "short_description": "支持锁定红利或分红；资料列示可由第10个保单周年日起申请，锁定比例范围约为10%至75%。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -304,7 +312,7 @@
       "category": "bonus_management",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "可按条款解锁已锁定红利，把握后续增长机会。",
+      "short_description": "已锁定红利或分红支持解锁；资料列示通常可在锁定后约1年起申请。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -344,7 +352,7 @@
       "category": "legacy_planning",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "可按条款分拆保单，便于家庭传承和资产分配。",
+      "short_description": "支持分拆保单；资料列示通常可由第3个保单周年日起申请。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -384,7 +392,7 @@
       "category": "legacy_planning",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "可按条款更改受保人，延续保单规划。",
+      "short_description": "支持更改受保人，便于延续保单规划。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -424,7 +432,7 @@
       "category": "legacy_planning",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "可按条款设置第二或后备受保人，增强传承弹性。",
+      "short_description": "支持第二或后备受保人安排，便于延续保单规划。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -466,7 +474,7 @@
       "category": "legacy_planning",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "可按条款设置第二或后续持有人，便利保单管理传承。",
+      "short_description": "支持第二或后续持有人安排，便于保单管理传承。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -506,7 +514,7 @@
       "category": "special_option",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "出现指定无行为能力或健康障碍时，可按条款启动备用安排。",
+      "short_description": "出现指定无行为能力或健康障碍时，符合指定无行为能力或健康障碍条件时启动备用安排。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -546,7 +554,7 @@
       "category": "special_option",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "达成指定学业成就时，可按条款获得奖励或相关权益。",
+      "short_description": "达成指定学业成就时，符合条件时可获得奖励或相关权益。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -588,7 +596,7 @@
       "category": "currency",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "可按条款转换保单货币，配合跨币种资产安排。",
+      "short_description": "支持转换保单货币；资料列示通常可由第3个保单周年日起申请。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -628,7 +636,7 @@
       "category": "life_protection",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "受保人身故时，可按条款向受益人支付身故赔偿。",
+      "short_description": "受保人身故时，符合条件向受益人支付身故赔偿。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -784,7 +792,23 @@
       "hard_truncation_candidates_after": 2,
       "fields_repaired": 12,
       "age_refine_note": "v2.9 age fields refined from the best PDF full-text window near 投保年齡/投保范围, avoiding unrelated owner/beneficiary age clauses and hard character truncation."
-    }
+    },
+    "v2_15_full_precision_cleanup": {
+      "version": "v2.15",
+      "applied_at": "2026-07-03",
+      "scope": "all critical_illness and savings vectors; savings compare_profile/product_features merged from v2.12 where available; vague clause-disclaimer wording removed from core display fields",
+      "policy": "Explicit facts are preferred; unresolved wording uses PDF未明确披露 rather than generic clause-disclaimer wording.",
+      "savings_fact_merge_from_v2_12": true,
+      "string_cleanup_count": 22,
+      "feature_description_improved_count": 9
+    },
+    "v2_16_semantic_cleanup": {
+      "updated_at": "2026-07-03",
+      "basis": "v2.15 semantic audit plus heuristic field/path validation",
+      "missing_text_standard": "产品手册未明确说明。",
+      "note": "统一缺失文案；修复等待期字段混入赔付比例/上限的语义错位；不改写原始 evidence_quote。"
+    },
+    "current_cleanup_version": "2.18"
   },
   "display_features": [
     {
@@ -845,6 +869,5 @@
       ],
       "source_paths": []
     }
-  ],
-  "product_name": "保诚信腾多元货币计划"
+  ]
 }

@@ -1,9 +1,9 @@
 {
-  "product_vector_version": "v2.9",
+  "product_vector_version": "2.18",
   "base": {
     "product_id": "ping-an-shengshi-jinyue-premium",
     "slug": "ping-an-shengshi-jinyue-premium",
-    "product_name": "平安盛世金越（尊享版）终身寿险",
+    "product_name": "平安盛世金越尊享版终身寿险",
     "product_name_en": null,
     "company_slug": "ping-an",
     "company_name": "中国平安",
@@ -26,10 +26,9 @@
     "source_pdf_filename": "ping-an-shengshi-jinyue-premium.pdf",
     "is_hot_discussed": false,
     "market_attention": "unknown",
-    "product_name_zh_cn": "平安盛世金越（尊享版）终身寿险",
+    "product_name_zh_cn": "平安盛世金越尊享版终身寿险",
     "product_name_zh_hk": "平安盛世金越尊享版終身壽險",
-    "display_name": "平安盛世金越尊享版终身寿险",
-    "product_name_zh_tw": "平安盛世金越（尊享版）終身壽險"
+    "display_name": "平安盛世金越尊享版终身寿险"
   },
   "core": {
     "critical_illness_core": null,
@@ -129,7 +128,7 @@
     "bonus_unlock_summary": null,
     "has_value_protection_account": false,
     "value_protection_account_summary": null,
-    "policy_loan_summary": "可按条款申请保单贷款，贷款会影响保单价值。",
+    "policy_loan_summary": "支持申请保单贷款；贷款及利息会影响保单现金价值与身故赔偿。",
     "partial_withdrawal_summary": null,
     "regular_withdrawal_summary": null,
     "change_insured_summary": null,
@@ -138,12 +137,13 @@
     "policy_split_summary": null,
     "has_death_benefit_payment_option": false,
     "death_benefit_payment_summary": null,
-    "has_beneficiary_flexible_option": false,
-    "beneficiary_option_summary": null,
+    "has_beneficiary_flexible_option": true,
+    "beneficiary_option_summary": "支持设置受益人或传承支付安排。",
     "has_terminal_illness_benefit": false,
     "terminal_illness_summary": null,
     "minimum_premium_summary": null,
-    "minimum_sum_assured_summary": null
+    "minimum_sum_assured_summary": null,
+    "accidental_death_benefit_percent": null
   },
   "product_features": [
     {
@@ -152,7 +152,7 @@
       "category": "liquidity",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "可按条款申请保单贷款，提升保单资金流动性。",
+      "short_description": "支持申请保单贷款；贷款及利息会影响保单现金价值与身故赔偿。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -262,7 +262,23 @@
       "hard_truncation_candidates_after": 0,
       "fields_repaired": 2,
       "age_refine_note": "v2.9 age fields refined from the best PDF full-text window near 投保年齡/投保范围, avoiding unrelated owner/beneficiary age clauses and hard character truncation."
-    }
+    },
+    "v2_15_full_precision_cleanup": {
+      "version": "v2.15",
+      "applied_at": "2026-07-03",
+      "scope": "all critical_illness and savings vectors; savings compare_profile/product_features merged from v2.12 where available; vague clause-disclaimer wording removed from core display fields",
+      "policy": "Explicit facts are preferred; unresolved wording uses PDF未明确披露 rather than generic clause-disclaimer wording.",
+      "savings_fact_merge_from_v2_12": true,
+      "string_cleanup_count": 3,
+      "feature_description_improved_count": 1
+    },
+    "v2_16_semantic_cleanup": {
+      "updated_at": "2026-07-03",
+      "basis": "v2.15 semantic audit plus heuristic field/path validation",
+      "missing_text_standard": "产品手册未明确说明。",
+      "note": "统一缺失文案；修复等待期字段混入赔付比例/上限的语义错位；不改写原始 evidence_quote。"
+    },
+    "current_cleanup_version": "2.18"
   },
   "display_features": [
     {
@@ -298,6 +314,5 @@
         "compare_profile.policy_term"
       ]
     }
-  ],
-  "product_name": "平安盛世金越（尊享版）终身寿险"
+  ]
 }

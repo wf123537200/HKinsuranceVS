@@ -1,9 +1,9 @@
 {
-  "product_vector_version": "v2.9",
+  "product_vector_version": "2.18",
   "base": {
     "product_id": "prudential-enlit-savings",
     "slug": "prudential-enlit-savings",
-    "product_name": "保诚智醒储蓄保险计划",
+    "product_name": "保诚隽享储蓄计划",
     "product_name_en": "Prudential Enlight Savings",
     "company_slug": "prudential-hk",
     "company_name": "保诚香港",
@@ -25,10 +25,9 @@
     "source_pdf_filename": "prudential-enlit-savings.pdf",
     "is_hot_discussed": false,
     "market_attention": "unknown",
-    "product_name_zh_cn": "保诚智醒储蓄保险计划",
+    "product_name_zh_cn": "保诚隽享储蓄计划",
     "product_name_zh_hk": "保誠雋享儲蓄計劃",
-    "display_name": "保诚隽享储蓄计划",
-    "product_name_zh_tw": "保誠智醒儲蓄保險計劃"
+    "display_name": "保诚隽享储蓄计划"
   },
   "core": {
     "critical_illness_core": null,
@@ -114,7 +113,7 @@
     "icu_benefit_summary": null,
     "post_claim_status_summary": null,
     "highest_illustrated_irr": null,
-    "guaranteed_irr": 105,
+    "guaranteed_irr": null,
     "highest_illustrated_return_multiple": null,
     "illustrated_break_even_year": null,
     "guaranteed_break_even_year": null,
@@ -127,9 +126,9 @@
     "bonus_unlock_summary": null,
     "has_value_protection_account": false,
     "value_protection_account_summary": null,
-    "policy_loan_summary": "可按条款申请保单贷款，贷款会影响保单价值。",
-    "partial_withdrawal_summary": "可按条款部分提取或减保，提取会影响保单价值。",
-    "regular_withdrawal_summary": "可按条款安排定期提取或入息支付。",
+    "policy_loan_summary": "支持申请保单贷款；贷款及利息会影响保单现金价值与身故赔偿。",
+    "partial_withdrawal_summary": "支持现金提取或部分退保；提取会影响保单价值。",
+    "regular_withdrawal_summary": "支持安排定期提取或入息支付。",
     "change_insured_summary": null,
     "second_insured_summary": null,
     "second_policyholder_summary": null,
@@ -139,9 +138,13 @@
     "has_beneficiary_flexible_option": false,
     "beneficiary_option_summary": null,
     "has_terminal_illness_benefit": true,
-    "terminal_illness_summary": "达到末期疾病定义时，可按条款申请相关利益。",
+    "terminal_illness_summary": "达到末期疾病定义时，符合条件可申请相关利益。",
     "minimum_premium_summary": null,
-    "minimum_sum_assured_summary": null
+    "minimum_sum_assured_summary": "olicy after withdrawal is reduce the future value of your policy. less than the minimum amount we set, in the case of – If you keep the same notional amount, we will withdrawal by reducing the notional amount; or withdraw from the balance of the – you transfer the policy ownership (for the case of accumulation account of the",
+    "_v2_12_removed_fields": {
+      "guaranteed_irr_previous": 105.0
+    },
+    "accidental_death_benefit_percent": null
   },
   "product_features": [
     {
@@ -150,7 +153,7 @@
       "category": "liquidity",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "可按条款申请保单贷款，提升保单资金流动性。",
+      "short_description": "支持申请保单贷款；贷款及利息会影响保单现金价值与身故赔偿。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -192,7 +195,7 @@
       "category": "special_option",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "达到末期疾病条件时，可按条款预支或获得相关利益。",
+      "short_description": "达到末期疾病条件时，符合条件可申请预支或相关利益。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -268,7 +271,7 @@
       "category": "special_option",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "出现指定无行为能力或健康障碍时，可按条款启动备用安排。",
+      "short_description": "出现指定无行为能力或健康障碍时，符合指定无行为能力或健康障碍条件时启动备用安排。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -311,7 +314,7 @@
       "category": "special_option",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "达成指定学业成就时，可按条款获得奖励或相关权益。",
+      "short_description": "达成指定学业成就时，符合条件时可获得奖励或相关权益。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -353,7 +356,7 @@
       "category": "premium_payment",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "达到指定理赔或家庭事件时，可按条款豁免保费。",
+      "short_description": "达到指定理赔或家庭事件时，符合条件可豁免保费。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -497,7 +500,23 @@
       "hard_truncation_candidates_after": 0,
       "fields_repaired": 8,
       "age_refine_note": "v2.9 age fields refined from the best PDF full-text window near 投保年齡/投保范围, avoiding unrelated owner/beneficiary age clauses and hard character truncation."
-    }
+    },
+    "v2_15_full_precision_cleanup": {
+      "version": "v2.15",
+      "applied_at": "2026-07-03",
+      "scope": "all critical_illness and savings vectors; savings compare_profile/product_features merged from v2.12 where available; vague clause-disclaimer wording removed from core display fields",
+      "policy": "Explicit facts are preferred; unresolved wording uses PDF未明确披露 rather than generic clause-disclaimer wording.",
+      "savings_fact_merge_from_v2_12": true,
+      "string_cleanup_count": 9,
+      "feature_description_improved_count": 1
+    },
+    "v2_16_semantic_cleanup": {
+      "updated_at": "2026-07-03",
+      "basis": "v2.15 semantic audit plus heuristic field/path validation",
+      "missing_text_standard": "产品手册未明确说明。",
+      "note": "统一缺失文案；修复等待期字段混入赔付比例/上限的语义错位；不改写原始 evidence_quote。"
+    },
+    "current_cleanup_version": "2.18"
   },
   "display_features": [
     {
@@ -545,6 +564,5 @@
       ],
       "source_paths": []
     }
-  ],
-  "product_name": "保诚智醒储蓄保险计划"
+  ]
 }

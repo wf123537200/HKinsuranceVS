@@ -1,9 +1,9 @@
 {
-  "product_vector_version": "v2.9",
+  "product_vector_version": "2.18",
   "base": {
     "product_id": "axa-wealth-advance-savings-ii-ultimate",
     "slug": "axa-wealth-advance-savings-ii-ultimate",
-    "product_name": "安进储蓄系列 II - 跃进（至尊）",
+    "product_name": "安盛安进储蓄系列 II - 跃进",
     "product_name_en": "WealthAhead II Savings Insurance - Supreme 2 Pay",
     "company_slug": "axa-hk",
     "company_name": "安盛香港",
@@ -34,10 +34,9 @@
     "source_pdf_filename": "axa-wealth-advance-savings-ii-ultimate.pdf",
     "is_hot_discussed": true,
     "market_attention": "hot_discussed",
-    "product_name_zh_cn": "安进储蓄系列 II - 跃进（至尊）",
+    "product_name_zh_cn": "安盛安进储蓄系列 II - 跃进",
     "product_name_zh_hk": "安盛安進儲蓄系列 II - 躍進",
-    "display_name": "安盛安进储蓄系列 II - 跃进",
-    "product_name_zh_tw": "安進儲蓄系列 II - 躍進（至尊）"
+    "display_name": "安盛安进储蓄系列 II - 跃进"
   },
   "core": {
     "critical_illness_core": null,
@@ -91,26 +90,27 @@
     "priority": 1,
     "policy_term": "终身",
     "premium_terms": [
+      "一次性",
       "2年",
-      "3年",
-      "1年"
+      "30年"
     ],
     "entry_age_summary": "投保年龄按计划版本、缴费期及条款规定而定。",
     "currencies": [
       "USD",
       "HKD",
-      "RMB",
+      "CNY",
       "AUD",
       "CAD",
       "GBP",
       "EUR",
       "SGD",
-      "MOP",
-      "CNY"
+      "MOP"
     ],
     "has_guaranteed_cash_value": true,
     "has_non_guaranteed_bonus": true,
-    "bonus_types": null,
+    "bonus_types": [
+      "终期红利"
+    ],
     "has_partial_withdrawal": true,
     "has_regular_withdrawal": true,
     "has_policy_loan": true,
@@ -133,42 +133,43 @@
     "icu_benefit_summary": null,
     "post_claim_status_summary": null,
     "highest_illustrated_irr": null,
-    "guaranteed_irr": 10,
+    "guaranteed_irr": null,
     "highest_illustrated_return_multiple": null,
     "illustrated_break_even_year": null,
     "guaranteed_break_even_year": null,
     "risk_summary": [
-      "非保证利益风险",
-      "退保/流动性风险",
-      "货币风险",
-      "汇率风险",
-      "保单贷款风险",
-      "通胀风险",
-      "理赔限制"
+      "非保证红利/分红及演示回报可能高于或低于示例，甚至为零。",
+      "多货币或货币转换安排涉及汇率波动风险。"
     ],
     "bonus_type_summary": "终期红利",
-    "bonus_declaration_summary": "提供终期红利，金额并不保证，实际派发及公布以保险公司政策为准。",
+    "bonus_declaration_summary": "通常每年公布红利/分红；金额并不保证，实际以公司公布为准。",
     "has_bonus_lock_in": false,
     "bonus_lock_in_summary": null,
     "has_bonus_unlock": false,
     "bonus_unlock_summary": null,
     "has_value_protection_account": false,
     "value_protection_account_summary": null,
-    "policy_loan_summary": "可按条款申请保单贷款，贷款会影响保单价值。",
-    "partial_withdrawal_summary": "可按条款部分提取或减保，提取会影响保单价值。",
-    "regular_withdrawal_summary": "可按条款安排定期提取或入息支付。",
+    "policy_loan_summary": "支持申请保单贷款；贷款及利息会影响保单现金价值与身故赔偿。",
+    "partial_withdrawal_summary": "支持现金提取/部分退保，提取会影响保单价值。",
+    "regular_withdrawal_summary": "支持安排定期提取或入息支付。",
     "change_insured_summary": null,
     "second_insured_summary": null,
     "second_policyholder_summary": null,
-    "policy_split_summary": "支持按条款分拆保单，便于家庭资产分配。",
+    "policy_split_summary": "支持分拆保单，便于家庭资产分配。",
     "has_death_benefit_payment_option": false,
     "death_benefit_payment_summary": null,
-    "has_beneficiary_flexible_option": false,
-    "beneficiary_option_summary": null,
+    "has_beneficiary_flexible_option": true,
+    "beneficiary_option_summary": "支持设置受益人或传承支付安排。",
     "has_terminal_illness_benefit": false,
     "terminal_illness_summary": null,
     "minimum_premium_summary": null,
-    "minimum_sum_assured_summary": "最低保额/名义金额按货币及缴费期而定，资料中列示包括24,000、24,000澳元、32,000新加坡元、160,000港元等。"
+    "minimum_sum_assured_summary": "最低名义金额/基本金额按币种列示，包括130,000人民幣、20,000美元、20,000歐元、24,000澳元、32,000新加坡元、160,000港元、160,000澳門幣、13,000人民幣、2,000美元、1,200英鎊、2,000歐元、2,400澳元。",
+    "_v2_12_removed_fields": {
+      "guaranteed_irr_previous": 10.0
+    },
+    "death_benefit_percent": 130.0,
+    "death_benefit_summary": "身故赔偿通常以保证现金价值/红利价值或已缴保费的130%等较高者为基础。",
+    "accidental_death_benefit_percent": null
   },
   "product_features": [
     {
@@ -177,7 +178,7 @@
       "category": "liquidity",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "可按条款申请保单贷款，提升保单资金流动性。",
+      "short_description": "支持申请保单贷款；贷款及利息会影响保单现金价值与身故赔偿。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -219,7 +220,7 @@
       "category": "legacy_planning",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "可按条款安排身故赔偿支付方式，配合传承规划。",
+      "short_description": "受保人身故时提供身故赔偿；资料列示身故赔偿基础包括已缴保费的130%或相关保单价值。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -259,7 +260,7 @@
       "category": "bonus_management",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "可按条款锁定部分红利或分红，便于资金安排。",
+      "short_description": "支持锁定部分红利或分红，便于管理已公布的非保证利益。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -302,7 +303,7 @@
       "category": "legacy_planning",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "可按条款分拆保单，便于家庭传承和资产分配。",
+      "short_description": "支持分拆保单，便于家庭资产分配。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -342,7 +343,7 @@
       "category": "special_option",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "出现指定无行为能力或健康障碍时，可按条款启动备用安排。",
+      "short_description": "出现指定无行为能力或健康障碍时，符合指定无行为能力或健康障碍条件时启动备用安排。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -418,7 +419,7 @@
       "category": "currency",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "可按条款转换保单货币，配合跨币种资产安排。",
+      "short_description": "支持转换保单货币，但会涉及汇率及货币风险。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -562,7 +563,23 @@
       "hard_truncation_candidates_after": 0,
       "fields_repaired": 10,
       "age_refine_note": "v2.9 age fields refined from the best PDF full-text window near 投保年齡/投保范围, avoiding unrelated owner/beneficiary age clauses and hard character truncation."
-    }
+    },
+    "v2_15_full_precision_cleanup": {
+      "version": "v2.15",
+      "applied_at": "2026-07-03",
+      "scope": "all critical_illness and savings vectors; savings compare_profile/product_features merged from v2.12 where available; vague clause-disclaimer wording removed from core display fields",
+      "policy": "Explicit facts are preferred; unresolved wording uses PDF未明确披露 rather than generic clause-disclaimer wording.",
+      "savings_fact_merge_from_v2_12": true,
+      "string_cleanup_count": 11,
+      "feature_description_improved_count": 4
+    },
+    "v2_16_semantic_cleanup": {
+      "updated_at": "2026-07-03",
+      "basis": "v2.15 semantic audit plus heuristic field/path validation",
+      "missing_text_standard": "产品手册未明确说明。",
+      "note": "统一缺失文案；修复等待期字段混入赔付比例/上限的语义错位；不改写原始 evidence_quote。"
+    },
+    "current_cleanup_version": "2.18"
   },
   "display_features": [
     {
@@ -627,6 +644,5 @@
         "compare_profile.supports_second_insured"
       ]
     }
-  ],
-  "product_name": "安进储蓄系列 II - 跃进（至尊）"
+  ]
 }

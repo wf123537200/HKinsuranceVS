@@ -1,9 +1,9 @@
 {
-  "product_vector_version": "v2.9",
+  "product_vector_version": "2.18",
   "base": {
     "product_id": "fwd-crisis-one-master",
     "slug": "fwd-crisis-one-master",
-    "product_name": "富卫危疾无双（尊享版）",
+    "product_name": "富卫危疾一保",
     "product_name_en": "FWD Crisis One Master",
     "company_slug": "fwd-hk",
     "company_name": "富卫香港",
@@ -29,10 +29,9 @@
     "source_pdf_filename": "fwd-crisis-one-master.pdf",
     "is_hot_discussed": false,
     "market_attention": "unknown",
-    "product_name_zh_cn": "富卫危疾无双（尊享版）",
+    "product_name_zh_cn": "富卫危疾一保",
     "product_name_zh_hk": "富衛危疾一保",
-    "display_name": "富卫危疾一保",
-    "product_name_zh_tw": "富衛危疾無雙（尊享版）"
+    "display_name": "富卫危疾一保"
   },
   "core": {
     "critical_illness_core": {
@@ -125,10 +124,10 @@
     "has_cancer_multiple_claims": true,
     "has_heart_stroke_multiple_claims": true,
     "has_icu_benefit": true,
-    "cancer_claim_cap_summary": "癌症相关总赔付上限约为基本/原有保额650%，具体项目及等候期以条款为准。",
+    "cancer_claim_cap_summary": "癌症相关赔付上限为650%。",
     "heart_stroke_claim_summary": "心脏病/中风相关赔付上限约为650%基本保额/名义金额。",
-    "icu_benefit_summary": "入住深切治疗或ICU达到指定条件时，可按条款获得额外赔偿。",
-    "post_claim_status_summary": "首次赔付后部分保障可能继续或终止，具体以产品条款为准。",
+    "icu_benefit_summary": "入住深切治疗或ICU达到指定条件时，符合条件时可获得额外赔偿。",
+    "post_claim_status_summary": "多重危疾权益赔付会扣减现有投保额至最低为零，并相应调低保证现金价值、未来保费及分红；当赔付达到总和限额时，基本保单余额保费获豁免，所有附约终止；当多重危疾权益赔付达到原有投保额1300%后，不再支付多重危疾权益。",
     "highest_illustrated_irr": null,
     "guaranteed_irr": null,
     "highest_illustrated_return_multiple": null,
@@ -145,11 +144,11 @@
     ],
     "has_death_benefit": null,
     "major_illness_payout_summary": "危疾权益通常按现有/原有投保额100%赔付。",
-    "early_stage_payout_summary": "早期或轻症疾病按条款以保额一定比例赔付，具体疾病及比例以条款为准。",
+    "early_stage_payout_summary": "严重疾病权益：指定精神疾病按原有投保额10%赔付，其他严重疾病一般按25%赔付；儿童疾病按8%或25%赔付，受每宗索偿上限限制。",
     "max_claim_count_summary": "最高合资格保障金额包括多重危疾权益1300%。",
     "cancer_claim_summary": "癌症组别最高保障金额为原有投保额650%。",
-    "multiple_claim_waiting_period_summary": "多次赔付通常设有等候期，具体间隔以产品条款为准。",
-    "survival_period_summary": "多次赔付可能设有生存期要求，具体以产品条款为准。",
+    "multiple_claim_waiting_period_summary": "多重危疾权益：一般两次严重疾病索偿之间不设等候期；但两次主要严重疾病索偿之间通常须相隔最少1年；两次癌症索偿中，持续癌症或复发癌症须相隔最少3年，新的独立癌症通常须相隔最少1年；末期疾病、完全及永久伤残或中度完全及永久伤残后的后续索偿须相隔最少3年。",
+    "survival_period_summary": "如在多重危疾权益已达总和限额后才作出危疾权益赔偿，受保人须自首次确认诊断日期起存活最少14天；持续癌症除外。",
     "early_stage_premium_waiver": null,
     "major_claim_premium_waiver": null,
     "family_premium_waiver_summary": null,
@@ -168,7 +167,14 @@
     "major_illness_payout_percent": 100,
     "child_illness_payout_percent": 100,
     "child_illness_payout_summary": "儿童疾病赔付比例约为100%基本保额/名义金额。",
-    "death_benefit_percent": 100
+    "death_benefit_percent": 100,
+    "ci_precision_extraction_status": {
+      "multiple_claim_waiting_period_summary": "not_disclosed_in_pdf",
+      "survival_period_summary": "not_disclosed_in_pdf",
+      "post_claim_status_summary": "not_disclosed_in_pdf",
+      "cancer_claim_cap_summary": "explicit",
+      "early_stage_payout_summary": "not_disclosed_in_pdf"
+    }
   },
   "product_features": [
     {
@@ -177,7 +183,7 @@
       "category": "liquidity",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "可按条款申请保单贷款，提升保单资金流动性。",
+      "short_description": "支持申请保单贷款；贷款及利息会影响保单现金价值与身故赔偿。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -219,7 +225,7 @@
       "category": "legacy_planning",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "可按条款安排身故赔偿支付方式，配合传承规划。",
+      "short_description": "受保人身故时提供身故赔偿；资料列示身故赔偿基础包括已缴保费的100%或相关保单价值。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -259,7 +265,7 @@
       "category": "special_option",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "达到末期疾病条件时，可按条款预支或获得相关利益。",
+      "short_description": "达到末期疾病条件时，符合条件可申请预支或相关利益。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -335,7 +341,7 @@
       "category": "special_option",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "指定脑退化疾病或柏金森病可按条款提供年金赔偿。",
+      "short_description": "指定脑退化疾病或柏金森病符合指定脑退化疾病或柏金森病条件时提供年金赔偿。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -461,7 +467,7 @@
       "category": "premium_payment",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "达到指定理赔或家庭事件时，可按条款豁免保费。",
+      "short_description": "达到指定理赔或家庭事件时，符合条件可豁免保费。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -717,6 +723,42 @@
         "quote": "益 2,5 （每名被保人於所有危疾緻尚保系列保單的每宗索償之上限為500,000港元 / 62,500美元） 指定癌症之額外權益 8 如被保人患上肺癌、結腸癌、乳癌或前列腺癌，將可額外獲得原有投保額的25% 延伸重大醫療護理權益 4 額外原有投保額的50% 25 26 計劃保障範圍 計劃保障範圍 特色簡介 特色簡介 (a) 若已支付癌症之主要危疾之危疾權益及被保人持續地依照專科醫生建議就同一 退保 / 期滿權益 保證現金價值 + 積存週年紅利及利息（如有）16 + 特別紅利（如有）17 癌症接受醫療需要的積極治療或",
         "confidence": "medium",
         "extraction_version": "v2.11"
+      },
+      "compare_profile.post_claim_status_summary": {
+        "source": "full_pdf_recheck_v2.18",
+        "source_pdf": "fwd-crisis-one-master.pdf",
+        "source_pages": "14-17",
+        "evidence_quote": "现有投保额将扣减已支付或应支付的多重危疾权益，最低为零；保证现金价值、未来保费、周年红利及特别红利会相应调整；如达到总和限额，基本保单余额保费获豁免，附约终止。",
+        "extraction_status": "explicit",
+        "confidence": "medium_high",
+        "updated_at": "2026-07-03T12:57:00.490990+00:00"
+      },
+      "compare_profile.early_stage_payout_summary": {
+        "source": "full_pdf_recheck_v2.18",
+        "source_pdf": "fwd-crisis-one-master.pdf",
+        "source_pages": "14",
+        "evidence_quote": "严重疾病权益列明指定精神疾病为10%，其他严重疾病为25%；儿童疾病权益为8%或25%，并受每宗索偿限额限制。",
+        "extraction_status": "explicit",
+        "confidence": "medium_high",
+        "updated_at": "2026-07-03T12:57:00.490990+00:00"
+      },
+      "compare_profile.multiple_claim_waiting_period_summary": {
+        "source": "full_pdf_recheck_v2.18",
+        "source_pdf": "fwd-crisis-one-master.pdf",
+        "source_pages": "16",
+        "evidence_quote": "严重疾病权益索偿之间一般没有等候期；但两次主要严重疾病索偿须相隔最少1年；持续癌症或复发癌症须相隔最少3年；新的独立癌症须相隔最少1年；末期疾病及伤残相关索偿后须相隔最少3年。",
+        "extraction_status": "explicit",
+        "confidence": "medium_high",
+        "updated_at": "2026-07-03T12:57:00.490990+00:00"
+      },
+      "compare_profile.survival_period_summary": {
+        "source": "full_pdf_recheck_v2.18",
+        "source_pdf": "fwd-crisis-one-master.pdf",
+        "source_pages": "16",
+        "evidence_quote": "若在多重危疾权益已达总和限额后才作出危疾权益赔偿，受保人须自首次确认诊断日期起计存活最少14天；持续癌症除外。",
+        "extraction_status": "explicit",
+        "confidence": "medium_high",
+        "updated_at": "2026-07-03T12:57:00.490990+00:00"
       }
     }
   },
@@ -781,7 +823,52 @@
       ],
       "ratio_field_count": 9,
       "applied_at": "2026-06-21T11:04:47.020903Z"
-    }
+    },
+    "v2_14_ci_precision_full_reextract": {
+      "generated_at": "2026-07-03T09:05:28.923708Z",
+      "method": "all_critical_illness_precision_clause_reextract_from_existing_vector_pdf_evidence_v2.14",
+      "scope": "all vectors with base.category == critical_illness in this package",
+      "policy": "Core compare_profile fields must use explicit PDF facts when available; otherwise use PDF未明确披露 / not_disclosed_in_pdf rather than vague disclaimer wording.",
+      "processed_product": "fwd-crisis-one-master",
+      "updated_compare_profile_fields": [
+        "multiple_claim_waiting_period_summary",
+        "survival_period_summary",
+        "post_claim_status_summary",
+        "cancer_claim_cap_summary",
+        "early_stage_payout_summary"
+      ],
+      "vague_compare_profile_fields_before": [
+        "cancer_claim_cap_summary",
+        "post_claim_status_summary",
+        "early_stage_payout_summary",
+        "multiple_claim_waiting_period_summary",
+        "survival_period_summary"
+      ],
+      "vague_compare_profile_fields_after": [],
+      "source_basis": "Existing v2.13 vectors and available PDF-derived evidence fields; no synthetic product facts were added."
+    },
+    "v2_15_full_precision_cleanup": {
+      "version": "v2.15",
+      "applied_at": "2026-07-03",
+      "scope": "all critical_illness and savings vectors; savings compare_profile/product_features merged from v2.12 where available; vague clause-disclaimer wording removed from core display fields",
+      "policy": "Explicit facts are preferred; unresolved wording uses PDF未明确披露 rather than generic clause-disclaimer wording.",
+      "savings_fact_merge_from_v2_12": false,
+      "string_cleanup_count": 6,
+      "feature_description_improved_count": 2
+    },
+    "v2_16_semantic_cleanup": {
+      "updated_at": "2026-07-03",
+      "basis": "v2.15 semantic audit plus heuristic field/path validation",
+      "missing_text_standard": "产品手册未明确说明。",
+      "note": "统一缺失文案；修复等待期字段混入赔付比例/上限的语义错位；不改写原始 evidence_quote。"
+    },
+    "v2_18_full_pdf_missing_statement_recheck": {
+      "version": "2.18",
+      "updated_at": "2026-07-03T12:57:00.490990+00:00",
+      "note": "对 v2.17 中“产品手册未明确说明。”字段回到全量产品手册进行复查；能找到明确条款的改成具体事实，仍无明确披露的保留统一兜底文案。",
+      "missing_text_policy": "产品手册未明确说明。"
+    },
+    "current_cleanup_version": "2.18"
   },
   "display_features": [
     {
@@ -848,6 +935,5 @@
       ],
       "source_paths": []
     }
-  ],
-  "product_name": "富卫危疾无双（尊享版）"
+  ]
 }

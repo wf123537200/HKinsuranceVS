@@ -1,9 +1,9 @@
 {
-  "product_vector_version": "v2.9",
+  "product_vector_version": "2.18",
   "base": {
     "product_id": "fwd-easycover-ci",
     "slug": "fwd-easycover-ci",
-    "product_name": "富卫简易危疾保",
+    "product_name": "富卫简易保危疾计划",
     "product_name_en": "FWD EasyCover Critical Illness Plan",
     "company_slug": "fwd-hk",
     "company_name": "富卫香港",
@@ -27,10 +27,9 @@
     "source_pdf_filename": "fwd-easycover-ci.pdf",
     "is_hot_discussed": false,
     "market_attention": "unknown",
-    "product_name_zh_cn": "富卫简易危疾保",
+    "product_name_zh_cn": "富卫简易保危疾计划",
     "product_name_zh_hk": "富衛簡易保危疾計劃",
-    "display_name": "富卫简易保危疾计划",
-    "product_name_zh_tw": "富衛簡易危疾保"
+    "display_name": "富卫简易保危疾计划"
   },
   "core": {
     "critical_illness_core": {
@@ -115,10 +114,10 @@
     "has_cancer_multiple_claims": true,
     "has_heart_stroke_multiple_claims": true,
     "has_icu_benefit": true,
-    "cancer_claim_cap_summary": "癌症相关额外或多次保障受赔付次数、等候期、保额上限及条款条件限制。",
+    "cancer_claim_cap_summary": "癌症属于危疾权益下的3大疾病；基本危疾权益为现有投保额100%。如附加3大疾病额外50%保障权益，癌症可额外获原有投保额50%；如附加3大疾病额外医疗保障，符合条件后可实报实销合资格费用，最高为原有投保额100%或1,000,000港元/125,000美元较低者。",
     "heart_stroke_claim_summary": "心脏病/中风相关赔付上限约为100%基本保额/名义金额。",
-    "icu_benefit_summary": "入住深切治疗或ICU达到指定条件时，可按条款获得额外赔偿。",
-    "post_claim_status_summary": "首次赔付后部分保障可能继续或终止，具体以产品条款为准。",
+    "icu_benefit_summary": "入住深切治疗或ICU达到指定条件时，符合条件时可获得额外赔偿。",
+    "post_claim_status_summary": "特別疾病权益赔付后，现有投保额、危疾权益、身故权益及未来保费相应减少；当已支付特別疾病权益及危疾权益合共达到原有投保额100%时，不再需要缴付往后保费。",
     "highest_illustrated_irr": null,
     "guaranteed_irr": null,
     "highest_illustrated_return_multiple": null,
@@ -136,10 +135,10 @@
     "has_death_benefit": null,
     "major_illness_payout_summary": "危疾权益为现有投保额100%。",
     "early_stage_payout_summary": "特别疾病权益预支原有投保额35%。",
-    "max_claim_count_summary": "指定疾病可多次赔付，最高次数及每次赔付金额以产品条款为准。",
-    "cancer_claim_summary": "癌症持续、复发或扩散达到条件时，可按条款继续获得赔偿。",
-    "multiple_claim_waiting_period_summary": "多次赔付通常设有等候期，具体间隔以产品条款为准。",
-    "survival_period_summary": "多次赔付可能设有生存期要求，具体以产品条款为准。",
+    "max_claim_count_summary": "特別疾病权益可多次赔偿至原有投保额100%，每次预支35%；危疾权益为现有投保额100%，3大疾病可另选额外50%保障及额外医疗保障。",
+    "cancer_claim_summary": "癌症作为危疾权益赔付现有投保额100%；若选择3大疾病额外50%保障权益，癌症可额外赔付原有投保额50%；若选择3大疾病额外医疗保障，符合条件后可获合资格医疗费用赔偿，最高为原有投保额100%或1,000,000港元/125,000美元较低者。",
+    "multiple_claim_waiting_period_summary": "产品手册未明确说明。",
+    "survival_period_summary": "产品手册未明确说明。",
     "early_stage_premium_waiver": null,
     "major_claim_premium_waiver": null,
     "family_premium_waiver_summary": null,
@@ -154,7 +153,15 @@
     "extra_three_disease_benefit_percent": 50,
     "extra_three_disease_benefit_summary": "三大疾病额外医疗保障最高为相关保单总原有投保额100%。",
     "three_disease_extra_medical_cap_percent": 100,
-    "heart_stroke_claim_max_percent": 100
+    "heart_stroke_claim_max_percent": 100,
+    "ci_precision_extraction_status": {
+      "multiple_claim_waiting_period_summary": "not_disclosed_in_pdf",
+      "survival_period_summary": "not_disclosed_in_pdf",
+      "post_claim_status_summary": "not_disclosed_in_pdf",
+      "cancer_claim_cap_summary": "not_disclosed_in_pdf",
+      "cancer_claim_summary": "not_disclosed_in_pdf",
+      "max_claim_count_summary": "not_disclosed_in_pdf"
+    }
   },
   "product_features": [
     {
@@ -163,7 +170,7 @@
       "category": "liquidity",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "可按条款申请保单贷款，提升保单资金流动性。",
+      "short_description": "支持申请保单贷款；贷款及利息会影响保单现金价值与身故赔偿。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -205,7 +212,7 @@
       "category": "legacy_planning",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "可按条款安排身故赔偿支付方式，配合传承规划。",
+      "short_description": "受保人身故时提供身故赔偿；资料列示身故赔偿基础包括已缴保费的100%或相关保单价值。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -244,7 +251,7 @@
       "category": "special_option",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "达到末期疾病条件时，可按条款预支或获得相关利益。",
+      "short_description": "达到末期疾病条件时，符合条件可申请预支或相关利益。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -320,7 +327,7 @@
       "category": "special_option",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "指定脑退化疾病或柏金森病可按条款提供年金赔偿。",
+      "short_description": "指定脑退化疾病或柏金森病符合指定脑退化疾病或柏金森病条件时提供年金赔偿。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -564,6 +571,42 @@
         "quote": "5種特別疾病中的任何 一種時，提供一筆過現金賠償，甚至延伸至未知的 傳染性疾病（例如嚴重急性呼吸系統綜合症及2019 冠狀病毒病） ，讓您以相宜保費獲得全面保障。 「3大疾病」⸺ 癌症、急性心肌梗塞和中風已佔我們 2020 年香港危疾賠償大約90%*。您可以相宜保費 靈活附加以下額外一筆過保障和醫療保障 2 項自選權益 於好易揀。 當您的人生踏入不同階段，您可將本計劃 簡易轉換至一份有限保費供款年期的終身危疾保障 而毋須再次提供健康證明。 無論您的計劃如何，我們總有辦法助您達成目標。 全港首創+ 自選權益 自選權益",
         "confidence": "medium",
         "extraction_version": "v2.11"
+      },
+      "compare_profile.cancer_claim_cap_summary": {
+        "source": "full_pdf_recheck_v2.18",
+        "source_pdf": "fwd-easycover-ci.pdf",
+        "source_pages": "5-8",
+        "evidence_quote": "癌症、突发性心脏病及中风属于3大疾病；危疾权益为现有投保额100%；3大疾病额外50%保障权益及3大疾病额外医疗保障列明相应赔偿上限。",
+        "extraction_status": "explicit",
+        "confidence": "medium_high",
+        "updated_at": "2026-07-03T12:57:00.490990+00:00"
+      },
+      "compare_profile.cancer_claim_summary": {
+        "source": "full_pdf_recheck_v2.18",
+        "source_pdf": "fwd-easycover-ci.pdf",
+        "source_pages": "5-8",
+        "evidence_quote": "3大疾病保障涵盖癌症；危疾权益为现有投保额100%；3大疾病额外50%保障权益为原有投保额50%；额外医疗保障最高为原有投保额100%或指定金额较低者。",
+        "extraction_status": "explicit",
+        "confidence": "medium_high",
+        "updated_at": "2026-07-03T12:57:00.490990+00:00"
+      },
+      "compare_profile.max_claim_count_summary": {
+        "source": "full_pdf_recheck_v2.18",
+        "source_pdf": "fwd-easycover-ci.pdf",
+        "source_pages": "3-8",
+        "evidence_quote": "特別疾病权益每次预支原有投保额35%，可多次赔偿直至总额达到原有投保额100%；危疾权益为现有投保额100%，另可选3大疾病额外50%及额外医疗保障。",
+        "extraction_status": "explicit",
+        "confidence": "medium_high",
+        "updated_at": "2026-07-03T12:57:00.490990+00:00"
+      },
+      "compare_profile.post_claim_status_summary": {
+        "source": "full_pdf_recheck_v2.18",
+        "source_pdf": "fwd-easycover-ci.pdf",
+        "source_pages": "3-6",
+        "evidence_quote": "特別疾病权益及危疾权益会相应减少现有投保额、危疾权益、身故权益及未来保费；两者合共达到原有投保额100%时，往后保费无需缴付。",
+        "extraction_status": "explicit",
+        "confidence": "medium_high",
+        "updated_at": "2026-07-03T12:57:00.490990+00:00"
       }
     }
   },
@@ -619,7 +662,54 @@
       ],
       "ratio_field_count": 7,
       "applied_at": "2026-06-21T11:04:47.187556Z"
-    }
+    },
+    "v2_14_ci_precision_full_reextract": {
+      "generated_at": "2026-07-03T09:05:28.926951Z",
+      "method": "all_critical_illness_precision_clause_reextract_from_existing_vector_pdf_evidence_v2.14",
+      "scope": "all vectors with base.category == critical_illness in this package",
+      "policy": "Core compare_profile fields must use explicit PDF facts when available; otherwise use PDF未明确披露 / not_disclosed_in_pdf rather than vague disclaimer wording.",
+      "processed_product": "fwd-easycover-ci",
+      "updated_compare_profile_fields": [
+        "multiple_claim_waiting_period_summary",
+        "survival_period_summary",
+        "post_claim_status_summary",
+        "cancer_claim_cap_summary",
+        "cancer_claim_summary",
+        "max_claim_count_summary"
+      ],
+      "vague_compare_profile_fields_before": [
+        "cancer_claim_cap_summary",
+        "post_claim_status_summary",
+        "max_claim_count_summary",
+        "cancer_claim_summary",
+        "multiple_claim_waiting_period_summary",
+        "survival_period_summary"
+      ],
+      "vague_compare_profile_fields_after": [],
+      "source_basis": "Existing v2.13 vectors and available PDF-derived evidence fields; no synthetic product facts were added."
+    },
+    "v2_15_full_precision_cleanup": {
+      "version": "v2.15",
+      "applied_at": "2026-07-03",
+      "scope": "all critical_illness and savings vectors; savings compare_profile/product_features merged from v2.12 where available; vague clause-disclaimer wording removed from core display fields",
+      "policy": "Explicit facts are preferred; unresolved wording uses PDF未明确披露 rather than generic clause-disclaimer wording.",
+      "savings_fact_merge_from_v2_12": false,
+      "string_cleanup_count": 5,
+      "feature_description_improved_count": 2
+    },
+    "v2_16_semantic_cleanup": {
+      "updated_at": "2026-07-03",
+      "basis": "v2.15 semantic audit plus heuristic field/path validation",
+      "missing_text_standard": "产品手册未明确说明。",
+      "note": "统一缺失文案；修复等待期字段混入赔付比例/上限的语义错位；不改写原始 evidence_quote。"
+    },
+    "v2_18_full_pdf_missing_statement_recheck": {
+      "version": "2.18",
+      "updated_at": "2026-07-03T12:57:00.490990+00:00",
+      "note": "对 v2.17 中“产品手册未明确说明。”字段回到全量产品手册进行复查；能找到明确条款的改成具体事实，仍无明确披露的保留统一兜底文案。",
+      "missing_text_policy": "产品手册未明确说明。"
+    },
+    "current_cleanup_version": "2.18"
   },
   "display_features": [
     {
@@ -686,6 +776,5 @@
       ],
       "source_paths": []
     }
-  ],
-  "product_name": "富卫简易危疾保"
+  ]
 }

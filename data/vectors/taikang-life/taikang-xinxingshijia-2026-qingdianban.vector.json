@@ -1,9 +1,9 @@
 {
-  "product_vector_version": "v2.9",
+  "product_vector_version": "2.18",
   "base": {
     "product_id": "taikang-xinxingshijia-2026-qingdianban",
     "slug": "taikang-xinxingshijia-2026-qingdianban",
-    "product_name": "鑫享世家 2026（庆典版）终身寿险（分红型）",
+    "product_name": "泰康鑫享世家2026庆典版终身寿险分红型",
     "product_name_en": null,
     "company_slug": "taikang-life",
     "company_name": "泰康保险",
@@ -29,10 +29,9 @@
     "source_pdf_filename": "taikang-xinxingshijia-2026-qingdianban.pdf",
     "is_hot_discussed": true,
     "market_attention": "hot_discussed",
-    "product_name_zh_cn": "鑫享世家 2026（庆典版）终身寿险（分红型）",
+    "product_name_zh_cn": "泰康鑫享世家2026庆典版终身寿险分红型",
     "product_name_zh_hk": "泰康鑫享世家2026慶典版終身壽險分紅型",
-    "display_name": "泰康鑫享世家2026庆典版终身寿险分红型",
-    "product_name_zh_tw": "鑫享世家 2026（慶典版）終身壽險（分紅型）"
+    "display_name": "泰康鑫享世家2026庆典版终身寿险分红型"
   },
   "core": {
     "critical_illness_core": null,
@@ -93,7 +92,8 @@
       "6年",
       "10年",
       "15年",
-      "20年"
+      "20年",
+      "25年"
     ],
     "entry_age_summary": "投保年龄按计划版本、缴费期及条款规定而定；最低年龄要求包括出生满30日。",
     "currencies": [
@@ -131,11 +131,10 @@
     "illustrated_break_even_year": null,
     "guaranteed_break_even_year": null,
     "risk_summary": [
-      "退保/流动性风险",
-      "货币风险"
+      "非保证红利/分红及演示回报可能高于或低于示例，甚至为零。"
     ],
     "bonus_type_summary": "非保证红利或分红",
-    "bonus_declaration_summary": "提供非保证红利或分红，金额并不保证，实际派发及公布以保险公司政策为准。",
+    "bonus_declaration_summary": "通常每年公布红利/分红；金额并不保证，实际以公司公布为准。",
     "has_bonus_lock_in": false,
     "bonus_lock_in_summary": null,
     "has_bonus_unlock": false,
@@ -143,7 +142,7 @@
     "has_value_protection_account": false,
     "value_protection_account_summary": null,
     "policy_loan_summary": null,
-    "partial_withdrawal_summary": "可按条款部分提取或减保，提取会影响保单价值。",
+    "partial_withdrawal_summary": "支持现金提取或部分退保；提取会影响保单价值。",
     "regular_withdrawal_summary": null,
     "change_insured_summary": null,
     "second_insured_summary": null,
@@ -151,12 +150,13 @@
     "policy_split_summary": null,
     "has_death_benefit_payment_option": false,
     "death_benefit_payment_summary": null,
-    "has_beneficiary_flexible_option": false,
-    "beneficiary_option_summary": null,
+    "has_beneficiary_flexible_option": true,
+    "beneficiary_option_summary": "支持设置受益人或传承支付安排。",
     "has_terminal_illness_benefit": false,
     "terminal_illness_summary": null,
     "minimum_premium_summary": null,
-    "minimum_sum_assured_summary": null
+    "minimum_sum_assured_summary": null,
+    "accidental_death_benefit_percent": null
   },
   "product_features": [
     {
@@ -165,7 +165,7 @@
       "category": "premium_payment",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "达到指定理赔或家庭事件时，可按条款豁免保费。",
+      "short_description": "达到指定理赔或家庭事件时，符合条件可豁免保费。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -208,7 +208,7 @@
       "category": "life_protection",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "受保人身故时，可按条款向受益人支付身故赔偿。",
+      "short_description": "受保人身故时，符合条件向受益人支付身故赔偿。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -317,7 +317,23 @@
       "hard_truncation_candidates_after": 0,
       "fields_repaired": 3,
       "age_refine_note": "v2.9 age fields refined from the best PDF full-text window near 投保年齡/投保范围, avoiding unrelated owner/beneficiary age clauses and hard character truncation."
-    }
+    },
+    "v2_15_full_precision_cleanup": {
+      "version": "v2.15",
+      "applied_at": "2026-07-03",
+      "scope": "all critical_illness and savings vectors; savings compare_profile/product_features merged from v2.12 where available; vague clause-disclaimer wording removed from core display fields",
+      "policy": "Explicit facts are preferred; unresolved wording uses PDF未明确披露 rather than generic clause-disclaimer wording.",
+      "savings_fact_merge_from_v2_12": true,
+      "string_cleanup_count": 4,
+      "feature_description_improved_count": 0
+    },
+    "v2_16_semantic_cleanup": {
+      "updated_at": "2026-07-03",
+      "basis": "v2.15 semantic audit plus heuristic field/path validation",
+      "missing_text_standard": "产品手册未明确说明。",
+      "note": "统一缺失文案；修复等待期字段混入赔付比例/上限的语义错位；不改写原始 evidence_quote。"
+    },
+    "current_cleanup_version": "2.18"
   },
   "display_features": [
     {
@@ -362,6 +378,5 @@
       ],
       "source_paths": []
     }
-  ],
-  "product_name": "鑫享世家 2026（庆典版）终身寿险（分红型）"
+  ]
 }

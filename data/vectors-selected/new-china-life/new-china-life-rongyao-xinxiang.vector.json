@@ -1,9 +1,9 @@
 {
-  "product_vector_version": "v2.9",
+  "product_vector_version": "2.18",
   "base": {
     "product_id": "new-china-life-rongyao-xinxiang",
     "slug": "new-china-life-rongyao-xinxiang",
-    "product_name": "新华荣耀鑫享庆典版",
+    "product_name": "新华荣耀鑫享庆典版终身寿险",
     "product_name_en": "New China Life Rongyao Xinxiang",
     "company_slug": "new-china-life",
     "company_name": "新华保险",
@@ -26,10 +26,9 @@
     "source_pdf_filename": "new-china-life-rongyao-xinxiang.pdf",
     "is_hot_discussed": true,
     "market_attention": "hot_discussed",
-    "product_name_zh_cn": "新华荣耀鑫享庆典版",
+    "product_name_zh_cn": "新华荣耀鑫享庆典版终身寿险",
     "product_name_zh_hk": "新華榮耀鑫享慶典版終身壽險",
-    "display_name": "新华荣耀鑫享庆典版终身寿险",
-    "product_name_zh_tw": "新華榮耀鑫享慶典版"
+    "display_name": "新华荣耀鑫享庆典版终身寿险"
   },
   "core": {
     "critical_illness_core": null,
@@ -80,6 +79,7 @@
     "priority": 1,
     "policy_term": "终身",
     "premium_terms": [
+      "2年",
       "3年",
       "5年",
       "10年"
@@ -129,8 +129,8 @@
     "bonus_unlock_summary": null,
     "has_value_protection_account": false,
     "value_protection_account_summary": null,
-    "policy_loan_summary": "可按条款申请保单贷款，贷款会影响保单价值。",
-    "partial_withdrawal_summary": "可按条款部分提取或减保，提取会影响保单价值。",
+    "policy_loan_summary": "支持申请保单贷款；贷款及利息会影响保单现金价值与身故赔偿。",
+    "partial_withdrawal_summary": "支持现金提取或部分退保；提取会影响保单价值。",
     "regular_withdrawal_summary": null,
     "change_insured_summary": null,
     "second_insured_summary": null,
@@ -143,7 +143,8 @@
     "has_terminal_illness_benefit": false,
     "terminal_illness_summary": null,
     "minimum_premium_summary": null,
-    "minimum_sum_assured_summary": null
+    "minimum_sum_assured_summary": null,
+    "accidental_death_benefit_percent": null
   },
   "product_features": [
     {
@@ -152,7 +153,7 @@
       "category": "liquidity",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "可按条款申请保单贷款，提升保单资金流动性。",
+      "short_description": "支持申请保单贷款；贷款及利息会影响保单现金价值与身故赔偿。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -260,7 +261,23 @@
       "hard_truncation_candidates_after": 0,
       "fields_repaired": 5,
       "age_refine_note": "v2.9 age fields refined from the best PDF full-text window near 投保年齡/投保范围, avoiding unrelated owner/beneficiary age clauses and hard character truncation."
-    }
+    },
+    "v2_15_full_precision_cleanup": {
+      "version": "v2.15",
+      "applied_at": "2026-07-03",
+      "scope": "all critical_illness and savings vectors; savings compare_profile/product_features merged from v2.12 where available; vague clause-disclaimer wording removed from core display fields",
+      "policy": "Explicit facts are preferred; unresolved wording uses PDF未明确披露 rather than generic clause-disclaimer wording.",
+      "savings_fact_merge_from_v2_12": true,
+      "string_cleanup_count": 0,
+      "feature_description_improved_count": 0
+    },
+    "v2_16_semantic_cleanup": {
+      "updated_at": "2026-07-03",
+      "basis": "v2.15 semantic audit plus heuristic field/path validation",
+      "missing_text_standard": "产品手册未明确说明。",
+      "note": "统一缺失文案；修复等待期字段混入赔付比例/上限的语义错位；不改写原始 evidence_quote。"
+    },
+    "current_cleanup_version": "2.18"
   },
   "display_features": [
     {
@@ -307,6 +324,5 @@
         "compare_profile.premium_terms"
       ]
     }
-  ],
-  "product_name": "新华荣耀鑫享庆典版"
+  ]
 }

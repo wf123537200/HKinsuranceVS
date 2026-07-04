@@ -1,9 +1,9 @@
 {
-  "product_vector_version": "v2.9",
+  "product_vector_version": "2.18",
   "base": {
     "product_id": "cpic-jinshengwuyou-2024-kids",
     "slug": "cpic-jinshengwuyou-2024-kids",
-    "product_name": "太保金生无忧 2024（少儿版）重大疾病保险",
+    "product_name": "太保金生无忧2024少儿版重大疾病保险",
     "product_name_en": null,
     "company_slug": "cpic-life",
     "company_name": "中国太保",
@@ -29,10 +29,9 @@
     "source_pdf_filename": "cpic-jinshengwuyou-2024-kids.pdf",
     "is_hot_discussed": true,
     "market_attention": "hot_discussed",
-    "product_name_zh_cn": "太保金生无忧 2024（少儿版）重大疾病保险",
+    "product_name_zh_cn": "太保金生无忧2024少儿版重大疾病保险",
     "product_name_zh_hk": "太保金生無憂2024少兒版重大疾病保險",
-    "display_name": "太保金生无忧2024少儿版重大疾病保险",
-    "product_name_zh_tw": "太保金生無憂 2024（少兒版）重大疾病保險"
+    "display_name": "太保金生无忧2024少儿版重大疾病保险"
   },
   "core": {
     "critical_illness_core": {
@@ -143,7 +142,8 @@
     "healthcare_service_summary": null,
     "major_illness_payout_percent": 100,
     "early_stage_payout_percent": 30,
-    "death_benefit_percent": 100
+    "death_benefit_percent": 100,
+    "ci_precision_extraction_status": {}
   },
   "product_features": [
     {
@@ -191,7 +191,7 @@
       "category": "premium_payment",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "达到指定理赔或家庭事件时，可按条款豁免保费。",
+      "short_description": "达到指定理赔或家庭事件时，符合条件可豁免保费。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -350,7 +350,34 @@
       ],
       "ratio_field_count": 3,
       "applied_at": "2026-06-21T11:04:48.040017Z"
-    }
+    },
+    "v2_14_ci_precision_full_reextract": {
+      "generated_at": "2026-07-03T09:05:28.957963Z",
+      "method": "all_critical_illness_precision_clause_reextract_from_existing_vector_pdf_evidence_v2.14",
+      "scope": "all vectors with base.category == critical_illness in this package",
+      "policy": "Core compare_profile fields must use explicit PDF facts when available; otherwise use PDF未明确披露 / not_disclosed_in_pdf rather than vague disclaimer wording.",
+      "processed_product": "cpic-jinshengwuyou-2024-kids",
+      "updated_compare_profile_fields": [],
+      "vague_compare_profile_fields_before": [],
+      "vague_compare_profile_fields_after": [],
+      "source_basis": "Existing v2.13 vectors and available PDF-derived evidence fields; no synthetic product facts were added."
+    },
+    "v2_15_full_precision_cleanup": {
+      "version": "v2.15",
+      "applied_at": "2026-07-03",
+      "scope": "all critical_illness and savings vectors; savings compare_profile/product_features merged from v2.12 where available; vague clause-disclaimer wording removed from core display fields",
+      "policy": "Explicit facts are preferred; unresolved wording uses PDF未明确披露 rather than generic clause-disclaimer wording.",
+      "savings_fact_merge_from_v2_12": false,
+      "string_cleanup_count": 1,
+      "feature_description_improved_count": 0
+    },
+    "v2_16_semantic_cleanup": {
+      "updated_at": "2026-07-03",
+      "basis": "v2.15 semantic audit plus heuristic field/path validation",
+      "missing_text_standard": "产品手册未明确说明。",
+      "note": "统一缺失文案；修复等待期字段混入赔付比例/上限的语义错位；不改写原始 evidence_quote。"
+    },
+    "current_cleanup_version": "2.18"
   },
   "display_features": [
     {
@@ -393,6 +420,5 @@
         "compare_profile.has_guaranteed_cash_value"
       ]
     }
-  ],
-  "product_name": "太保金生无忧 2024（少儿版）重大疾病保险"
+  ]
 }

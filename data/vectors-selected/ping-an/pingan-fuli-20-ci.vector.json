@@ -1,9 +1,9 @@
 {
-  "product_vector_version": "v2.9",
+  "product_vector_version": "2.18",
   "base": {
     "product_id": "pingan-fuli-20-ci",
     "slug": "pingan-fuli-20-ci",
-    "product_name": "平安福 20 重大疾病保险",
+    "product_name": "平安福20重大疾病保险",
     "product_name_en": null,
     "company_slug": "ping-an",
     "company_name": "中国平安",
@@ -24,10 +24,9 @@
     "source_pdf_filename": "pingan-fuli-20-ci.pdf",
     "is_hot_discussed": true,
     "market_attention": "historically_hot_discussed",
-    "product_name_zh_cn": "平安福 20 重大疾病保险",
+    "product_name_zh_cn": "平安福20重大疾病保险",
     "product_name_zh_hk": "平安福20重大疾病保險",
-    "display_name": "平安福20重大疾病保险",
-    "product_name_zh_tw": "平安福 20 重大疾病保險"
+    "display_name": "平安福20重大疾病保险"
   },
   "core": {
     "critical_illness_core": {
@@ -107,7 +106,7 @@
     "has_heart_stroke_multiple_claims": true,
     "has_icu_benefit": false,
     "cancer_claim_cap_summary": null,
-    "heart_stroke_claim_summary": "心脏病或中风达到指定条件时，可按条款提供额外赔付。",
+    "heart_stroke_claim_summary": "心脏及脑血管相关疾病按重大疾病或特定轻度重疾对应责任给付；重大疾病保险金给付以一次为限，给付后本主险合同保险责任终止，产品手册未列出心脏病或中风多次赔付。",
     "icu_benefit_summary": null,
     "post_claim_status_summary": null,
     "highest_illustrated_irr": null,
@@ -123,8 +122,8 @@
     "major_illness_payout_summary": "70周岁前发生过三次特定轻度重疾后，重大疾病可额外给付最高60%基本保额。",
     "early_stage_payout_summary": "特定轻度重疾保险金为基本保险金额20%，累计以三次为限。",
     "max_claim_count_summary": null,
-    "cancer_claim_summary": "癌症持续、复发或扩散达到条件时，可按条款继续获得赔偿。",
-    "multiple_claim_waiting_period_summary": "多次赔付或相关保障设等待期，具体以产品条款为准。",
+    "cancer_claim_summary": "癌症作为重大疾病责任按重大疾病保险金一次性给付；给付重大疾病保险金后，本主险合同保险责任终止，产品手册未列出癌症多次赔付。",
+    "multiple_claim_waiting_period_summary": null,
     "survival_period_summary": null,
     "early_stage_premium_waiver": null,
     "major_claim_premium_waiver": null,
@@ -136,7 +135,12 @@
     "early_stage_payout_percent": 20,
     "early_stage_sports_bonus_percent": 2,
     "major_extra_after_early_max_percent": 60,
-    "death_benefit_percent": 20
+    "death_benefit_percent": 20,
+    "ci_precision_extraction_status": {
+      "multiple_claim_waiting_period_summary": "not_applicable",
+      "cancer_claim_summary": "not_disclosed_in_pdf",
+      "heart_stroke_claim_summary": "not_disclosed_in_pdf"
+    }
   },
   "product_features": [
     {
@@ -145,7 +149,7 @@
       "category": "liquidity",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "可按条款申请保单贷款，提升保单资金流动性。",
+      "short_description": "支持申请保单贷款；贷款及利息会影响保单现金价值与身故赔偿。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -187,7 +191,7 @@
       "category": "special_option",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "指定脑退化疾病或柏金森病可按条款提供年金赔偿。",
+      "short_description": "指定脑退化疾病或柏金森病符合指定脑退化疾病或柏金森病条件时提供年金赔偿。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -228,7 +232,7 @@
       "category": "premium_payment",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "达到指定理赔或家庭事件时，可按条款豁免保费。",
+      "short_description": "达到指定理赔或家庭事件时，符合条件可豁免保费。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -376,6 +380,24 @@
         "quote": "平安人寿[2020]疾病保险 113 号 阅 读 指 引 请扫描以查询验证条款 平安平安福 20 重大疾病保险产品提供特定轻度重疾、重疾及身故保障   被保险人就是受保险合同保障的人。 为了帮助您更好地了解产品，我们先介绍几个保险条款中常用的术语  投保人就是购买保险并交纳保险费的人。  受益人就是发生保险事故后领取保险金的人。  保险人就是保险公司。  下面我们举例说明本产品提供哪些保障 例子：王先生为妻子李女士（30 周岁）投保平安平安福 20 重大疾病保险（简称平安福 20） ， 基本保险金额",
         "confidence": "medium",
         "extraction_version": "v2.11"
+      },
+      "compare_profile.cancer_claim_summary": {
+        "source": "full_pdf_recheck_v2.18",
+        "source_pdf": "pingan-fuli-20-ci.pdf",
+        "source_pages": "条款摘要",
+        "evidence_quote": "等待期后发生重大疾病，按基本保险金额给付重大疾病保险金；给付重大疾病保险金后，本主险合同保险责任终止。",
+        "extraction_status": "explicit",
+        "confidence": "medium_high",
+        "updated_at": "2026-07-03T12:57:00.490990+00:00"
+      },
+      "compare_profile.heart_stroke_claim_summary": {
+        "source": "full_pdf_recheck_v2.18",
+        "source_pdf": "pingan-fuli-20-ci.pdf",
+        "source_pages": "条款摘要",
+        "evidence_quote": "重大疾病保险金按基本保险金额给付，给付后本主险合同保险责任终止；特定轻度重疾可按轻度重疾保险金责任给付。",
+        "extraction_status": "explicit",
+        "confidence": "medium_high",
+        "updated_at": "2026-07-03T12:57:00.490990+00:00"
       }
     }
   },
@@ -429,7 +451,48 @@
       ],
       "ratio_field_count": 5,
       "applied_at": "2026-06-21T11:04:48.413492Z"
-    }
+    },
+    "v2_14_ci_precision_full_reextract": {
+      "generated_at": "2026-07-03T09:05:28.953109Z",
+      "method": "all_critical_illness_precision_clause_reextract_from_existing_vector_pdf_evidence_v2.14",
+      "scope": "all vectors with base.category == critical_illness in this package",
+      "policy": "Core compare_profile fields must use explicit PDF facts when available; otherwise use PDF未明确披露 / not_disclosed_in_pdf rather than vague disclaimer wording.",
+      "processed_product": "pingan-fuli-20-ci",
+      "updated_compare_profile_fields": [
+        "multiple_claim_waiting_period_summary",
+        "cancer_claim_summary",
+        "heart_stroke_claim_summary"
+      ],
+      "vague_compare_profile_fields_before": [
+        "heart_stroke_claim_summary",
+        "cancer_claim_summary",
+        "multiple_claim_waiting_period_summary"
+      ],
+      "vague_compare_profile_fields_after": [],
+      "source_basis": "Existing v2.13 vectors and available PDF-derived evidence fields; no synthetic product facts were added."
+    },
+    "v2_15_full_precision_cleanup": {
+      "version": "v2.15",
+      "applied_at": "2026-07-03",
+      "scope": "all critical_illness and savings vectors; savings compare_profile/product_features merged from v2.12 where available; vague clause-disclaimer wording removed from core display fields",
+      "policy": "Explicit facts are preferred; unresolved wording uses PDF未明确披露 rather than generic clause-disclaimer wording.",
+      "savings_fact_merge_from_v2_12": false,
+      "string_cleanup_count": 3,
+      "feature_description_improved_count": 1
+    },
+    "v2_16_semantic_cleanup": {
+      "updated_at": "2026-07-03",
+      "basis": "v2.15 semantic audit plus heuristic field/path validation",
+      "missing_text_standard": "产品手册未明确说明。",
+      "note": "统一缺失文案；修复等待期字段混入赔付比例/上限的语义错位；不改写原始 evidence_quote。"
+    },
+    "v2_18_full_pdf_missing_statement_recheck": {
+      "version": "2.18",
+      "updated_at": "2026-07-03T12:57:00.490990+00:00",
+      "note": "对 v2.17 中“产品手册未明确说明。”字段回到全量产品手册进行复查；能找到明确条款的改成具体事实，仍无明确披露的保留统一兜底文案。",
+      "missing_text_policy": "产品手册未明确说明。"
+    },
+    "current_cleanup_version": "2.18"
   },
   "display_features": [
     {
@@ -474,6 +537,5 @@
       ],
       "source_paths": []
     }
-  ],
-  "product_name": "平安福 20 重大疾病保险"
+  ]
 }

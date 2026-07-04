@@ -1,5 +1,5 @@
 {
-  "version": "v2.11",
+  "version": "v2.18-semantic-cleanup-ci-savings",
   "missing_value": "暂无数据",
   "critical_illness_fields": [
     {
@@ -144,6 +144,62 @@
       "path": "compare_profile.survival_period_summary",
       "valueType": "text",
       "advantageRule": "no_auto_judgement",
+      "maxLength": 60
+    },
+    {
+      "section": "多次赔付",
+      "label": "一般相隔期（年）",
+      "path": "compare_profile.multiple_claim_interval_years",
+      "valueType": "number",
+      "advantageRule": "no_auto_judgement",
+      "maxLength": 60
+    },
+    {
+      "section": "多次赔付",
+      "label": "癌症同类相隔期（年）",
+      "path": "compare_profile.cancer_multiple_claim_interval_years",
+      "valueType": "number",
+      "advantageRule": "no_auto_judgement",
+      "maxLength": 60
+    },
+    {
+      "section": "多次赔付",
+      "label": "是否要求生存期",
+      "path": "compare_profile.multiple_claim_survival_period_required",
+      "valueType": "boolean",
+      "advantageRule": "no_auto_judgement",
+      "maxLength": 60
+    },
+    {
+      "section": "多次赔付",
+      "label": "生存期（日）",
+      "path": "compare_profile.multiple_claim_survival_period_days",
+      "valueType": "number",
+      "advantageRule": "no_auto_judgement",
+      "maxLength": 60
+    },
+    {
+      "section": "多次赔付",
+      "label": "多次赔付年龄上限",
+      "path": "compare_profile.multiple_claim_age_limit_next_birthday",
+      "valueType": "number",
+      "advantageRule": "higher_is_better",
+      "maxLength": 60
+    },
+    {
+      "section": "多次赔付",
+      "label": "癌症延伸赔付次数",
+      "path": "compare_profile.cancer_claim_count",
+      "valueType": "number",
+      "advantageRule": "higher_is_better",
+      "maxLength": 60
+    },
+    {
+      "section": "多次赔付",
+      "label": "心脏病/中风延伸赔付次数",
+      "path": "compare_profile.heart_stroke_claim_count_total",
+      "valueType": "number",
+      "advantageRule": "higher_is_better",
       "maxLength": 60
     },
     {
@@ -685,5 +741,5 @@
       "maxLength": 60
     }
   ],
-  "extraction_note": "v2.11 全量重疾赔付比例增强：对全部重疾险产品重新扫描 PDF 文本中的基本保额/名义金额/原有投保额百分比，补齐首次赔付、早期/中症/儿童、ICU、癌症、心脏病/中风、多次赔付、额外保障、身故等可量化字段。"
+  "extraction_note": "v2.16 基于 v2.15：修复语义错位字段，统一缺失说明为“产品手册未明确说明。”；未重新改写原始 evidence_quote。"
 }

@@ -1,5 +1,5 @@
 {
-  "product_vector_version": "v2.9",
+  "product_vector_version": "2.18",
   "base": {
     "product_id": "pru-guardian-ci-series",
     "slug": "pru-guardian-ci-series",
@@ -33,8 +33,7 @@
     "market_attention": "hot_discussed",
     "product_name_zh_cn": "保诚诚保一生危疾保",
     "product_name_zh_hk": "保誠誠保一生危疾保",
-    "display_name": "保诚诚保一生危疾保",
-    "product_name_zh_tw": "保誠誠保一生危疾保"
+    "display_name": "保诚诚保一生危疾保"
   },
   "core": {
     "critical_illness_core": {
@@ -127,10 +126,10 @@
     "has_cancer_multiple_claims": true,
     "has_heart_stroke_multiple_claims": true,
     "has_icu_benefit": true,
-    "cancer_claim_cap_summary": "癌症相关总赔付上限约为基本/原有保额200%，具体项目及等候期以条款为准。",
-    "heart_stroke_claim_summary": "心脏病/中风相关赔付上限约为200%基本保额/名义金额。",
+    "cancer_claim_cap_summary": "癌症相关索偿次数为2次；癌症相关赔付上限为200%；癌症再次索偿相隔期为至少3年。",
+    "heart_stroke_claim_summary": "心脏病发作/中风属于严重疾病延伸保障疾病组别2，最高保障额为基本保额200%；后续同类索偿须诊断为新一次心脏病发作或中风。",
     "icu_benefit_summary": "深切治疗保障一般按基本保额20%赔付；境外可调整为10%。",
-    "post_claim_status_summary": "首次赔付后部分保障可能继续或终止，具体以产品条款为准。",
+    "post_claim_status_summary": "支付严重疾病保障后，严重疾病延伸保障及人寿延伸保障仍可继续；同时豁免计划往后的所有保费。",
     "highest_illustrated_irr": null,
     "guaranteed_irr": null,
     "highest_illustrated_return_multiple": null,
@@ -149,15 +148,15 @@
     "major_illness_payout_summary": "严重疾病保障按基本保额100%赔付。",
     "early_stage_payout_summary": "多数早期严重疾病按基本保额20%赔付；部分早期项目可为25%。",
     "max_claim_count_summary": "最高总保障可达基本保额1100%。",
-    "cancer_claim_summary": "严重疾病延伸保障中癌症组最高保障额为基本保额200%。",
-    "multiple_claim_waiting_period_summary": "多次赔付通常设有等候期，具体间隔以产品条款为准。",
-    "survival_period_summary": "多次赔付可能设有生存期要求，具体以产品条款为准。",
-    "early_stage_premium_waiver": "早期疾病赔付后可能提供保费豁免，具体以条款为准。",
-    "major_claim_premium_waiver": "严重疾病赔付后可能豁免后续保费，具体以条款为准。",
-    "family_premium_waiver_summary": "父母、配偶或家庭相关事件可按条款触发保费豁免，具体条件以条款为准。",
+    "cancer_claim_summary": "癌症属于严重疾病延伸保障疾病组别1，最高保障额为基本保额200%；两次癌症索偿的诊断日期须相距至少3年。",
+    "multiple_claim_waiting_period_summary": "严重疾病延伸保障：两次相关严重疾病保障/严重疾病延伸保障索偿的诊断日期须相距至少1年；若两次索偿同属癌症，须相距至少3年。",
+    "survival_period_summary": "严重疾病延伸保障索偿无需存活期，但受保人于确诊相关严重病况时必须在生。",
+    "early_stage_premium_waiver": "索偿早期疾病后，可豁免1年保费。",
+    "major_claim_premium_waiver": "索偿严重疾病保障后，豁免计划往后的所有保费。",
+    "family_premium_waiver_summary": "若保单持有人或其配偶身故，且符合2年等候期（意外身故除外），可豁免往后保费直至受保孩子26岁（下次生日年龄）。",
     "bonus_type_summary": "提供非保证红利或分红，实际金额并不保证。",
     "death_benefit_summary": "身故保障为基本保额100%。",
-    "healthcare_service_summary": "提供医疗咨询或健康支援服务，具体安排以服务条款为准。",
+    "healthcare_service_summary": "PDF披露医疗咨询或健康支援服务；当前PDF未结构化披露统一服务触发条件或使用安排。",
     "major_illness_payout_percent": 100,
     "early_stage_payout_percent": 20,
     "early_stage_special_payout_percent": 25,
@@ -166,7 +165,7 @@
     "icu_benefit_overseas_percent": 10,
     "icu_benefit_overseas_summary": "香港或澳门境外深切治疗可调整为基本保额10%。",
     "multiple_claim_per_claim_percent": 100,
-    "multiple_claim_per_claim_summary": "每次严重疾病延伸保障支付基本保额100%。",
+    "multiple_claim_per_claim_summary": "严重疾病延伸保障每次支付基本保额100%。",
     "cancer_claim_max_percent": 200,
     "heart_stroke_claim_max_percent": 200,
     "multiple_claim_total_extra_percent": 900,
@@ -174,13 +173,35 @@
     "max_total_claim_percent": 1100,
     "death_benefit_percent": 100,
     "life_extension_benefit_percent": 100,
-    "life_extension_benefit_summary": "索偿严重疾病后仍可提供基本保额100%的人寿延伸保障。",
+    "life_extension_benefit_summary": "索偿严重疾病保障后若存活1年，受保人于86岁（下次生日年龄）前身故可获基本保额100%的人寿延伸保障。",
     "neurodegenerative_annuity_annual_percent": 6,
-    "neurodegenerative_annuity_summary": "严重脑退化症或柏金森病终身年金为每年基本保额6%。",
+    "neurodegenerative_annuity_summary": "86岁前确诊严重脑退化症或柏金森病，确诊1年后每年支付基本保额6%，直至受保人身故。",
     "upgrade_benefit_percent": 50,
     "upgrade_benefit_summary": "首10年额外50%身故保障或严重疾病保障。",
     "child_illness_payout_percent": 100,
-    "child_illness_payout_summary": "儿童疾病赔付比例约为100%基本保额/名义金额。"
+    "child_illness_payout_summary": "儿童疾病赔付比例约为100%基本保额/名义金额。",
+    "multiple_claim_interval_years": 1,
+    "cancer_multiple_claim_interval_years": 3,
+    "multiple_claim_survival_period_required": false,
+    "multiple_claim_survival_period_days": 0,
+    "multiple_claim_age_limit_next_birthday": 86,
+    "multiple_claim_age_limit_summary": "严重疾病延伸保障提供至受保人86岁（下次生日年龄）前。",
+    "cancer_claim_count": 2,
+    "heart_stroke_claim_count_total": 2,
+    "multiple_claim_group_limits_summary": "严重疾病延伸保障：癌症200%；心脏病发作/中风200%；脑退化/柏金森100%；主要器官及功能相关疾病200%；其他200%；总额900%。",
+    "neurodegenerative_claim_max_percent": 100,
+    "organ_function_claim_max_percent": 200,
+    "other_disease_claim_max_percent": 200,
+    "heart_stroke_new_event_required": true,
+    "heart_stroke_new_event_summary": "若之前获赔病况为心脏病发作或中风，后续严重疾病延伸保障索偿心脏病发作或中风时，必须由注册专科医生诊断为新一次心脏病发作或中风。",
+    "life_extension_survival_period_years": 1,
+    "neurodegenerative_annuity_start_after_years": 1,
+    "ci_precision_extraction_status": {
+      "cancer_claim_cap_summary": "explicit",
+      "early_stage_premium_waiver": "not_disclosed_in_pdf",
+      "family_premium_waiver_summary": "not_disclosed_in_pdf",
+      "healthcare_service_summary": "not_disclosed_in_pdf"
+    }
   },
   "product_features": [
     {
@@ -189,7 +210,7 @@
       "category": "liquidity",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "可按条款申请保单贷款，提升保单资金流动性。",
+      "short_description": "支持申请保单贷款；资料列示最高可达相关保单价值的80%，贷款及利息会影响保单现金价值与身故赔偿。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -231,7 +252,7 @@
       "category": "legacy_planning",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "可按条款安排身故赔偿支付方式，配合传承规划。",
+      "short_description": "受保人身故时提供身故赔偿；资料列示身故赔偿基础包括已缴保费的100%或相关保单价值。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -271,7 +292,7 @@
       "category": "special_option",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "达到末期疾病条件时，可按条款预支或获得相关利益。",
+      "short_description": "达到末期疾病条件时，符合条件可申请预支或相关利益。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -347,7 +368,7 @@
       "category": "special_option",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "指定脑退化疾病或柏金森病可按条款提供年金赔偿。",
+      "short_description": "指定脑退化疾病或柏金森病符合指定脑退化疾病或柏金森病条件时提供年金赔偿。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -388,7 +409,7 @@
       "category": "maternity",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "孕期版本可按条款覆盖孕妈妈、新生儿或儿童保障。",
+      "short_description": "孕期版本符合指定孕期/儿童保障条件时覆盖孕妈妈、新生儿或儿童保障。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -512,7 +533,7 @@
       "category": "premium_payment",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "达到指定理赔或家庭事件时，可按条款豁免保费。",
+      "short_description": "达到指定理赔或家庭事件时，符合条件可豁免保费。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -552,7 +573,7 @@
       "category": "life_protection",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "受保人身故时，可按条款向受益人支付身故赔偿。",
+      "short_description": "受保人身故时，符合条件向受益人支付身故赔偿。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -814,10 +835,14 @@
       },
       "compare_profile.cancer_claim_summary": {
         "source": "local_pdf_text",
-        "page": null,
-        "quote": "保單條款。 16 當我們已支付嚴重疾病保障，我們將繼續提供以下保障： 保障 保障概覽 保障額 嚴重疾病延伸保障12 於86歲（下次生日年齡）13前確診癌症、心臟病 基本保額的 發作、中風、阿耳滋海默氏症／ 不可還原之 器質性腦退化疾病（腦退化症）、柏金遜病及 100% 其他48種嚴重病況 • 當支付嚴重疾病保障或嚴重疾病延伸保障後，您仍可就嚴重疾病延伸保障提出索償，惟2個 相關索償的診斷日期時間相距須為 (i) 最少1年；及 (ii) 最少3年（當2次索償同屬癌症時），並須 受限於以下每項疾病組別的最高保障額： 疾",
+        "source_pdf": "pruhealth-guardian-critical-illness-plan-series-product-brochure.pdf",
+        "pages": [
+          16
+        ],
+        "quote": "疾病組別1 癌症，最高保障額基本保額的200%。",
         "confidence": "high",
-        "extraction_version": "v2.11"
+        "extraction_version": "v2.13",
+        "method": "precision_condition_reextract_from_pdf_text"
       },
       "compare_profile.cancer_claim_max_percent": {
         "source": "local_pdf_text",
@@ -828,10 +853,14 @@
       },
       "compare_profile.heart_stroke_claim_summary": {
         "source": "local_pdf_text",
-        "page": null,
-        "quote": "16 當我們已支付嚴重疾病保障，我們將繼續提供以下保障： 保障 保障概覽 保障額 嚴重疾病延伸保障12 於86歲（下次生日年齡）13前確診癌症、心臟病 基本保額的 發作、中風、阿耳滋海默氏症／ 不可還原之 器質性腦退化疾病（腦退化症）、柏金遜病及 100% 其他48種嚴重病況 • 當支付嚴重疾病保障或嚴重疾病延伸保障後，您仍可就嚴重疾病延伸保障提出索償，惟2個 相關索償的診斷日期時間相距須為 (i) 最少1年；及 (ii) 最少3年（當2次索償同屬癌症時），並須 受限於以下每項疾病組別的最高保障額： 疾病組別 受保",
+        "source_pdf": "pruhealth-guardian-critical-illness-plan-series-product-brochure.pdf",
+        "pages": [
+          16
+        ],
+        "quote": "疾病組別2 心臟病發作／中風，最高保障額基本保額的200%。",
         "confidence": "high",
-        "extraction_version": "v2.11"
+        "extraction_version": "v2.13",
+        "method": "precision_condition_reextract_from_pdf_text"
       },
       "compare_profile.heart_stroke_claim_max_percent": {
         "source": "local_pdf_text",
@@ -884,10 +913,14 @@
       },
       "compare_profile.life_extension_benefit_summary": {
         "source": "local_pdf_text",
-        "page": null,
-        "quote": "伸保障VII 疾病保障 （於86歲［下次生日年齡］前提供保障） 56種 疾病組別1： 疾病組別2： 疾病組別3： 疾病組別4： 疾病組別5： 癌症 心臟病發作／ 阿耳滋 與主要器官及 其他IX,X 嚴重病況 (包括新病發、 中風 海默氏症／ 功能相關的 的任何1種 復發、轉移及 不可還原之 疾病IX 持續癌症) 器質性 腦退化疾病 （腦退化症） ／ 柏金遜病VIII 索償1次 額外 額外 額外 額外 額外 高達 索償2次 索償2次 索償1次 索償2次 索償2次 100% 200% 200% 100% 200% 20",
+        "source_pdf": "pruhealth-guardian-critical-illness-plan-series-product-brochure.pdf",
+        "pages": [
+          10
+        ],
+        "quote": "若受保人於索償嚴重疾病保障後存活1年，我們將會就受保人於86歲前不幸身故支付基本保額的100%。",
         "confidence": "high",
-        "extraction_version": "v2.11"
+        "extraction_version": "v2.13",
+        "method": "precision_condition_reextract_from_pdf_text"
       },
       "compare_profile.life_extension_benefit_percent": {
         "source": "local_pdf_text",
@@ -898,10 +931,14 @@
       },
       "compare_profile.neurodegenerative_annuity_summary": {
         "source": "local_pdf_text",
-        "page": null,
-        "quote": "3及4以外的嚴重病況，但不包括「末期疾病及傷殘」組別下的嚴重病況。 9 在70歲以上的長者中，每 10名 便有 1名 患有腦退化疾病6 6 甚麼是認知障礙症 | 香港認知障礙症協會 (hkada.org.hk) 。 10 老 市場獨有 就嚴重腦退化症或柏金遜病提供終身年金，減輕您的生活重擔 當人年紀漸長，患上腦退化疾病的機會亦越來越高。此疾病很普遍，亦不可還原且無法痊癒，但及早發現並持續接受治療， 有助減緩退化。 為減輕長期護理的重擔，若受保人86歲（下次生日年齡）前確診嚴重腦退化症或柏金遜病，我們會提供嚴重腦退化",
+        "source_pdf": "pruhealth-guardian-critical-illness-plan-series-product-brochure.pdf",
+        "pages": [
+          9
+        ],
+        "quote": "確診嚴重腦退化症或柏金遜病...確診1年後開始每年支付計劃基本保額的6%，直至受保人身故。",
         "confidence": "high",
-        "extraction_version": "v2.11"
+        "extraction_version": "v2.13",
+        "method": "precision_condition_reextract_from_pdf_text"
       },
       "compare_profile.neurodegenerative_annuity_annual_percent": {
         "source": "local_pdf_text",
@@ -937,6 +974,140 @@
         "quote": "V • 出生後180日內：身故保障的20% • 出生後180日後：身故保障的100% 我們還會為您將出生的孩子或現有子女提供哪些保障？ 當您或您的配偶不幸身故時，親子保費豁免保障會豁免計劃往後之所有保費，直至受保人26歲（下次生日年齡） (適用於「誠保一生」危疾保 - 摯愛寶下將出生的孩子或我們發出「誠保一生」危疾保時1至18歲［下次生日年齡］的 孩子），並於投保時毋須提供任何健康資料。如此一來，即使失去經濟支柱，您的摯愛家人仍可獲得保障，跨越 財務難關。 註：有關保障的詳情或保障上限，請參閱以下「系列之保障表」部",
         "confidence": "medium",
         "extraction_version": "v2.11"
+      },
+      "compare_profile.multiple_claim_waiting_period_summary": {
+        "source": "local_pdf_text",
+        "source_pdf": "pruhealth-guardian-critical-illness-plan-series-product-brochure.pdf",
+        "pages": [
+          8,
+          16
+        ],
+        "quote": "每次嚴重疾病延伸保障將支付基本保額的100%，而2個相關...診斷日期相距須為最少1年；最少3年（當2次索償同屬癌症時）。",
+        "confidence": "high",
+        "extraction_version": "v2.13",
+        "method": "precision_condition_reextract_from_pdf_text"
+      },
+      "compare_profile.multiple_claim_interval_years": {
+        "source": "local_pdf_text",
+        "source_pdf": "pruhealth-guardian-critical-illness-plan-series-product-brochure.pdf",
+        "pages": [
+          8,
+          16
+        ],
+        "quote": "2個相關嚴重疾病保障及／或嚴重疾病延伸保障索償的診斷日期相距須為最少1年。",
+        "confidence": "high",
+        "extraction_version": "v2.13",
+        "method": "precision_condition_reextract_from_pdf_text"
+      },
+      "compare_profile.cancer_multiple_claim_interval_years": {
+        "source": "local_pdf_text",
+        "source_pdf": "pruhealth-guardian-critical-illness-plan-series-product-brochure.pdf",
+        "pages": [
+          8,
+          16
+        ],
+        "quote": "最少3年（當2次索償同屬癌症時）。",
+        "confidence": "high",
+        "extraction_version": "v2.13",
+        "method": "precision_condition_reextract_from_pdf_text"
+      },
+      "compare_profile.survival_period_summary": {
+        "source": "local_pdf_text",
+        "source_pdf": "pruhealth-guardian-critical-illness-plan-series-product-brochure.pdf",
+        "pages": [
+          8
+        ],
+        "quote": "索償無需存活期，惟受保人於確診有關嚴重病況時必須在生。",
+        "confidence": "high",
+        "extraction_version": "v2.13",
+        "method": "precision_condition_reextract_from_pdf_text"
+      },
+      "compare_profile.multiple_claim_survival_period_required": {
+        "source": "local_pdf_text",
+        "source_pdf": "pruhealth-guardian-critical-illness-plan-series-product-brochure.pdf",
+        "pages": [
+          8
+        ],
+        "quote": "索償無需存活期，惟受保人於確診有關嚴重病況時必須在生。",
+        "confidence": "high",
+        "extraction_version": "v2.13",
+        "method": "precision_condition_reextract_from_pdf_text"
+      },
+      "compare_profile.multiple_claim_survival_period_days": {
+        "source": "local_pdf_text",
+        "source_pdf": "pruhealth-guardian-critical-illness-plan-series-product-brochure.pdf",
+        "pages": [
+          8
+        ],
+        "quote": "索償無需存活期。",
+        "confidence": "high",
+        "extraction_version": "v2.13",
+        "method": "precision_condition_reextract_from_pdf_text"
+      },
+      "compare_profile.multiple_claim_group_limits_summary": {
+        "source": "local_pdf_text",
+        "source_pdf": "pruhealth-guardian-critical-illness-plan-series-product-brochure.pdf",
+        "pages": [
+          16
+        ],
+        "quote": "疾病組別最高保障額：癌症200%、心臟病發作／中風200%、腦退化疾病／柏金遜病100%、總額900%。",
+        "confidence": "high",
+        "extraction_version": "v2.13",
+        "method": "precision_condition_reextract_from_pdf_text"
+      },
+      "compare_profile.heart_stroke_new_event_summary": {
+        "source": "local_pdf_text",
+        "source_pdf": "pruhealth-guardian-critical-illness-plan-series-product-brochure.pdf",
+        "pages": [
+          16
+        ],
+        "quote": "當之前曾獲接納之嚴重病況賠償乃心臟病發作或中風，嚴重疾病延伸保障索償心臟病發作或中風時，其必須分別由註冊專科醫生診斷為新一次心臟病發作或中風。",
+        "confidence": "high",
+        "extraction_version": "v2.13",
+        "method": "precision_condition_reextract_from_pdf_text"
+      },
+      "compare_profile.major_claim_premium_waiver": {
+        "source": "local_pdf_text",
+        "source_pdf": "pruhealth-guardian-critical-illness-plan-series-product-brochure.pdf",
+        "pages": [
+          3,
+          7
+        ],
+        "quote": "索償嚴重疾病，即豁免往後所有保費。",
+        "confidence": "high",
+        "extraction_version": "v2.13",
+        "method": "precision_condition_reextract_from_pdf_text"
+      },
+      "compare_profile.post_claim_status_summary": {
+        "source": "official_pdf_text",
+        "source_pdf": "pruhealth-guardian-critical-illness-plan-series-product-brochure.pdf",
+        "pages": [
+          3,
+          7,
+          10
+        ],
+        "quote": "索償嚴重疾病，即豁免往後所有保費；若受保人於索償嚴重疾病保障後存活1年...支付基本保額的100%；嚴重疾病延伸保障於86歲前提供。",
+        "confidence": "medium",
+        "extraction_version": "v2.13",
+        "method": "precision_condition_reextract_from_pdf_text"
+      },
+      "compare_profile.early_stage_premium_waiver": {
+        "source": "full_pdf_recheck_v2.18",
+        "source_pdf": "pru-guardian-ci-series.pdf",
+        "source_pages": "4",
+        "evidence_quote": "索偿早期疾病后，可豁免1年保费；索偿严重疾病后，可豁免未来所有保费。",
+        "extraction_status": "explicit",
+        "confidence": "medium_high",
+        "updated_at": "2026-07-03T12:57:00.490990+00:00"
+      },
+      "compare_profile.family_premium_waiver_summary": {
+        "source": "full_pdf_recheck_v2.18",
+        "source_pdf": "pru-guardian-ci-series.pdf",
+        "source_pages": "18",
+        "evidence_quote": "如您或您的配偶身故，可豁免往后保费直至受保孩子26岁；亲子保费豁免保障设2年等候期，意外身故除外。",
+        "extraction_status": "explicit",
+        "confidence": "medium_high",
+        "updated_at": "2026-07-03T12:57:00.490990+00:00"
       }
     }
   },
@@ -1015,7 +1186,85 @@
       ],
       "ratio_field_count": 15,
       "applied_at": "2026-06-21T11:04:47.692784Z"
-    }
+    },
+    "v2_13_ci_precision_reextract": {
+      "generated_at": "2026-07-03T08:54:45Z",
+      "method": "manual+programmatic precision re-extraction from product brochure text",
+      "scope": "critical illness multiple-claim waiting period, survival period, claim counts and limits",
+      "source_pdf_note": "Official Prudential HK brochure downloaded 2026-07-03 for precision check.",
+      "vague_disclaimer_policy": "Do not use “。/PDF未明确披露是否设有要求” as core facts when brochure has explicit conditions; use explicit facts or not_disclosed_in_pdf.",
+      "updated_fields": [
+        "cancer_claim_count",
+        "cancer_claim_summary",
+        "cancer_multiple_claim_interval_years",
+        "heart_stroke_claim_count_total",
+        "heart_stroke_claim_summary",
+        "heart_stroke_new_event_required",
+        "heart_stroke_new_event_summary",
+        "life_extension_benefit_percent",
+        "life_extension_benefit_summary",
+        "life_extension_survival_period_years",
+        "major_claim_premium_waiver",
+        "multiple_claim_age_limit_next_birthday",
+        "multiple_claim_age_limit_summary",
+        "multiple_claim_group_limits_summary",
+        "multiple_claim_interval_years",
+        "multiple_claim_per_claim_summary",
+        "multiple_claim_survival_period_days",
+        "multiple_claim_survival_period_required",
+        "multiple_claim_waiting_period_summary",
+        "neurodegenerative_annuity_annual_percent",
+        "neurodegenerative_annuity_start_after_years",
+        "neurodegenerative_annuity_summary",
+        "neurodegenerative_claim_max_percent",
+        "organ_function_claim_max_percent",
+        "other_disease_claim_max_percent",
+        "survival_period_summary"
+      ]
+    },
+    "v2_14_ci_precision_full_reextract": {
+      "generated_at": "2026-07-03T09:05:28.945114Z",
+      "method": "all_critical_illness_precision_clause_reextract_from_existing_vector_pdf_evidence_v2.14",
+      "scope": "all vectors with base.category == critical_illness in this package",
+      "policy": "Core compare_profile fields must use explicit PDF facts when available; otherwise use PDF未明确披露 / not_disclosed_in_pdf rather than vague disclaimer wording.",
+      "processed_product": "pru-guardian-ci-series",
+      "updated_compare_profile_fields": [
+        "cancer_claim_cap_summary",
+        "early_stage_premium_waiver",
+        "family_premium_waiver_summary",
+        "healthcare_service_summary"
+      ],
+      "vague_compare_profile_fields_before": [
+        "cancer_claim_cap_summary",
+        "early_stage_premium_waiver",
+        "family_premium_waiver_summary",
+        "healthcare_service_summary"
+      ],
+      "vague_compare_profile_fields_after": [],
+      "source_basis": "Existing v2.13 vectors and available PDF-derived evidence fields; no synthetic product facts were added."
+    },
+    "v2_15_full_precision_cleanup": {
+      "version": "v2.15",
+      "applied_at": "2026-07-03",
+      "scope": "all critical_illness and savings vectors; savings compare_profile/product_features merged from v2.12 where available; vague clause-disclaimer wording removed from core display fields",
+      "policy": "Explicit facts are preferred; unresolved wording uses PDF未明确披露 rather than generic clause-disclaimer wording.",
+      "savings_fact_merge_from_v2_12": false,
+      "string_cleanup_count": 8,
+      "feature_description_improved_count": 2
+    },
+    "v2_16_semantic_cleanup": {
+      "updated_at": "2026-07-03",
+      "basis": "v2.15 semantic audit plus heuristic field/path validation",
+      "missing_text_standard": "产品手册未明确说明。",
+      "note": "统一缺失文案；修复等待期字段混入赔付比例/上限的语义错位；不改写原始 evidence_quote。"
+    },
+    "v2_18_full_pdf_missing_statement_recheck": {
+      "version": "2.18",
+      "updated_at": "2026-07-03T12:57:00.490990+00:00",
+      "note": "对 v2.17 中“产品手册未明确说明。”字段回到全量产品手册进行复查；能找到明确条款的改成具体事实，仍无明确披露的保留统一兜底文案。",
+      "missing_text_policy": "产品手册未明确说明。"
+    },
+    "current_cleanup_version": "2.18"
   },
   "display_features": [
     {
@@ -1030,12 +1279,13 @@
     },
     {
       "title": "多次赔付",
-      "summary": "指定疾病可在首次赔付后继续获得保障。",
+      "summary": "严重疾病延伸保障每次100%；一般相隔至少1年，两次均属癌症须至少3年；索偿无需存活期但诊断时须在生。",
       "category": "protection",
       "priority": 2,
       "source_tags": [],
       "source_paths": [
-        "compare_profile.has_multiple_claims"
+        "compare_profile.multiple_claim_waiting_period_summary",
+        "compare_profile.survival_period_summary"
       ]
     },
     {
@@ -1050,14 +1300,14 @@
     },
     {
       "title": "心脑血管保障",
-      "summary": "心脏病或中风达到条件后，可获额外支持。",
+      "summary": "心脏病发作/中风延伸保障最高基本保额200%，后续同类索偿须为新一次事件。",
       "category": "protection",
       "priority": 4,
       "source_tags": [
         "heart_stroke_multiple_claims"
       ],
       "source_paths": [
-        "compare_profile.has_heart_stroke_multiple_claims"
+        "compare_profile.heart_stroke_claim_summary"
       ]
     },
     {
@@ -1081,6 +1331,18 @@
         "neurodegenerative_annuity"
       ],
       "source_paths": []
+    },
+    {
+      "title": "脑退化/柏金森年金",
+      "summary": "86岁前确诊严重脑退化症或柏金森病，确诊1年后每年支付基本保额6%直至身故。",
+      "category": "protection",
+      "priority": 7,
+      "source_tags": [
+        "neurodegenerative_annuity"
+      ],
+      "source_paths": [
+        "compare_profile.neurodegenerative_annuity_summary"
+      ]
     }
   ]
 }

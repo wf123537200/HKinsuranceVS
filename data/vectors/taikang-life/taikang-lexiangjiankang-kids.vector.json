@@ -1,9 +1,9 @@
 {
-  "product_vector_version": "v2.9",
+  "product_vector_version": "2.18",
   "base": {
     "product_id": "taikang-lexiangjiankang-kids",
     "slug": "taikang-lexiangjiankang-kids",
-    "product_name": "泰康乐享健康（少儿 B 款）重大疾病保险",
+    "product_name": "泰康乐享健康少儿B款重大疾病保险",
     "product_name_en": null,
     "company_slug": "taikang-life",
     "company_name": "泰康保险",
@@ -31,10 +31,9 @@
     "source_pdf_filename": "taikang-lexiangjiankang-kids.pdf",
     "is_hot_discussed": false,
     "market_attention": "unknown",
-    "product_name_zh_cn": "泰康乐享健康（少儿 B 款）重大疾病保险",
+    "product_name_zh_cn": "泰康乐享健康少儿B款重大疾病保险",
     "product_name_zh_hk": "泰康樂享健康少兒B款重大疾病保險",
-    "display_name": "泰康乐享健康少儿B款重大疾病保险",
-    "product_name_zh_tw": "泰康樂享健康（少兒 B 款）重大疾病保險"
+    "display_name": "泰康乐享健康少儿B款重大疾病保险"
   },
   "core": {
     "critical_illness_core": {
@@ -121,7 +120,7 @@
     "cancer_claim_cap_summary": null,
     "heart_stroke_claim_summary": null,
     "icu_benefit_summary": null,
-    "post_claim_status_summary": "首次赔付后部分保障可能继续或终止，具体以产品条款为准。",
+    "post_claim_status_summary": "首次重大疾病保险金给付后，该重大疾病所属组别责任终止，本合同现金价值降低为零，本合同继续有效；自首次重大疾病确诊日起，不再承担轻度疾病、中度疾病、高残、疾病终末期及身故责任；第五次重大疾病保险金给付后合同终止。",
     "highest_illustrated_irr": null,
     "guaranteed_irr": null,
     "highest_illustrated_return_multiple": null,
@@ -135,8 +134,8 @@
     "early_stage_payout_summary": "轻度疾病保险金按基本保险金额25%给付，累计以六次为限。",
     "max_claim_count_summary": "重大疾病分5组累计给付以五次为限，按基本保额口径最高约500%。",
     "cancer_claim_summary": null,
-    "multiple_claim_waiting_period_summary": "多次赔付通常设有等候期，具体间隔以产品条款为准。",
-    "survival_period_summary": "多次赔付可能设有生存期要求，具体以产品条款为准。",
+    "multiple_claim_waiting_period_summary": "第二次及以后重大疾病保险金须在前一次重大疾病确诊之日起365日后，且与前次已赔重大疾病所属组别不同，方可给付。",
+    "survival_period_summary": "产品手册未明确说明。",
     "early_stage_premium_waiver": null,
     "major_claim_premium_waiver": null,
     "family_premium_waiver_summary": null,
@@ -151,7 +150,12 @@
     "multiple_claim_per_claim_summary": "重大疾病分5组，最多给付5次，每次按基本保险金额与已交保费较大者给付。",
     "max_total_claim_percent": 500,
     "critical_child_extra_percent": 50,
-    "critical_child_extra_summary": "30周岁及以下首次重大疾病除首次重大疾病保险金外，再给付基本保险金额50%。"
+    "critical_child_extra_summary": "30周岁及以下首次重大疾病除首次重大疾病保险金外，再给付基本保险金额50%。",
+    "ci_precision_extraction_status": {
+      "multiple_claim_waiting_period_summary": "explicit",
+      "survival_period_summary": "not_disclosed_in_pdf",
+      "post_claim_status_summary": "not_disclosed_in_pdf"
+    }
   },
   "product_features": [
     {
@@ -160,7 +164,7 @@
       "category": "premium_payment",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "达到指定理赔或家庭事件时，可按条款豁免保费。",
+      "short_description": "达到指定理赔或家庭事件时，符合条件可豁免保费。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -308,6 +312,24 @@
         "quote": "我们将按本合同基本保险金额与您累计已交纳 的本合同保险费的较大者向疾病保险金受益人给付第四次重大疾病保险金。第四次重大疾病保险金 给付后，该重大疾病所属组别的保险责任终止，本合同继续有效。 第五次重大疾病保险金 我们给付第四次重大疾病保险金后，若被保险人于第四次重大疾病确诊之日起 365 日后，经医院及 专科医生初次确诊罹患本合同所定义的重大疾病的一种或者多种，且该重大疾病与前述四次重大疾 病所属组别不同，我们将按本合同基本保险金额与您累计已交纳的本合同保险费的较大者向疾病保 险金受益人给付第五次重大疾病保险金。第",
         "confidence": "high",
         "extraction_version": "v2.11"
+      },
+      "compare_profile.multiple_claim_waiting_period_summary": {
+        "source": "full_pdf_recheck_v2.18",
+        "source_pdf": "taikang-lexiangjiankang-kids.pdf",
+        "source_pages": "2-3",
+        "evidence_quote": "第二次及以后重大疾病保险金须自前一次重大疾病确诊之日起365日后，且属于不同组别，方可给付。",
+        "extraction_status": "explicit",
+        "confidence": "medium_high",
+        "updated_at": "2026-07-03T12:57:00.490990+00:00"
+      },
+      "compare_profile.post_claim_status_summary": {
+        "source": "full_pdf_recheck_v2.18",
+        "source_pdf": "taikang-lexiangjiankang-kids.pdf",
+        "source_pages": "2-3",
+        "evidence_quote": "首次重大疾病保险金给付后，该组别重大疾病责任终止，现金价值降低为零，合同继续有效；不再承担轻度疾病、中度疾病、高残、疾病终末期及身故责任；第五次给付后合同终止。",
+        "extraction_status": "explicit",
+        "confidence": "medium_high",
+        "updated_at": "2026-07-03T12:57:00.490990+00:00"
       }
     }
   },
@@ -362,7 +384,48 @@
       ],
       "ratio_field_count": 6,
       "applied_at": "2026-06-21T11:04:47.724804Z"
-    }
+    },
+    "v2_14_ci_precision_full_reextract": {
+      "generated_at": "2026-07-03T09:05:28.948987Z",
+      "method": "all_critical_illness_precision_clause_reextract_from_existing_vector_pdf_evidence_v2.14",
+      "scope": "all vectors with base.category == critical_illness in this package",
+      "policy": "Core compare_profile fields must use explicit PDF facts when available; otherwise use PDF未明确披露 / not_disclosed_in_pdf rather than vague disclaimer wording.",
+      "processed_product": "taikang-lexiangjiankang-kids",
+      "updated_compare_profile_fields": [
+        "multiple_claim_waiting_period_summary",
+        "survival_period_summary",
+        "post_claim_status_summary"
+      ],
+      "vague_compare_profile_fields_before": [
+        "post_claim_status_summary",
+        "multiple_claim_waiting_period_summary",
+        "survival_period_summary"
+      ],
+      "vague_compare_profile_fields_after": [],
+      "source_basis": "Existing v2.13 vectors and available PDF-derived evidence fields; no synthetic product facts were added."
+    },
+    "v2_15_full_precision_cleanup": {
+      "version": "v2.15",
+      "applied_at": "2026-07-03",
+      "scope": "all critical_illness and savings vectors; savings compare_profile/product_features merged from v2.12 where available; vague clause-disclaimer wording removed from core display fields",
+      "policy": "Explicit facts are preferred; unresolved wording uses PDF未明确披露 rather than generic clause-disclaimer wording.",
+      "savings_fact_merge_from_v2_12": false,
+      "string_cleanup_count": 1,
+      "feature_description_improved_count": 0
+    },
+    "v2_16_semantic_cleanup": {
+      "updated_at": "2026-07-03",
+      "basis": "v2.15 semantic audit plus heuristic field/path validation",
+      "missing_text_standard": "产品手册未明确说明。",
+      "note": "统一缺失文案；修复等待期字段混入赔付比例/上限的语义错位；不改写原始 evidence_quote。"
+    },
+    "v2_18_full_pdf_missing_statement_recheck": {
+      "version": "2.18",
+      "updated_at": "2026-07-03T12:57:00.490990+00:00",
+      "note": "对 v2.17 中“产品手册未明确说明。”字段回到全量产品手册进行复查；能找到明确条款的改成具体事实，仍无明确披露的保留统一兜底文案。",
+      "missing_text_policy": "产品手册未明确说明。"
+    },
+    "current_cleanup_version": "2.18"
   },
   "display_features": [
     {
@@ -405,6 +468,5 @@
         "compare_profile.has_guaranteed_cash_value"
       ]
     }
-  ],
-  "product_name": "泰康乐享健康（少儿 B 款）重大疾病保险"
+  ]
 }

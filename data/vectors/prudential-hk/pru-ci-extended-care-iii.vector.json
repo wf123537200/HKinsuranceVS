@@ -1,9 +1,9 @@
 {
-  "product_vector_version": "v2.9",
+  "product_vector_version": "2.18",
   "base": {
     "product_id": "pru-ci-extended-care-iii",
     "slug": "pru-ci-extended-care-iii",
-    "product_name": "保诚信护危疾保 III",
+    "product_name": "保诚危疾加护保 III",
     "product_name_en": "Prudential CI Extended Care III",
     "company_slug": "prudential-hk",
     "company_name": "保诚香港",
@@ -26,10 +26,9 @@
     "source_pdf_filename": "pru-ci-extended-care-iii.pdf",
     "is_hot_discussed": false,
     "market_attention": "unknown",
-    "product_name_zh_cn": "保诚信护危疾保 III",
+    "product_name_zh_cn": "保诚危疾加护保 III",
     "product_name_zh_hk": "保誠危疾加護保 III",
-    "display_name": "保诚危疾加护保 III",
-    "product_name_zh_tw": "保誠信護危疾保 III"
+    "display_name": "保诚危疾加护保 III"
   },
   "core": {
     "critical_illness_core": {
@@ -116,10 +115,10 @@
     "has_cancer_multiple_claims": true,
     "has_heart_stroke_multiple_claims": true,
     "has_icu_benefit": true,
-    "cancer_claim_cap_summary": "癌症相关额外或多次保障受赔付次数、等候期、保额上限及条款条件限制。",
-    "heart_stroke_claim_summary": "心脏病/中风相关赔付上限约为200%基本保额/名义金额。",
+    "cancer_claim_cap_summary": "癌症相关索偿次数为2次；癌症相关赔付上限为660%；癌症再次索偿相隔期为至少3年。",
+    "heart_stroke_claim_summary": "严重疾病延伸保障下，心脏病发作或中风合共最多额外索偿2次，每次当时保额100%。",
     "icu_benefit_summary": "深切治疗保障最高为当时保额20%；境外可为10%。",
-    "post_claim_status_summary": "首次赔付后部分保障可能继续或终止，具体以产品条款为准。",
+    "post_claim_status_summary": "支付严重疾病保障后，严重疾病延伸保障及癌症治疗额外保障继续有效且毋须再缴保费；早期严重疾病保障、ICU保障、身故赔偿、退保价值、特别红利及额外危疾加护保III等不再提供。",
     "highest_illustrated_irr": null,
     "guaranteed_irr": null,
     "highest_illustrated_return_multiple": null,
@@ -138,15 +137,15 @@
     "major_illness_payout_summary": "严重疾病保障最高为当时保额100%。",
     "early_stage_payout_summary": "其余早期严重病况每次赔偿最高为当时保额20%。",
     "max_claim_count_summary": "连同心脏病发作或中风延伸保障，合共最高为当时保额860%。",
-    "cancer_claim_summary": "癌症保障最高可达当时保额660%，含癌症治疗额外保障。",
-    "multiple_claim_waiting_period_summary": "多次赔付通常设有等候期，具体间隔以产品条款为准。",
-    "survival_period_summary": "多次赔付可能设有生存期要求，具体以产品条款为准。",
+    "cancer_claim_summary": "严重疾病延伸保障下，癌症最多额外索偿2次，每次当时保额100%；癌症治疗额外保障在每次癌症重疾/延伸索偿后最多2次，每次60%，整体癌症保障最高可达当时保额660%。",
+    "multiple_claim_waiting_period_summary": "严重疾病延伸保障：前后两次严重病况诊断日期必须相隔至少1年；如前后两次严重疾病保障/严重疾病延伸保障索偿均属癌症，诊断日期必须相隔至少3年。",
+    "survival_period_summary": "索偿严重疾病延伸保障时，86岁（下次生日年龄）以下受保人必须由诊断日期起计存活至少14日。",
     "early_stage_premium_waiver": null,
-    "major_claim_premium_waiver": null,
-    "family_premium_waiver_summary": "父母、配偶或家庭相关事件可按条款触发保费豁免，具体条件以条款为准。",
+    "major_claim_premium_waiver": "支付严重疾病保障后，豁免提供保障直至受保人86岁（下次生日年龄）的往后所有保费。",
+    "family_premium_waiver_summary": "亲子保费豁免保障：若受保人于计划生效时为1至18岁（下次生日年龄），且保单持有人或已登记并获接纳的配偶符合年龄条件，在保单生效、接纳登记或复效日起计最少2年后身故（意外身故不受2年等候期限制），可由下一次到期保费起豁免未来基本保费，直至受保人26岁（下次生日年龄）或保费供款年期结束，以较早者为准。",
     "bonus_type_summary": "提供非保证红利或分红，实际金额并不保证。",
     "death_benefit_summary": "身故赔偿通常为当时保额100%。",
-    "healthcare_service_summary": "提供医疗咨询或健康支援服务，具体安排以服务条款为准。",
+    "healthcare_service_summary": "PDF披露医疗咨询或健康支援服务；当前PDF未结构化披露统一服务触发条件或使用安排。",
     "major_illness_payout_percent": 100,
     "death_benefit_percent": 100,
     "multiple_claim_per_claim_percent": 100,
@@ -163,7 +162,23 @@
     "icu_benefit_overseas_summary": "香港或澳门境外入住深切治疗病房，赔偿额可调至当时保额10%。",
     "upgrade_benefit_percent": 50,
     "upgrade_benefit_summary": "首10年额外危疾加护保障或身故赔偿为当时保额50%。",
-    "family_extra_death_benefit_percent": 50
+    "family_extra_death_benefit_percent": 50,
+    "multiple_claim_interval_years": 1,
+    "cancer_multiple_claim_interval_years": 3,
+    "multiple_claim_survival_period_required": true,
+    "multiple_claim_survival_period_days": 14,
+    "multiple_claim_age_limit_next_birthday": 86,
+    "multiple_claim_age_limit_summary": "严重疾病延伸保障及癌症治疗额外保障提供至86岁（下次生日年龄）前。",
+    "cancer_claim_count": 2,
+    "heart_stroke_claim_count_total": 2,
+    "cancer_treatment_extra_condition_summary": "癌症治疗额外保障要求受保人仍患有癌症，并正在接受积极治疗或晚期护理；索偿窗口为上次癌症诊断日期起计至少1年至2年内，以及至少2年至3年内。",
+    "cancer_treatment_extra_claim_count_per_cancer_claim": 2,
+    "cancer_treatment_extra_claim_total_count": 6,
+    "ci_precision_extraction_status": {
+      "cancer_claim_cap_summary": "explicit",
+      "family_premium_waiver_summary": "not_disclosed_in_pdf",
+      "healthcare_service_summary": "not_disclosed_in_pdf"
+    }
   },
   "product_features": [
     {
@@ -172,7 +187,7 @@
       "category": "liquidity",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "可按条款申请保单贷款，提升保单资金流动性。",
+      "short_description": "支持申请保单贷款；贷款及利息会影响保单现金价值与身故赔偿。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -214,7 +229,7 @@
       "category": "special_option",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "达到末期疾病条件时，可按条款预支或获得相关利益。",
+      "short_description": "达到末期疾病条件时，符合条件可申请预支或相关利益。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -290,7 +305,7 @@
       "category": "cancer_support",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "癌症持续、复发或扩散时，可按条款获得现金赔偿支持。",
+      "short_description": "癌症持续、复发或扩散时，符合条件时可获得现金赔偿支持。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -331,7 +346,7 @@
       "category": "special_option",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "指定脑退化疾病或柏金森病可按条款提供年金赔偿。",
+      "short_description": "指定脑退化疾病或柏金森病符合指定脑退化疾病或柏金森病条件时提供年金赔偿。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -415,7 +430,7 @@
       "category": "premium_payment",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "达到指定理赔或家庭事件时，可按条款豁免保费。",
+      "short_description": "达到指定理赔或家庭事件时，符合条件可豁免保费。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -455,7 +470,7 @@
       "category": "life_protection",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "受保人身故时，可按条款向受益人支付身故赔偿。",
+      "short_description": "受保人身故时，符合条件向受益人支付身故赔偿。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -632,10 +647,15 @@
       },
       "compare_profile.cancer_claim_summary": {
         "source": "local_pdf_text",
-        "page": null,
-        "quote": "危疾加護保 III 減輕危疾持續帶來的財務負擔 - 更就持續癌症每年提供一筆財務支援， 總保障高達660% 危疾保障 香港版 主要不保範圍 計劃的詳細資料 關於股東全資分紅計劃 重要事項 計劃特點 保障概覽 保障表 計劃如何提供保障 危疾加護保 III 今時今日，患有危疾例如癌症已經非常普遍。危疾患者（特別是癌症）或需要接受 長期及持續的治療，而相關開支可能會為您和家人帶來沉重的財務負擔。我們為此 推出危疾加護保 III，您只需於有限供款年期內繳付保費，計劃就會提供持續保障。 即使曾就嚴重疾病作出索償，其後仍可就癌",
+        "source_pdf": "pru-ci-extended-care-iii.pdf",
+        "pages": [
+          3,
+          12
+        ],
+        "quote": "癌症索償最多2次；每次支付當時保額100%；癌症治療額外保障每次可獲60%保障。",
         "confidence": "high",
-        "extraction_version": "v2.11"
+        "extraction_version": "v2.13",
+        "method": "precision_condition_reextract_from_pdf_text"
       },
       "compare_profile.heart_stroke_claim_max_percent": {
         "source": "local_pdf_text",
@@ -646,10 +666,15 @@
       },
       "compare_profile.heart_stroke_claim_summary": {
         "source": "local_pdf_text",
-        "page": null,
-        "quote": "身 為您家人提供的專屬保障 增值服務以加強您的保障 只要您家庭內的任何2位成員一同受保於本計劃 安心醫 - 國際專家提供的個人化醫療諮詢 +50% 於首10年內可享50%額外人壽保障 服務，助您重拾健康 如您或您的配偶不幸身故 $ 子女保單的未來所有保費可獲豁免 直至子女26歲（下次生日年齡） 2 主要不保範圍 計劃的詳細資料 關於股東全資分紅計劃 重要事項 計劃特點 保障概覽 保障表 計劃如何提供保障 保障概覽 保障涵蓋117種病況 117 我們為117種病況提供保障，包括56種嚴重病況及61種早期嚴重病況，令您",
+        "source_pdf": "pru-ci-extended-care-iii.pdf",
+        "pages": [
+          3,
+          12
+        ],
+        "quote": "心臟病發作或中風索償合共最多2次；每次支付當時保額100%。",
         "confidence": "high",
-        "extraction_version": "v2.11"
+        "extraction_version": "v2.13",
+        "method": "precision_condition_reextract_from_pdf_text"
       },
       "compare_profile.max_total_claim_percent": {
         "source": "local_pdf_text",
@@ -748,6 +773,96 @@
         "quote": "您對抗癌症的路上，無間斷為您提供每年一筆財務保障，以支持您 戰勝頑疾。當您在危疾範疇以外的身體狀況（包括傳染病及受傷）而須入住深切治療 病房時，計劃亦會支付保障。 計劃特點 保障涵蓋117種病況 深切治療保障 - 若因危疾範疇以外的身體狀況 117 （包括傳染病及受傷）須連續入住深切治療病房 種病況 3日或以上，可獲高達20%保障 危疾保障高達860% - 就早期嚴重病況提供保障 • 100%嚴重疾病保障後，仍可就癌症、 包括原位癌 心臟病發作及中風享有多重保障 • 就新病發或原有癌症的延續提供額外保障: - 就癌",
         "confidence": "high",
         "extraction_version": "v2.11"
+      },
+      "compare_profile.multiple_claim_waiting_period_summary": {
+        "source": "local_pdf_text",
+        "source_pdf": "pru-ci-extended-care-iii.pdf",
+        "pages": [
+          3
+        ],
+        "quote": "嚴重疾病延伸保障之等候期：前後2次嚴重病況之診斷日期必須相隔最少1年；...均屬癌症...必須相隔最少3年。",
+        "confidence": "high",
+        "extraction_version": "v2.13",
+        "method": "precision_condition_reextract_from_pdf_text"
+      },
+      "compare_profile.multiple_claim_interval_years": {
+        "source": "local_pdf_text",
+        "source_pdf": "pru-ci-extended-care-iii.pdf",
+        "pages": [
+          3
+        ],
+        "quote": "前後2次嚴重病況之診斷日期必須相隔最少1年。",
+        "confidence": "high",
+        "extraction_version": "v2.13",
+        "method": "precision_condition_reextract_from_pdf_text"
+      },
+      "compare_profile.cancer_multiple_claim_interval_years": {
+        "source": "local_pdf_text",
+        "source_pdf": "pru-ci-extended-care-iii.pdf",
+        "pages": [
+          3
+        ],
+        "quote": "前後2次就嚴重疾病保障或嚴重疾病延伸保障索償之病況均屬癌症，有關診斷日期則必須相隔最少3年。",
+        "confidence": "high",
+        "extraction_version": "v2.13",
+        "method": "precision_condition_reextract_from_pdf_text"
+      },
+      "compare_profile.survival_period_summary": {
+        "source": "local_pdf_text",
+        "source_pdf": "pru-ci-extended-care-iii.pdf",
+        "pages": [
+          6
+        ],
+        "quote": "受保人索償嚴重疾病延伸保障，該受保人必須由診斷日期起計存活最少14日。",
+        "confidence": "high",
+        "extraction_version": "v2.13",
+        "method": "precision_condition_reextract_from_pdf_text"
+      },
+      "compare_profile.multiple_claim_survival_period_days": {
+        "source": "local_pdf_text",
+        "source_pdf": "pru-ci-extended-care-iii.pdf",
+        "pages": [
+          6
+        ],
+        "quote": "必須由診斷日期起計存活最少14日。",
+        "confidence": "high",
+        "extraction_version": "v2.13",
+        "method": "precision_condition_reextract_from_pdf_text"
+      },
+      "compare_profile.cancer_treatment_extra_condition_summary": {
+        "source": "local_pdf_text",
+        "source_pdf": "pru-ci-extended-care-iii.pdf",
+        "pages": [
+          4,
+          20
+        ],
+        "quote": "仍患有癌症，並就癌症正在接受積極治療或晚期護理；於上次索償癌症的診斷日期起計至少1年後至2年內及至少2年後至3年內。",
+        "confidence": "high",
+        "extraction_version": "v2.13",
+        "method": "precision_condition_reextract_from_pdf_text"
+      },
+      "compare_profile.major_claim_premium_waiver": {
+        "source": "local_pdf_text",
+        "source_pdf": "pru-ci-extended-care-iii.pdf",
+        "pages": [
+          6,
+          16
+        ],
+        "quote": "支付嚴重疾病保障後...毋須再為計劃繳付任何保費；危疾保費豁免保障提供保障直至受保人86歲。",
+        "confidence": "high",
+        "extraction_version": "v2.13",
+        "method": "precision_condition_reextract_from_pdf_text"
+      },
+      "compare_profile.post_claim_status_summary": {
+        "source": "local_pdf_text",
+        "source_pdf": "pru-ci-extended-care-iii.pdf",
+        "pages": [
+          6
+        ],
+        "quote": "索償嚴重疾病保障後...仍享有嚴重疾病延伸保障及癌症治療額外保障；...不會再提供早期嚴重疾病保障、深切治療保障、身故賠償、退保價值、特別紅利及額外危疾加護保 III。",
+        "confidence": "high",
+        "extraction_version": "v2.13",
+        "method": "precision_condition_reextract_from_pdf_text"
       }
     }
   },
@@ -809,7 +924,77 @@
       ],
       "ratio_field_count": 12,
       "applied_at": "2026-06-21T11:04:47.605856Z"
-    }
+    },
+    "v2_13_ci_precision_reextract": {
+      "generated_at": "2026-07-03T08:54:45Z",
+      "method": "manual+programmatic precision re-extraction from product brochure text",
+      "scope": "critical illness multiple-claim waiting period, survival period, claim counts and limits",
+      "source_pdf_note": "Local PDF /mnt/data/pru-ci-extended-care-iii.pdf precision check.",
+      "vague_disclaimer_policy": "Do not use “。/PDF未明确披露是否设有要求” as core facts when brochure has explicit conditions; use explicit facts or not_disclosed_in_pdf.",
+      "updated_fields": [
+        "cancer_claim_count",
+        "cancer_claim_summary",
+        "cancer_multiple_claim_interval_years",
+        "cancer_treatment_extra_claim_count_per_cancer_claim",
+        "cancer_treatment_extra_claim_total_count",
+        "cancer_treatment_extra_condition_summary",
+        "cancer_treatment_extra_percent",
+        "heart_stroke_claim_count_total",
+        "heart_stroke_claim_summary",
+        "major_claim_premium_waiver",
+        "multiple_claim_age_limit_next_birthday",
+        "multiple_claim_age_limit_summary",
+        "multiple_claim_interval_years",
+        "multiple_claim_survival_period_days",
+        "multiple_claim_survival_period_required",
+        "multiple_claim_waiting_period_summary",
+        "post_claim_status_summary",
+        "survival_period_summary"
+      ]
+    },
+    "v2_14_ci_precision_full_reextract": {
+      "generated_at": "2026-07-03T09:05:28.943091Z",
+      "method": "all_critical_illness_precision_clause_reextract_from_existing_vector_pdf_evidence_v2.14",
+      "scope": "all vectors with base.category == critical_illness in this package",
+      "policy": "Core compare_profile fields must use explicit PDF facts when available; otherwise use PDF未明确披露 / not_disclosed_in_pdf rather than vague disclaimer wording.",
+      "processed_product": "pru-ci-extended-care-iii",
+      "updated_compare_profile_fields": [
+        "cancer_claim_cap_summary",
+        "family_premium_waiver_summary",
+        "healthcare_service_summary"
+      ],
+      "vague_compare_profile_fields_before": [
+        "cancer_claim_cap_summary",
+        "family_premium_waiver_summary",
+        "healthcare_service_summary"
+      ],
+      "vague_compare_profile_fields_after": [],
+      "source_basis": "Existing v2.13 vectors and available PDF-derived evidence fields; no synthetic product facts were added."
+    },
+    "v2_15_full_precision_cleanup": {
+      "version": "v2.15",
+      "applied_at": "2026-07-03",
+      "scope": "all critical_illness and savings vectors; savings compare_profile/product_features merged from v2.12 where available; vague clause-disclaimer wording removed from core display fields",
+      "policy": "Explicit facts are preferred; unresolved wording uses PDF未明确披露 rather than generic clause-disclaimer wording.",
+      "savings_fact_merge_from_v2_12": false,
+      "string_cleanup_count": 7,
+      "feature_description_improved_count": 1
+    },
+    "v2_16_semantic_cleanup": {
+      "updated_at": "2026-07-03",
+      "basis": "v2.15 semantic audit plus heuristic field/path validation",
+      "missing_text_standard": "产品手册未明确说明。",
+      "note": "统一缺失文案；修复等待期字段混入赔付比例/上限的语义错位；不改写原始 evidence_quote。"
+    },
+    "v2_17_missing_statement_recheck": {
+      "note": "针对“产品手册未明确说明。”字段进行复查；本产品相关字段已按可用产品手册原文修正。",
+      "reviewed_at": "2026-07-03T10:24:50.633557Z",
+      "available_pdf_verified": true,
+      "changed_fields": [
+        "compare_profile.family_premium_waiver_summary"
+      ]
+    },
+    "current_cleanup_version": "2.18"
   },
   "display_features": [
     {
@@ -824,36 +1009,38 @@
     },
     {
       "title": "多次赔付",
-      "summary": "指定疾病可在首次赔付后继续获得保障。",
+      "summary": "重疾延伸保障每次100%；一般相隔至少1年，两次均属癌症须至少3年；索偿须自诊断日起存活至少14日。",
       "category": "protection",
       "priority": 2,
       "source_tags": [],
       "source_paths": [
-        "compare_profile.has_multiple_claims"
+        "compare_profile.multiple_claim_waiting_period_summary",
+        "compare_profile.survival_period_summary"
       ]
     },
     {
       "title": "癌症持续保障",
-      "summary": "癌症持续、复发或扩散时，可获得后续赔付。",
+      "summary": "癌症延伸最多2次每次100%；癌症治疗额外保障每次60%，要求仍患癌并接受积极治疗或晚期护理。",
       "category": "protection",
       "priority": 3,
       "source_tags": [
         "persistent_cancer_cash"
       ],
       "source_paths": [
-        "compare_profile.has_cancer_multiple_claims"
+        "compare_profile.cancer_claim_summary",
+        "compare_profile.cancer_treatment_extra_condition_summary"
       ]
     },
     {
       "title": "心脑血管保障",
-      "summary": "心脏病或中风达到条件后，可获额外支持。",
+      "summary": "心脏病发作或中风延伸保障合共最多2次，每次100%。",
       "category": "protection",
       "priority": 4,
       "source_tags": [
         "heart_stroke_multiple_claims"
       ],
       "source_paths": [
-        "compare_profile.has_heart_stroke_multiple_claims"
+        "compare_profile.heart_stroke_claim_summary"
       ]
     },
     {
@@ -878,6 +1065,5 @@
       ],
       "source_paths": []
     }
-  ],
-  "product_name": "保诚信护危疾保 III"
+  ]
 }

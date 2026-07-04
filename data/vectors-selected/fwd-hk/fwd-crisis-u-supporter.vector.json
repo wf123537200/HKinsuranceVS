@@ -1,5 +1,5 @@
 {
-  "product_vector_version": "v2.9",
+  "product_vector_version": "2.18",
   "base": {
     "product_id": "fwd-crisis-u-supporter",
     "slug": "fwd-crisis-u-supporter",
@@ -31,8 +31,7 @@
     "market_attention": "hot_discussed",
     "product_name_zh_cn": "富卫危疾应援保",
     "product_name_zh_hk": "富衛危疾應援保",
-    "display_name": "富卫危疾应援保",
-    "product_name_zh_tw": "富衛危疾應援保"
+    "display_name": "富卫危疾应援保"
   },
   "core": {
     "critical_illness_core": {
@@ -125,10 +124,10 @@
     "has_cancer_multiple_claims": true,
     "has_heart_stroke_multiple_claims": true,
     "has_icu_benefit": true,
-    "cancer_claim_cap_summary": "癌症相关额外或多次保障受赔付次数、等候期、保额上限及条款条件限制。",
+    "cancer_claim_cap_summary": "持续癌症现金可为每年5%。",
     "heart_stroke_claim_summary": "心脏病/中风相关赔付上限约为990%基本保额/名义金额。",
     "icu_benefit_summary": "深切治疗保障：一级50%，二级100%基本保额/名义金额。",
-    "post_claim_status_summary": "首次赔付后部分保障可能继续或终止，具体以产品条款为准。",
+    "post_claim_status_summary": "特別疾病权益等赔付后，现有投保额、身故权益、危疾权益、保证现金价值、未来保费及特别红利会相应减少；当已支付赔偿高于原有投保额100%时，往后保费无需缴付，保证现金价值减至零，未来特别红利不再派发。",
     "highest_illustrated_irr": null,
     "guaranteed_irr": null,
     "highest_illustrated_return_multiple": null,
@@ -147,9 +146,9 @@
     "major_illness_payout_summary": "危疾权益为现有投保额100%。",
     "early_stage_payout_summary": "特别疾病权益预支原有投保额20%。",
     "max_claim_count_summary": "危疾权益100%加指定危疾多重权益990%，合计可达原有投保额1090%（不含其他额外权益）。",
-    "cancer_claim_summary": "癌症持续、复发或扩散达到条件时，可按条款继续获得赔偿。",
-    "multiple_claim_waiting_period_summary": "多次赔付通常设有等候期，具体间隔以产品条款为准。",
-    "survival_period_summary": "多次赔付可能设有生存期要求，具体以产品条款为准。",
+    "cancer_claim_summary": "持续癌症现金可为每年5%。",
+    "multiple_claim_waiting_period_summary": "指定危疾多重权益：持续癌症再次索偿示例为3年等候期。",
+    "survival_period_summary": "产品手册未明确说明。",
     "early_stage_premium_waiver": null,
     "major_claim_premium_waiver": null,
     "family_premium_waiver_summary": null,
@@ -181,7 +180,14 @@
     "parent_child_guard_percent": 20,
     "heart_stroke_claim_max_percent": 990,
     "death_benefit_percent": 155,
-    "icu_benefit_percent": 100
+    "icu_benefit_percent": 100,
+    "ci_precision_extraction_status": {
+      "multiple_claim_waiting_period_summary": "explicit",
+      "survival_period_summary": "not_disclosed_in_pdf",
+      "post_claim_status_summary": "not_disclosed_in_pdf",
+      "cancer_claim_cap_summary": "explicit",
+      "cancer_claim_summary": "explicit"
+    }
   },
   "product_features": [
     {
@@ -190,7 +196,7 @@
       "category": "liquidity",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "可按条款申请保单贷款，提升保单资金流动性。",
+      "short_description": "支持申请保单贷款；贷款及利息会影响保单现金价值与身故赔偿。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -232,7 +238,7 @@
       "category": "legacy_planning",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "可按条款安排身故赔偿支付方式，配合传承规划。",
+      "short_description": "受保人身故时提供身故赔偿；资料列示身故赔偿基础包括已缴保费的155%或相关保单价值。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -271,7 +277,7 @@
       "category": "special_option",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "达到末期疾病条件时，可按条款预支或获得相关利益。",
+      "short_description": "达到末期疾病条件时，符合条件可申请预支或相关利益。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -347,7 +353,7 @@
       "category": "special_option",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "指定脑退化疾病或柏金森病可按条款提供年金赔偿。",
+      "short_description": "指定脑退化疾病或柏金森病符合指定脑退化疾病或柏金森病条件时提供年金赔偿。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -391,7 +397,7 @@
       "category": "maternity",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "孕期版本可按条款覆盖孕妈妈、新生儿或儿童保障。",
+      "short_description": "孕期版本符合指定孕期/儿童保障条件时覆盖孕妈妈、新生儿或儿童保障。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -511,7 +517,7 @@
       "category": "premium_payment",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "达到指定理赔或家庭事件时，可按条款豁免保费。",
+      "short_description": "达到指定理赔或家庭事件时，符合条件可豁免保费。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -850,6 +856,24 @@
         "quote": "(一) 應繳保費已全數支付、 (二) 保單內沒有任何欠款、 (三) 符合權益的定義及賠償要求及 (四) 基本計劃的原有投保額於保障年期內維持不變。 9 計劃如何運作 2023 年 5月 投保本計劃，並分別於父母之家添守護及子女之家添守護申報她的父母（下次生日年齡皆為70歲） 及5歲的女兒。 2026 年 2 月 她的父親首次確認診斷患上肺癌，因此可獲賠償父母之家添守護，即額外原有投保額的 20% （200,000港元）。 2029 年 2 月 她感到胸部痛楚並不幸地確診患上乳房原位癌。因此，她可獲賠償特別疾病權益，",
         "confidence": "medium",
         "extraction_version": "v2.11"
+      },
+      "compare_profile.post_claim_status_summary": {
+        "source": "full_pdf_recheck_v2.18",
+        "source_pdf": "fwd-crisis-u-supporter.pdf",
+        "source_pages": "11-13",
+        "evidence_quote": "当已支付赔偿高于原有投保额100%时，往后保费无需缴付；保证现金价值减至零，未来特别红利不再派发；身故权益及危疾权益等会相应减少。",
+        "extraction_status": "explicit",
+        "confidence": "medium_high",
+        "updated_at": "2026-07-03T12:57:00.490990+00:00"
+      },
+      "compare_profile.multiple_claim_waiting_period_summary": {
+        "source": "full_pdf_recheck_v2.18",
+        "source_pdf": "fwd-crisis-u-supporter.pdf",
+        "source_pages": "12",
+        "evidence_quote": "示例列明乳癌持续且未完全缓和时，在3年等候期后可获指定危疾多重权益赔偿。",
+        "extraction_status": "explicit",
+        "confidence": "medium_high",
+        "updated_at": "2026-07-03T12:57:00.490990+00:00"
       }
     }
   },
@@ -917,7 +941,52 @@
       ],
       "ratio_field_count": 20,
       "applied_at": "2026-06-21T11:04:48.166415Z"
-    }
+    },
+    "v2_14_ci_precision_full_reextract": {
+      "generated_at": "2026-07-03T09:05:28.959348Z",
+      "method": "all_critical_illness_precision_clause_reextract_from_existing_vector_pdf_evidence_v2.14",
+      "scope": "all vectors with base.category == critical_illness in this package",
+      "policy": "Core compare_profile fields must use explicit PDF facts when available; otherwise use PDF未明确披露 / not_disclosed_in_pdf rather than vague disclaimer wording.",
+      "processed_product": "fwd-crisis-u-supporter",
+      "updated_compare_profile_fields": [
+        "multiple_claim_waiting_period_summary",
+        "survival_period_summary",
+        "post_claim_status_summary",
+        "cancer_claim_cap_summary",
+        "cancer_claim_summary"
+      ],
+      "vague_compare_profile_fields_before": [
+        "cancer_claim_cap_summary",
+        "post_claim_status_summary",
+        "cancer_claim_summary",
+        "multiple_claim_waiting_period_summary",
+        "survival_period_summary"
+      ],
+      "vague_compare_profile_fields_after": [],
+      "source_basis": "Existing v2.13 vectors and available PDF-derived evidence fields; no synthetic product facts were added."
+    },
+    "v2_15_full_precision_cleanup": {
+      "version": "v2.15",
+      "applied_at": "2026-07-03",
+      "scope": "all critical_illness and savings vectors; savings compare_profile/product_features merged from v2.12 where available; vague clause-disclaimer wording removed from core display fields",
+      "policy": "Explicit facts are preferred; unresolved wording uses PDF未明确披露 rather than generic clause-disclaimer wording.",
+      "savings_fact_merge_from_v2_12": false,
+      "string_cleanup_count": 6,
+      "feature_description_improved_count": 2
+    },
+    "v2_16_semantic_cleanup": {
+      "updated_at": "2026-07-03",
+      "basis": "v2.15 semantic audit plus heuristic field/path validation",
+      "missing_text_standard": "产品手册未明确说明。",
+      "note": "统一缺失文案；修复等待期字段混入赔付比例/上限的语义错位；不改写原始 evidence_quote。"
+    },
+    "v2_18_full_pdf_missing_statement_recheck": {
+      "version": "2.18",
+      "updated_at": "2026-07-03T12:57:00.490990+00:00",
+      "note": "对 v2.17 中“产品手册未明确说明。”字段回到全量产品手册进行复查；能找到明确条款的改成具体事实，仍无明确披露的保留统一兜底文案。",
+      "missing_text_policy": "产品手册未明确说明。"
+    },
+    "current_cleanup_version": "2.18"
   },
   "display_features": [
     {

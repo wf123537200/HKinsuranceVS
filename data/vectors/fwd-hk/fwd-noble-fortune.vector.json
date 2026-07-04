@@ -1,9 +1,9 @@
 {
-  "product_vector_version": "v2.9",
+  "product_vector_version": "2.18",
   "base": {
     "product_id": "fwd-noble-fortune",
     "slug": "fwd-noble-fortune",
-    "product_name": "富卫尊贵盈家储蓄保险计划",
+    "product_name": "富卫尊贵财富保险计划",
     "product_name_en": "FWD Noble Fortune",
     "company_slug": "fwd-hk",
     "company_name": "富卫香港",
@@ -22,10 +22,9 @@
     "source_pdf_filename": "fwd-noble-fortune.pdf",
     "is_hot_discussed": false,
     "market_attention": "unknown",
-    "product_name_zh_cn": "富卫尊贵盈家储蓄保险计划",
+    "product_name_zh_cn": "富卫尊贵财富保险计划",
     "product_name_zh_hk": "富衛尊貴財富保險計劃",
-    "display_name": "富卫尊贵财富保险计划",
-    "product_name_zh_tw": "富衛尊貴盈家儲蓄保險計劃"
+    "display_name": "富卫尊贵财富保险计划"
   },
   "core": {
     "critical_illness_core": null,
@@ -108,17 +107,13 @@
     "icu_benefit_summary": null,
     "post_claim_status_summary": null,
     "highest_illustrated_irr": null,
-    "guaranteed_irr": 2.3,
+    "guaranteed_irr": null,
     "highest_illustrated_return_multiple": null,
     "illustrated_break_even_year": null,
     "guaranteed_break_even_year": null,
     "risk_summary": [
-      "非保证利益风险",
-      "退保/流动性风险",
-      "货币风险",
-      "汇率风险",
-      "通胀风险",
-      "理赔限制"
+      "非保证红利/分红及演示回报可能高于或低于示例，甚至为零。",
+      "多货币或货币转换安排涉及汇率波动风险。"
     ],
     "bonus_type_summary": "非保证红利或分红",
     "bonus_declaration_summary": "提供非保证红利或分红，金额并不保证，实际派发及公布以保险公司政策为准。",
@@ -129,20 +124,24 @@
     "has_value_protection_account": false,
     "value_protection_account_summary": null,
     "policy_loan_summary": null,
-    "partial_withdrawal_summary": "可按条款部分提取或减保，提取会影响保单价值。",
+    "partial_withdrawal_summary": "支持现金提取或部分退保；提取会影响保单价值。",
     "regular_withdrawal_summary": null,
-    "change_insured_summary": "支持按条款更改受保人，便于长期传承安排。",
+    "change_insured_summary": "支持更改受保人，便于长期传承安排。",
     "second_insured_summary": null,
     "second_policyholder_summary": null,
     "policy_split_summary": null,
     "has_death_benefit_payment_option": false,
     "death_benefit_payment_summary": null,
-    "has_beneficiary_flexible_option": false,
-    "beneficiary_option_summary": null,
+    "has_beneficiary_flexible_option": true,
+    "beneficiary_option_summary": "支持设置受益人或传承支付安排。",
     "has_terminal_illness_benefit": false,
     "terminal_illness_summary": null,
-    "minimum_premium_summary": "最低保费按货币、缴费期及投保安排而定，具体以条款为准。",
-    "minimum_sum_assured_summary": null
+    "minimum_premium_summary": "the amount of premium paid at any time and will not be responsible for any loss arising from 7. 富卫有绝对酌情权厘定最高及最低保费金额，并保留权利于 or attributable to the decision to refund, reject or limit the amount of premium paid, including but not limited to any interest and deduction of value caused by 任何时间退回、拒绝或限制所缴保费之金额，而无须就因退 exchange rate fluctuation. 回、拒绝或限制所缴保费金额之决定而招致的任",
+    "minimum_sum_assured_summary": null,
+    "_v2_12_removed_fields": {
+      "guaranteed_irr_previous": 2.3
+    },
+    "accidental_death_benefit_percent": null
   },
   "product_features": [
     {
@@ -190,7 +189,7 @@
       "category": "legacy_planning",
       "feature_type": "policy_option",
       "availability": true,
-      "short_description": "可按条款更改受保人，延续保单规划。",
+      "short_description": "支持更改受保人，便于延续保单规划。",
       "detail_description": null,
       "trigger_condition": null,
       "benefit_amount": null,
@@ -310,7 +309,23 @@
       "hard_truncation_candidates_after": 0,
       "fields_repaired": 5,
       "age_refine_note": "v2.9 age fields refined from the best PDF full-text window near 投保年齡/投保范围, avoiding unrelated owner/beneficiary age clauses and hard character truncation."
-    }
+    },
+    "v2_15_full_precision_cleanup": {
+      "version": "v2.15",
+      "applied_at": "2026-07-03",
+      "scope": "all critical_illness and savings vectors; savings compare_profile/product_features merged from v2.12 where available; vague clause-disclaimer wording removed from core display fields",
+      "policy": "Explicit facts are preferred; unresolved wording uses PDF未明确披露 rather than generic clause-disclaimer wording.",
+      "savings_fact_merge_from_v2_12": true,
+      "string_cleanup_count": 4,
+      "feature_description_improved_count": 1
+    },
+    "v2_16_semantic_cleanup": {
+      "updated_at": "2026-07-03",
+      "basis": "v2.15 semantic audit plus heuristic field/path validation",
+      "missing_text_standard": "产品手册未明确说明。",
+      "note": "统一缺失文案；修复等待期字段混入赔付比例/上限的语义错位；不改写原始 evidence_quote。"
+    },
+    "current_cleanup_version": "2.18"
   },
   "display_features": [
     {
@@ -349,6 +364,5 @@
         "compare_profile.supports_second_insured"
       ]
     }
-  ],
-  "product_name": "富卫尊贵盈家储蓄保险计划"
+  ]
 }
