@@ -9,7 +9,7 @@ import CompanyLogo from "@/components/CompanyLogo";
 import { getSiteProductSlugs, getSelectedDbSlugs } from "@/lib/selected-products";
 import { getHotProductVectors, getAllProductVectors } from "@/lib/product-vector-registry";
 import { getProductName, getCompanyName, getRegionLabel, getCompareDescription, pickBaseName } from "@/lib/vector-i18n";
-import { getPdfCatalog, pdfCatalogStats } from "@/lib/pdf-catalog";
+import { getProductCatalog, productCatalogStats } from "@/lib/pdf-catalog";
 import { buildMetadata } from "@/lib/seo";
 import { buildWebSiteJsonLd, buildPublisherOrganizationJsonLd } from "@/lib/jsonld";
 import JsonLd from "@/components/JsonLd";
@@ -109,12 +109,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const translatedProducts = dbHotProducts;
   const translatedCompanies = companiesWithProducts.map((c) => translateCompany(c, locale as Locale)).sort(sortByTranslatedName(locale as Locale));
 
-  // Stat block: PDFs are the truth source. We override the prisma-derived
-  // counts with what we actually have on disk under public/pdfs/, so the
-  // hero band never reports a stale number. Hot-products list still uses
-  // prisma + vectors for now (cosmetic, not the stat).
-  const pdfCatalog = await getPdfCatalog();
-  const pdfStats = pdfCatalogStats(pdfCatalog);
+  // Stat block: the runtime catalog is the truth source. It reads from
+  // prisma (companies + products) and merges in vector metadata for
+  // category/region/displayName. It does NOT depend on public/pdfs/
+  // being present on the server, which makes it safe in production
+  // where PDFs are gitignored.
+  const pdfCatalog = await getProductCatalog();
+  const pdfStats = productCatalogStats(pdfCatalog);
   const totalProducts = pdfStats.products;
 
   // Build slug -> vector base map so comparison/product cards can resolve the

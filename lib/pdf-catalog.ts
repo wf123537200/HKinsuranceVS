@@ -1,25 +1,38 @@
 // pdf-catalog.ts
 //
-// Single source of truth for the public catalog.
+// Catalog source of truth for the public site.
 //
-// "Pdfs under public/pdfs/ are the truth source": every product has a PDF
-// there, and the company boundary is inferred from filename prefix. This
-// module reads the filesystem directly (`public/pdfs/` and
-// `data/vectors/{co}/{slug}.vector.json`) and returns a frozen view of:
+// Two catalog views are exposed here:
 //
-//   - all 9 companies that actually have at least one PDF (china-life has
-//     translations but no PDF, so it is intentionally excluded here)
-//   - all 45 products, one per PDF
-//   - aggregate counts for the homepage stat block
+//   1. getLocalPdfCatalog() — legacy filesystem-scanning catalog.
+//      Reads public/pdfs/ directly and infers company boundaries from
+//      filename prefix. Useful for local dev and data-extraction runs
+//      where we want to verify what's on disk. NOT safe in production
+//      because public/pdfs/ is gitignored and won't exist on the
+//      server.
 //
-// This intentionally does NOT read prisma. The DB still owns runtime-only
-// data: users, sessions, discussions, user-saved comparisons, and PDF
-// download authorization. None of that is catalog data and none of that
-// flows through this module.
+//   2. getProductCatalog() — runtime catalog. Reads from prisma
+//      (companies, products, comparisons) and merges in vector
+//      metadata (category, region, displayName) from
+//      data/vectors/. The returned pdfPath is a stable relative path
+//      used as an identifier only — the actual PDF bytes are NOT
+//      shipped to the server; the existing /api/pdf-url route issues
+//      R2-signed URLs on click.
+//
+// Production code paths (homepage hero stat block, companies index)
+// MUST use getProductCatalog(). getLocalPdfCatalog is preserved only
+// for compatibility with any tool/script that wants to know what's on
+// disk.
+//
+// DB still owns runtime-only data: users, sessions, discussions,
+// user-saved comparisons, and PDF download authorization. None of
+// that flows through this module.
 
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import type { Locale } from "@/i18n/config";
+import { prisma } from "@/lib/prisma";
+import { getAllProductVectors } from "@/lib/product-vector-registry";
 
 // Each company canonical slug can be matched by one or more filename
 // prefixes. Prudential has two (`pru-` and `prudential-`); Ping An has
@@ -180,10 +193,167 @@ export async function getPdfCatalog(): Promise<PdfCatalog> {
   };
 }
 
-// ---------- aggregate helpers ----------
-// Mirrors the math that `app/[locale]/page.tsx` does today against the
-// prisma-backed `siteSlugs` list. We just count PDF products per category.
+// Back-compat alias. Old code paths that imported getPdfCatalog
+// continue to compile; they now get the local filesystem-scanning
+// catalog. New code paths should call getProductCatalog instead.
+export { getPdfCatalog as getLocalPdfCatalog };
 
+// ---------- runtime product catalog ----------
+// This is what production actually depends on. It does NOT read
+// public/pdfs/ -- PDFs on disk are a local-dev / data-extraction
+// artifact only. In production the public/pdfs/ directory does not
+// exist (it's gitignored), so a filesystem-scanning catalog returns
+// zero products and the home page hero stat reads "0 / 0 / 0". To
+// prevent that, this catalog reads from prisma (companies, products)
+// and merges in vector metadata (category, region, display name)
+// from data/vectors/. The catalog's own productCatalogStats
+// helper derives the comparison-pair count from ci/sv counts so we
+// don't need a separate prisma.comparison.count() round trip.
+//
+// `pdfPath` is preserved on each product so existing UI that links to
+// `/pdfs/<slug>.pdf` still has a stable relative URL. The actual PDF
+// bytes are NOT shipped to the server; the existing /api/pdf-url
+// route generates a signed R2 URL on click. The relative path is a
+// stable identifier only.
+
+
+export type RuntimeCompany = {
+  slug: string;
+  prefix: string;
+  productCount: number;
+  region: string;
+};
+
+export type RuntimeProduct = {
+  companySlug: string;
+  slug: string;
+  pdfPath: string;
+  category?: "critical_illness" | "savings";
+  region?: string;
+  displayName?: string;
+  isPublished: boolean;
+};
+
+export type RuntimeCatalog = {
+  totalPdfs: number;
+  companies: RuntimeCompany[];
+  products: RuntimeProduct[];
+};
+
+export type RuntimeCatalogStats = {
+  companies: number;
+  products: number;
+  comparisons: number;
+};
+
+function derivePrefix(slug: string): string {
+  return COMPANY_PREFIXES[slug]?.[0] ?? "";
+}
+
+function deriveRegion(slug: string): string {
+  return slug.endsWith("-hk") || slug === "aia-hk" || slug === "axa-hk" ||
+    slug === "fwd-hk" || slug === "manulife-hk" || slug === "prudential-hk"
+    ? "Hong Kong"
+    : "Mainland China";
+}
+
+export async function getProductCatalog(): Promise<RuntimeCatalog> {
+  // Single parallel prisma query path: companies with their products
+  // joined, plus the published-products list. The totalProducts/ci/sv
+  // counts that the hero stat block needs are derived from this
+  // catalog directly, so we don't need a separate prisma.count().
+  const [companies, allProducts] = await Promise.all([
+    prisma.company.findMany({
+      orderBy: { slug: "asc" },
+      include: { products: { select: { slug: true, isPublished: true } } },
+    }),
+    prisma.product.findMany({
+      where: { isPublished: true },
+      select: {
+        slug: true,
+        company: { select: { slug: true } },
+        category: true,
+      },
+    }),
+  ]);
+
+  // Load vectors once and index by <company>/<product>. Vectors carry
+  // category + region + displayName overrides that prisma's
+  // `displayName` column does not. If a product has no vector, we
+  // fall back to prisma's category.
+  const vectors = await getAllProductVectors();
+  const vectorByKey = new Map<string, { category?: "critical_illness" | "savings"; region?: string; displayName?: string }>();
+  for (const v of vectors) {
+    const base = v.base;
+    vectorByKey.set(`${base.company_slug}/${base.slug}`, {
+      category: base.category === "savings" || base.category === "critical_illness"
+        ? base.category
+        : undefined,
+      region: typeof base.region === "string" ? base.region : undefined,
+      displayName: typeof base.product_name === "string" ? base.product_name : undefined,
+    });
+  }
+
+  // Index products by company slug for O(1) lookup when building
+  // RuntimeCompany.productCount.
+  const productsByCompany = new Map<string, RuntimeProduct[]>();
+  for (const p of allProducts) {
+    const companySlug = p.company.slug;
+    const vec = vectorByKey.get(`${companySlug}/${p.slug}`);
+    const runtime: RuntimeProduct = {
+      companySlug,
+      slug: p.slug,
+      pdfPath: `/pdfs/${p.slug}.pdf`, // stable identifier only; not a real file on disk in prod
+      category: vec?.category ?? (p.category === "CRITICAL_ILLNESS" ? "critical_illness" : p.category === "SAVINGS" ? "savings" : undefined),
+      region: vec?.region,
+      displayName: vec?.displayName,
+      // Filtered to `isPublished: true` in the where clause, so every
+      // row in `allProducts` is by definition published.
+      isPublished: true,
+    };
+    const list = productsByCompany.get(companySlug) ?? [];
+    list.push(runtime);
+    productsByCompany.set(companySlug, list);
+  }
+
+  const runtimeCompanies: RuntimeCompany[] = companies
+    .map((c) => {
+      const products = productsByCompany.get(c.slug) ?? [];
+      return {
+        slug: c.slug,
+        prefix: derivePrefix(c.slug),
+        productCount: products.length,
+        region: deriveRegion(c.slug),
+      };
+    })
+    .filter((c) => c.productCount > 0)
+    .sort((a, b) => a.slug.localeCompare(b.slug, "en"));
+
+  const products = companies.flatMap((c) => productsByCompany.get(c.slug) ?? []);
+
+  return {
+    totalPdfs: products.length,
+    companies: runtimeCompanies,
+    products,
+  };
+}
+
+export function productCatalogStats(catalog: RuntimeCatalog): RuntimeCatalogStats {
+  const companyCount = catalog.companies.filter((c) => c.productCount > 0).length;
+  const ciCount = catalog.products.filter((p) => p.category === "critical_illness").length;
+  const svCount = catalog.products.filter((p) => p.category === "savings").length;
+  const comparisons = (ciCount * (ciCount - 1)) / 2 + (svCount * (svCount - 1)) / 2;
+  return {
+    companies: companyCount,
+    products: catalog.products.length,
+    comparisons,
+  };
+}
+
+// ---------- aggregate helpers (legacy PDF-catalog math) ----------
+// Kept for any code that still wants to derive counts from the
+// filesystem-scanned catalog. The runtime catalog above has its own
+// stats helper that reads from prisma instead.
 export type PdfCatalogStats = {
   companies: number;
   products: number;

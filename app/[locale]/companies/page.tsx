@@ -11,7 +11,7 @@ import {
 } from "@/lib/translations";
 import type { Locale } from "@/i18n/config";
 import { defaultLocale, locales } from "@/i18n/config";
-import { getPdfCatalog } from "@/lib/pdf-catalog";
+import { getProductCatalog } from "@/lib/pdf-catalog";
 import { buildMetadata } from "@/lib/seo";
 import { buildItemListJsonLd } from "@/lib/jsonld";
 import JsonLd from "@/components/JsonLd";
@@ -44,11 +44,11 @@ export default async function CompaniesPage({ params }: { params: Promise<{ loca
   const tc = await getTranslations("categories");
   const tCommon = await getTranslations("common");
 
-  // PDFs are the truth source for which companies exist and which products
-  // they own. We still pull logoUrl from prisma (a static asset that
-  // doesn't ship with the PDF) but the company list and per-company
-  // product counts come straight from disk.
-  const pdfCatalog = await getPdfCatalog();
+  // The runtime catalog is the truth source for which companies exist
+  // and which products they own. It reads from prisma + vectors and
+  // does NOT depend on public/pdfs/ being present on the server,
+  // which makes it safe in production where PDFs are gitignored.
+  const pdfCatalog = await getProductCatalog();
   const companyCountMap = new Map(
     pdfCatalog.companies.filter((c) => c.productCount > 0).map((c) => [c.slug, c.productCount])
   );
