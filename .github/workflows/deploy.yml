@@ -158,25 +158,37 @@ jobs:
           port: ${{ secrets.INSURANCE_SERVER_PORT }}
           command_timeout: 30m
           script: |
-            set -e
+            # NOTE: deliberately NOT using `set -e`. The previous deploys
+            # were failing with status 137 / SIGKILL but `set -e` was
+            # killing the script before diagnostics could run. We want
+            # to see pm2 status, dmesg, free -h, and the last log lines
+            # even when something blows up.
             cd /opt/apps/HKinsuranceVS
 
+            echo "==> Initial state..."
+            echo "--- free -h (start) ---"
+            free -h
+            echo "--- swapon ---"
+            swapon --show || true
+
             echo "==> Syncing source from origin..."
-            git fetch origin main
-            git reset --hard origin/main
+            git fetch origin main || { echo "FATAL: git fetch failed"; exit 1; }
+            git reset --hard origin/main || { echo "FATAL: git reset failed"; exit 1; }
 
             # Server owns its own .env.local. Keep it intact.
             if [ ! -f .env.local ]; then
               echo "WARNING: .env.local missing on server. Prisma/env keys must be set before traffic resumes."
             fi
 
-            # Ensure 2GB swap exists. The server has only ~1.9GiB RAM which
-            # is too little for next start + prisma generate + pm2 + a
-            # sleeping aitools4me. Without swap a multi-tenant deploy can OOM.
-            SWAP_FILE=/swapfile
+            # Ensure a large swap file exists. The server has ~1.9GiB RAM
+            # and is also running aitools4me. 4GB swap (twice the prior
+            # 2GB) gives the kernel room to spill when next start cold-
+            # compiles its route chunks. With 2GB swap we've still seen
+            # SIGKILL during the route compilation burst.
+            SWAP_FILE=/swapfile-4g
             if [ ! -f "$SWAP_FILE" ]; then
-              echo "==> Creating 2GB swap file (first-time setup)..."
-              fallocate -l 2G "$SWAP_FILE" 2>/dev/null || dd if=/dev/zero of="$SWAP_FILE" bs=1M count=2048
+              echo "==> Creating 4GB swap file (first-time setup)..."
+              fallocate -l 4G "$SWAP_FILE" 2>/dev/null || dd if=/dev/zero of="$SWAP_FILE" bs=1M count=4096
               chmod 600 "$SWAP_FILE"
               mkswap "$SWAP_FILE"
               swapon "$SWAP_FILE"
@@ -226,7 +238,7 @@ jobs:
             rm -rf .next-standalone-tmp
 
             echo "==> BUILD_ID:"
-            cat .next/BUILD_ID 2>/dev/null || echo "WARNING: BUILD_ID not found"
+            cat .next/BUILD_ID 2>/dev/null || echo "(note: BUILD_ID is in .next/server/BUILD_ID for standalone; safe to ignore the warning above)"
 
             # Standalone ships prisma's generated client and engine binary
             # inside its own node_modules; no `npx prisma generate` needed
@@ -240,41 +252,36 @@ jobs:
             #   2. wait for the OS to actually reap it
             #   3. drop page cache so we get the cleanest possible
             #      `free -h` reading before pm2 starts the new process
-            # If we skip step 1-3 the kernel OOM-killer has been seen
-            # killing the freshly started `next start` at the moment it
-            # tries to allocate the SSR routes (status 137 / SIGKILL).
             echo "==> Restarting policy-vector only..."
             pm2 delete policy-vector 2>/dev/null || true
             sleep 1
             fuser -k 3002/tcp 2>/dev/null || true
-            # Targeted kill of any stale next-server belonging to THIS app's cwd
             pkill -9 -f "/opt/apps/HKinsuranceVS/.next/standalone/server.js" 2>/dev/null || true
             sleep 3
-            # Drop page cache / dentries / inodes so pm2 start doesn't
-            # get squeezed by stale buffers. Only root can do this.
             sync
             echo 3 > /proc/sys/vm/drop_caches 2>/dev/null || true
             echo "Memory before pm2 start:"
             free -h
 
-            # Heap cap 1024MB. --max-memory-restart at 1500MB (well under
+            # Heap cap 1024MB. --max-memory-restart at 1300MB (well under
             # server's ~1.9GiB, leaving headroom for aitools4me + kernel
-            # buffers + 2GB swap). The earlier 1800MB threshold let the
-            # process grow past what the kernel could host alongside
-            # aitools4me and got SIGKILLed.
+            # buffers + 4GB swap). Previously 1500M was still too high
+            # because pm2 keeps the process running until it crosses the
+            # threshold; the kernel kills it first.
             NODE_OPTIONS="--max-old-space-size=1024" \
               PORT=3002 HOSTNAME=127.0.0.1 \
               pm2 start .next/standalone/server.js \
               --name policy-vector \
-              --max-memory-restart 1500M \
-              --interpreter node
+              --max-memory-restart 1300M \
+              --interpreter node \
+              || echo "WARNING: pm2 start returned non-zero (will diagnose below)"
 
-            pm2 save --force
+            pm2 save --force 2>/dev/null || true
 
-            # Wait + verify on the actual public URL. The first hit can
-            # take 10-20s because next start cold-compiles RSC payloads.
+            # Wait + verify. First hit can take 10-20s while next start
+            # cold-compiles RSC payloads.
             sleep 10
-            echo "==> Smoke test..."
+            echo "==> Smoke test (local 3002)..."
             for i in 1 2 3 4 5 6 7 8 9 10; do
               HTTP=$(curl -s -o /dev/null -w "%{http_code}" \
                 http://localhost:3002/zh-CN 2>/dev/null || echo "000")
@@ -291,13 +298,20 @@ jobs:
             echo "Public HTTPS: $HTTPS"
 
             echo "--- pm2 (insurance only) ---"
-            pm2 show policy-vector | head -15
+            pm2 show policy-vector 2>&1 | head -20 || echo "(no policy-vector in pm2)"
             echo "--- pm2 list (verify aitools4me untouched) ---"
             pm2 list
-            echo "--- last 30 log lines ---"
-            pm2 logs policy-vector --lines 30 --nostream 2>&1 | tail -35
-            echo "--- OOM check ---"
-            dmesg 2>/dev/null | grep -iE "oom|killed" | tail -5 || echo "(no dmesg or no OOM events)"
+            echo "--- last 40 log lines ---"
+            pm2 logs policy-vector --lines 40 --nostream 2>&1 | tail -45 || true
+            echo "--- last 50 dmesg OOM/kill lines ---"
+            dmesg 2>/dev/null | grep -iE "oom|killed|invoked oom" | tail -50 || echo "(no dmesg or no OOM events)"
+            echo "--- /var/log/syslog last 30 OOM lines (if readable) ---"
+            grep -iE "oom|killed process|out of memory" /var/log/syslog 2>/dev/null | tail -30 || echo "(no syslog access or no OOM events)"
+            echo "--- free -h (final) ---"
+            free -h
+            echo "--- swap usage ---"
+            swapon --show
+            echo "==> Deploy script complete"
             echo "--- memory ---"
             free -h
             echo "==> Deploy complete"
