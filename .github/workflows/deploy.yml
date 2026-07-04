@@ -296,6 +296,36 @@ jobs:
             test -f .next/standalone/server.js && echo "OK: .next/standalone/server.js" || { echo "MISSING"; exit 1; }
             test -d .next/static && echo "OK: .next/static" || { echo "MISSING"; exit 1; }
 
+            # Prepare Next standalone static assets.
+            # server.js resolves .next/static/, public/, and data/ via
+            # process.cwd(). With standalone output, server.js runs
+            # with cwd=/opt/apps/HKinsuranceVS/.next/standalone, so it
+            # looks for them INSIDE that directory. The standalone
+            # bundle does NOT ship .next/static, public, or data -- they
+            # have to be copied in alongside the bundle before pm2
+            # starts the process, otherwise the browser hits 404s for
+            # /_next/static/chunks/*.js and /logos/*.svg.
+            echo "==> Preparing Next standalone static assets..."
+            test -f .next/standalone/server.js || { echo "FATAL: .next/standalone/server.js missing"; exit 1; }
+            test -d .next/static || { echo "FATAL: .next/static missing"; exit 1; }
+            test -d public || { echo "FATAL: public missing"; exit 1; }
+            test -d data || { echo "FATAL: data missing"; exit 1; }
+
+            mkdir -p .next/standalone/.next
+
+            rm -rf .next/standalone/.next/static
+            cp -a .next/static .next/standalone/.next/static
+
+            rm -rf .next/standalone/public
+            cp -a public .next/standalone/public
+
+            rm -rf .next/standalone/data
+            cp -a data .next/standalone/data
+
+            test -d .next/standalone/.next/static || { echo "FATAL: .next/standalone/.next/static copy failed"; exit 1; }
+            test -f .next/standalone/public/logos/policy-vector-logo.svg || { echo "FATAL: logo not copied"; exit 1; }
+            echo "OK: standalone assets prepared"
+
             echo "==> BUILD_ID:"
             cat .next/BUILD_ID 2>/dev/null || cat .next/server/BUILD_ID 2>/dev/null || echo "(BUILD_ID lookup path varies by Next.js version; non-fatal)"
 
@@ -424,6 +454,24 @@ jobs:
               https://policy-vector.com/zh-CN 2>/dev/null || echo "000")
             echo "Public HTTPS: $HTTPS"
 
+            # Static asset smoke tests. Without these, the page can
+            # render but the browser console fills with 404s for
+            # /_next/static/* and /logos/*.svg -- which is what
+            # happens when .next/static and public/ are at the project
+            # root but server.js runs from .next/standalone/.
+            echo "==> Static asset smoke tests..."
+            CHUNK=$(find .next/standalone/.next/static/chunks -type f -name "*.js" 2>/dev/null | head -1 | sed 's#^\.next/standalone/.next/static#/_next/static#')
+            if [ -n "$CHUNK" ]; then
+              CHUNK_CODE=$(curl -s -o /dev/null -w "%{http_code}" "http://127.0.0.1:3002$CHUNK" 2>/dev/null || echo "000")
+              echo "JS chunk $CHUNK -> $CHUNK_CODE"
+            else
+              echo "WARNING: no JS chunk found under .next/standalone/.next/static/chunks/"
+            fi
+            LOGO_CODE=$(curl -s -o /dev/null -w "%{http_code}" "http://127.0.0.1:3002/logos/policy-vector-logo.svg" 2>/dev/null || echo "000")
+            echo "Logo /logos/policy-vector-logo.svg -> $LOGO_CODE"
+            HEALTH_CODE=$(curl -s -o /dev/null -w "%{http_code}" "http://127.0.0.1:3002/api/health" 2>/dev/null || echo "000")
+            echo "Health /api/health -> $HEALTH_CODE"
+
             echo "--- pm2 (insurance only) ---"
             pm2 show policy-vector 2>&1 | head -20 || echo "(no policy-vector in pm2)"
             echo "--- pm2 list (verify aitools4me untouched) ---"
@@ -438,7 +486,4 @@ jobs:
             free -h
             echo "--- swap usage ---"
             swapon --show
-            echo "==> Deploy script complete"
-            echo "--- memory ---"
-            free -h
             echo "==> Deploy complete"
