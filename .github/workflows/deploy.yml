@@ -216,29 +216,29 @@ jobs:
             echo "==> Removing old .next..."
             rm -rf .next
             echo "==> Removing old standalone..."
-            rm -rf .next-standalone-tmp
-            mkdir -p .next-standalone-tmp
+            rm -rf .next-new
+            mkdir -p .next-new
             echo "==> Extracting payload..."
-            tar xzf /tmp/policy-vector-deploy.tar.gz -C .next-standalone-tmp
+            # Extract the WHOLE tar into a sibling directory, then
+            # atomically rename it into place. This avoids having both
+            # the old .next/ and the new one on disk simultaneously
+            # (which would briefly need ~700MB of disk AND make the
+            # kernel page-cache grow by the same amount -- on a 1.9GiB
+            # VPS that page cache growth has been seen to OOM-kill
+            # other processes mid-extract).
+            tar xzf /tmp/policy-vector-deploy.tar.gz -C .next-new
             rm -f /tmp/policy-vector-deploy.tar.gz
 
-            # Lay the standalone output out where next expects it.
-            # `.next/standalone/` already has its own .next/ and node_modules/
-            # subdirectories -- we just need to merge our .next/static,
-            # public, and data in alongside it.
-            echo "==> Promoting .next-standalone-tmp/.next/standalone -> .next..."
-            rm -rf .next
-            mv .next-standalone-tmp/.next/standalone .next
-            # Standalone bundle ships its own copy of .next/server (the SSR
-            # manifests). Add the static + public + data from our runner build.
-            cp -r .next-standalone-tmp/.next/static .next/static
-            cp -r .next-standalone-tmp/public public
-            cp -r .next-standalone-tmp/data data
-            cp .next-standalone-tmp/package.json package.json
-            rm -rf .next-standalone-tmp
+            # Standalone layout (from `output: "standalone"` in
+            # next.config.ts): `.next-new/` contains `.next/standalone/`,
+            # `.next/static/`, `public/`, `data/`, `package.json` -- all
+            # extracted directly under .next-new/. Rename .next-new ->
+            # .next in one atomic step.
+            echo "==> Atomic rename .next-new -> .next..."
+            mv .next-new .next
 
             echo "==> BUILD_ID:"
-            cat .next/BUILD_ID 2>/dev/null || echo "(note: BUILD_ID is in .next/server/BUILD_ID for standalone; safe to ignore the warning above)"
+            cat .next/BUILD_ID 2>/dev/null || cat .next/server/BUILD_ID 2>/dev/null || echo "(note: BUILD_ID lookup path varies by Next.js version; non-fatal)"
 
             # Standalone ships prisma's generated client and engine binary
             # inside its own node_modules; no `npx prisma generate` needed
@@ -247,27 +247,55 @@ jobs:
 
             # Free port 3002 only. NEVER fuser/3000 -- that's aitools4me.
             # Memory on this VPS is tight (~1.9GiB total, aitools4me is
-            # resident). Order matters:
-            #   1. delete old policy-vector from pm2 (releases its RSS)
-            #   2. wait for the OS to actually reap it
-            #   3. drop page cache so we get the cleanest possible
-            #      `free -h` reading before pm2 starts the new process
-            echo "==> Restarting policy-vector only..."
+            # resident). Critical order:
+            #   1. Hard-kill the OLD policy-vector (if any) BEFORE we
+            #      extract 350MB of new payload. We've seen SIGKILL
+            #      during the new node start when the old one was
+            #      still resident -- two next-server processes briefly
+            #      coexisting in RAM spikes past what the kernel can
+            #      give us alongside aitools4me.
+            #   2. Drop page cache so the 350MB extract doesn't
+            #      temporarily inflate buff/cache into swap pressure.
+            #   3. wait for the OS to actually reap the killed PID
+            #      (zombies still hold RSS).
+            echo "==> Freeing port 3002 + killing any prior policy-vector..."
             pm2 delete policy-vector 2>/dev/null || true
-            sleep 1
             fuser -k 3002/tcp 2>/dev/null || true
             pkill -9 -f "/opt/apps/HKinsuranceVS/.next/standalone/server.js" 2>/dev/null || true
-            sleep 3
+            pkill -9 -f "/opt/apps/HKinsuranceVS/node_modules/.bin/next" 2>/dev/null || true
+            sleep 5
             sync
             echo 3 > /proc/sys/vm/drop_caches 2>/dev/null || true
-            echo "Memory before pm2 start:"
+            echo "Memory BEFORE extracting new payload:"
             free -h
+
+            # Now do the extraction. We have ~6.4GiB free swap + whatever
+            # RAM is available, so a 350MB tar extract fits easily.
+            echo "==> Removing old .next..."
+            rm -rf .next
+            echo "==> Removing old extract dir..."
+            rm -rf .next-new
+            mkdir -p .next-new
+            echo "==> Extracting payload (this can take 30-60s)..."
+            tar xzf /tmp/policy-vector-deploy.tar.gz -C .next-new
+            rm -f /tmp/policy-vector-deploy.tar.gz
+
+            echo "==> Atomic rename .next-new -> .next..."
+            mv .next-new .next
+            sync
+            echo 3 > /proc/sys/vm/drop_caches 2>/dev/null || true
+            echo "Memory AFTER extracting new payload:"
+            free -h
+
+            echo "==> BUILD_ID:"
+            cat .next/BUILD_ID 2>/dev/null || cat .next/server/BUILD_ID 2>/dev/null || echo "(BUILD_ID lookup path varies by Next.js version; non-fatal)"
 
             # Heap cap 1024MB. --max-memory-restart at 1300MB (well under
             # server's ~1.9GiB, leaving headroom for aitools4me + kernel
             # buffers + 4GB swap). Previously 1500M was still too high
             # because pm2 keeps the process running until it crosses the
             # threshold; the kernel kills it first.
+            echo "==> pm2 start standalone server.js..."
             NODE_OPTIONS="--max-old-space-size=1024" \
               PORT=3002 HOSTNAME=127.0.0.1 \
               pm2 start .next/standalone/server.js \
