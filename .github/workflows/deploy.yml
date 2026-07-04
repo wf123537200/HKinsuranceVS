@@ -372,8 +372,22 @@ jobs:
             # self-register" because the .node binary's V8 ABI
             # doesn't match the runtime's. No `|| echo WARNING` --
             # pm2 start MUST succeed or the deploy must fail visibly.
+            #
+            # DATABASE_URL is passed INLINE here rather than read from
+            # the server's .env.local. Two reasons:
+            #   1. lib/prisma.ts's cwd-relative fallback breaks when pm2
+            #      launches server.js from a different cwd than
+            #      /opt/apps/HKinsuranceVS.
+            #   2. The DB file is at /opt/apps/HKinsuranceVS/prisma/dev.db
+            #      and is gitignored, so we'd otherwise depend on the
+            #      operator-maintained .env.local being correct. An
+            #      inline env var removes that dependency for the
+            #      critical "can the app connect to its database"
+            #      path. The absolute path here matches what DEPLOY.md
+            #      tells the operator to put in .env.local.
             NODE_OPTIONS="--max-old-space-size=1024" \
               PORT=3002 HOSTNAME=0.0.0.0 \
+              DATABASE_URL="file:/opt/apps/HKinsuranceVS/prisma/dev.db" \
               pm2 start .next/standalone/server.js \
               --name policy-vector \
               --interpreter "$(which node)" \
