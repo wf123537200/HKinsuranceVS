@@ -101,19 +101,19 @@ curl -I https://policy-vector.com/zh-CN   # HTTP/2 200
 
 去 GitHub 仓库 `wf123537200/HKinsuranceVS` → Settings → Secrets and variables → Actions：
 
-- `SERVER_HOST`
-- `SERVER_USER`
-- `SERVER_SSH_KEY`
-- `SERVER_PORT`
+- `INSURANCE_SERVER_HOST`
+- `INSURANCE_SERVER_USER`
+- `INSURANCE_SERVER_PORT`
+- `INSURANCE_SERVER_SSH_KEY`
 
-> 这 4 个 secrets 跟 aiTools4me 共用同一份，不另开一套，因为是同一台机器、同一个 SSH 用户和密钥。
+> 这 4 个 secrets 跟 aiTools4me 共用同一台服务器、同一份私钥，但命名加了 `INSURANCE_` 前缀，跟其他项目的工作流隔离开（也避免 aiTools4me 的 `SERVER_*` 命名变更时误伤这里）。
 
 如果是当前 RackNerd VPS：
 
-- `SERVER_HOST=192.227.219.254`
-- `SERVER_USER=root`
-- `SERVER_PORT=22`
-- `SERVER_SSH_KEY=<私钥内容>`
+- `INSURANCE_SERVER_HOST=192.227.219.254`
+- `INSURANCE_SERVER_USER=root`
+- `INSURANCE_SERVER_PORT=22`
+- `INSURANCE_SERVER_SSH_KEY=<私钥全文，包含 BEGIN/END OPENSSH PRIVATE KEY 标记>`
 
 ---
 

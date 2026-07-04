@@ -21,6 +21,42 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Validate server secrets
+        # GitHub Actions substitutes ${{ secrets.X }} with an empty
+        # string when the secret is unset, which would then cascade into
+        # a confusing rsync "connection refused" or "no such host" error
+        # much later in the pipeline. Catch the missing-secrets case
+        # up front so the operator knows exactly what to fix.
+        # This repo's secrets are namespaced with INSURANCE_ to keep them
+        # separate from any other workflows sharing the same GitHub org.
+        env:
+          SERVER_HOST:    ${{ secrets.INSURANCE_SERVER_HOST }}
+          SERVER_USER:    ${{ secrets.INSURANCE_SERVER_USER }}
+          SERVER_PORT:    ${{ secrets.INSURANCE_SERVER_PORT }}
+          SERVER_SSH_KEY: ${{ secrets.INSURANCE_SERVER_SSH_KEY }}
+        run: |
+          MISSING=()
+          [ -z "$SERVER_HOST"    ] && MISSING+=("INSURANCE_SERVER_HOST")
+          [ -z "$SERVER_USER"    ] && MISSING+=("INSURANCE_SERVER_USER")
+          [ -z "$SERVER_PORT"    ] && MISSING+=("INSURANCE_SERVER_PORT")
+          [ -z "$SERVER_SSH_KEY" ] && MISSING+=("INSURANCE_SERVER_SSH_KEY")
+          if [ ${#MISSING[@]} -gt 0 ]; then
+            echo "::error::Missing GitHub Actions secrets: ${MISSING[*]}"
+            echo "Set them at https://github.com/wf123537200/HKinsuranceVS/settings/secrets/actions"
+            echo "Expected values:"
+            echo "  INSURANCE_SERVER_HOST=192.227.219.254"
+            echo "  INSURANCE_SERVER_USER=root"
+            echo "  INSURANCE_SERVER_PORT=22"
+            echo "  INSURANCE_SERVER_SSH_KEY=<full contents of ~/.ssh/aitools4me_deploy on your local machine>"
+            exit 1
+          fi
+          # Sanity: private key must include BEGIN/END markers, otherwise
+          # rsync will silently authenticate as a public-key-only user
+          # and fail with "Permission denied (publickey)".
+          echo "$SERVER_SSH_KEY" | head -1 | grep -q "BEGIN .* PRIVATE KEY" \
+            || { echo "::error::INSURANCE_SERVER_SSH_KEY does not look like a private key (missing BEGIN marker)"; exit 1; }
+          echo "Server secrets OK (host=$SERVER_HOST user=$SERVER_USER port=$SERVER_PORT, key has BEGIN marker)."
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -92,18 +128,18 @@ jobs:
       - name: Transfer package (rsync over SSH, low memory)
         run: |
           mkdir -p ~/.ssh
-          ssh-keyscan -H -p "${{ secrets.SERVER_PORT }}" \
-            "${{ secrets.SERVER_HOST }}" >> ~/.ssh/known_hosts 2>/dev/null
+          ssh-keyscan -H -p "${{ secrets.INSURANCE_SERVER_PORT }}" \
+            "${{ secrets.INSURANCE_SERVER_HOST }}" >> ~/.ssh/known_hosts 2>/dev/null
 
           KEY_FILE=$(mktemp)
-          echo "${{ secrets.SERVER_SSH_KEY }}" > "$KEY_FILE"
+          echo "${{ secrets.INSURANCE_SERVER_SSH_KEY }}" > "$KEY_FILE"
           chmod 600 "$KEY_FILE"
 
           rsync -avz \
-            -e "ssh -i $KEY_FILE -p ${{ secrets.SERVER_PORT }} -o StrictHostKeyChecking=no" \
+            -e "ssh -i $KEY_FILE -p ${{ secrets.INSURANCE_SERVER_PORT }} -o StrictHostKeyChecking=no" \
             --progress \
             deploy.tar.gz \
-            "${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/tmp/policy-vector-deploy.tar.gz"
+            "${{ secrets.INSURANCE_SERVER_USER }}@${{ secrets.INSURANCE_SERVER_HOST }}:/tmp/policy-vector-deploy.tar.gz"
 
           rm -f "$KEY_FILE"
           echo "==> File transferred"
@@ -111,10 +147,10 @@ jobs:
       - name: Deploy on server (extract + restart)
         uses: appleboy/ssh-action@v1
         with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SERVER_SSH_KEY }}
-          port: ${{ secrets.SERVER_PORT }}
+          host: ${{ secrets.INSURANCE_SERVER_HOST }}
+          username: ${{ secrets.INSURANCE_SERVER_USER }}
+          key: ${{ secrets.INSURANCE_SERVER_SSH_KEY }}
+          port: ${{ secrets.INSURANCE_SERVER_PORT }}
           command_timeout: 30m
           script: |
             set -e
