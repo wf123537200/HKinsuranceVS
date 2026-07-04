@@ -210,34 +210,55 @@ jobs:
             npx prisma generate
 
             # Free port 3002 only. NEVER fuser/3000 -- that's aitools4me.
+            # Memory on this VPS is tight (~1.9GiB total, aitools4me is
+            # resident). Order matters:
+            #   1. delete old policy-vector from pm2 (releases its RSS)
+            #   2. wait for the OS to actually reap it
+            #   3. drop page cache so we get the cleanest possible
+            #      `free -h` reading before pm2 starts the new process
+            # If we skip step 1-3 the kernel OOM-killer has been seen
+            # killing the freshly started `next start` at the moment it
+            # tries to allocate the SSR routes (status 137 / SIGKILL).
             echo "==> Restarting policy-vector only..."
             pm2 delete policy-vector 2>/dev/null || true
             sleep 1
             fuser -k 3002/tcp 2>/dev/null || true
             # Targeted kill of any stale next-server belonging to THIS app's cwd
             pkill -9 -f "/opt/apps/HKinsuranceVS/node_modules/.bin/next" 2>/dev/null || true
-            sleep 2
+            sleep 3
+            # Drop page cache / dentries / inodes so pm2 start doesn't
+            # get squeezed by stale buffers. Only root can do this.
+            sync
+            echo 3 > /proc/sys/vm/drop_caches 2>/dev/null || true
+            echo "Memory before pm2 start:"
+            free -h
 
+            # Heap cap 1024MB. --max-memory-restart at 1500MB (well under
+            # server's ~1.9GiB, leaving headroom for aitools4me + kernel
+            # buffers + 2GB swap). The earlier 1800MB threshold let the
+            # process grow past what the kernel could host alongside
+            # aitools4me and got SIGKILLed.
             NODE_OPTIONS="--max-old-space-size=1024" \
               pm2 start node_modules/.bin/next \
               --name policy-vector \
-              --max-memory-restart 1800M \
+              --max-memory-restart 1500M \
               -- start
 
             pm2 save --force
 
-            # Wait + verify on the actual public URL
-            sleep 8
+            # Wait + verify on the actual public URL. The first hit can
+            # take 10-20s because next start cold-compiles RSC payloads.
+            sleep 10
             echo "==> Smoke test..."
-            for i in 1 2 3 4 5; do
+            for i in 1 2 3 4 5 6 7 8 9 10; do
               HTTP=$(curl -s -o /dev/null -w "%{http_code}" \
                 http://localhost:3002/zh-CN 2>/dev/null || echo "000")
               if [ "$HTTP" = "200" ]; then
-                echo "Local HTTP 3002: 200 OK"
+                echo "Local HTTP 3002: 200 OK (attempt $i)"
                 break
               fi
               echo "Attempt $i: HTTP $HTTP, retrying..."
-              sleep 3
+              sleep 4
             done
 
             HTTPS=$(curl -s -o /dev/null -w "%{http_code}" \
