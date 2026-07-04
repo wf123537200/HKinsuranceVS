@@ -245,24 +245,28 @@ jobs:
             # on the server. Schema migrations (db push) are still a manual
             # server-side step -- nothing in CI touches prisma/dev.db.
 
-            # Free port 3002 only. NEVER fuser/3000 -- that's aitools4me.
-            # Memory on this VPS is tight (~1.9GiB total, aitools4me is
-            # resident). Critical order:
-            #   1. Hard-kill the OLD policy-vector (if any) BEFORE we
-            #      extract 350MB of new payload. We've seen SIGKILL
-            #      during the new node start when the old one was
-            #      still resident -- two next-server processes briefly
-            #      coexisting in RAM spikes past what the kernel can
-            #      give us alongside aitools4me.
-            #   2. Drop page cache so the 350MB extract doesn't
-            #      temporarily inflate buff/cache into swap pressure.
-            #   3. wait for the OS to actually reap the killed PID
-            #      (zombies still hold RSS).
-            echo "==> Freeing port 3002 + killing any prior policy-vector..."
+            # Free port 3002 + stop the prior policy-vector PM2 process.
+            # IMPORTANT: do NOT use `pkill -f` here. The earlier
+            # `pkill -9 -f "next"` style commands matched *any*
+            # process whose argv contained "next" -- which during a
+            # deploy session can include the deploy shell's own
+            # children (drone-ssh's helper, the GitHub runner
+            # subagent, etc.) and got the deploy script itself
+            # SIGKILLed at the "Restarting policy-vector only..."
+            # step (exit 137). Stick to two precise tools:
+            #   1. `pm2 delete policy-vector` -- addresses the PM2
+            #      process by its registered name.
+            #   2. `fuser -k 3002/tcp`           -- addresses the
+            #      process listening on port 3002 (whatever PID that
+            #      is, NOT by argv pattern match).
+            # Every kill has `|| true` so a missing process never
+            # aborts the deploy.
+            echo "==> Stopping prior policy-vector (PM2 + port 3002)..."
             pm2 delete policy-vector 2>/dev/null || true
+            # `fuser` is more reliable than `lsof` (which may not be
+            # installed). It only operates on PIDs that own the
+            # given socket, so it cannot match our own shell.
             fuser -k 3002/tcp 2>/dev/null || true
-            pkill -9 -f "/opt/apps/HKinsuranceVS/.next/standalone/server.js" 2>/dev/null || true
-            pkill -9 -f "/opt/apps/HKinsuranceVS/node_modules/.bin/next" 2>/dev/null || true
             sleep 5
             sync
             echo 3 > /proc/sys/vm/drop_caches 2>/dev/null || true
