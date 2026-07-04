@@ -273,27 +273,6 @@ jobs:
             echo "Memory BEFORE extracting new payload:"
             free -h
 
-            # Now do the extraction. We have ~6.4GiB free swap + whatever
-            # RAM is available, so a 350MB tar extract fits easily.
-            echo "==> Removing old .next..."
-            rm -rf .next
-            echo "==> Removing old extract dir..."
-            rm -rf .next-new
-            mkdir -p .next-new
-            echo "==> Extracting payload (this can take 30-60s)..."
-            tar xzf /tmp/policy-vector-deploy.tar.gz -C .next-new
-            rm -f /tmp/policy-vector-deploy.tar.gz
-
-            echo "==> Atomic rename .next-new -> .next..."
-            mv .next-new .next
-            sync
-            echo 3 > /proc/sys/vm/drop_caches 2>/dev/null || true
-            echo "Memory AFTER extracting new payload:"
-            free -h
-
-            echo "==> BUILD_ID:"
-            cat .next/BUILD_ID 2>/dev/null || cat .next/server/BUILD_ID 2>/dev/null || echo "(BUILD_ID lookup path varies by Next.js version; non-fatal)"
-
             # Heap cap 1024MB. --max-memory-restart at 1300MB (well under
             # server's ~1.9GiB, leaving headroom for aitools4me + kernel
             # buffers + 4GB swap). Previously 1500M was still too high
@@ -312,9 +291,14 @@ jobs:
             echo "prisma/dev.db exists: $(test -f prisma/dev.db && echo yes || echo NO)"
 
             echo "==> pm2 start standalone server.js..."
+            # Use absolute path for the script. pm2 has historically had
+            # issues resolving a relative path even when --cwd is set
+            # (the daemon runs the script from its own cwd context, not
+            # the cwd we tell the start command). Absolute paths sidestep
+            # this entirely.
             NODE_OPTIONS="--max-old-space-size=1024" \
               PORT=3002 HOSTNAME=127.0.0.1 \
-              pm2 start .next/standalone/server.js \
+              pm2 start /opt/apps/HKinsuranceVS/.next/standalone/server.js \
               --name policy-vector \
               --cwd /opt/apps/HKinsuranceVS \
               --max-memory-restart 1300M \
