@@ -258,57 +258,41 @@ function deriveRegion(slug: string): string {
 }
 
 export async function getProductCatalog(): Promise<RuntimeCatalog> {
-  // Single parallel prisma query path: companies with their products
-  // joined, plus the published-products list. The totalProducts/ci/sv
-  // counts that the hero stat block needs are derived from this
-  // catalog directly, so we don't need a separate prisma.count().
-  const [companies, allProducts] = await Promise.all([
-    prisma.company.findMany({
-      orderBy: { slug: "asc" },
-      include: { products: { select: { slug: true, isPublished: true } } },
-    }),
-    prisma.product.findMany({
-      where: { isPublished: true },
-      select: {
-        slug: true,
-        company: { select: { slug: true } },
-        category: true,
-      },
-    }),
-  ]);
-
-  // Load vectors once and index by <company>/<product>. Vectors carry
-  // category + region + displayName overrides that prisma's
-  // `displayName` column does not. If a product has no vector, we
-  // fall back to prisma's category.
+  // Vectors are the single source of truth for the public catalog.
+  // We do NOT take a Prisma `isPublished` filter here — operators
+  // occasionally unpublish vector-backed products (out_of_scope,
+  // mismatch, etc.) and that drift must not pop a product out of the
+  // public catalog. The catalog count always equals the number of
+  // vector files on disk. Prisma is kept in sync by
+  // scripts/sync-vectors-to-db.cjs so detail pages, /api/pdf-url,
+  // and discussion threads can still join back by id.
   const vectors = await getAllProductVectors();
-  const vectorByKey = new Map<string, { category?: "critical_illness" | "savings"; region?: string; displayName?: string }>();
+  const companySlugs = Array.from(new Set(vectors.map((v) => v.base.company_slug)));
+  const companies = await prisma.company.findMany({
+    where: { slug: { in: companySlugs } },
+    orderBy: { slug: "asc" },
+    select: { slug: true },
+  });
+
+  // Index vectors by company slug, deriving runtime products from each
+  // vector's `base.*`. Category comes from the vector exclusively;
+  // the prisma category column is irrelevant to this catalog.
+  const productsByCompany = new Map<string, RuntimeProduct[]>();
   for (const v of vectors) {
     const base = v.base;
-    vectorByKey.set(`${base.company_slug}/${base.slug}`, {
-      category: base.category === "savings" || base.category === "critical_illness"
+    const companySlug = base.company_slug;
+    const slug = base.slug;
+    const category =
+      base.category === "savings" || base.category === "critical_illness"
         ? base.category
-        : undefined,
-      region: typeof base.region === "string" ? base.region : undefined,
-      displayName: typeof base.product_name === "string" ? base.product_name : undefined,
-    });
-  }
-
-  // Index products by company slug for O(1) lookup when building
-  // RuntimeCompany.productCount.
-  const productsByCompany = new Map<string, RuntimeProduct[]>();
-  for (const p of allProducts) {
-    const companySlug = p.company.slug;
-    const vec = vectorByKey.get(`${companySlug}/${p.slug}`);
+        : undefined;
     const runtime: RuntimeProduct = {
       companySlug,
-      slug: p.slug,
-      pdfPath: `/pdfs/${p.slug}.pdf`, // stable identifier only; not a real file on disk in prod
-      category: vec?.category ?? (p.category === "CRITICAL_ILLNESS" ? "critical_illness" : p.category === "SAVINGS" ? "savings" : undefined),
-      region: vec?.region,
-      displayName: vec?.displayName,
-      // Filtered to `isPublished: true` in the where clause, so every
-      // row in `allProducts` is by definition published.
+      slug,
+      pdfPath: `/pdfs/${slug}.pdf`,
+      category,
+      region: typeof base.region === "string" ? base.region : undefined,
+      displayName: typeof base.product_name === "string" ? base.product_name : undefined,
       isPublished: true,
     };
     const list = productsByCompany.get(companySlug) ?? [];
@@ -329,7 +313,7 @@ export async function getProductCatalog(): Promise<RuntimeCatalog> {
     .filter((c) => c.productCount > 0)
     .sort((a, b) => a.slug.localeCompare(b.slug, "en"));
 
-  const products = companies.flatMap((c) => productsByCompany.get(c.slug) ?? []);
+  const products = runtimeCompanies.flatMap((c) => productsByCompany.get(c.slug) ?? []);
 
   return {
     totalPdfs: products.length,

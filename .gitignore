@@ -120,3 +120,11 @@ reports/
 scripts/.pdf-server-port
 scripts/build-output.txt
 scripts/lint-output.txt
+
+# dev SQLite database (local only)
+dev.db
+dev.db-shm
+dev.db-wal
+# backup
+dev.db.bak
+
