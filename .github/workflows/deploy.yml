@@ -60,13 +60,24 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          # insurance stack (next-intl 4, prisma 7, next 16) expects Node 22+.
-          # If locked at 20 it'll just print deprecation warnings on Supabase.
+          # Pin to Node 22 explicitly. GitHub Actions recently moved
+          # ubuntu-latest runners off Node 20 (the default `actions/setup-node`
+          # if no version is specified is now Node 24), and a mismatch
+          # between the build-time Node and the runtime Node on the
+          # 1.9GiB VPS causes native modules like better-sqlite3 to
+          # throw "Module did not self-register" on load -- the .node
+          # binary is built against one V8 ABI and gets loaded against
+          # another. Locking to 22 on both ends keeps the ABIs in sync.
           node-version: '22'
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: |
+          echo "==> Toolchain versions"
+          node -v
+          npm -v
+          which node
+          npm ci
 
       - name: Generate Prisma client
         # schema.prisma's `output = "../app/generated/prisma"` puts the
@@ -341,6 +352,10 @@ jobs:
             test -f .next/standalone/server.js || { echo "FATAL: .next/standalone/server.js missing; aborting."; exit 1; }
             test -d .next/static || { echo "FATAL: .next/static missing; aborting."; exit 1; }
 
+            echo "==> Server toolchain versions (before pm2 start)..."
+            node -v
+            which node
+
             echo "==> pm2 start standalone server.js..."
             # Use a path RELATIVE to cwd (pm2 has historically had
             # problems resolving relative paths even with --cwd, but
@@ -348,12 +363,20 @@ jobs:
             # what server.js itself expects and what we've now verified
             # exists). --update-env forces pm2 to refresh env vars
             # (PORT, HOSTNAME, NODE_OPTIONS) on every restart, not just
-            # the first one. No `|| echo WARNING` -- pm2 start MUST
-            # succeed or the deploy must fail visibly.
+            # the first one. --interpreter "$(which node)" pins the
+            # interpreter to the same Node binary that built the
+            # standalone output (Node 22) -- if pm2's daemon was
+            # originally spawned under a different Node (e.g. the
+            # system Node 18) and we let pm2 default to it, native
+            # modules like better-sqlite3 throw "Module did not
+            # self-register" because the .node binary's V8 ABI
+            # doesn't match the runtime's. No `|| echo WARNING` --
+            # pm2 start MUST succeed or the deploy must fail visibly.
             NODE_OPTIONS="--max-old-space-size=1024" \
               PORT=3002 HOSTNAME=0.0.0.0 \
               pm2 start .next/standalone/server.js \
               --name policy-vector \
+              --interpreter "$(which node)" \
               --update-env
 
             pm2 save --force
