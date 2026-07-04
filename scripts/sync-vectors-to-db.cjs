@@ -189,6 +189,7 @@ if (apply) {
     for (const file of fs.readdirSync(dir).sort()) {
       if (!file.endsWith(".vector.json")) continue;
       const slug = file.replace(/\.vector\.json$/, "");
+      seenVectorSlugs.add(slug);
       const vec = JSON.parse(fs.readFileSync(path.join(dir, file), "utf8"));
       const vCat = vec?.base?.category;
       const catEnum = deriveCategoryEnum(vCat);

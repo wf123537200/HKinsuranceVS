@@ -326,6 +326,34 @@ jobs:
             test -f .next/standalone/public/logos/policy-vector-logo.svg || { echo "FATAL: logo not copied"; exit 1; }
             echo "OK: standalone assets prepared"
 
+            # Drift check: vectors under data/vectors/ are the public
+            # catalog truth source. After `git reset --hard origin/main`
+            # the server's vectors are fresh, but prisma/dev.db is
+            # gitignored and untouched. Show what a real sync would do
+            # WITHOUT writing -- this surfaces drift in the deploy log
+            # so the operator can ssh in and run --apply manually.
+            # Two scripts shipped under scripts/:
+            #   sync-vectors-to-db.cjs   -- adds missing products,
+            #                               updates vector-backed rows
+            #   check-orphan-refs.cjs    -- removes products whose slug
+            #                               has no matching vector file
+            # Both default to dry-run and exit 0 with no writes.
+            # Placed AFTER the standalone extraction (so
+            # .next/standalone/node_modules exists, which is where
+            # better-sqlite3 lives -- the script's only runtime dep).
+            echo "==> Drift check (vectors vs prisma/dev.db, dry-run only)..."
+            if [ -f prisma/dev.db ] && [ -d scripts ]; then
+              export NODE_PATH=.next/standalone/node_modules
+              node scripts/sync-vectors-to-db.cjs || echo "  (sync-vectors-to-db.cjs exited non-zero -- see log)"
+              echo ""
+              node scripts/check-orphan-refs.cjs || echo "  (check-orphan-refs.cjs exited non-zero -- see log)"
+              echo ""
+              unset NODE_PATH
+              echo "==> Drift check complete. NO writes performed. Re-run with --apply on the server to reconcile."
+            else
+              echo "Skipped: prisma/dev.db or scripts/ not present at expected paths."
+            fi
+
             echo "==> BUILD_ID:"
             cat .next/BUILD_ID 2>/dev/null || cat .next/server/BUILD_ID 2>/dev/null || echo "(BUILD_ID lookup path varies by Next.js version; non-fatal)"
 
