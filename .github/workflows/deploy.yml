@@ -118,11 +118,16 @@ jobs:
             --exclude='prisma/dev.db-journal' \
             --exclude='.env.local' \
             --exclude='.env*' \
-            --exclude='node_modules' \
             --exclude='data/*.zip' \
             --exclude='data/.tmp-*' \
-            .next public package.json package-lock.json app/generated/prisma data
+            .next/standalone .next/static public data package.json
 
+          # `output: "standalone"` in next.config.ts bundles only the
+          # node_modules the app actually uses into .next/standalone/.
+          # The server only needs that directory + .next/static/ + public/
+          # + data/, so no `npm ci` is needed on the 1.9GiB VPS. This is
+          # the single biggest lever for staying out of OOM territory
+          # alongside aitools4me.
           echo "Package size: $(du -h deploy.tar.gz | cut -f1)"
 
       - name: Transfer package (rsync over SSH, low memory)
@@ -183,31 +188,50 @@ jobs:
               fi
             fi
 
-            # Extract the uploaded payload
+            # Extract the uploaded payload. Layout from CI tarball:
+            #   .next/standalone/   -- has node server.js + a self-contained
+            #                          subset of node_modules (output:
+            #                          "standalone" in next.config.ts). This
+            #                          is the ONLY thing we need to run the
+            #                          app, so we can skip `npm ci` entirely.
+            #                          Skipping `npm ci` is what lets a 1.9GiB
+            #                          VPS coexist with aitools4me.
+            #   .next/static/       -- client-side static assets (loaded by
+            #                          server.js via process.cwd())
+            #   public/             -- static PDFs, logos
+            #   data/               -- product feature vectors + registry
+            #   package.json        -- metadata for `next start`-style tooling
             echo "==> Removing old .next..."
             rm -rf .next
+            echo "==> Removing old standalone..."
+            rm -rf .next-standalone-tmp
+            mkdir -p .next-standalone-tmp
             echo "==> Extracting payload..."
-            tar xzf /tmp/policy-vector-deploy.tar.gz
+            tar xzf /tmp/policy-vector-deploy.tar.gz -C .next-standalone-tmp
             rm -f /tmp/policy-vector-deploy.tar.gz
+
+            # Lay the standalone output out where next expects it.
+            # `.next/standalone/` already has its own .next/ and node_modules/
+            # subdirectories -- we just need to merge our .next/static,
+            # public, and data in alongside it.
+            echo "==> Promoting .next-standalone-tmp/.next/standalone -> .next..."
+            rm -rf .next
+            mv .next-standalone-tmp/.next/standalone .next
+            # Standalone bundle ships its own copy of .next/server (the SSR
+            # manifests). Add the static + public + data from our runner build.
+            cp -r .next-standalone-tmp/.next/static .next/static
+            cp -r .next-standalone-tmp/public public
+            cp -r .next-standalone-tmp/data data
+            cp .next-standalone-tmp/package.json package.json
+            rm -rf .next-standalone-tmp
 
             echo "==> BUILD_ID:"
             cat .next/BUILD_ID 2>/dev/null || echo "WARNING: BUILD_ID not found"
 
-            # Install deps only if package-lock has drifted against node_modules
-            if [ ! -f node_modules/.package-lock.json ] || \
-               ! diff -q package-lock.json node_modules/.package-lock.json >/dev/null 2>&1; then
-              echo "==> npm ci (lockfile changed)"
-              npm ci --production=false
-              cp package-lock.json node_modules/.package-lock.json
-            else
-              echo "==> Dependencies up to date"
-            fi
-
-            # Regenerate Prisma client (does NOT touch prisma/dev.db).
-            # If you have a schema change to ship, run `npx prisma db push`
-            # manually on the server first. This is intentional.
-            echo "==> prisma generate (no schema migration in CI)"
-            npx prisma generate
+            # Standalone ships prisma's generated client and engine binary
+            # inside its own node_modules; no `npx prisma generate` needed
+            # on the server. Schema migrations (db push) are still a manual
+            # server-side step -- nothing in CI touches prisma/dev.db.
 
             # Free port 3002 only. NEVER fuser/3000 -- that's aitools4me.
             # Memory on this VPS is tight (~1.9GiB total, aitools4me is
@@ -224,7 +248,7 @@ jobs:
             sleep 1
             fuser -k 3002/tcp 2>/dev/null || true
             # Targeted kill of any stale next-server belonging to THIS app's cwd
-            pkill -9 -f "/opt/apps/HKinsuranceVS/node_modules/.bin/next" 2>/dev/null || true
+            pkill -9 -f "/opt/apps/HKinsuranceVS/.next/standalone/server.js" 2>/dev/null || true
             sleep 3
             # Drop page cache / dentries / inodes so pm2 start doesn't
             # get squeezed by stale buffers. Only root can do this.
@@ -239,10 +263,11 @@ jobs:
             # process grow past what the kernel could host alongside
             # aitools4me and got SIGKILLed.
             NODE_OPTIONS="--max-old-space-size=1024" \
-              pm2 start node_modules/.bin/next \
+              PORT=3002 HOSTNAME=127.0.0.1 \
+              pm2 start .next/standalone/server.js \
               --name policy-vector \
               --max-memory-restart 1500M \
-              -- start
+              --interpreter node
 
             pm2 save --force
 
