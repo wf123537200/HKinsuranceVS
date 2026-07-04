@@ -380,7 +380,7 @@
       "methodologyTitle": "Methodology",
       "sourcesTitle": "Sources",
       "dataExtractedFrom": "Data extracted from official product brochure on {date}.",
-      "vectorVersion": "Structured data: ProductVector v2.11 (registry id compare-field-registry-v2.11.json).",
+      "vectorVersion": "Structured data: ProductVector v2.11 (registry id compare-field-registry-v2.18.json).",
       "policyVectorSource": "Policy Vector insurance product database"
     },
     "home": {

@@ -3,7 +3,7 @@
 // File layout:
 //   /data/vectors/{companySlug}/{productSlug}.vector.json      (full pool, 45 products)
 //   /data/vectors-selected/{companySlug}/{productSlug}.vector.json (curated hot set, optional)
-//   /data/compare-field-registry-v2.11.json                   (field registry, v2.11)
+//   /data/compare-field-registry-v2.18.json                   (field registry, v2.11)
 //
 // All readers are fault-tolerant: a single bad JSON logs a warning but never throws.
 
@@ -14,7 +14,7 @@ import { getByPath, isEmptyValue } from "./product-vector-formatters";
 const DATA_DIR = path.join(process.cwd(), "data");
 const VECTORS_DIR = path.join(DATA_DIR, "vectors");
 const VECTORS_SELECTED_DIR = path.join(DATA_DIR, "vectors-selected");
-const REGISTRY_PATH = path.join(DATA_DIR, "compare-field-registry-v2.11.json");
+const REGISTRY_PATH = path.join(DATA_DIR, "compare-field-registry-v2.18.json");
 
 export type ProductVectorV24 = {
   product_vector_version: string;

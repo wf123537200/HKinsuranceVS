@@ -45,6 +45,8 @@ export default async function CompareSavingsPage({ params }: { params: Promise<{
     displayName: getProductName(v.base.slug, localeTyped, pickBaseName(v.base, localeTyped)),
     companySlug: v.base.company_slug,
     companyName: getCompanyName(v.base.company_slug, localeTyped, v.base.company_name),
+    // This page only renders savings products. See note in compare/critical-illness/page.tsx.
+    category: "savings" as const,
   }));
 
   return (

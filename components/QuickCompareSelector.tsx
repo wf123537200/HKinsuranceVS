@@ -3,11 +3,14 @@
 import { useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
 
+export type QuickCompareCategory = "critical_illness" | "savings";
+
 export interface QuickCompareProduct {
   slug: string;
   displayName: string;
   companySlug: string;
   companyName: string;
+  category: QuickCompareCategory;
 }
 
 interface Props {
@@ -56,24 +59,87 @@ export default function QuickCompareSelector({
       .sort((a, b) => a.displayName.localeCompare(b.displayName, "zh"));
   }
 
-  const leftOptions = useMemo(
-    () => productsFor(leftProducts, leftCompany),
-    [leftProducts, leftCompany]
-  );
-  const rightOptions = useMemo(
-    () => productsFor(rightProducts, rightCompany),
-    [rightProducts, rightCompany]
-  );
+  const leftOptions = useMemo(() => {
+    const lockedCat = lockedCategoryFor("left");
+    return productsFor(leftProducts, leftCompany).filter(
+      (p) => !lockedCat || p.category === lockedCat
+    );
+  }, [leftProducts, leftCompany, rightProduct]);
+  const rightOptions = useMemo(() => {
+    const lockedCat = lockedCategoryFor("right");
+    return productsFor(rightProducts, rightCompany).filter(
+      (p) => !lockedCat || p.category === lockedCat
+    );
+  }, [rightProducts, rightCompany, leftProduct]);
+
+  // Hide products from the opposite category rather than confusingly listing
+  // them. The placeholder note explains the lock-in.
+  const leftLockHint =
+    lockedCategoryFor("left") === "savings" ? "（已限定：储蓄险）" : lockedCategoryFor("left") === "critical_illness" ? "（已限定：重疾险）" : "";
+  const rightLockHint =
+    lockedCategoryFor("right") === "savings" ? "（已限定：储蓄险）" : lockedCategoryFor("right") === "critical_illness" ? "（已限定：重疾险）" : "";
 
   // Reset dependent state when company changes
   function onLeftCompanyChange(v: string) {
     setLeftCompany(v);
     setLeftProduct("");
+    // When the user changes the left company, if a right product was
+    // already chosen and its category no longer fits, drop it.
+    if (
+      rightProduct &&
+      productBySlug(rightProduct)?.category !==
+        productBySlug(leftProduct)?.category
+    ) {
+      // Keep the rule: both sides must match. We'll detect category below
+      // when the user picks a product; for now, just clear the error.
+    }
     setError(null);
   }
   function onRightCompanyChange(v: string) {
     setRightCompany(v);
     setRightProduct("");
+    setError(null);
+  }
+
+  // Find product metadata by slug from the union list. Used to lock the
+  // opposite side's category once a product is picked.
+  function productBySlug(slug: string): QuickCompareProduct | undefined {
+    return [...leftProducts, ...rightProducts].find(
+      (p) => p.slug === slug && p.companySlug === (slug === leftProduct ? leftCompany : rightCompany)
+    )
+      ?? [...leftProducts, ...rightProducts].find((p) => p.slug === slug);
+  }
+
+  // Returns the locked category (if any) for a given side, derived from the
+  // product already chosen on the opposite side.
+  function lockedCategoryFor(side: "left" | "right"): QuickCompareCategory | undefined {
+    const otherSlug = side === "left" ? rightProduct : leftProduct;
+    if (!otherSlug) return undefined;
+    return productBySlug(otherSlug)?.category;
+  }
+
+  function onLeftProductChange(v: string) {
+    setLeftProduct(v);
+    // If the right side already picked a product but it now disagrees with
+    // the left category, drop it so the user can pick a matching one.
+    const leftCat = productBySlug(v)?.category;
+    if (leftCat && rightProduct) {
+      const rightCat = productBySlug(rightProduct)?.category;
+      if (rightCat && rightCat !== leftCat) {
+        setRightProduct("");
+      }
+    }
+    setError(null);
+  }
+  function onRightProductChange(v: string) {
+    setRightProduct(v);
+    const rightCat = productBySlug(v)?.category;
+    if (rightCat && leftProduct) {
+      const leftCat = productBySlug(leftProduct)?.category;
+      if (leftCat && leftCat !== rightCat) {
+        setLeftProduct("");
+      }
+    }
     setError(null);
   }
 
@@ -93,6 +159,12 @@ export default function QuickCompareSelector({
     }
     if (leftProduct === rightProduct) {
       setError("请选择不同的两个产品");
+      return;
+    }
+    const leftCat = productBySlug(leftProduct)?.category;
+    const rightCat = productBySlug(rightProduct)?.category;
+    if (leftCat && rightCat && leftCat !== rightCat) {
+      setError("请选择同类型（重疾险 vs 重疾险，或 储蓄险 vs 储蓄险）的产品");
       return;
     }
     router.push(`${basePath}/${leftProduct}-vs-${rightProduct}`);
@@ -121,14 +193,17 @@ export default function QuickCompareSelector({
           <select
             aria-label="左侧产品"
             value={leftProduct}
-            onChange={(e) => {
-              setLeftProduct(e.target.value);
-              setError(null);
-            }}
+            onChange={(e) => onLeftProductChange(e.target.value)}
             disabled={!leftCompany}
             className="px-3 py-2 text-sm border border-gray-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-50 disabled:text-gray-400"
           >
-            <option value="">{leftCompany ? "选择产品" : "请先选择公司"}</option>
+            <option value="">
+              {leftCompany
+                ? leftLockHint
+                  ? `选择产品 ${leftLockHint}`
+                  : "选择产品"
+                : "请先选择公司"}
+            </option>
             {leftOptions.map((p) => (
               <option key={p.slug} value={p.slug}>
                 {p.displayName}
@@ -169,14 +244,17 @@ export default function QuickCompareSelector({
           <select
             aria-label="右侧产品"
             value={rightProduct}
-            onChange={(e) => {
-              setRightProduct(e.target.value);
-              setError(null);
-            }}
+            onChange={(e) => onRightProductChange(e.target.value)}
             disabled={!rightCompany}
             className="px-3 py-2 text-sm border border-gray-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-50 disabled:text-gray-400"
           >
-            <option value="">{rightCompany ? "选择产品" : "请先选择公司"}</option>
+            <option value="">
+              {rightCompany
+                ? rightLockHint
+                  ? `选择产品 ${rightLockHint}`
+                  : "选择产品"
+                : "请先选择公司"}
+            </option>
             {rightOptions.map((p) => (
               <option key={p.slug} value={p.slug}>
                 {p.displayName}

@@ -43,6 +43,11 @@ export default async function CompareCriticalIllnessPage({ params }: { params: P
     displayName: getProductName(v.base.slug, localeTyped, pickBaseName(v.base, localeTyped)),
     companySlug: v.base.company_slug,
     companyName: getCompanyName(v.base.company_slug, localeTyped, v.base.company_name),
+    // This page only renders critical_illness products, so every entry
+    // carries the same category. QuickCompareSelector uses this to lock
+    // both sides to the same category and avoid 404s from cross-category
+    // compare URLs that don't exist in the comparisons table.
+    category: "critical_illness" as const,
   }));
 
   return (

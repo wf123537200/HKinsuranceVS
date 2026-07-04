@@ -380,7 +380,7 @@
       "methodologyTitle": "資料來源與方法",
       "sourcesTitle": "參考資料",
       "dataExtractedFrom": "資料抽取自官方產品手冊，日期 {date}。",
-      "vectorVersion": "結構化資料：ProductVector v2.11（registry id compare-field-registry-v2.11.json）。",
+      "vectorVersion": "結構化資料：ProductVector v2.11（registry id compare-field-registry-v2.18.json）。",
       "policyVectorSource": "Policy Vector 保險產品資料庫"
     },
     "home": {

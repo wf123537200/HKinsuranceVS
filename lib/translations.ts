@@ -15,7 +15,7 @@ const companyNames: Record<string, Record<Locale, string>> = {
 };
 
 // Company description translations
-const companyDescriptions: Record<string, Record<Locale, string>> = {
+export const companyDescriptions: Record<string, Record<Locale, string>> = {
   "prudential-hk": { en: "Prudential Hong Kong is a leading life insurance company that has been serving customers in Hong Kong for over 60 years, offering a comprehensive range of protection, savings, and investment-linked products.", "zh-CN": "保诚香港是领先的寿险公司，服务香港客户超过60年，提供全面的保障、储蓄和投资相连产品。", "zh-TW": "保誠香港是領先的壽險公司，服務香港客戶超過60年，提供全面的保障、儲蓄和投資相連產品。" },
   "aia-hk": { en: "AIA is the largest independent publicly listed pan-Asian life insurance group, serving over 3 million customers in Hong Kong. With a history spanning over a century since 1919, AIA is ranked No.1 in Hong Kong's insurance market and leads globally in MDRT membership.", "zh-CN": "友邦是最大的独立上市泛亚人寿保险集团，服务香港超过300万客户。自1919年创立至今已有百年历史，友邦在香港保险市场排名第一，MDRT会员人数全球领先。", "zh-TW": "友邦是最大的獨立上市泛亞人壽保險集團，服務香港超過300萬客戶。自1919年創立至今已有百年歷史，友邦在香港保險市場排名第一，MDRT會員人數全球領先。" },
   "manulife-hk": { en: "Manulife Hong Kong, part of the global Manulife Financial Corporation founded in 1887, provides financial protection and wealth management solutions to individuals and businesses in Hong Kong, with a strong focus on retirement and investment products.", "zh-CN": "宏利香港是全球宏利金融集团（创立于1887年）的成员，为香港个人和企业提供财务保障和财富管理方案，专注于退休和投资产品。", "zh-TW": "宏利香港是全球宏利金融集團（創立於1887年）的成員，為香港個人和企業提供財務保障和財富管理方案，專注於退休和投資產品。" },

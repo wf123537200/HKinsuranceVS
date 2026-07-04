@@ -4,7 +4,7 @@ import { getTranslations } from "next-intl/server";
 import { translateProduct, translateCompany, sortByTranslatedName } from "@/lib/translations";
 import type { Locale } from "@/i18n/config";
 import CompareListWithSearch from "@/components/CompareListWithSearch";
-import QuickCompareSelector, { type QuickCompareProduct } from "@/components/QuickCompareSelector";
+import QuickCompareSelector, { type QuickCompareProduct, type QuickCompareCategory } from "@/components/QuickCompareSelector";
 import { buildMetadata } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
@@ -51,7 +51,18 @@ export default async function ComparePage({ params }: Props) {
   }).sort(sortByTranslatedName(locale as Locale));
 
   // Build QuickCompare selector dataset from all distinct products that
-  // appear in any comparison. Deduplicate by product id.
+  // appear in any comparison. Deduplicate by product id. The `category`
+  // is consumed by QuickCompareSelector to lock both sides to the same
+  // category (CI×CI or Savings×Savings) to avoid 404 from cross-category
+  // /compare/[slug] pages that don't exist in the comparisons table.
+  // Prisma stores categories uppercased ("SAVINGS" / "CRITICAL_ILLNESS"),
+  // while QuickCompareSelector's `category` enum is lowercase. Map:
+  //   "savings" / "SAVINGS"      -> "savings"
+  //   anything else (incl. CRITICAL_ILLNESS, null, undefined) -> "critical_illness"
+  function toCompareCategory(raw: string | null | undefined): QuickCompareCategory {
+    if (typeof raw === "string" && raw.toLowerCase() === "savings") return "savings";
+    return "critical_illness";
+  }
   const productMap = new Map<string, QuickCompareProduct>();
   for (const c of comparisons) {
     const a = c.productA as (typeof comparisons)[number]["productA"];
@@ -61,12 +72,14 @@ export default async function ComparePage({ params }: Props) {
       displayName: a.displayName,
       companySlug: a.company?.slug || "",
       companyName: a.company?.displayName || "",
+      category: toCompareCategory((a as { category?: string | null }).category),
     });
     productMap.set(b.id, {
       slug: b.slug,
       displayName: b.displayName,
       companySlug: b.company?.slug || "",
       companyName: b.company?.displayName || "",
+      category: toCompareCategory((b as { category?: string | null }).category),
     });
   }
   const selectorProducts = Array.from(productMap.values());

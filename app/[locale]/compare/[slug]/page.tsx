@@ -224,6 +224,15 @@ export default async function CompareDetailPage({ params }: Props) {
   const catB =
     vectorB?.base?.category ||
     (productB.category === "CRITICAL_ILLNESS" ? "critical_illness" : "savings");
+
+  // Different categories: comparing a critical-illness product against a
+  // savings product is not meaningful — the comparison matrix is per-category.
+  // Mirror the rule the QuickCompareSelector enforces client-side so direct
+  // deep links (manual URL typing, search engine referrals, etc.) get a
+  // clear 404 with explanation rather than a confusing half-rendered page.
+  if (catA !== catB) {
+    notFound();
+  }
   const isCI = catA === "critical_illness" || catB === "critical_illness";
   const categoryLabel = formatCategory(catA);
 
@@ -233,7 +242,7 @@ export default async function CompareDetailPage({ params }: Props) {
     return (
       <div className="max-w-3xl mx-auto px-4 py-16 text-center">
         <h1 className="text-2xl font-bold text-gray-900 mb-4">对比表暂不可用</h1>
-        <p className="text-gray-600">未能加载 compare-field-registry-v2.11.json。</p>
+        <p className="text-gray-600">未能加载 compare-field-registry-v2.18.json。</p>
       </div>
     );
   }

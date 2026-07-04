@@ -380,7 +380,7 @@
       "methodologyTitle": "数据来源与方法",
       "sourcesTitle": "参考资料",
       "dataExtractedFrom": "数据提取自官方产品手册，日期 {date}。",
-      "vectorVersion": "结构化数据：ProductVector v2.11（registry id compare-field-registry-v2.11.json）。",
+      "vectorVersion": "结构化数据：ProductVector v2.11（registry id compare-field-registry-v2.18.json）。",
       "policyVectorSource": "Policy Vector 保险产品数据库"
     },
     "home": {
