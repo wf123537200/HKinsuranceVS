@@ -97,7 +97,7 @@ export default function Header() {
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
-            <div className="w-64"><SearchBar /></div>
+            <div className="w-64" style={{ display: "none" }}><SearchBar /></div>
 
             <div className="relative">
               <button onClick={() => setLangOpen(!langOpen)} className="flex items-center gap-1 text-sm text-gray-600 hover:text-blue-700 px-2 py-1 rounded">
