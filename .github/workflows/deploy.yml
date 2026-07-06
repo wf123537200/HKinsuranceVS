@@ -34,6 +34,9 @@ jobs:
           SERVER_USER:    ${{ secrets.INSURANCE_SERVER_USER }}
           SERVER_PORT:    ${{ secrets.INSURANCE_SERVER_PORT }}
           SERVER_SSH_KEY: ${{ secrets.INSURANCE_SERVER_SSH_KEY }}
+          SUPABASE_URL:     ${{ secrets.INSURANCE_SUPABASE_URL }}
+          SUPABASE_ANON:    ${{ secrets.INSURANCE_SUPABASE_ANON_KEY }}
+          SUPABASE_SERVICE: ${{ secrets.INSURANCE_SUPABASE_SERVICE_ROLE_KEY }}
         run: |
           MISSING=()
           [ -z "$SERVER_HOST"    ] && MISSING+=("INSURANCE_SERVER_HOST")
@@ -49,6 +52,20 @@ jobs:
             echo "  INSURANCE_SERVER_PORT=22"
             echo "  INSURANCE_SERVER_SSH_KEY=<full contents of ~/.ssh/aitools4me_deploy on your local machine>"
             exit 1
+          fi
+          # Supabase is optional at the deploy level: register / login
+          # pages will degrade gracefully (t("notConfigured")), and
+          # R2-gated PDFs will 503. We warn instead of blocking the
+          # deploy so a Supabase outage / key rotation never bricks
+          # the rest of the site.
+          SUPABASE_MISSING=()
+          [ -z "$SUPABASE_URL"     ] && SUPABASE_MISSING+=("INSURANCE_SUPABASE_URL")
+          [ -z "$SUPABASE_ANON"    ] && SUPABASE_MISSING+=("INSURANCE_SUPABASE_ANON_KEY")
+          [ -z "$SUPABASE_SERVICE" ] && SUPABASE_MISSING+=("INSURANCE_SUPABASE_SERVICE_ROLE_KEY")
+          if [ ${#SUPABASE_MISSING[@]} -gt 0 ]; then
+            echo "::warning::Supabase secrets missing: ${SUPABASE_MISSING[*]}"
+            echo "Register/login pages will show '服务端未配置登录服务' until these are set."
+            echo "Set them at https://github.com/wf123537200/HKinsuranceVS/settings/secrets/actions"
           fi
           # Sanity: private key must include BEGIN/END markers, otherwise
           # rsync will silently authenticate as a public-key-only user
@@ -99,6 +116,12 @@ jobs:
         run: NODE_OPTIONS="--max-old-space-size=4096" npm run build
         env:
           DATABASE_URL: 'file:./prisma/dev.db'
+          # NEXT_PUBLIC_* values get inlined into the client bundle at
+          # build time, so they MUST be present here. Without these,
+          # lib/supabase/client.ts returns null and /login /register
+          # show "服务端未配置登录服务".
+          NEXT_PUBLIC_SUPABASE_URL:     ${{ secrets.INSURANCE_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.INSURANCE_SUPABASE_ANON_KEY }}
 
       - name: Prepare deploy package
         run: |
@@ -446,6 +469,9 @@ jobs:
             NODE_OPTIONS="--max-old-space-size=1024" \
               PORT=3002 HOSTNAME=0.0.0.0 \
               DATABASE_URL="file:/opt/apps/HKinsuranceVS/prisma/dev.db" \
+              NEXT_PUBLIC_SUPABASE_URL="${{ secrets.INSURANCE_SUPABASE_URL }}" \
+              NEXT_PUBLIC_SUPABASE_ANON_KEY="${{ secrets.INSURANCE_SUPABASE_ANON_KEY }}" \
+              SUPABASE_SERVICE_ROLE_KEY="${{ secrets.INSURANCE_SUPABASE_SERVICE_ROLE_KEY }}" \
               pm2 start .next/standalone/server.js \
               --name policy-vector \
               --interpreter "$(which node)" \
