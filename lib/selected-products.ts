@@ -40,14 +40,19 @@ export function getSelectedDbSlugs(): string[] {
 }
 
 /**
- * Slugs of all products visible site-wide: every product with an official PDF
- * and a `manual_verified` or `candidate` dataStatus. Includes the 24 selected.
+ * Slugs of all products visible site-wide: every product with a `verified`,
+ * `manual_verified`, or `candidate` dataStatus. Includes the 24 selected.
+ *
+ * Note: do NOT add `localPdfPath: { not: null }` here. The production loader
+ * (scripts/sync-vectors-to-db.cjs) writes rows with `localPdfPath = NULL`;
+ * the authoritative PDF path lives on the vector file itself
+ * (`vector.base.local_pdf_path`) and is consumed by the API / UI directly.
+ * DB `localPdfPath` is only a UI hint for ClientPdfGate, not a visibility gate.
  */
 export async function getSiteProductSlugs(): Promise<string[]> {
   const rows = await prisma.product.findMany({
     where: {
-      dataStatus: { in: ["manual_verified", "candidate"] },
-      localPdfPath: { not: null },
+      dataStatus: { in: ["verified", "manual_verified", "candidate"] },
     },
     select: { slug: true },
   });

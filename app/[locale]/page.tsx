@@ -55,9 +55,16 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     select: { slug: true, company: { select: { slug: true, logoUrl: true } } },
   });
   const companySlugs = Array.from(new Set(productsWithCompany.map((p) => p.company.slug)));
-  // Build slug -> logoUrl map for the hot products block (Task: "红框应该展示各公司 logo")
+  // Logo URL must come from the companies table directly — NOT from
+  // getSiteProductSlugs(). The site-visibility filter (dataStatus in
+  // ['manual_verified','candidate']) is independent of logo availability;
+  // if it returns [] the previous join produced an empty map and every
+  // homepage logo fell back to the brand-color abbreviation tile.
+  const companyLogoRows = await prisma.company.findMany({
+    select: { slug: true, logoUrl: true },
+  });
   const logoByCompany = new Map(
-    productsWithCompany.map((p) => [p.company.slug, p.company.logoUrl])
+    companyLogoRows.map((c) => [c.slug, c.logoUrl])
   );
 
   const [rawCompanies, dbHotProducts, comparisons, productStats, categoryCounts] = await Promise.all([
