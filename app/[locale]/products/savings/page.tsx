@@ -80,7 +80,7 @@ export default async function SavingsPage({ params }: { params: Promise<{ locale
         <p className="text-xs text-gray-400 pb-1">{tCommon("sortNote")}</p>
       </div>
       <p className="text-gray-600 mb-4">{t("savingsDescription")}</p>
-      <ProductListWithSearch products={products} />
+      <ProductListWithSearch products={products} lockedCategory="SAVINGS" />
     </div>
   );
 }

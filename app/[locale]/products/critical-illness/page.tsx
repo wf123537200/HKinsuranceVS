@@ -81,7 +81,7 @@ export default async function CriticalIllnessPage({ params }: { params: Promise<
         <p className="text-xs text-gray-400 pb-1">{tCommon("sortNote")}</p>
       </div>
       <p className="text-gray-600 mb-4">{t("criticalIllnessDescription")}</p>
-      <ProductListWithSearch products={products} />
+      <ProductListWithSearch products={products} lockedCategory="CRITICAL_ILLNESS" />
     </div>
   );
 }

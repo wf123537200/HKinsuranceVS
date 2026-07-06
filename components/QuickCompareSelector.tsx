@@ -2,6 +2,8 @@
 
 import { useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
+import { useLocale, useTranslations } from "next-intl";
+import type { Locale } from "@/i18n/config";
 
 export type QuickCompareCategory = "critical_illness" | "savings";
 
@@ -30,6 +32,8 @@ export default function QuickCompareSelector({
   basePath = "/compare",
 }: Props) {
   const router = useRouter();
+  const t = useTranslations("compare");
+  const locale = useLocale() as Locale;
   const [leftCompany, setLeftCompany] = useState("");
   const [leftProduct, setLeftProduct] = useState("");
   const [rightCompany, setRightCompany] = useState("");
@@ -44,7 +48,7 @@ export default function QuickCompareSelector({
     }
     return Array.from(map.entries())
       .map(([slug, name]) => ({ slug, name }))
-      .sort((a, b) => a.name.localeCompare(b.name, "zh"));
+      .sort((a, b) => a.name.localeCompare(b.name, locale));
   }
 
   const leftCompanies = useMemo(() => companiesOf(leftProducts), [leftProducts]);
@@ -56,7 +60,7 @@ export default function QuickCompareSelector({
   ): QuickCompareProduct[] {
     return list
       .filter((p) => p.companySlug === companySlug)
-      .sort((a, b) => a.displayName.localeCompare(b.displayName, "zh"));
+      .sort((a, b) => a.displayName.localeCompare(b.displayName, locale));
   }
 
   const leftOptions = useMemo(() => {
@@ -75,9 +79,9 @@ export default function QuickCompareSelector({
   // Hide products from the opposite category rather than confusingly listing
   // them. The placeholder note explains the lock-in.
   const leftLockHint =
-    lockedCategoryFor("left") === "savings" ? "（已限定：储蓄险）" : lockedCategoryFor("left") === "critical_illness" ? "（已限定：重疾险）" : "";
+    lockedCategoryFor("left") === "savings" ? t("quickCompareLockedSavings") : lockedCategoryFor("left") === "critical_illness" ? t("quickCompareLockedCI") : "";
   const rightLockHint =
-    lockedCategoryFor("right") === "savings" ? "（已限定：储蓄险）" : lockedCategoryFor("right") === "critical_illness" ? "（已限定：重疾险）" : "";
+    lockedCategoryFor("right") === "savings" ? t("quickCompareLockedSavings") : lockedCategoryFor("right") === "critical_illness" ? t("quickCompareLockedCI") : "";
 
   // Reset dependent state when company changes
   function onLeftCompanyChange(v: string) {
@@ -154,17 +158,17 @@ export default function QuickCompareSelector({
 
   function go() {
     if (!leftProduct || !rightProduct) {
-      setError("请同时选择两个产品");
+      setError(t("quickCompareErrorBoth"));
       return;
     }
     if (leftProduct === rightProduct) {
-      setError("请选择不同的两个产品");
+      setError(t("quickCompareErrorDifferent"));
       return;
     }
     const leftCat = productBySlug(leftProduct)?.category;
     const rightCat = productBySlug(rightProduct)?.category;
     if (leftCat && rightCat && leftCat !== rightCat) {
-      setError("请选择同类型（重疾险 vs 重疾险，或 储蓄险 vs 储蓄险）的产品");
+      setError(t("quickCompareErrorSameCategory"));
       return;
     }
     router.push(`${basePath}/${leftProduct}-vs-${rightProduct}`);
@@ -172,18 +176,18 @@ export default function QuickCompareSelector({
 
   return (
     <div className="mb-6 p-4 bg-white border border-gray-200 rounded-lg">
-      <p className="text-xs text-gray-500 mb-3">快速对比：先选公司，再选产品</p>
+      <p className="text-xs text-gray-500 mb-3">{t("quickCompareIntro")}</p>
 
       <div className="flex flex-col md:flex-row md:items-end gap-3">
         {/* Left side: company + product */}
         <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-2">
           <select
-            aria-label="左侧公司"
+            aria-label={t("quickCompareLeftCompany")}
             value={leftCompany}
             onChange={(e) => onLeftCompanyChange(e.target.value)}
             className="px-3 py-2 text-sm border border-gray-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
-            <option value="">选择公司</option>
+            <option value="">{t("quickCompareSelectCompany")}</option>
             {leftCompanies.map((c) => (
               <option key={c.slug} value={c.slug}>
                 {c.name}
@@ -191,7 +195,7 @@ export default function QuickCompareSelector({
             ))}
           </select>
           <select
-            aria-label="左侧产品"
+            aria-label={t("quickCompareLeftProduct")}
             value={leftProduct}
             onChange={(e) => onLeftProductChange(e.target.value)}
             disabled={!leftCompany}
@@ -200,9 +204,9 @@ export default function QuickCompareSelector({
             <option value="">
               {leftCompany
                 ? leftLockHint
-                  ? `选择产品 ${leftLockHint}`
-                  : "选择产品"
-                : "请先选择公司"}
+                  ? `${t("quickCompareSelectProduct")} ${leftLockHint}`
+                  : t("quickCompareSelectProduct")
+                : t("quickCompareSelectProductFirst")}
             </option>
             {leftOptions.map((p) => (
               <option key={p.slug} value={p.slug}>
@@ -220,21 +224,21 @@ export default function QuickCompareSelector({
             onClick={swap}
             disabled={!leftCompany && !rightCompany}
             className="text-xs text-blue-600 hover:text-blue-700 disabled:text-gray-300"
-            title="交换两侧选择"
+            title={t("quickCompareSwapTitle")}
           >
-            ⇄ 交换
+            ⇄ {t("quickCompareSwap")}
           </button>
         </div>
 
         {/* Right side: company + product */}
         <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-2">
           <select
-            aria-label="右侧公司"
+            aria-label={t("quickCompareRightCompany")}
             value={rightCompany}
             onChange={(e) => onRightCompanyChange(e.target.value)}
             className="px-3 py-2 text-sm border border-gray-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
-            <option value="">选择公司</option>
+            <option value="">{t("quickCompareSelectCompany")}</option>
             {rightCompanies.map((c) => (
               <option key={c.slug} value={c.slug}>
                 {c.name}
@@ -242,7 +246,7 @@ export default function QuickCompareSelector({
             ))}
           </select>
           <select
-            aria-label="右侧产品"
+            aria-label={t("quickCompareRightProduct")}
             value={rightProduct}
             onChange={(e) => onRightProductChange(e.target.value)}
             disabled={!rightCompany}
@@ -251,9 +255,9 @@ export default function QuickCompareSelector({
             <option value="">
               {rightCompany
                 ? rightLockHint
-                  ? `选择产品 ${rightLockHint}`
-                  : "选择产品"
-                : "请先选择公司"}
+                  ? `${t("quickCompareSelectProduct")} ${rightLockHint}`
+                  : t("quickCompareSelectProduct")
+                : t("quickCompareSelectProductFirst")}
             </option>
             {rightOptions.map((p) => (
               <option key={p.slug} value={p.slug}>
@@ -270,7 +274,7 @@ export default function QuickCompareSelector({
           disabled={!leftProduct || !rightProduct}
           className="md:ml-2 px-5 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed"
         >
-          开始对比
+          {t("quickCompareGo")}
         </button>
       </div>
 
