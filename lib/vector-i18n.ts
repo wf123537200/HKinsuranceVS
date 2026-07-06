@@ -448,12 +448,17 @@ export function getProductName(
   locale: Locale,
   fallback?: string
 ): string {
-  // Prefer the vector's authoritative localized name (passed in by callers as
-  // pickBaseName(base, locale)). Only consult the static table when no
-  // fallback was provided, e.g. legacy code paths.
-  if (fallback) return fallback;
+  // The static PRODUCT_NAMES table is the authoritative source for
+  // translated product names. Vectors commonly store only the
+  // zh-CN product_name and either miss product_name_en entirely or
+  // carry a hand-typed English string that drifts from the curated
+  // table (e.g. "ManuBright Care 2" vs the table's "Manulife Bright
+  // Care Pro"). We therefore look up the table first; only if a slug
+  // has no entry do we honour the caller's `fallback` (which is the
+  // vector's per-locale field) and finally fall back to the slug.
   const entry = PRODUCT_NAMES[slug];
   if (entry) return entry[locale] || entry["zh-CN"] || slug;
+  if (fallback) return fallback;
   return slug;
 }
 
