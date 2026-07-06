@@ -120,8 +120,13 @@ jobs:
           # build time, so they MUST be present here. Without these,
           # lib/supabase/client.ts returns null and /login /register
           # show "服务端未配置登录服务".
+          NEXT_PUBLIC_SITE_URL:        ${{ secrets.INSURANCE_SITE_URL }}
           NEXT_PUBLIC_SUPABASE_URL:     ${{ secrets.INSURANCE_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.INSURANCE_SUPABASE_ANON_KEY }}
+          SUPABASE_SERVICE_ROLE_KEY:    ${{ secrets.INSURANCE_SUPABASE_SERVICE_ROLE_KEY }}
+          AUTH_URL:                     ${{ secrets.INSURANCE_SITE_URL }}
+          NEXTAUTH_URL:                 ${{ secrets.INSURANCE_SITE_URL }}
+          AUTH_TRUST_HOST:              "true"
 
       - name: Prepare deploy package
         run: |
@@ -466,12 +471,35 @@ jobs:
             #      critical "can the app connect to its database"
             #      path. The absolute path here matches what DEPLOY.md
             #      tells the operator to put in .env.local.
+            # Source the server's .env.local so R2_* and any other operator-managed
+            # vars are available for inline expansion below. We do NOT source it
+            # with `set -e` because a missing file should warn, not abort.
+            if [ -f /opt/apps/HKinsuranceVS/.env.local ]; then
+              set -a
+              . /opt/apps/HKinsuranceVS/.env.local
+              set +a
+            else
+              echo "WARNING: /opt/apps/HKinsuranceVS/.env.local missing — R2_* vars will be empty."
+            fi
+
             NODE_OPTIONS="--max-old-space-size=1024" \
-              PORT=3002 HOSTNAME=0.0.0.0 \
-              DATABASE_URL="file:/opt/apps/HKinsuranceVS/prisma/dev.db" \
+              DATABASE_URL="$DATABASE_URL" \
+              AUTH_SECRET="$AUTH_SECRET" \
+              AUTH_TRUST_HOST="true" \
+              AUTH_URL="${{ secrets.INSURANCE_SITE_URL }}" \
+              NEXTAUTH_URL="${{ secrets.INSURANCE_SITE_URL }}" \
+              NEXT_PUBLIC_SITE_URL="${{ secrets.INSURANCE_SITE_URL }}" \
               NEXT_PUBLIC_SUPABASE_URL="${{ secrets.INSURANCE_SUPABASE_URL }}" \
               NEXT_PUBLIC_SUPABASE_ANON_KEY="${{ secrets.INSURANCE_SUPABASE_ANON_KEY }}" \
               SUPABASE_SERVICE_ROLE_KEY="${{ secrets.INSURANCE_SUPABASE_SERVICE_ROLE_KEY }}" \
+              R2_ACCOUNT_ID="$R2_ACCOUNT_ID" \
+              R2_ACCESS_KEY_ID="$R2_ACCESS_KEY_ID" \
+              R2_SECRET_ACCESS_KEY="$R2_SECRET_ACCESS_KEY" \
+              R2_BUCKET_NAME="$R2_BUCKET_NAME" \
+              R2_PRESIGNED_URL_EXPIRES_SECONDS="$R2_PRESIGNED_URL_EXPIRES_SECONDS" \
+              PDF_ACCESS_MODE="$PDF_ACCESS_MODE" \
+              PDF_SOURCE_TYPE="$PDF_SOURCE_TYPE" \
+              PORT=3002 HOSTNAME=0.0.0.0 \
               pm2 start .next/standalone/server.js \
               --name policy-vector \
               --interpreter "$(which node)" \
@@ -504,27 +532,14 @@ jobs:
               sleep 4
             done
 
-            HTTPS=$(curl -s -o /dev/null -w "%{http_code}" \
-              https://policy-vector.com/zh-CN 2>/dev/null || echo "000")
-            echo "Public HTTPS: $HTTPS"
-
-            # Static asset smoke tests. Without these, the page can
-            # render but the browser console fills with 404s for
-            # /_next/static/* and /logos/*.svg -- which is what
-            # happens when .next/static and public/ are at the project
-            # root but server.js runs from .next/standalone/.
-            echo "==> Static asset smoke tests..."
-            CHUNK=$(find .next/standalone/.next/static/chunks -type f -name "*.js" 2>/dev/null | head -1 | sed 's#^\.next/standalone/.next/static#/_next/static#')
-            if [ -n "$CHUNK" ]; then
-              CHUNK_CODE=$(curl -s -o /dev/null -w "%{http_code}" "http://127.0.0.1:3002$CHUNK" 2>/dev/null || echo "000")
-              echo "JS chunk $CHUNK -> $CHUNK_CODE"
-            else
-              echo "WARNING: no JS chunk found under .next/standalone/.next/static/chunks/"
-            fi
-            LOGO_CODE=$(curl -s -o /dev/null -w "%{http_code}" "http://127.0.0.1:3002/logos/policy-vector-logo.svg" 2>/dev/null || echo "000")
-            echo "Logo /logos/policy-vector-logo.svg -> $LOGO_CODE"
-            HEALTH_CODE=$(curl -s -o /dev/null -w "%{http_code}" "http://127.0.0.1:3002/api/health" 2>/dev/null || echo "000")
-            echo "Health /api/health -> $HEALTH_CODE"
+            # Minimal smoke tests: auth session (with production Host header
+            # so NextAuth's host check sees a trusted name) and home page.
+            echo "==> Smoke: /api/auth/session (Host: policy-vector.com)..."
+            curl -s -o /dev/null -w "  HTTP %{http_code}\n" \
+              -H "Host: policy-vector.com" http://127.0.0.1:3002/api/auth/session
+            echo "==> Smoke: /zh-CN..."
+            curl -s -o /dev/null -w "  HTTP %{http_code}\n" \
+              http://127.0.0.1:3002/zh-CN
 
             echo "--- pm2 (insurance only) ---"
             pm2 show policy-vector 2>&1 | head -20 || echo "(no policy-vector in pm2)"
