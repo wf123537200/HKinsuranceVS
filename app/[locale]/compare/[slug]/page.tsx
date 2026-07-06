@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/prisma";
+import type { Prisma } from "@/app/generated/prisma/client";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import type { Locale } from "@/i18n/config";
@@ -41,16 +42,43 @@ interface Props {
   params: Promise<{ slug: string; locale: string }>;
 }
 
+type ComparisonWithProducts = Prisma.ComparisonGetPayload<{
+  include: {
+    productA: { include: { company: true } };
+    productB: { include: { company: true } };
+  };
+}>;
+
+/**
+ * Look up a comparison by its slug. Comparisons are seeded with slugs of
+ * the form "<a-slug>-vs-<b-slug>", but the order in which the two product
+ * vectors were loaded at seed time doesn't necessarily match the order
+ * users would type into a URL. To keep direct deep links (manual URL
+ * typing, search engine referrals, etc.) from 404'ing on the same pair,
+ * we also try the slug with the two halves swapped.
+ */
+async function findComparisonBySlug(slug: string): Promise<ComparisonWithProducts | null> {
+  const include = {
+    productA: { include: { company: true } },
+    productB: { include: { company: true } },
+  } as const;
+  const direct = await prisma.comparison.findUnique({ where: { slug }, include });
+  if (direct) return direct as ComparisonWithProducts;
+  const parts = slug.split("-vs-");
+  if (parts.length === 2 && parts[0] && parts[1] && parts[0] !== parts[1]) {
+    const swapped = `${parts[1]}-vs-${parts[0]}`;
+    if (swapped !== slug) {
+      const alt = await prisma.comparison.findUnique({ where: { slug: swapped }, include });
+      if (alt) return alt as ComparisonWithProducts;
+    }
+  }
+  return null;
+}
+
 export async function generateMetadata({ params }: Props) {
   const { slug, locale } = await params;
   const localeTyped = locale as Locale;
-  const comparison = await prisma.comparison.findUnique({
-    where: { slug },
-    include: {
-      productA: { include: { company: true } },
-      productB: { include: { company: true } },
-    },
-  });
+  const comparison = await findComparisonBySlug(slug);
   if (!comparison) {
     return buildMetadata({
       path: `/compare/${slug}`,
@@ -189,13 +217,7 @@ export default async function CompareDetailPage({ params }: Props) {
   const tGeo = await getTranslations("geo");
   const localeTyped = locale as Locale;
 
-  const comparison = await prisma.comparison.findUnique({
-    where: { slug },
-    include: {
-      productA: { include: { company: true } },
-      productB: { include: { company: true } },
-    },
-  });
+  const comparison = await findComparisonBySlug(slug);
   if (!comparison) notFound();
 
   const productA = translateProduct(
