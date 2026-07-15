@@ -1,7 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
-import { GoogleAnalytics } from "@next/third-parties/google";
 import { locales, defaultLocale, type Locale } from "@/i18n/config";
 import { localizedUrl, ogLocale, siteUrl } from "@/lib/seo";
 import Providers from "@/components/Providers";
@@ -95,9 +94,16 @@ export default async function LocaleLayout({
           </Providers>
         </NextIntlClientProvider>
       </body>
-      {process.env.NEXT_PUBLIC_GA_ID ? (
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
-      ) : null}
+      {/* Google tag (gtag.js) */}
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-E72G2JKJQH"></script>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-E72G2JKJQH');`,
+        }}
+      />
     </html>
   );
 }
