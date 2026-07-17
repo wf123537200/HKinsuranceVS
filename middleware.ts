@@ -89,24 +89,10 @@ export default function middleware(request: NextRequest) {
     return intl(request);
   }
 
-  // URL has no prefix. next-intl would normally rewrite to /en/<path>
-  // and set a cookie. The rewrite is invisible to browsers but the
-  // canonical 307 loop is real. So only invoke next-intl if the cookie
-  // disagrees with the default — i.e. the user explicitly chose a
-  // non-default locale and needs to be redirected to the prefixed URL.
-  if (cookieIsDefault) {
-    // Cookie says default (or no cookie). next-intl's Accept-Language
-    // detection would also want to redirect zh-CN visitors to /zh-CN/...
-    // Do that ourselves to avoid the rewrite+redirect combination.
-    const accept = pickFromAcceptLanguage(request.headers.get("accept-language"));
-    if (accept && accept !== defaultLocale) {
-      return intl(request);
-    }
-    return NextResponse.next();
-  }
-
-  // Cookie is non-default but URL is unprefixed. Hand off so next-intl
-  // redirects the user to /<locale>/<path>.
+  // URL has no prefix. Hand off to next-intl which will:
+  //   - Internally rewrite to /en/<path> (invisible to browser)
+  //   - Set the NEXT_LOCALE cookie
+  // This ensures [locale]/page.tsx receives the correct locale param.
   return intl(request);
 }
 
