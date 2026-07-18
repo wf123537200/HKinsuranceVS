@@ -89,10 +89,13 @@ export default function middleware(request: NextRequest) {
     return intl(request);
   }
 
-  // URL has no prefix and no cookie conflict. Let Next.js handle the
-  // request directly — the next-intl plugin (createNextIntlPlugin) in
-  // next.config.ts will internally rewrite / -> /en/ without any redirect.
-  // This avoids the redirect error that Googlebot sees when intl() is called.
+  // URL has no prefix. next-intl would normally rewrite to /en/<path>.
+  // Only redirect if the user has an explicit NEXT_LOCALE cookie set
+  // (meaning they chose a locale via the language switcher).
+  // This prevents Googlebot from being redirected based on Accept-Language.
+  if (cookieLocale && cookieLocale !== defaultLocale) {
+    return intl(request);
+  }
   return NextResponse.next();
 }
 
