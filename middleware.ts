@@ -89,11 +89,11 @@ export default function middleware(request: NextRequest) {
     return intl(request);
   }
 
-  // URL has no prefix. Hand off to next-intl which will:
-  //   - Internally rewrite to /en/<path> (invisible to browser)
-  //   - Set the NEXT_LOCALE cookie
-  // This ensures [locale]/page.tsx receives the correct locale param.
-  return intl(request);
+  // URL has no prefix and no cookie conflict. Let Next.js handle the
+  // request directly — the next-intl plugin (createNextIntlPlugin) in
+  // next.config.ts will internally rewrite / -> /en/ without any redirect.
+  // This avoids the redirect error that Googlebot sees when intl() is called.
+  return NextResponse.next();
 }
 
 export const config = {
