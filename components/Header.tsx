@@ -34,16 +34,15 @@ export default function Header() {
   const pathname = usePathname();
   const currentLocale = (params?.locale as Locale) || "en";
 
-  // Switching language must do two things in order:
-  //   1. Set the locale cookie. If we just navigated, next-intl would
-  //      re-detect Accept-Language on the next request and overwrite.
-  //   2. Navigate to a URL with an explicit locale prefix so the page
-  //      always sees `params.locale`. With `localePrefix: "as-needed"`
-  //      and `defaultLocale="en"`, next-intl canonicalizes prefixed
-  //      URLs to the unprefixed form (e.g. /en/products → /products).
-  //      For the locale root we explicitly keep `/en` (since `/` 404s
-  //      under our setup) and rely on the in-app page rather than the
-  //      middleware redirect.
+  // Switching language must do three things in order:
+  //   1. Set the locale cookie.
+  //   2. Use window.location.href (full page reload) instead of router.push.
+  //      router.push does client-side navigation; the middleware won't run
+  //      and the NEXT_LOCALE cookie won't take effect on the current page.
+  //      A full reload forces the browser to send a new HTTP request,
+  //      which the middleware handles, routing the user to the correct locale.
+  //   3. Navigate to a URL with an explicit locale prefix so the page
+  //      always sees `params.locale`.
   function switchLocale(target: Locale) {
     setLocaleCookie(target);
     const url =
@@ -52,9 +51,7 @@ export default function Header() {
         : `/${target}${pathWithoutLocale}`;
     setLangOpen(false);
     setMobileOpen(false);
-    startTransition(() => {
-      router.push(url);
-    });
+    window.location.href = url;
   }
 
   const NAV_ITEMS = [
