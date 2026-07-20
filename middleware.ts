@@ -89,10 +89,14 @@ export default function middleware(request: NextRequest) {
     return intl(request);
   }
 
-  // URL has no prefix. Invoke next-intl for internal rewrite to /en/<path>.
-  // This rewrite is invisible to browsers (no redirect), but allows
-  // Next.js to route the request to app/[locale]/page.tsx correctly.
-  return intl(request);
+  // URL has no prefix. Only invoke intl() for a visible redirect when the
+  // user explicitly chose a non-default locale (has NEXT_LOCALE cookie).
+  // Otherwise let Next.js continue so next-intl's plugin can perform the
+  // internal rewrite (invisible to browser, no redirect).
+  if (cookieLocale && cookieLocale !== defaultLocale) {
+    return intl(request);
+  }
+  return NextResponse.next();
 }
 
 export const config = {
