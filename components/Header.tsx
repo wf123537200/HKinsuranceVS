@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
-import { useState, useTransition } from "react";
-import { useRouter, useParams, usePathname } from "next/navigation";
+import { Link, usePathname } from "../i18n/navigation";
+import { useState } from "react";
+import { useParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import SearchBar from "./SearchBar";
 import { locales, localeNames, type Locale, defaultLocale } from "@/i18n/config";
@@ -24,8 +24,6 @@ export default function Header() {
   const { email: sessionEmail } = useSupabaseSession();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
-  const router = useRouter();
-  const [, startTransition] = useTransition();
   const t = useTranslations("nav");
   const tc = useTranslations("common");
   const tCommon = useTranslations("common");

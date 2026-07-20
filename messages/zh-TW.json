@@ -234,7 +234,10 @@
   "glossary": {
     "title": "保險術語",
     "description": "常見保險術語及定義。",
-    "searchPlaceholder": "搜尋保險術語..."
+    "searchPlaceholder": "搜尋保險術語...",
+    "breadcrumb": "術語表",
+    "notFoundTitle": "未找到術語",
+    "notFoundDescription": "您查找的術語在 Policy Vector 上不可用。"
   },
   "discussions": {
     "title": "社區討論",
@@ -245,7 +248,24 @@
     "reply": "回覆",
     "writeReply": "寫下你的回覆...",
     "postReply": "發表回覆",
-    "loginToReply": "登入後回覆。"
+    "loginToReply": "登入後回覆。",
+    "metaTitle": "社群討論",
+    "metaDescription": "在 Policy Vector 上關於保險產品的社群討論。",
+    "subtitle": "關於保險產品的社群討論。",
+    "emptyState": "暫無討論。成為第一個開啟話題的人！",
+    "anonymous": "匿名",
+    "categoryProductDiscussion": "產品討論",
+    "categoryCriticalIllness": "重疾險",
+    "categorySavings": "儲蓄保險",
+    "categoryComparison": "產品對比",
+    "categoryDataCorrection": "資料更正",
+    "categoryProfessionals": "保險專業人士",
+    "breadcrumb": "討論",
+    "notFoundTitle": "討論未找到",
+    "notFoundDescription": "您查找的討論在 Policy Vector 上不可用。",
+    "views": "{count} 次瀏覽",
+    "commentsTitle": "評論 ({count})",
+    "noComments": "暫無評論。"
   },
   "search": {
     "title": "搜尋",
@@ -403,16 +423,28 @@
       "quickAnswerTitle": "Policy Vector 是什麼？",
       "quickAnswerText": "Policy Vector 是香港與中國內地的保險產品資料庫與對比平台。我們從官方 PDF 手冊抽取結構化資料，發布重疾險與儲蓄險的同台對比。",
       "sources": [
-        { "label": "Policy Vector — 保險公司", "url": "https://policy-vector.com/zh-TW/companies" },
-        { "label": "Policy Vector — 保險產品", "url": "https://policy-vector.com/zh-TW/products" }
+        {
+          "label": "Policy Vector — 保險公司",
+          "url": "https://policy-vector.com/zh-TW/companies"
+        },
+        {
+          "label": "Policy Vector — 保險產品",
+          "url": "https://policy-vector.com/zh-TW/products"
+        }
       ]
     },
     "company": {
       "quickAnswerTitle": "{name} 提供哪些產品？",
       "quickAnswerText": "{name} 是一家位於 {region} 的保險公司。在 Policy Vector 上我們收錄了該公司的 {count} 款精選產品，涵蓋重疾險與儲蓄險類別。",
       "sources": [
-        { "label": "Policy Vector 上的 {name}", "url": "https://policy-vector.com/zh-TW/company/{slug}" },
-        { "label": "全部保險公司", "url": "https://policy-vector.com/zh-TW/companies" }
+        {
+          "label": "Policy Vector 上的 {name}",
+          "url": "https://policy-vector.com/zh-TW/company/{slug}"
+        },
+        {
+          "label": "全部保險公司",
+          "url": "https://policy-vector.com/zh-TW/companies"
+        }
       ]
     },
     "product": {
@@ -425,9 +457,14 @@
       "faqQ3": "在哪裡可以閱讀 {name} 的官方手冊？",
       "faqA3": "本頁已附官方 PDF 手冊連結。購買前請以官方手冊為準核對條款、保費與保障。",
       "sources": [
-
-        { "label": "Policy Vector 上的 {company}", "url": "https://policy-vector.com/zh-TW/company/{companySlug}" },
-        { "label": "全部{category}產品", "url": "https://policy-vector.com/zh-TW/products/{categorySlug}" }
+        {
+          "label": "Policy Vector 上的 {company}",
+          "url": "https://policy-vector.com/zh-TW/company/{companySlug}"
+        },
+        {
+          "label": "全部{category}產品",
+          "url": "https://policy-vector.com/zh-TW/products/{categorySlug}"
+        }
       ]
     },
     "compare": {

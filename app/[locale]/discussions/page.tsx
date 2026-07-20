@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import type { Locale } from "@/i18n/config";
 import { buildMetadata } from "@/lib/seo";
 
@@ -8,11 +9,12 @@ export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "discussions" });
   return buildMetadata({
     path: "/discussions",
     locale: locale as Locale,
-    title: "Community Discussions",
-    description: "Community discussions about insurance products on Policy Vector.",
+    title: t("metaTitle"),
+    description: t("metaDescription"),
   });
 }
 
@@ -24,21 +26,23 @@ export default async function DiscussionsPage() {
     take: 50,
   });
 
+  const t = await getTranslations("discussions");
+
   const categories = [
-    { value: "PRODUCT_DISCUSSION", label: "Product Discussions" },
-    { value: "CRITICAL_ILLNESS", label: "Critical Illness" },
-    { value: "SAVINGS", label: "Savings Insurance" },
-    { value: "COMPARISON", label: "Product Comparisons" },
-    { value: "DATA_CORRECTION", label: "Data Correction" },
-    { value: "PROFESSIONALS", label: "Insurance Professionals" },
+    { value: "PRODUCT_DISCUSSION", label: t("categoryProductDiscussion") },
+    { value: "CRITICAL_ILLNESS", label: t("categoryCriticalIllness") },
+    { value: "SAVINGS", label: t("categorySavings") },
+    { value: "COMPARISON", label: t("categoryComparison") },
+    { value: "DATA_CORRECTION", label: t("categoryDataCorrection") },
+    { value: "PROFESSIONALS", label: t("categoryProfessionals") },
   ];
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Discussions</h1>
-          <p className="text-gray-600">Community discussions about insurance products.</p>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">{t("title")}</h1>
+          <p className="text-gray-600">{t("subtitle")}</p>
         </div>
       </div>
 
@@ -57,7 +61,7 @@ export default async function DiscussionsPage() {
       {/* Discussions List */}
       {discussions.length === 0 ? (
         <div className="text-center py-12">
-          <p className="text-gray-500">No discussions yet. Be the first to start a conversation!</p>
+          <p className="text-gray-500">{t("emptyState")}</p>
         </div>
       ) : (
         <div className="space-y-4">
@@ -77,7 +81,7 @@ export default async function DiscussionsPage() {
                 </span>
               </div>
               <div className="flex items-center gap-4 mt-3 text-xs text-gray-400">
-                <span>{discussion.author.name ?? "Anonymous"}</span>
+                <span>{discussion.author.name ?? t("anonymous")}</span>
                 <span>{discussion._count.comments} comments</span>
                 <span>{discussion.viewCount} views</span>
                 <span>{new Date(discussion.createdAt).toLocaleDateString()}</span>

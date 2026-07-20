@@ -2,6 +2,7 @@ import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 import type { Locale } from "@/i18n/config";
 import { buildMetadata } from "@/lib/seo";
 import { getGlossaryTerm } from "@/lib/glossary-i18n";
@@ -13,13 +14,14 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug, locale } = await params;
   const localeTyped = locale as Locale;
+  const t = await getTranslations({ locale, namespace: "glossary" });
   const term = await prisma.glossaryTerm.findUnique({ where: { slug } });
   if (!term) {
     return buildMetadata({
       path: `/glossary/${slug}`,
       locale: localeTyped,
-      title: "Glossary Term Not Found",
-      description: "The glossary term you are looking for is not available on Policy Vector.",
+      title: t("notFoundTitle"),
+      description: t("notFoundDescription"),
       robots: { index: false, follow: false },
     });
   }
@@ -31,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return buildMetadata({
     path: `/glossary/${slug}`,
     locale: localeTyped,
-    title: `${i18n.name} - Insurance Glossary`,
+    title: `${i18n.name} - ${t("title")}`,
     description: i18n.description.slice(0, 200).replace(/\s+/g, " ").trim(),
   });
 }
@@ -49,10 +51,12 @@ export default async function GlossaryTermPage({ params }: Props) {
     category: term.category,
   });
 
+  const t = await getTranslations("glossary");
+
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <nav className="text-sm text-gray-500 mb-6">
-        <Link href="/glossary" className="hover:text-blue-600">Glossary</Link>
+        <Link href="/glossary" className="hover:text-blue-600">{t("breadcrumb")}</Link>
         <span className="mx-2">/</span>
         <span className="text-gray-900">{i18n.name}</span>
       </nav>

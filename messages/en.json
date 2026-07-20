@@ -234,7 +234,10 @@
   "glossary": {
     "title": "Insurance Glossary",
     "description": "Common insurance terms and definitions.",
-    "searchPlaceholder": "Search glossary terms..."
+    "searchPlaceholder": "Search glossary terms...",
+    "breadcrumb": "Glossary",
+    "notFoundTitle": "Glossary Term Not Found",
+    "notFoundDescription": "The glossary term you are looking for is not available on Policy Vector."
   },
   "discussions": {
     "title": "Discussions",
@@ -245,7 +248,24 @@
     "reply": "Reply",
     "writeReply": "Write a reply...",
     "postReply": "Post Reply",
-    "loginToReply": "Sign in to reply."
+    "loginToReply": "Sign in to reply.",
+    "metaTitle": "Community Discussions",
+    "metaDescription": "Community discussions about insurance products on Policy Vector.",
+    "subtitle": "Community discussions about insurance products.",
+    "emptyState": "No discussions yet. Be the first to start a conversation!",
+    "anonymous": "Anonymous",
+    "categoryProductDiscussion": "Product Discussions",
+    "categoryCriticalIllness": "Critical Illness",
+    "categorySavings": "Savings Insurance",
+    "categoryComparison": "Product Comparisons",
+    "categoryDataCorrection": "Data Correction",
+    "categoryProfessionals": "Insurance Professionals",
+    "breadcrumb": "Discussions",
+    "notFoundTitle": "Discussion Not Found",
+    "notFoundDescription": "The discussion you are looking for is not available on Policy Vector.",
+    "views": "{count} views",
+    "commentsTitle": "Comments ({count})",
+    "noComments": "No comments yet."
   },
   "search": {
     "title": "Search",
@@ -403,16 +423,28 @@
       "quickAnswerTitle": "What is Policy Vector?",
       "quickAnswerText": "Policy Vector is an insurance product database and comparison platform for Hong Kong and Mainland China. We extract structured data from official PDF brochures and publish side-by-side comparisons of critical illness and savings products.",
       "sources": [
-        { "label": "Policy Vector — Companies", "url": "https://policy-vector.com/companies" },
-        { "label": "Policy Vector — Products", "url": "https://policy-vector.com/products" }
+        {
+          "label": "Policy Vector — Companies",
+          "url": "https://policy-vector.com/companies"
+        },
+        {
+          "label": "Policy Vector — Products",
+          "url": "https://policy-vector.com/products"
+        }
       ]
     },
     "company": {
       "quickAnswerTitle": "What products does {name} offer?",
       "quickAnswerText": "{name} is an insurance company in {region}. On Policy Vector we list {count} selected products from this insurer, including critical illness and savings categories.",
       "sources": [
-        { "label": "{name} on Policy Vector", "url": "https://policy-vector.com/company/{slug}" },
-        { "label": "All insurance companies", "url": "https://policy-vector.com/companies" }
+        {
+          "label": "{name} on Policy Vector",
+          "url": "https://policy-vector.com/company/{slug}"
+        },
+        {
+          "label": "All insurance companies",
+          "url": "https://policy-vector.com/companies"
+        }
       ]
     },
     "product": {
@@ -425,8 +457,14 @@
       "faqQ3": "Where can I read the official brochure for {name}?",
       "faqA3": "The official PDF brochure is linked on this page. Always verify terms, premiums, and benefits with the official brochure before purchasing.",
       "sources": [
-        { "label": "{company} on Policy Vector", "url": "https://policy-vector.com/company/{companySlug}" },
-        { "label": "All {category} products", "url": "https://policy-vector.com/products/{categorySlug}" }
+        {
+          "label": "{company} on Policy Vector",
+          "url": "https://policy-vector.com/company/{companySlug}"
+        },
+        {
+          "label": "All {category} products",
+          "url": "https://policy-vector.com/products/{categorySlug}"
+        }
       ]
     },
     "compare": {
