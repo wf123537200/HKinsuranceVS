@@ -52,6 +52,7 @@ const intl = createIntlMiddleware({
   locales,
   defaultLocale,
   localePrefix: "as-needed",
+  localeDetection: false,
 });
 
 export default function middleware(request: NextRequest) {
@@ -89,14 +90,9 @@ export default function middleware(request: NextRequest) {
     return intl(request);
   }
 
-  // URL has no prefix. Only invoke intl() for a visible redirect when the
-  // user explicitly chose a non-default locale (has NEXT_LOCALE cookie).
-  // Otherwise let Next.js continue so next-intl's plugin can perform the
-  // internal rewrite (invisible to browser, no redirect).
-  if (cookieLocale && cookieLocale !== defaultLocale) {
-    return intl(request);
-  }
-  return NextResponse.next();
+  // URL has no prefix. Invoke intl() for the internal rewrite.
+  // With localeDetection: false, no redirect happens for unprefixed URLs.
+  return intl(request);
 }
 
 export const config = {
