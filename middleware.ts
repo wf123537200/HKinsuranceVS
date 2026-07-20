@@ -52,7 +52,6 @@ const intl = createIntlMiddleware({
   locales,
   defaultLocale,
   localePrefix: "as-needed",
-  localeDetection: false,
 });
 
 export default function middleware(request: NextRequest) {
@@ -90,9 +89,14 @@ export default function middleware(request: NextRequest) {
     return intl(request);
   }
 
-  // URL has no prefix. Invoke intl() for the internal rewrite.
-  // With localeDetection: false, no redirect happens for unprefixed URLs.
-  return intl(request);
+  // URL has no prefix. Only invoke intl() if user has an explicit NEXT_LOCALE
+  // cookie set to a non-default locale. This prevents Googlebot (no cookie) from
+  // being redirected based on Accept-Language, while still allowing users who
+  // explicitly chose a locale to be properly handled.
+  if (cookieLocale && cookieLocale !== defaultLocale) {
+    return intl(request);
+  }
+  return NextResponse.next();
 }
 
 export const config = {
