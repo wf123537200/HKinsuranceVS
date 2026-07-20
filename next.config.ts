@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
+import path from "path";
 
 const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 
@@ -23,6 +24,10 @@ const nextConfig: NextConfig = {
       "./app/generated/prisma/**/*",
       "./node_modules/@prisma/**/*",
       "./node_modules/.prisma/**/*",
+      // WORKAROUND: Next.js 16.2.7's outputFileTracing bundles @swc/helpers@0.5.15
+      // (which lacks esm/) instead of the npm-overridden @swc/helpers@0.5.17.
+      // Force the correct version into the standalone bundle.
+      "./node_modules/@swc/helpers/**/*",
     ],
   },
 };
