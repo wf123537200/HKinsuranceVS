@@ -89,14 +89,10 @@ export default function middleware(request: NextRequest) {
     return intl(request);
   }
 
-  // URL has no prefix. next-intl would normally rewrite to /en/<path>.
-  // Only redirect if the user has an explicit NEXT_LOCALE cookie set
-  // (meaning they chose a locale via the language switcher).
-  // This prevents Googlebot from being redirected based on Accept-Language.
-  if (cookieLocale && cookieLocale !== defaultLocale) {
-    return intl(request);
-  }
-  return NextResponse.next();
+  // URL has no prefix. Invoke next-intl for internal rewrite to /en/<path>.
+  // This rewrite is invisible to browsers (no redirect), but allows
+  // Next.js to route the request to app/[locale]/page.tsx correctly.
+  return intl(request);
 }
 
 export const config = {
